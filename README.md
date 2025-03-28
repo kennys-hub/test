@@ -1,147 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Metadata Hybrid Schema Flowchart</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    .flowchart-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-    }
-    .section {
-      margin: 20px 0;
-      padding: 10px;
-      border: 2px solid #333;
-      width: 80%;
-      border-radius: 10px;
-    }
-    .section h3 {
-      text-align: center;
-      color: #2c3e50;
-    }
-    .field {
-      margin: 5px 0;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background-color: #f9f9f9;
-    }
-    .field p {
-      margin: 0;
-    }
-    .dropdown {
-      font-style: italic;
-    }
-    .link {
-      color: #3498db;
-    }
-  </style>
-</head>
-<body>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <div class="flowchart-container">
-    <!-- Archival Structure -->
-    <div class="section">
-      <h3>1️⃣ Archival Structure (Respect des Fonds)</h3>
-      <div class="field">
-        <p><strong>Fonds:</strong> Highest level of archival hierarchy <span class="dropdown">Dropdown</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Series:</strong> Subdivision of a fonds grouping related records <span class="dropdown">Dropdown</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Sub-Series:</strong> Further subdivision within a series <span class="dropdown">Dropdown</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Collection:</strong> Group of related items within a fonds <span class="dropdown">Dropdown or Link</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Location:</strong> Physical or digital storage location <span class="dropdown">Text</span></p>
-      </div>
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>index | test</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="index" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://kennys-hub.github.io/test/" />
+<meta property="og:url" content="https://kennys-hub.github.io/test/" />
+<meta property="og:site_name" content="test" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="index" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","headline":"index","name":"test","url":"https://kennys-hub.github.io/test/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/test/assets/css/style.css?v=c9c958e7318f392119ceaa481558eae609553a48">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/test/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://kennys-hub.github.io/test/">test</a></h1>
+      
+
+      <h1 id="index">index</h1>
+
+
+      
     </div>
-
-    <!-- Core Metadata -->
-    <div class="section">
-      <h3>2️⃣ Core Metadata (Descriptive - Dublin Core & MARC21)</h3>
-      <div class="field">
-        <p><strong>Title:</strong> Name of the item <span class="dropdown">Text</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Creator:</strong> Author, photographer, or originator <span class="dropdown">Text</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Date:</strong> Date of creation <span class="dropdown">Date</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Type:</strong> Content type (Text, Image, Video) <span class="dropdown">Dropdown</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Format:</strong> File format (PDF, JPEG, MP4) <span class="dropdown">Dropdown</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Description:</strong> Summary of the item <span class="dropdown">Text</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Subject/Keywords:</strong> Topics covered in the item <span class="dropdown">Multi-Select</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Language:</strong> Language of content <span class="dropdown">Dropdown</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Identifier:</strong> Unique ID (Auto-generated) <span class="dropdown">Auto-Generated</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Rights/Access:</strong> Public, Private, Copyrighted <span class="dropdown">Dropdown</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Source:</strong> Where the item originated from <span class="dropdown">Text</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Publisher:</strong> Organization or person that published it <span class="dropdown">Text</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Contributor:</strong> Other involved persons (editor, photographer) <span class="dropdown">Dropdown</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Relation:</strong> Link to related records <span class="link">Link</span></p>
-      </div>
-    </div>
-
-    <!-- Digital Archival Storage -->
-    <div class="section">
-      <h3>3️⃣ Digital Archival Storage (Technical Metadata - METS)</h3>
-      <div class="field">
-        <p><strong>Permanent Archive Link:</strong> URL to digital archive <span class="dropdown">URL</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Checksum:</strong> SHA-256/MD5 for integrity <span class="dropdown">Text</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Cloud Storage Link:</strong> Google Drive, Arweave, etc. <span class="dropdown">URL</span></p>
-      </div>
-    </div>
-
-    <!-- Administrative Metadata -->
-    <div class="section">
-      <h3>4️⃣ Administrative Metadata (Tracking - EAD/MARC21)</h3>
-      <div class="field">
-        <p><strong>Added By:</strong> User who created the record <span class="dropdown">Auto-Fill (Username)</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Date Added:</strong> When the record was added <span class="dropdown">Auto-Fill (Timestamp)</span></p>
-      </div>
-      <div class="field">
-        <p><strong>Last Modified:</strong> Last update timestamp <span class="dropdown">Auto-Fill (Timestamp)</span></p>
-      </div>
-    </div>
-
-  </div>
-
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
 </html>
