@@ -1,50 +1,26 @@
-<!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+function doPost(e) {
+  const sheetName = "Sheet1";  // Replace with the name of your sheet
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName(sheetName);
 
-<!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>index | test</title>
-<meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="index" />
-<meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://kennys-hub.github.io/test/" />
-<meta property="og:url" content="https://kennys-hub.github.io/test/" />
-<meta property="og:site_name" content="test" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="index" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","headline":"index","name":"test","url":"https://kennys-hub.github.io/test/"}</script>
-<!-- End Jekyll SEO tag -->
+  if (!sheet) {
+    return ContentService.createTextOutput("Sheet not found: " + sheetName).setMimeType(ContentService.MimeType.TEXT);
+  }
 
-    <link rel="stylesheet" href="/test/assets/css/style.css?v=c9c958e7318f392119ceaa481558eae609553a48">
-    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+  const data = JSON.parse(e.postData.contents);
+  const headerRow = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+  const newRow = [];
 
-<!-- Setup Google Analytics -->
+  // Ensure that the incoming data keys match the sheet headers.
+  headerRow.forEach(header => {
+    if (data.hasOwnProperty(header)) {
+      newRow.push(data[header]);
+    } else {
+      newRow.push(""); // Or some other default value
+    }
+  });
+  sheet.appendRow(newRow);
 
-
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="/test/favicon.ico" -->
-
-<!-- end custom head snippets -->
-
-  </head>
-  <body>
-    <div class="container-lg px-3 my-5 markdown-body">
-      
-      <h1><a href="https://kennys-hub.github.io/test/">test</a></h1>
-      
-
-      <h1 id="index">index</h1>
-
-
-      
-    </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
-    <script>anchors.add();</script>
-  </body>
-</html>
+  // Return a success message
+  return ContentService.createTextOutput(JSON.stringify({ result: "success", message: "Data saved successfully." })).setMimeType(ContentService.MimeType.JSON);
+}
