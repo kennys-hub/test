@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <form id="metadataForm">
+      <label>Title: <input type="text" name="title" required></label><br>
+      <label>Creator: <input type="text" name="creator"></label><br>
+      <label>Date: <input type="date" name="date"></label><br>
+      <label>Type: <select name="type">
+          <option>Text</option><option>Image</option><option>Video</option>
+      </select></label><br>
+      <label>Format: <input type="text" name="format"></label><br>
+      <label>Description: <textarea name="description"></textarea></label><br>
+      <button type="button" onclick="submitData()">Submit</button>
+    </form>
+    
+    <script>
+      function submitData() {
+        var form = document.getElementById("metadataForm");
+        var formData = new FormData(form);
+        var json = {};
+        formData.forEach((value, key) => json[key] = value);
+
+        google.script.run.withSuccessHandler(alert).saveData(json);
+      }
+    </script>
+  </body>
+</html>
