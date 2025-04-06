@@ -57,7 +57,7 @@
 </head>
 <body>
     <h1>Archival Metadata Entry</h1>
-    <form>
+    <form action="process_data.php" method="post">
         <div class="category-header">Archival Structure 📦</div>
         <div class="form-group">
             <label for="fonds">Fonds:</label>
@@ -65,7 +65,7 @@
         </div>
         <div class="form-group">
             <label for="series">Series:</label>
-            <input type="text" id="series" name="series" placeholder="A group of records...">
+            <input type="text" id="series" name="series" placeholder="A group of records created or used by the same person, organization, or function.">
         </div>
         <div class="form-group">
             <label for="sub-series">Sub-Series:</label>
@@ -73,7 +73,7 @@
         </div>
         <div class="form-group">
             <label for="collection">Collection:</label>
-            <input type="text" id="collection" name="collection" placeholder="An artificial accumulation of documents...">
+            <input type="text" id="collection" name="collection" placeholder="An artificial accumulation of documents brought together for some reason.">
         </div>
         <div class="form-group">
             <label for="location">Location 📍:</label>
@@ -87,7 +87,7 @@
         </div>
         <div class="form-group">
             <label for="creator">Creator ✍️:</label>
-            <input type="text" id="creator" name="creator" placeholder="Person, family, or organization responsible...">
+            <input type="text" id="creator" name="creator" placeholder="Person, family, or organization responsible for creating the archived item.">
         </div>
         <div class="form-group">
             <label for="date">Date 📅:</label>
@@ -108,11 +108,11 @@
         </div>
         <div class="form-group">
             <label for="format">Format 📀:</label>
-            <input type="text" id="format" name="format" placeholder="Physical or digital manifestation...">
+            <input type="text" id="format" name="format" placeholder="Physical or digital manifestation of the archived item.">
         </div>
         <div class="form-group">
             <label for="description">Description 📝:</label>
-            <textarea id="description" name="description" rows="4" placeholder="Account of the contents..."></textarea>
+            <textarea id="description" name="description" rows="4" placeholder="Account of the contents of the archived item."></textarea>
         </div>
         <div class="form-group">
             <label for="subject">Subject/Keywords 🔑:</label>
@@ -126,15 +126,15 @@
                 <option value="es">Spanish</option>
                 <option value="fr">French</option>
                 <option value="de">German</option>
-                </select>
+            </select>
         </div>
         <div class="form-group">
             <label for="identifier">Identifier 🔍:</label>
-            <input type="text" id="identifier" name="identifier" placeholder="Unique identification...">
+            <input type="text" id="identifier" name="identifier" placeholder="Unique identification of the archived item.">
         </div>
         <div class="form-group">
             <label for="rights">Rights ⚖️:</label>
-            <textarea id="rights" name="rights" rows="2" placeholder="Information about rights held..."></textarea>
+            <textarea id="rights" name="rights" rows="2" placeholder="Information about rights held in and over the archived item."></textarea>
         </div>
         <div class="form-group">
             <label for="source">Source 🌱:</label>
@@ -142,11 +142,11 @@
         </div>
         <div class="form-group">
             <label for="publisher">Publisher 🏢:</label>
-            <input type="text" id="publisher" name="publisher" placeholder="Entity responsible for making available.">
+            <input type="text" id="publisher" name="publisher" placeholder="Entity responsible for making the archived item available.">
         </div>
         <div class="form-group">
             <label for="contributor">Contributor 👥:</label>
-            <input type="text" id="contributor" name="contributor" placeholder="Entity responsible for making contributions.">
+            <input type="text" id="contributor" name="contributor" placeholder="Entity responsible for making contributions to the archived item.">
         </div>
         <div class="form-group">
             <label for="relation">Relation 🔗:</label>
@@ -158,7 +158,7 @@
         </div>
         <div class="form-group">
             <label for="checksum">Checksum 🧮:</label>
-            <input type="text" id="checksum" name="checksum" placeholder="Digital fingerprint for integrity.">
+            <input type="text" id="checksum" name="checksum" placeholder="Digital fingerprint for integrity verification.">
         </div>
 
         <div class="category-header">Digital Archival Storage ☁️</div>
@@ -172,7 +172,7 @@
         </div>
         <div class="form-group">
             <label for="bit-depth">Bit Depth/Resolution 🎥:</label>
-            <input type="text" id="bit-depth" name="bit-depth" placeholder="Bit depth or resolution of content.">
+            <input type="text" id="bit-depth" name="bit-depth" placeholder="Bit depth or resolution of digital content.">
         </div>
         <div class="form-group">
             <label for="mime-type">MIME Type 📄:</label>
@@ -182,7 +182,7 @@
         <div class="category-header">Administrative Metadata ➕</div>
         <div class="form-group">
             <label for="added-by">Added By:</label>
-            <input type="text" id="added-by" name="added-by" placeholder="Person or system that added the item.">
+            <input type="text" id="added-by" name="added-by" placeholder="Person or system that added the archived item.">
         </div>
         <div class="form-group">
             <label for="date-added">Date Added ⏳:</label>
