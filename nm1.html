@@ -11,8 +11,10 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            min-height: 100vh; /* Allow scrolling if content overflows */
+            height: auto;
+            overflow-y: auto;
             margin: 20px;
+            padding-top: 50px;
             background-color: #f0f0f0;
         }
         .lot {
@@ -22,12 +24,12 @@
             gap: 1px;
             background-color: #000;
             border: 2px solid #000;
-            width: 400px; /* 8 × 50px */
-            height: 550px; /* 11 × 50px */
+            width: 400px;
+            height: 550px;
             transform: rotate(0deg);
         }
         .cell {
-            background-color: #32cd32; /* Green for empty yard */
+            background-color: #32cd32;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,7 +37,7 @@
             color: #fff;
             text-align: center;
         }
-        .home { background-color: #1e90ff; } /* Blue for house */
+        .home { background-color: #1e90ff; }
         .garage { background-color: #1e90ff; }
         .shed { background-color: #1e90ff; }
         .atu-tank { background-color: #1e90ff; }
@@ -76,26 +78,26 @@
 <body>
     <div class="lot">
         <!-- Row 11 (y=156, North) -->
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <!-- Row 10 (y=141.8–156) -->
         <div class="cell swales">Swales</div>
         <div class="cell swales"></div>
         <div class="cell swales"></div>
         <div class="cell swales"></div>
         <div class="cell swales"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <!-- Row 10 (y=141.8–156) -->
-        <div class="cell doghouse">Doghouse</div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
+        <div class="cell swales"></div>
         <div class="cell"></div>
         <div class="cell"></div>
         <!-- Row 9 (y=127.62–141.8) -->
         <div class="cell"></div>
-        <div class="cell"></div>
+        <div class="cell doghouse">Doghouse</div>
         <div class="cell"></div>
         <div class="cell"></div>
         <div class="cell"></div>
@@ -117,17 +119,17 @@
         <div class="cell"></div>
         <div class="cell"></div>
         <div class="cell"></div>
-        <div class="cell"></div>
         <div class="cell atu-tank">ATU Tank</div>
-        <div class="cell atu-drain">Drain Field</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
         <!-- Row 6 (y=85.08–99.26) -->
         <div class="cell"></div>
         <div class="cell"></div>
         <div class="cell"></div>
         <div class="cell"></div>
         <div class="cell"></div>
-        <div class="cell"></div>
         <div class="cell atu-drain">Drain Field</div>
+        <div class="cell"></div>
         <div class="cell"></div>
         <!-- Row 5 (y=70.9–85.08) -->
         <div class="cell"></div>
@@ -144,29 +146,29 @@
         <div class="cell home">Home</div>
         <div class="cell home"></div>
         <div class="cell home"></div>
-        <div class="cell"></div>
+        <div class="cell home"></div>
         <div class="cell"></div>
         <div class="cell"></div>
         <!-- Row 3 (y=42.54–56.72) -->
+        <div class="cell"></div>
         <div class="cell garage">Garage</div>
-        <div class="cell garage"></div>
         <div class="cell home">Home</div>
         <div class="cell path">Path</div>
         <div class="cell home"></div>
-        <div class="cell"></div>
+        <div class="cell home"></div>
         <div class="cell cistern">Cistern</div>
         <div class="cell"></div>
         <!-- Row 2 (y=28.36–42.54) -->
+        <div class="cell"></div>
         <div class="cell garage">Garage</div>
-        <div class="cell garage"></div>
         <div class="cell home">Home</div>
         <div class="cell home"></div>
         <div class="cell home"></div>
-        <div class="cell"></div>
+        <div class="cell home"></div>
         <div class="cell"></div>
         <div class="cell"></div>
         <!-- Row 1 (y=0–28.36, South) -->
-        <div class="cell shed">Shed</div>
+        <div class="cell"></div>
         <div class="cell propane">Propane</div>
         <div class="cell"></div>
         <div class="cell"></div>
@@ -190,13 +192,14 @@
         <div>Garage: 20’ × 20’</div>
         <div>Shed: Utility Shed (6’ × 6’)</div>
         <div>ATU Tank: BioMicrobics MicroFAST 0.5 Tank (8’ × 4’)</div>
-        <div>Drain Field: ATU Drain Field (15’ × 10’)</div>
+        <div>Drain Field: ATU Drain Field (10’ × 10’)</div>
         <div>Cistern: 2,000-gal Rainwater Cistern (10’ × 7.5’)</div>
         <div>Jacuzzi: 7’ × 7’</div>
         <div>Propane: Propane Tanks (1.5’ × 1.5’ each)</div>
         <div>Doghouse: 3’ × 3’</div>
-        <div>Swales: Runoff Mitigations (50’ × 2’)</div>
+        <div>Swales: Runoff Mitigations (50’ × 5’)</div>
         <div>Path: Gravel Path to Jacuzzi (3’ × 10’)</div>
+        <div>Solar System: 5 kW, Roof-Mounted on Home</div>
     </div>
 </body>
 </html>
