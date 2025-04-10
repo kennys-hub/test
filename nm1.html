@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>0.28 Acre Lot Layout - Rio del Oro</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .lot {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(10, 1fr);
+      width: 400px;
+      height: 500px;
+      border: 2px solid #333;
+      margin-bottom: 20px;
+    }
+    .cell {
+      border: 1px solid #ccc;
+      position: relative;
+    }
+    .blue { background-color: rgba(0, 120, 255, 0.6); }
+    .green { background-color: rgba(0, 200, 0, 0.4); }
+    .label {
+      font-size: 0.55em;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      color: #000;
+    }
+    .legend {
+      margin-top: 10px;
+    }
+    .legend div {
+      margin-bottom: 5px;
+    }
+    .key {
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+    .title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="title">Diagram: 0.28 Acre Lot Layout - Rio del Oro, NM (8x10 Grid)</div>
+  <div class="lot">
+    <!-- Grid rows from top (north) to bottom (south) -->
+    <!-- Row 10 (North boundary) -->
+    <div class="cell green"><div class="label">Dog</div></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+
+    <!-- Row 9 (Swales) -->
+    <div class="cell green"><div class="label">Swale</div></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+
+    <!-- Row 8 (ATU) -->
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell blue"><div class="label">ATU</div></div>
+    <div class="cell blue"></div>
+
+    <!-- Row 7 (Drain field) -->
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell blue"><div class="label">Drain</div></div>
+    <div class="cell blue"></div>
+
+    <!-- Row 6 (Yard) -->
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+
+    <!-- Row 5 (Jacuzzi) -->
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell blue"><div class="label">Jacuzzi</div></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+
+    <!-- Row 4 (Home) -->
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell blue"><div class="label">Home</div></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+
+    <!-- Row 3 (Home + Cistern) -->
+    <div class="cell green"></div>
+    <div class="cell blue"><div class="label">Home</div></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"><div class="label">Cistern</div></div>
+    <div class="cell blue"></div>
+
+    <!-- Row 2 (Garage) -->
+    <div class="cell blue"><div class="label">Garage</div></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+    <div class="cell blue"></div>
+
+    <!-- Row 1 (Utility shed + propane) -->
+    <div class="cell blue"><div class="label">Shed</div></div>
+    <div class="cell blue"><div class="label">LPG</div></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+    <div class="cell green"></div>
+  </div>
+
+  <div class="legend">
+    <div><span class="key" style="background-color: rgba(0, 120, 255, 0.6);"></span> House & Utilities (12.7%)</div>
+    <div><span class="key" style="background-color: rgba(0, 200, 0, 0.4);"></span> Yard Space (87.3%)</div>
+    <div>Orientation: Portrait (8x10) — South = Bottom (Street), North = Top</div>
+  </div>
+</body>
+</html>
