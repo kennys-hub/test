@@ -1,175 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Rio del Oro Lot Diagram</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #f8f8f8;
-    }
-    h1 {
-      text-align: center;
-    }
-    .lot {
-      display: grid;
-      grid-template-columns: repeat(8, 50px);
-      grid-template-rows: repeat(10, 50px);
-      gap: 2px;
-      margin: auto;
-      border: 2px solid #444;
-      background-color: #ccc;
-      width: fit-content;
-    }
-    .cell {
-      width: 50px;
-      height: 50px;
-      text-align: center;
-      font-size: 10px;
-      line-height: 12px;
-      padding: 2px;
-      box-sizing: border-box;
-      border: 1px solid #999;
-    }
-    .green { background-color: #a4d4ae; } /* Yard */
-    .blue { background-color: #7dafff; }  /* Structures/utilities */
-    .swale { background-color: #ccffcc; } /* Swales */
-    .label {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .legend {
-      margin-top: 30px;
-      padding: 10px;
-      background-color: #fff;
-      border: 1px solid #aaa;
-      max-width: 400px;
-    }
-    .legend div {
-      margin-bottom: 4px;
-    }
-    .key-box {
-      display: inline-block;
-      width: 12px;
-      height: 12px;
-      margin-right: 8px;
-      vertical-align: middle;
-      border: 1px solid #333;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Lot Diagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh; /* Allow scrolling if content overflows */
+            margin: 20px;
+            background-color: #f0f0f0;
+        }
+        .lot {
+            display: grid;
+            grid-template-columns: repeat(8, 50px);
+            grid-template-rows: repeat(11, 50px);
+            gap: 1px;
+            background-color: #000;
+            border: 2px solid #000;
+            width: 400px; /* 8 × 50px */
+            height: 550px; /* 11 × 50px */
+            transform: rotate(0deg);
+        }
+        .cell {
+            background-color: #32cd32; /* Green for empty yard */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            color: #fff;
+            text-align: center;
+        }
+        .home { background-color: #1e90ff; } /* Blue for house */
+        .garage { background-color: #1e90ff; }
+        .shed { background-color: #1e90ff; }
+        .atu-tank { background-color: #1e90ff; }
+        .atu-drain { background-color: #1e90ff; }
+        .cistern { background-color: #1e90ff; }
+        .jacuzzi { background-color: #1e90ff; }
+        .propane { background-color: #1e90ff; }
+        .doghouse { background-color: #1e90ff; }
+        .swales { background-color: #1e90ff; }
+        .path { background-color: #1e90ff; }
+        .street {
+            width: 400px;
+            height: 30px;
+            background-color: #808080;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .key {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .key div {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .key .color-box {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Rio del Oro Lot Diagram (8×10 Grid)</h1>
-  <div class="lot">
-    <!-- Row 10 (North) -->
-    <div class="swale cell">Doghouse</div>
-    <div class="swale cell">Swale</div>
-    <div class="swale cell">Swale</div>
-    <div class="swale cell">Swale</div>
-    <div class="swale cell">Swale</div>
-    <div class="green cell">Garden</div>
-    <div class="green cell">Garden</div>
-    <div class="green cell">Garden</div>
-    
-    <!-- Row 9 -->
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="blue cell">ATU</div>
-    <div class="blue cell">ATU</div>
-    <div class="green cell"></div>
-    
-    <!-- Row 8 -->
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="blue cell">Drain Field</div>
-    <div class="blue cell">Drain Field</div>
-    <div class="green cell"></div>
-    
-    <!-- Row 7 -->
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    
-    <!-- Row 6 -->
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="blue cell">Jacuzzi</div>
-    <div class="blue cell">Jacuzzi</div>
-    <div class="blue cell">Jacuzzi</div>
-    <div class="blue cell">Jacuzzi</div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    
-    <!-- Row 5 -->
-    <div class="green cell"></div>
-    <div class="blue cell">Home</div>
-    <div class="blue cell">Home</div>
-    <div class="blue cell">Home</div>
-    <div class="blue cell">Home</div>
-    <div class="blue cell">Home</div>
-    <div class="blue cell">Home</div>
-    <div class="blue cell">Home</div>
-    
-    <!-- Row 4 -->
-    <div class="blue cell">Garage</div>
-    <div class="blue cell">Garage</div>
-    <div class="blue cell">Cistern</div>
-    <div class="blue cell">Cistern</div>
-    <div class="blue cell">Cistern</div>
-    <div class="blue cell">Cistern</div>
-    <div class="blue cell">Cistern</div>
-    <div class="blue cell">Cistern</div>
-    
-    <!-- Row 3 -->
-    <div class="blue cell">Garage</div>
-    <div class="blue cell">Garage</div>
-    <div class="blue cell">Garage</div>
-    <div class="blue cell">Garage</div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    
-    <!-- Row 2 -->
-    <div class="blue cell">Utility Shed</div>
-    <div class="blue cell">Propane</div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    <div class="green cell"></div>
-    
-    <!-- Row 1 (South, street) -->
-    <div class="green cell">Street</div>
-    <div class="green cell">Street</div>
-    <div class="green cell">Street</div>
-    <div class="green cell">Street</div>
-    <div class="green cell">Street</div>
-    <div class="green cell">Street</div>
-    <div class="green cell">Street</div>
-    <div class="green cell">Street</div>
-  </div>
-
-  <div class="legend">
-    <h3>Legend</h3>
-    <div><span class="key-box green"></span> Empty Yard / Garden Space (87.3%)</div>
-    <div><span class="key-box blue"></span> House & Utilities (12.7%)</div>
-    <div><span class="key-box swale"></span> Swales & Drainage Features</div>
-    <div><b>Street:</b> South end of property (bottom row)</div>
-    <div><b>North:</b> Top of grid</div>
-  </div>
+    <div class="lot">
+        <!-- Row 11 (y=156, North) -->
+        <div class="cell swales">Swales</div>
+        <div class="cell swales"></div>
+        <div class="cell swales"></div>
+        <div class="cell swales"></div>
+        <div class="cell swales"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <!-- Row 10 (y=141.8–156) -->
+        <div class="cell doghouse">Doghouse</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <!-- Row 9 (y=127.62–141.8) -->
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <!-- Row 8 (y=113.44–127.62) -->
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <!-- Row 7 (y=99.26–113.44) -->
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell atu-tank">ATU Tank</div>
+        <div class="cell atu-drain">Drain Field</div>
+        <!-- Row 6 (y=85.08–99.26) -->
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell atu-drain">Drain Field</div>
+        <div class="cell"></div>
+        <!-- Row 5 (y=70.9–85.08) -->
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell jacuzzi">Jacuzzi</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <!-- Row 4 (y=56.72–70.9) -->
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell home">Home</div>
+        <div class="cell home"></div>
+        <div class="cell home"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <!-- Row 3 (y=42.54–56.72) -->
+        <div class="cell garage">Garage</div>
+        <div class="cell garage"></div>
+        <div class="cell home">Home</div>
+        <div class="cell path">Path</div>
+        <div class="cell home"></div>
+        <div class="cell"></div>
+        <div class="cell cistern">Cistern</div>
+        <div class="cell"></div>
+        <!-- Row 2 (y=28.36–42.54) -->
+        <div class="cell garage">Garage</div>
+        <div class="cell garage"></div>
+        <div class="cell home">Home</div>
+        <div class="cell home"></div>
+        <div class="cell home"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <!-- Row 1 (y=0–28.36, South) -->
+        <div class="cell shed">Shed</div>
+        <div class="cell propane">Propane</div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+    </div>
+    <div class="street">Street (South)</div>
+    <div class="key">
+        <h3>Key</h3>
+        <div>
+            <div class="color-box" style="background-color: #1e90ff;"></div>
+            House and Utilities (Blue) - 12.7%
+        </div>
+        <div>
+            <div class="color-box" style="background-color: #32cd32;"></div>
+            Empty Yard (Green) - 87.3%
+        </div>
+        <div>Home: Container Home (40’ × 16’)</div>
+        <div>Garage: 20’ × 20’</div>
+        <div>Shed: Utility Shed (6’ × 6’)</div>
+        <div>ATU Tank: BioMicrobics MicroFAST 0.5 Tank (8’ × 4’)</div>
+        <div>Drain Field: ATU Drain Field (15’ × 10’)</div>
+        <div>Cistern: 2,000-gal Rainwater Cistern (10’ × 7.5’)</div>
+        <div>Jacuzzi: 7’ × 7’</div>
+        <div>Propane: Propane Tanks (1.5’ × 1.5’ each)</div>
+        <div>Doghouse: 3’ × 3’</div>
+        <div>Swales: Runoff Mitigations (50’ × 2’)</div>
+        <div>Path: Gravel Path to Jacuzzi (3’ × 10’)</div>
+    </div>
 </body>
 </html>
