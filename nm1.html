@@ -3,313 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Property Lot Description - Rio del Oro 🏡</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <title>Property Lot Description - Canyon del Rio 🏡</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            margin: 20px;
-            background-color: #f5f5f5;
-            color: #333;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
         }
-        h1, h2, h3 {
-            font-family: 'Montserrat', sans-serif;
-            color: #1e90ff;
+        h1, h2 {
+            color: #333;
         }
         h1 {
+            font-size: 2em;
             text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         h2 {
-            font-size: 1.8em;
-            margin-top: 30px;
-            border-bottom: 2px solid #1e90ff;
+            font-size: 1.5em;
+            margin-top: 20px;
+            border-bottom: 1px solid #ccc;
             padding-bottom: 5px;
         }
-        h3 {
-            font-size: 1.4em;
-            margin-top: 20px;
-        }
-        p, ul, li {
-            font-size: 1.1em;
+        p, ul {
+            color: #555;
+            font-size: 1em;
         }
         .container {
-            max-width: 1200px;
+            max-width: 800px;
             margin: 0 auto;
+            background: #fff;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .lot {
+        .diagram {
             display: grid;
-            grid-template-columns: repeat(8, 50px);
-            grid-template-rows: repeat(11, 50px);
-            gap: 1px;
-            background-color: #000;
-            border: 2px solid #000;
-            width: 400px;
-            height: 550px;
-            margin: 20px auto;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            gap: 2px;
+            margin: 20px 0;
+            background-color: #e0e0e0;
+            padding: 10px;
+            border-radius: 5px;
         }
-        .cell {
-            background-color: #32cd32;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 10px;
-            color: #fff;
+        .diagram div {
+            padding: 5px;
             text-align: center;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            font-size: 0.9em;
         }
-        .center-img {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 40%; 
-    }
-        .home { background-color: #1e90ff; }
-        .garage { background-color: #1e90ff; }
-        .shed { background-color: #1e90ff; }
-        .atu-tank { background-color: #1e90ff; }
-        .atu-drain { background-color: #1e90ff; }
-        .cistern { background-color: #1e90ff; }
-        .jacuzzi { background-color: #1e90ff; }
-        .doghouse { background-color: #1e90ff; }
-        .swales { background-color: #1e90ff; }
-        .path { background-color: #1e90ff; }
-        .heat-pump { background-color: #1e90ff; }
-        .street {
-            width: 400px;
-            height: 30px;
-            background-color: #808080;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            font-size: 14px;
-            margin: 0 auto;
+        .house-utilities {
+            background-color: #add8e6;
+        }
+        .empty-yard {
+            background-color: #90ee90;
         }
         .key {
-            font-size: 14px;
-            margin: 20px auto;
-            max-width: 400px;
+            margin-top: 10px;
         }
         .key div {
-            display: flex;
-            align-items: center;
-            margin: 5px 0;
+            display: inline-block;
+            margin-right: 20px;
+            font-size: 0.9em;
         }
-        .key .color-box {
-            width: 20px;
-            height: 20px;
-            margin-right: 10px;
-        }
-        ul {
+        .compliance-checklist ul {
             list-style-type: none;
             padding: 0;
         }
-        li {
-            margin: 10px 0;
+        .compliance-checklist li {
+            margin-bottom: 10px;
         }
-        .compliance {
-            background-color: #e8f4ff;
-            padding: 15px;
-            border-radius: 5px;
-            margin-top: 10px;
+        .compliance-checklist li::before {
+            content: "✅";
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Property Lot Description - Rio del Oro 🏡</h1>
-        <a href="nmhome1.jpeg" target="_blank">
-   <img src="./nmhome1.jpeg" alt="Santa Fe Home" class="center-img">
-        <a href="./nmland1.png" target="_blank">
-   <img src="./nmland1.png" alt="Santa Fe Home" class="center-img">
-
-            
-</a>
+        <h1>Property Lot Description - Canyon del Rio 🏡</h1>
+        <p style="text-align: center;">Valencia County Home</p>
 
         <h2>Property Description 🌄</h2>
-        <p>This 0.28-acre property in Rio del Oro, Unit 28, Valencia County, New Mexico, is a sustainable off-grid homestead. Measuring 77’ east-west by 156’ north-south, it features a 2-story container home, garage, shed, heat pump, septic system (ATU tank and drain field), cistern, jacuzzi, doghouse, swales, and a gravel path. The property is zoned RR-1 (Rural Residential) and is oriented with the street on the south (y=0), north boundary at y=156, west at x=0, and east at x=77. A 5 kW solar system powers the home, supported by 27 kWh battery storage, making it fully off-grid. 🌞</p>
+        <p>
+            This 0.28-acre property in Canyon del Rio, Valencia County, New Mexico, is a sustainable off-grid homestead. Measuring 77’ east-west by 156’ north-south, it features a 2-story site-built home, garage, shed, heat pump, septic system (ATU tank and drain field), cistern, jacuzzi, doghouse, swales, and a gravel path. The property is zoned RR-1 (Rural Residential) and is oriented with the street on the south (y=0), north boundary at y=156, west at x=0, and east at x=77. A 5 kW solar system powers the home, supported by 27 kWh battery storage, making it fully off-grid. 🌞
+        </p>
 
         <h2>Home and Utilities 🏠</h2>
         <ul>
-            <li><strong>Container Home 🏠</strong>: 2-story, 900 sq ft, built from two 40’ × 8’ ground-level containers and one 20’ × 8’ upstairs section. Includes an electric stove (5 kW), heat pump indoor air handler, upgraded insulation (R-30 walls, R-50 roof), 32 sq ft south-facing windows, and thermal mass for passive solar heating. Located at columns 3–6, rows 2–4 (20’–60’, 28.36’–70.9’).</li>
-            <li><strong>Garage 🚗</strong>: 20’ × 20’, contains solar batteries (27 kWh), inverter, water pump, vehicle parking, and tools. Located at columns 2–3, rows 2–3 (15’–30’, 28.36’–42.54’).</li>
-            <li><strong>Shed 🛠️</strong>: 6’ × 6’, stores garden tools, cistern accessories, and miscellaneous items. Located at column 2, row 5 (15’, 65’).</li>
-            <li><strong>Heat Pump ❄️</strong>: 2-ton (24,000 BTU, 2.4 kW), provides cooling and primary heating. Located at column 2, row 4 (15’, 56.72’).</li>
-            <li><strong>ATU Tank 🚽</strong>: BioMicrobics MicroFAST 0.5 tank (8’ × 4’), part of the septic system. Located at column 6, row 7 (60’, 100’–104’).</li>
-            <li><strong>Drain Field 💧</strong>: 10’ × 10’, disperses treated effluent. Located at column 6, row 6 (57’, 80’–90’).</li>
-            <li><strong>Cistern 💦</strong>: 2,000-gallon rainwater cistern (10’ × 7.5’), collects runoff. Located at column 6, row 2 (60’, 25’).</li>
-            <li><strong>Jacuzzi 🛁</strong>: 7’ × 7’, for relaxation. Located at column 4, row 5 (35’, 65’).</li>
-            <li><strong>Doghouse 🐶</strong>: 3’ × 3’, pet shelter. Located at column 2, row 9 (15’, 127.62’).</li>
-            <li><strong>Swales 🌊</strong>: Runoff mitigations (50’ × 5’), manage water flow. Located at columns 2–6, row 10 (15’–60’, 141.8’–156’).</li>
-            <li><strong>Path 🚶</strong>: Gravel path to the jacuzzi (3’ × 10’), connects the home to the jacuzzi. Located at columns 3–6, row 5 (20’–60’, 65’).</li>
+            <li><strong>Site-Built Home 🏠</strong>: 2-story, 900 sq ft, built with stucco exterior and a flat roof concealed by parapets. Includes an electric stove (5 kW), heat pump indoor air handler, upgraded insulation (R-30 walls, R-50 roof), 32 sq ft south-facing windows, and thermal mass for passive solar heating. Located at columns 3–6, rows 2–4 (15.4’–46.2’, 31.2’–62.4’).</li>
+            <li><strong>Garage 🚗</strong>: 20’ × 20’, contains solar batteries (27 kWh), inverter, water pump, vehicle parking, and tools. Located at columns 2–3, rows 2–3 (7.7’–23.1’, 31.2’–46.8’).</li>
+            <li><strong>Shed 🛠️</strong>: 6’ × 6’, stores garden tools, cistern accessories, and miscellaneous items. Located at column 2, row 5 (7.7’, - set to (7.7’, 78’).</li>
+            <li><strong>Heat Pump ❄️</strong>: 2-ton (24,000 BTU, 2.4 kW), provides cooling and primary heating. Located at column 2, row 4 (7.7’, 62.4’).</li>
+            <li><strong>ATU Tank 🚽</strong>: BioMicrobics MicroFAST 0.5 tank (8’ × 4’), part of the septic system. Located at column 6, row 8 (46.2’, 124.8’–128.8’).</li>
+            <li><strong>Drain Field 💧</strong>: 10’ × 10’, disperses treated effluent. Located at column 6, row 7 (46.2’, 109.2’–119.2’).</li>
+            <li><strong>Cistern 💦</strong>: 2,000-gallon rainwater cistern (10’ × 7.5’), collects runoff. Located at column 6, row 2 (46.2’, 31.2’).</li>
+            <li><strong>Jacuzzi 🛁</strong>: 7’ × 7’, for relaxation. Located at column 4, row 5 (30.8’, 78’).</li>
+            <li><strong>Doghouse 🐶</strong>: 3’ × 3’, pet shelter. Located at column 2, row 10 (7.7’, 140.4’–156’).</li>
+            <li><strong>Swales 🌊</strong>: Runoff mitigations (50’ × 5’), manage water flow. Located at columns 2–6, row 2 (7.7’–46.2’, 15.6’–31.2’).</li>
+            <li><strong>Path 🚶</strong>: Gravel path to the jacuzzi (3’ × 10’), connects the home to the jacuzzi. Located at columns 4–6, row 5 (30.8’–46.2’, 78’).</li>
             <li><strong>Solar System ☀️</strong>: 5 kW, roof-mounted on the home, produces ~20 kWh/day.</li>
         </ul>
 
         <h2>Property Diagram 📍</h2>
-        <div class="lot">
-            <!-- Row 11 (y=156, North) -->
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <!-- Row 10 (y=141.8–156) -->
-            <div class="cell"></div>
-            <div class="cell swales">Swales 🌊</div>
-            <div class="cell swales">Swales 🌊</div>
-            <div class="cell swales">Swales 🌊</div>
-            <div class="cell swales">Swales 🌊</div>
-            <div class="cell swales">Swales 🌊</div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <!-- Row 9 (y=127.62–141.8) -->
-            <div class="cell"></div>
-            <div class="cell doghouse">Doghouse 🐶</div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <!-- Row 8 (y=113.44–127.62) -->
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <!-- Row 7 (y=99.26–113.44) -->
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell atu-tank">ATU Tank 🚽</div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <!-- Row 6 (y=85.08–99.26) -->
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell atu-drain">Drain Field 💧</div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <!-- Row 5 (y=70.9–85.08) -->
-            <div class="cell"></div>
-            <div class="cell shed">Shed 🛠️</div>
-            <div class="cell path">Path 🚶</div>
-            <div class="cell path jacuzzi">Path Jacuzzi 🛁</div>
-            <div class="cell path">Path 🚶</div>
-            <div class="cell path">Path 🚶</div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <!-- Row 4 (y=56.72–70.9) -->
-            <div class="cell"></div>
-            <div class="cell heat-pump">Heat Pump ❄️</div>
-            <div class="cell home">Home 🏠</div>
-            <div class="cell home">Home 🏠</div>
-            <div class="cell home">Home 🏠</div>
-            <div class="cell home">Home 🏠</div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <!-- Row 3 (y=42.54–56.72) -->
-            <div class="cell"></div>
-            <div class="cell garage">Garage + Batteries 🚗</div>
-            <div class="cell home">Home 🏠</div>
-            <div class="cell home">Home 🏠</div>
-            <div class="cell home">Home 🏠</div>
-            <div class="cell home">Home 🏠</div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <!-- Row 2 (y=28.36–42.54) -->
-            <div class="cell"></div>
-            <div class="cell garage">Garage 🚗</div>
-            <div class="cell home">Home 🏠</div>
-            <div class="cell home">Home 🏠</div>
-            <div class="cell home">Home 🏠</div>
-            <div class="cell home">Home 🏠</div>
-            <div class="cell"></div>
-            <div class="cell cistern">Cistern 💦</div>
-            <!-- Row 1 (y=0–28.36, South) -->
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
-            <div class="cell"></div>
+        <div class="diagram">
+            <!-- Row 10 (y=140.4–156) -->
+            <div class="empty-yard"></div>
+            <div class="house-utilities">Doghouse 🐶</div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <!-- Row 9 (y=124.8–140.4) -->
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="house-utilities">ATU Tank 🚽</div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <!-- Row 8 (y=109.2–124.8) -->
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="house-utilities">Drain Field 💧</div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <!-- Row 7 (y=93.6–109.2) -->
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="house-utilities">Drain Field 💧</div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <!-- Row 6 (y=78–93.6) -->
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <!-- Row 5 (y=62.4–78) -->
+            <div class="empty-yard"></div>
+            <div class="house-utilities">Shed 🛠️</div>
+            <div class="empty-yard"></div>
+            <div class="house-utilities">Jacuzzi 🛁</div>
+            <div class="house-utilities">Path 🚶</div>
+            <div class="house-utilities">Path 🚶</div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <!-- Row 4 (y=46.8–62.4) -->
+            <div class="empty-yard"></div>
+            <div class="house-utilities">Heat Pump ❄️</div>
+            <div class="empty-yard"></div>
+            <div class="house-utilities">Home 🏠</div>
+            <div class="house-utilities">Home 🏠</div>
+            <div class="house-utilities">Home 🏠</div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <!-- Row 3 (y=31.2–46.8) -->
+            <div class="empty-yard"></div>
+            <div class="house-utilities">Garage 🚗</div>
+            <div class="house-utilities">Garage 🚗</div>
+            <div class="house-utilities">Home 🏠</div>
+            <div class="house-utilities">Home 🏠</div>
+            <div class="house-utilities">Home 🏠</div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <!-- Row 2 (y=15.6–31.2) -->
+            <div class="empty-yard"></div>
+            <div class="house-utilities">Swales 🌊</div>
+            <div class="house-utilities">Swales 🌊</div>
+            <div class="house-utilities">Swales 🌊</div>
+            <div class="house-utilities">Swales 🌊</div>
+            <div class="house-utilities">Swales 🌊</div>
+            <div class="house-utilities">Cistern 💦</div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <div class="empty-yard"></div>
+            <!-- Row 1 (y=0–15.6) -->
+            <div class="empty-yard">Street 🛤️</div>
+            <div class="empty-yard">Street 🛤️</div>
+            <div class="empty-yard">Street 🛤️</div>
+            <div class="empty-yard">Street 🛤️</div>
+            <div class="empty-yard">Street 🛤️</div>
+            <div class="empty-yard">Street 🛤️</div>
+            <div class="empty-yard">Street 🛤️</div>
+            <div class="empty-yard">Street 🛤️</div>
+            <div class="empty-yard">Street 🛤️</div>
+            <div class="empty-yard">Street 🛤️</div>
         </div>
-        <div class="street">Street (South) 🛤️</div>
         <div class="key">
-            <h3>Key 🔑</h3>
-            <div>
-                <div class="color-box" style="background-color: #1e90ff;"></div>
-                House and Utilities (Blue) - 10.23% 🏠
-            </div>
-            <div>
-                <div class="color-box" style="background-color: #32cd32;"></div>
-                Empty Yard (Green) - 89.77% 🌳
-            </div>
-            <div>🏠 Home: 2-Story Container Home (40’ × 16’ footprint, 900 sq ft total, two 40’ × 8’ ground-level containers, one 20’ × 8’ upstairs, contains Heat Pump Indoor Air Handler and Electric Stove; upgraded insulation to R-30 walls, R-50 roof, added 32 sq ft south-facing windows and thermal mass for passive solar heating)</div>
-            <div>🚗 Garage: 20’ × 20’ (contains solar batteries, inverter, water pump, vehicle parking, tools)</div>
-            <div>🛠️ Shed: Utility Shed (6’ × 6’) (contains garden tools, cistern accessories, miscellaneous storage)</div>
-            <div>❄️ Heat Pump: 2-Ton Electric Heat Pump Outdoor Unit (provides cooling and primary heating)</div>
-            <div>🚽 ATU Tank: BioMicrobics MicroFAST 0.5 Tank (8’ × 4’)</div>
-            <div>💧 Drain Field: ATU Drain Field (10’ × 10’)</div>
-            <div>💦 Cistern: 2,000-gal Rainwater Cistern (10’ × 7.5’)</div>
-            <div>🛁 Jacuzzi: 7’ × 7’</div>
-            <div>🐶 Doghouse: 3’ × 3’</div>
-            <div>🌊 Swales: Runoff Mitigations (50’ × 5’)</div>
-            <div>🚶 Path: Gravel Path to Jacuzzi (3’ × 10’)</div>
-            <div>☀️ Solar System: 5 kW, Roof-Mounted on Home</div>
+            <div><span style="color: #add8e6;">■</span> House and Utilities (Blue) - 10.06% 🏠</div>
+            <div><span style="color: #90ee90;">■</span> Empty Yard (Green) - 89.94% 🌳</div>
         </div>
 
+        <h2>Key 🔑</h2>
+        <ul>
+            <li><strong>🏠 Home</strong>: 2-Story Site-Built Home (30.8’ × 31.2’ footprint, 900 sq ft total, stucco exterior, flat roof concealed by parapets, contains Heat Pump Indoor Air Handler and Electric Stove; upgraded insulation to R-30 walls, R-50 roof, added 32 sq ft south-facing windows and thermal mass for passive solar heating)</li>
+            <li><strong>🚗 Garage</strong>: 20’ × 20’ (contains solar batteries, inverter, water pump, vehicle parking, tools)</li>
+            <li><strong>🛠️ Shed</strong>: Utility Shed (6’ × 6’) (contains garden tools, cistern accessories, miscellaneous storage)</li>
+            <li><strong>❄️ Heat Pump</strong>: 2-Ton Electric Heat Pump Outdoor Unit (provides cooling and primary heating)</li>
+            <li><strong>🚽 ATU Tank</strong>: BioMicrobics MicroFAST 0.5 Tank (8’ × 4’)</li>
+            <li><strong>💧 Drain Field</strong>: ATU Drain Field (10’ × 10’)</li>
+            <li><strong>💦 Cistern</strong>: 2,000-gal Rainwater Cistern (10’ × 7.5’)</li>
+            <li><strong>🛁 Jacuzzi</strong>: 7’ × 7’</li>
+            <li><strong>🐶 Doghouse</strong>: 3’ × 3’</li>
+            <li><strong>🌊 Swales</strong>: Runoff Mitigations (50’ × 5’)</li>
+            <li><strong>🚶 Path</strong>: Gravel Path to Jacuzzi (3’ × 10’)</li>
+            <li><strong>☀️ Solar System</strong>: 5 kW, Roof-Mounted on Home</li>
+        </ul>
+
         <h2>Applicable Laws 📜</h2>
-        <h3>Valencia County RR-1 Zoning (Article 5, Section 154.071)</h3>
+        <p><strong>Valencia County RR-1 Zoning (Article 5, Section 154.071)</strong></p>
         <ul>
             <li>Front Setback: 25’ from the street (y=0).</li>
             <li>Side Setback: 10’ from side property lines (x=0, x=77).</li>
             <li>Rear Setback: 10’ from the rear property line (y=156).</li>
             <li>Lot Coverage: Maximum 35% for all structures.</li>
         </ul>
-        <h3>NMAC § 20.7.3 (Liquid Waste Treatment and Disposal)</h3>
+        <p><strong>Canyon del Rio ACC Manual (Adopted October 29, 1998)</strong></p>
         <ul>
-            <li>ATU Tank and Drain Field Setbacks:</li>
-            <li>5’ from property lines.</li>
-            <li>10’ from buildings.</li>
-            <li>4’ from non-paved surfaces (e.g., paths).</li>
-            <li>50’ from water storage systems (e.g., cistern).</li>
+            <li>Front Setback: 20’ from the front lot line (Section 5-2-1).</li>
+            <li>Side Setback: 5’ from side lot lines (10’ if a street right-of-way on a corner lot) (Section 5-2-2).</li>
+            <li>Rear Setback: 15’ from the rear lot line (Section 5-2-3).</li>
+            <li>Drainage Easement Setback: 35’ from any lot line abutting a drainage easement (Section 5-2-4).</li>
+            <li>Minimum Square Footage: 800 sq ft for the main structure (Section 5-3-1).</li>
+            <li>Minimum Width: 24’ for the main structure (Section 5-3-2).</li>
+            <li>Garage Requirement: At least a one-car garage (250 sq ft) (Section 5-3-3).</li>
+            <li>Exterior Design: Stucco, earthtone colors, flat roof concealed by parapets (Sections 5-4-1 to 5-4-5).</li>
+            <li>Utilities: Electric lines must be buried underground (Section 5-7).</li>
+            <li>Drainage: A drainage plan may be required due to the nearby arroyo (Section 5-8).</li>
+        </ul>
+        <p><strong>NMAC § 20.7.3 (Liquid Waste Treatment and Disposal)</strong></p>
+        <ul>
+            <li>ATU Tank and Drain Field Setbacks:
+                <ul>
+                    <li>5’ from property lines.</li>
+                    <li>10’ from buildings.</li>
+                    <li>4’ from non-paved surfaces (e.g., paths).</li>
+                    <li>50’ from water storage systems (e.g., cistern).</li>
+                </ul>
+            </li>
         </ul>
 
         <h2>Compliance Checklist ✅</h2>
-        <div class="compliance">
-            <p><strong>Container Home 🏠</strong>: Front (28.36’ > 25’), West (20’ > 10’), East (17’ > 10’), North (85.1’ > 10’), ATU Tank (29.1’ > 10’), Drain Field (14.1’ > 10’). <strong>Compliant</strong>.</p>
-            <p><strong>Garage 🚗</strong>: Front (28.36’ > 25’), West (15’ > 10’), East (47’ > 10’), North (113.46’ > 10’), ATU Tank (64.81’ > 10’), Drain Field (50.32’ > 10’). <strong>Compliant</strong>.</p>
-            <p><strong>Shed 🛠️</strong>: Front (65’ > 25’), West (15’ > 10’), East (62’ > 10’), North (91’ > 10’), ATU Tank (57’ > 10’), Drain Field (46.52’ > 10’). <strong>Compliant</strong>.</p>
-            <p><strong>Heat Pump ❄️</strong>: Front (56.72’ > 25’), West (15’ > 10’), East (62’ > 10’), North (99.28’ > 10’), ATU Tank (62.43’ > 10’), Drain Field (50.63’ > 10’). <strong>Compliant</strong>.</p>
-            <p><strong>ATU Tank 🚽</strong>: Property lines (West 60’, East 17’, North 52’, South 100’ > 5’), House (29.1’ > 10’), Path (35’ > 4’), Cistern (75’ > 50’). <strong>Compliant</strong>.</p>
-            <p><strong>Drain Field 💧</strong>: Property lines (West 57’, East 20’, North 71’, South 80’ > 5’), House (14.1’ > 10’), Path (20’ > 4’), Cistern (55.08’ > 50’). <strong>Compliant</strong>.</p>
-            <p><strong>Cistern 💦</strong>: Front (25’ = 25’), West (60’ > 10’), East (17’ > 10’), North (131’ > 10’), ATU Tank (75’ > 50’), Drain Field (55.08’ > 50’). <strong>Compliant</strong>.</p>
-            <p><strong>Jacuzzi 🛁</strong>: Front (65’ > 25’), West (35’ > 10’), East (42’ > 10’), North (91’ > 10’). <strong>Compliant</strong>.</p>
-            <p><strong>Doghouse 🐶</strong>: Front (127.62’ > 25’), West (15’ > 10’), East (62’ > 10’), North (28.38’ > 10’). <strong>Compliant</strong>.</p>
-            <p><strong>Swales 🌊</strong>: Front (141.8’ > 25’), West (15’ > 10’), East (17’ > 10’), North (14.2’ > 10’). <strong>Compliant</strong>.</p>
-            <p><strong>Path 🚶</strong>: Front (65’ > 25’), West (20’ > 10’), East (17’ > 10’), North (91’ > 10’). <strong>Compliant</strong>.</p>
-            <p><strong>Solar System ☀️</strong>: Roof-mounted on the home, meets home’s setbacks (Front 28.36’ > 25’, West 20’ > 10’, East 17’ > 10’, North 85.1’ > 10’), Height (~19’ < 35’), Lot Coverage (10.06% < 35%), ATU Tank (29.1’ > 10’), Drain Field (14.1’ > 10’). <strong>Compliant</strong>.</p>
-            <p><strong>Lot Coverage 📏</strong>: Structures (1,209 sq ft), Lot (12,012 sq ft), Coverage (10.06% < 35%). <strong>Compliant</strong>.</p>
+        <div class="compliance-checklist">
+            <ul>
+                <li><strong>Site-Built Home 🏠</strong>: Front (31.2’ > 25’), West (15.4’ > 10’), East (30.8’ > 10’), North (93.6’ > 15’), ATU Tank (62.4’ > 10’), Drain Field (46.8’ > 10’). Compliant with RR-1 and ACC setbacks, minimum size (900 sq ft > 800 sq ft), and width (30.8’ > 24’).</li>
+                <li><strong>Garage 🚗</strong>: Front (31.2’ > 25’), West (7.7’ < 10’), East (53.9’ > 10’), North (109.2’ > 15’), ATU Tank (81.24’ > 10’), Drain Field (65.64’ > 10’). Meets ACC side setback (7.7’ > 5’) but not RR-1 (7.7’ < 10’); variance needed for RR-1.</li>
+                <li><strong>Shed 🛠️</strong>: Front (78’ > 25’), West (7.7’ < 10’), East (69.3’ > 10’), North (78’ > 15’), ATU Tank (46.8’ > 10’), Drain Field (31.2’ > 10’). Meets ACC side setback (7.7’ > 5’) but not RR-1 (7.7’ < 10’); variance needed for RR-1.</li>
+                <li><strong>Heat Pump ❄️</strong>: Front (62.4’ > 25’), West (7.7’ < 10’), East (69.3’ > 10’), North (93.6’ > 15’), ATU Tank (62.4’ > 10’), Drain Field (46.8’ > 10’). Meets ACC side setback (7.7’ > 5’) but not RR-1 (7.7’ < 10’); variance needed for RR-1.</li>
+                <li><strong>ATU Tank 🚽</strong>: Property lines (West 46.2’, East 30.8’, North 27.2’, South 124.8’ > 5’), House (62.4’ > 10’), Path (46.8’ > 4’), Cistern (93.6’ > 50’). Compliant.</li>
+                <li><strong>Drain Field 💧</strong>: Property lines (West 46.2’, East 30.8’, North 36.8’, South 109.2’ > 5’), House (46.8’ > 10’), Path (31.2’ > 4’), Cistern (78’ > 50’). Compliant.</li>
+                <li><strong>Cistern 💦</strong>: Front (31.2’ > 25’), West (46.2’ > 10’), East (30.8’ > 10’), North (124.8’ > 15’), ATU Tank (93.6’ > 50’), Drain Field (78’ > 50’). Compliant.</li>
+                <li><strong>Jacuzzi 🛁</strong>: Front (78’ > 25’), West (30.8’ > 10’), East (46.2’ > 10’), North (78’ > 15’). Compliant.</li>
+                <li><strong>Doghouse 🐶</strong>: Front (140.4’ > 25’), West (7.7’ < 10’), East (69.3’ > 10’), North (15.6’ > 15’). Meets ACC side setback (7.7’ > 5’) but not RR-1 (7.7’ < 10’); variance needed for RR-1.</li>
+                <li><strong>Swales 🌊</strong>: Front (15.6’ < 25’), West (7.7’ < 10’), East (30.8’ > 10’), North (140.4’ > 15’). Meets ACC front setback (15.6’ < 20’) but not RR-1 (15.6’ < 25’); meets ACC side setback (7.7’ > 5’) but not RR-1 (7.7’ < 10’); variance needed for RR-1.</li>
+                <li><strong>Path 🚶</strong>: Front (78’ > 25’), West (30.8’ > 10’), East (30.8’ > 10’), North (78’ > 15’). Compliant.</li>
+                <li><strong>Solar System ☀️</strong>: Roof-mounted on the home, meets home’s setbacks (Front 31.2’ > 25’, West 15.4’ > 10’, East 30.8’ > 10’, North 93.6’ > 15’), Height (~19’ < 35’), Lot Coverage (10.06% < 35%), ATU Tank (62.4’ > 10’), Drain Field (46.8’ > 10’). Compliant.</li>
+                <li><strong>Lot Coverage 📏</strong>: Structures (1,209 sq ft), Lot (12,012 sq ft), Coverage (10.06% < 35%). Compliant.</li>
+            </ul>
         </div>
     </div>
 </body>
