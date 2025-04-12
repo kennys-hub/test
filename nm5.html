@@ -113,6 +113,24 @@
             font-size: 1.2rem;
             margin-right: 0.5rem;
         }
+        .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 1rem;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
 
         /* Footer */
         footer {
@@ -138,10 +156,14 @@
     </header>
 
     <!-- Main Content -->
-    <div class="container">
-        <!-- Property Description -->
-        <div style="text-align:center;">
-  <img src="nmhome2.jpeg" alt="container home" width="500">
+    <div class="section">
+    <h2>Photo Gallery 📸</h2>
+    <div class="gallery">
+        <img src="nmhome1.jpeg/300x200" alt="Gallery Photo 1">
+        <img src="nmhome2.jpeg/300x200" alt="Gallery Photo 2">
+        <img src="nmhome1.jpeg/300x200" alt="Gallery Photo 3">
+        <img src="nmhome2.jpeg/300x200" alt="Gallery Photo 4">
+    </div>
 </div>
         
         <div class="section">
