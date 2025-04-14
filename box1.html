@@ -68,7 +68,14 @@
       font-size: 0.9em;
       border-top: 8px double #fff;
     }
-  </style>
+  .bw-preview img {
+    filter: grayscale(100%);
+    border: 4px double #000;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.4);
+  }
+</style>
+
+
 </head>
 <body>
   <header>🎞️ Box Office Chronicles – 1925</header>
@@ -90,11 +97,11 @@
        <strong>3.</strong> *Love in Lantern Alley* – $81,000</p>
   </section>
 
-  <section id="pictures">
-    <h2>📷 Pictures</h2>
-    <img src="https://en.wikipedia.org/wiki/File:ClaraBow2.1.jpg" alt="Vintage still">
-    <p>Still from *Whispers in the Parlor* – Clara Vane stuns in a scene of suspense!</p>
-  </section>
+ <section id="pictures">
+  <h2>📷 Pictures</h2>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/ClaraBow2.1.jpg" alt="Clara Bow still" />
+  <p>Still from <em>Whispers in the Parlor</em> – Clara Vane stuns in a scene of suspense!</p>
+</section>
 
   <section id="ads">
     <h2>📰 Vintage Ads</h2>
@@ -115,8 +122,9 @@
 
   <section id="clips">
     <h2>🎬 Clips</h2>
-    <p>🎥 <a href="#">View silent reel: *Clara Bow in *Jazz Baby*</a> (Requires Flashplayer)</p>
-    <p>🎥 <a href="#">https://youtu.be/Dxo_99eaEEA</a></p>
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="bw-preview">
+  <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg" alt="Watch on YouTube" width="560" height="315">
+</a>
   </section>
 
   <section id="stats">
