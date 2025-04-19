@@ -29,6 +29,8 @@
             background-image: linear-gradient(rgba(226, 114, 91, 0.8), rgba(226, 114, 91, 0.8)), url('https://img.freepik.com/premium-vector/retro-colors-abstract-navajo-indian-seamless-striped-ethnic-geometric-background-traditional_252172-33.jpg?w=2000');
             background-size: cover;
             background-position: center;
+            position: relative;
+            z-index: 0; /* Ensure header stays below gallery images on hover */
         }
 
         header h1 {
@@ -46,6 +48,8 @@
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 1rem;
+            position: relative;
+            z-index: 0; /* Keep container below gallery images on hover */
         }
 
         .section {
@@ -56,7 +60,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             position: relative;
             overflow: visible;
-            z-index: 0;
+            z-index: 0; /* Keep section below gallery images on hover */
         }
 
         .section h2 {
@@ -132,7 +136,7 @@
             gap: 15px;
             margin-top: 1rem;
             position: relative;
-            z-index: 0;
+            z-index: 1; /* Higher base z-index for gallery to ensure images can pop out */
             overflow: visible; /* Ensure gallery allows overflow for hovered images */
         }
 
@@ -142,14 +146,19 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             transition: transform 0.2s ease-in-out;
-            position: relative; /* Ensure image can use z-index properly */
-            z-index: 1; /* Base z-index for images */
+            position: relative;
+            z-index: 2; /* Base z-index for images, higher than other elements */
         }
 
         .gallery img:hover {
             transform: scale(1.75);
-            z-index: 10; /* Bring hovered image to the front */
+            z-index: 1000; /* Very high z-index on hover to pop out above everything */
             position: relative;
+        }
+
+        /* Standalone images outside galleries */
+        div[style*="text-align:center"] img {
+            z-index: 0; /* Ensure standalone images stay below gallery images on hover */
         }
 
         /* Footer */
@@ -161,6 +170,7 @@
             position: relative;
             bottom: 0;
             width: 100%;
+            z-index: 0; /* Keep footer below gallery images on hover */
         }
 
         footer p {
