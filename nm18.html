@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canyon del Rio - Kenny's Off-Grid Ecotech Container Home 2030🏡</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind styles */
+        .cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        .lato {
+            font-family: 'Lato', sans-serif;
+        }
+        /* Lightbox styles */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-beige-100 text-black lato">
+    <!-- Navigation -->
+    <nav class="bg-terracotta-500 text-beige-100 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl sm:text-2xl cinzel">Canyon del Rio</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#property" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Property</a>
+                    <a href="#design" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Design</a>
+                    <a href="#utilities" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Utilities</a>
+                    <a href="#summary" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Summary</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-terracotta-500 text-beige-100 text-center py-16 bg-gradient-to-b from-terracotta-500 to-terracotta-600 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://img.freepik.com/premium-vector/retro-colors-abstract-navajo-indian-seamless-striped-ethnic-geometric-background-traditional_252172-33.jpg?w=2000')] bg-cover bg-center opacity-20"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl sm:text-5xl cinzel mb-4 animate-fade-in">Welcome to Canyon del Rio 🏡</h1>
+            <p class="text-lg sm:text-xl">Kenny's Sustainable, Off-Grid Container Home in Valencia County, NM 🌄</p>
+        </div>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="text-center my-8">
+        <img src="riodeloro.jpg" alt="Canyon del Rio Overview" class="mx-auto w-4/5 max-w-2xl rounded-lg shadow-lg">
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
+        <!-- Property Description -->
+        <section id="property" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Property Description 🌵</h2>
+            <div class="bg-turquoise-500 text-beige-100 p-4 rounded-md mb-4 text-center font-bold">
+                🌟 Breakthrough: Advanced septic system ensures zero pollution risk to the Rio Grande! 🌟
+            </div>
+            <p>Tucked into the high desert of Canyon del Rio, Valencia County, NM, this 0.28-acre lot (80' × 150', 12,000 sq ft) at coordinates 34.6911, -106.5575 is Kenny’s vision for sustainable off-grid living. Located in Rio del Oro, Unit 28, Lot 25, Block 27, the lot is a diagonal rectangle oriented southwest to northeast with a 3.33% slope from north (5400 ft) to south (5390 ft).</p>
+            <ul class="list-none space-y-2 mt-4">
+                <li>🌱 <strong>Soil:</strong> Well-draining sandy loam, ideal for construction but requires careful water management for gardening.</li>
+                <li>🌊 <strong>Arroyo:</strong> Enters at (x=0, y=75) at 35° and exits at (x=80, y=35) at 30°, carrying rare runoff (~8–10 inches/year) to the Rio Grande via Camino Rio.</li>
+                <li>📏 <strong>Topography:</strong> 10 ft elevation drop (3.33% N-S, 5.88% diagonal), directing runoff toward the arroyo.</li>
+                <li>🛡️ <strong>Zoning & Safety:</strong> Zoned RR-1, FEMA Zone X (minimal flood risk). Runoff managed with swales, cacti, and a 5,000-gallon cistern.</li>
+            </ul>
+            <!-- Land and Plat Photos -->
+            <h3 class="text-xl cinzel text-terracotta-500 mt-6 mb-2">Land and Plat Photos 📸</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <img src="nmland7.png" alt="Land Photo 1" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
+                <img src="nmland1.png" alt="Land Photo 2" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
+                <img src="nmland6.png" alt="Land Photo 3" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
+                <img src="nmland16.png" alt="Land Photo 4" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
+            </div>
+            <!-- Standalone Land Image -->
+            <div class="text-center my-8">
+                <img src="nmland14.png" alt="Land Overview" class="mx-auto w-4/5 max-w-2xl rounded-lg shadow-lg">
+            </div>
+        </section>
+
+        <!-- Access and Proximity -->
+        <section class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Access and Proximity 🛤️</h2>
+            <p>This off-grid homestead balances seclusion and convenience. From the lot, it’s 1–2 miles on dirt roads to Rio del Oro Loop South, 5 miles on gravel to the Manzano Expressway, and 11 paved miles to Belen via NM-309/E River Rd. Total travel to Belen is ~18 miles (25–30 minutes), offering access to Walmart, Valencia High School, and the Rail Runner Express to Albuquerque (~40 minutes, 35 miles). Albertsons and I-25 are also ~40 minutes away.</p>
+            <!-- Route Image -->
+            <figure class="text-center my-8">
+                <img src="nmland13.png" alt="Route to Belen" class="mx-auto w-full max-w-2xl rounded-lg shadow-lg">
+                <figcaption class="mt-2 text-gray-600 italic">Route from property to Belen: 20–30 mins, 18 miles.</figcaption>
+            </figure>
+            <!-- Additional Land Photos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <img src="nmland13.png" alt="Land Photo 1" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
+                <img src="nmland17.png" alt="Land Photo 2" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
+                <img src="nmland18.png" alt="Land Photo 3" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
+            </div>
+        </section>
+
+        <!-- Lot Orientation and Setbacks -->
+        <section class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Lot Orientation & Setbacks 📐</h2>
+            <p>The lot’s longer axis (150 ft) runs SW to NE (y-axis), and the shorter axis (80 ft) runs NW to SE (x-axis). The arroyo enters at (x=0, y=75) at 35° and exits at (x=80, y=35) at 30°, requiring a 100 ft septic setback due to its Rio Grande connection.</p>
+            <table class="w-full border-collapse mt-4">
+                <thead>
+                    <tr class="bg-turquoise-500 text-beige-100">
+                        <th class="p-3 text-left">Setback Type</th>
+                        <th class="p-3 text-left">Required Distance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-gray-400">
+                        <td class="p-3">🛣️ Front (SW, y=0)</td>
+                        <td class="p-3">30 ft</td>
+                    </tr>
+                    <tr class="border-b border-gray-400">
+                        <td class="p-3">🧱 Rear (NE, y=150)</td>
+                        <td class="p-3">15 ft</td>
+                    </tr>
+                    <tr class="border-b border-gray-400">
+                        <td class="p-3">📏 Side (SE, x=80)</td>
+                        <td class="p-3">15 ft</td>
+                    </tr>
+                    <tr class="border-b border-gray-400">
+                        <td class="p-3">🌊 Arroyo (NW, x=0)</td>
+                        <td class="p-3">35 ft (100 ft for septic)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="text-xl cinzel text-terracotta-500 mt-6 mb-2">Buildable Area</h3>
+            <ul class="list-none space-y-2">
+                <li>📏 <strong>Lot Area:</strong> 12,000 sq ft</li>
+                <li>📏 <strong>Usable Width:</strong> 80 ft − 35 ft (NW) − 15 ft (SE) = <span class="text-terracotta-500 font-bold">30 ft</span></li>
+                <li>📏 <strong>Usable Length:</strong> 150 ft − 30 ft (SW) − 15 ft (NE) = <span class="text-terracotta-500 font-bold">105 ft</span></li>
+                <li>🧱 <strong>Buildable Area:</strong> 30 ft × 105 ft = <span class="text-terracotta-500 font-bold">3,150 sq ft</span> (~26.25%)</li>
+                <li>✅ Complies with 15% RR-1 lot coverage limit.</li>
+            </ul>
+        </section>
+
+        <!-- Container Home Design -->
+        <section id="design" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Container Home Design 🏠</h2>
+            <p>The centerpiece is a 900 sq ft solar-powered container home, built from three shipping containers, designed for sustainability in FEMA Zone X’s low flood risk.</p>
+            <ul class="list-none space-y-2 mt-4">
+                <li>🏡 <strong>Main Structure:</strong> Two 40' × 8' containers (640 sq ft) and one 20' × 8' container on top (160 sq ft), plus a 15 sq ft deck. Features R-13 spray foam insulation, 32 sq ft windows, and an external staircase. Positioned at x=35–51, y=45–85, elevated 2 ft.</li>
+                <li>🚗 <strong>Garage:</strong> 18' × 10' (x=35–47, y=105–125) for vehicle and workshop space.</li>
+                <li>🛠️ <strong>Shed:</strong> 6' × 4' (x=57–63, y=105–111) for storage.</li>
+                <li>🛁 <strong>Jacuzzi:</strong> 6' × 6' (x=50–56, y=35–41), elevated 2 ft on a gravel pad.</li>
+                <li>🐶 <strong>Doghouse:</strong> 3' × 3' (x=50–53, y=40–43) for pet comfort.</li>
+            </ul>
+            <!-- Concept Designs Gallery -->
+            <h3 class="text-xl cinzel text-terracotta-500 mt-6 mb-2">Concept Designs 📸</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <img src="nmhome1.jpeg" alt="Concept Design 1" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
+                <img src="nmhome2.jpeg" alt="Concept Design 2" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
+                <img src="nmhome3.jpeg" alt="Concept Design 3" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
+                <img src="nmhome4.jpeg" alt="Concept Design 4" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-200 cursor-pointer">
+            </div>
+        </section>
+
+        <!-- Utilities and Systems -->
+        <section id="utilities" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Utilities & Systems 🔋</h2>
+            <p>Fully off-grid, the homestead features a state-of-the-art septic system and water management to protect the Rio Grande, powered by solar energy.</p>
+            <ul class="list-none space-y-2 mt-4">
+                <li>☀️ <strong>Solar Power:</strong> 5 kW array (x=40–60, y=10–30), producing ~20 kWh/day, with a 2-ton, 2.4 kW heat pump for climate control.</li>
+                <li>🚽 <strong>Septic System:</strong> BioMicrobics MicroFAST 0.5 ATU tank (8' × 4', x=45–53, y=145–149) with tertiary treatment and smart sensors, over 100 ft from the arroyo.</li>
+                <li>💧 <strong>Mound Field:</strong> 10' × 10' (x=40–50, y=135–145), elevated 2–3 ft, with a 15' × 15' berm (y=133–148) and 30' × 8' swale (y=125–133).</li>
+                <li>🪨 <strong>Gravel Filter:</strong> 10' × 10' (x=40–50, y=125–135) to catch overflow.</li>
+                <li>🌵 <strong>Vegetative Buffer:</strong> Prickly pear and cholla (x=0–80, y=35–75) for natural filtration.</li>
+                <li>💦 <strong>Cistern:</strong> 5,000 gallons (x=55–62, y=40–47), elevated 1–2 ft, with a 4" PVC overflow pipe to a dry well (x=70–80, y=30–40).</li>
+                <li>🌊 <strong>Swales & Basins:</strong> 80' × 5' swale (x=0–80, y=10–15), primary basin (x=55–65, y=15–25), and secondary basin (x=20–30, y=20–30) for runoff management.</li>
+                <li>🌱 <strong>Garden:</strong> 10' × 10' (x=40–50, y=35–45), irrigated with treated effluent.</li>
+                <li>🚶 <strong>Gravel Path:</strong> 3' × 16' (x=50–53, y=35–51), connecting home, jacuzzi, and garden.</li>
+            </ul>
+        </section>
+
+        <!-- Text Diagram -->
+        <section class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Lot Layout Diagram 📏</h2>
+            <p>This diagram shows the 80' × 150' lot with structures, arroyo path (~~~), and runoff controls, ensuring compliance with setbacks and environmental standards.</p>
+            <pre class="bg-gray-100 p-4 rounded-md text-sm overflow-x-auto">
+Canyon del Rio Lot (80' × 150', SW-NE, 5400–5390 ft)
+-------------------------------------------------
+y=150 (NE, 15' setback, 5400 ft)
+|  [ATU Tank: 8×4 🚽]  [Drain Field: 10×10 💧]  |
+|  x=45──x=53 y=145─y=149  x=40──x=50 y=135─y=145
+y=135 ────────────┬────────── [Berm: 15×15] y=133─y=148
+|                 │         [Garage: 18×10 🚗]  |
+y=125 ────────────┴────────── x=35──x=47 y=105─y=125 [Swale: 30×8 🌊]
+|                           [Shed: 6×4 🛠️] [Gravel Filter: 10×10 🪨]
+y=111 ─────────────────────────── x=57──x=63 y=105─y=111
+|                                              |
+y=85  ────────────────┬─────── [Container Home: 40×16 🏡] x=35──x=51
+|                     │                        |
+y=75  ~~~~~[Arroyo Entry: x=0, y=75, 35°]~~~~~~ [Cacti Rows 🌵]
+y=60  ───────┬───────────────────────────┬────── x=0──x=80 y=35─y=120
+|            ~~~~~~~ [Cacti Rows 🌵]
+y=51  ───────┬───────┬──────────── x=50─x=53 │ [Gravel Path: 3×16 🚶]
+|  [Cistern: 10×7 💦] ~~~~~~~ [Doghouse 🐶] [Jacuzzi 🛁]
+y=45  x=55──x=62 y=40─y=47 ┴────[Garden: 10×10 🌱] x=40──x=50 y=35─y=45
+y=41  ───────┬───────────────────────────┬~~~[Arroyo Exit: x=80, y=35, 30°]
+|            ~~~~~~~ [Cholla Channel 🌵] x=59─x=65 y=40─y=100
+y=30  ───────┴───────┬──[Retention Basin 2: 10×10 🌊] x=20──x=30 y=20─y=30
+|  [Solar Array: 20×10 ☀️] x=40──x=60 y=10─y=30
+y=15  [Swale: 80×5 🌊] x=0──x=80 y=10─y=15 [Retention Basin 1: 10×10 🌊]
+|----x=35 (Arroyo Setback: 35 ft, Septic 100 ft)──────────────|
+y=0   x=0 (NW)                                 x=80 (SE, 5390 ft)
+(SW, 30' setback)
+-------------------------------------------------
+            </pre>
+        </section>
+
+        <!-- Summary -->
+        <section id="summary" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Summary 💡</h2>
+            <div class="bg-turquoise-500 text-beige-100 p-4 rounded-md mb-4 text-center font-bold">
+                🌟 Kenny’s vision: Sustainable, Safe, Smart, Secluded 🌟
+            </div>
+            <p>Kenny’s 900 sq ft container home in Canyon del Rio, set for a 2030 build, is a model of sustainable living on a 0.28-acre lot (80' × 150'). Zoned RR-1 and in FEMA Zone X, it features a state-of-the-art septic system with tertiary treatment, a mound field, gravel filter, and vegetative buffers, ensuring zero pollution to the Rio Grande. Solar power, a 5,000-gallon cistern, swales, and cacti manage the arid desert’s resources. With a buildable area of 3,150 sq ft (~26.25%) and 14.99% lot coverage, it complies with RR-1 zoning. Accessible to Belen (18 miles, 25–30 minutes) and Albuquerque (~40 minutes), this off-grid homestead blends seclusion with convenience, respecting the desert’s natural flow.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-terracotta-500 text-beige-100 text-center py-6">
+        <p>© 2025 Kenny - A Sustainable Living Project 🌞</p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Gallery Image">
+    </div>
+
+    <!-- JavaScript for Lightbox -->
+    <script>
+        const galleryImages = document.querySelectorAll('.gallery-img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        // Keyboard navigation for accessibility
+        lightbox.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+
+    <!-- Custom Tailwind Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'beige-100': '#F5F5DC',
+                        'terracotta-500': '#E2725B',
+                        'terracotta-600': '#C95A47',
+                        'sage-200': '#A9BA9D',
+                        'turquoise-500': '#40C4B7',
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Animation Keyframes -->
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-in-out;
+        }
+    </style>
+</body>
+</html>
