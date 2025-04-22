@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canyon del Rio - Arroyo & WOTUS Technical Report 🌊</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind styles */
+        .cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        .lato {
+            font-family: 'Lato', sans-serif;
+        }
+        /* Lightbox styles */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-beige-100 text-black lato">
+    <!-- Navigation -->
+    <nav class="bg-terracotta-500 text-beige-100 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl sm:text-2xl cinzel">Canyon del Rio</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#overview" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Overview</a>
+                    <a href="#wotus" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">WOTUS Assessment</a>
+                    <a href="#arroyo-specs" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Arroyo Specs</a>
+                    <a href="#classification" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Classification</a>
+                    <a href="#network" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Arroyo Network</a>
+                    <a href="#gallery" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Gallery</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-terracotta-500 text-beige-100 text-center py-16 bg-gradient-to-b from-terracotta-500 to-terracotta-600 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://img.freepik.com/premium-vector/retro-colors-abstract-navajo-indian-seamless-striped-ethnic-geometric-background-traditional_252172-33.jpg?w=2000')] bg-cover bg-center opacity-20"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl sm:text-5xl cinzel mb-4 animate-fade-in">Camino Rio Arroyo & WOTUS Technical Report 🌊</h1>
+            <p class="text-lg sm:text-xl">A Detailed Assessment for Canyon del Rio, Valencia County, NM 📊</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
+        <!-- Overview -->
+        <section id="overview" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Overview 📝</h2>
+            <p>This technical report provides a comprehensive analysis of the Camino Rio arroyo adjacent to the Canyon del Rio property in Valencia County, NM, located at coordinates 34.6911, -106.5575. The report evaluates the arroyo's characteristics, its classification, and its status under the Waters of the United States (WOTUS) framework as of April 2025. It also examines the arroyo's role within the regional hydrological network and its compliance with local and federal regulations.</p>
+            <p>The Camino Rio arroyo is 20–30 ft southeast of the lot’s southern boundary and 5–10 ft below, running diagonally southwest to northeast. It is ephemeral, dry 99.9% of the time, with rare runoff (~9–10 inches/year), and connects to the Rio Grande (10–15 miles away) only during extreme events such as 100-year storms. The property’s eco-friendly design ensures minimal environmental impact, supporting a low WOTUS likelihood.</p>
+        </section>
+
+        <!-- WOTUS Assessment -->
+        <section id="wotus" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">WOTUS Assessment ⚖️</h2>
+            <h3 class="text-xl cinzel text-terracotta-500 mt-6 mb-2">Regulatory Framework</h3>
+            <p>The Waters of the United States (WOTUS) designation determines federal jurisdiction over water bodies under the Clean Water Act (CWA). The definition of WOTUS has evolved significantly:</p>
+            <ul class="list-none space-y-2 mt-4">
+                <li>📜 <strong>2015 Obama-era Rule:</strong> Broadly included streams with a "significant nexus" to navigable waters, potentially covering ephemeral streams like Camino Rio.</li>
+                <li>📜 <strong>2020 Trump-era Navigable Waters Protection Rule:</strong> Narrowed WOTUS to traditional navigable waters, their tributaries, and adjacent wetlands, often excluding ephemeral streams.</li>
+                <li>📜 <strong>2023 Sackett v. EPA Decision:</strong> Limited WOTUS to waters with a "continuous surface connection" to navigable waters, requiring direct abutting. This excluded most ephemeral streams unless they directly connect to navigable waters.</li>
+                <li>📜 <strong>March 2025 EPA Guidance:</strong> Clarified "continuous surface connection" as "abutting (or touching)," reinforcing the exclusion of intermittent and ephemeral streams without direct, unbroken connections to navigable waters.</li>
+            </ul>
+            <h3 class="text-xl cinzel text-terracotta-500 mt-6 mb-2">Camino Rio WOTUS Evaluation</h3>
+            <p>The Camino Rio arroyo does not meet the current WOTUS criteria:</p>
+            <ul class="list-none space-y-2 mt-4">
+                <li>🌊 <strong>Flow Characteristics:</strong> Ephemeral, dry 99.9% of the time, with flow only during extreme events (e.g., 100-year storms).</li>
+                <li>📏 <strong>Connection to Navigable Waters:</strong> Connects to the Rio Grande (10–15 miles away) via regional arroyos, but only during rare events. Runoff often disperses into the desert before reaching the Rio Grande.</li>
+                <li>⚖️ <strong>Continuous Surface Connection:</strong> Lacks a direct, continuous surface connection to the Rio Grande, failing the *Sackett* standard of abutting a navigable water.</li>
+                <li>🛡️ <strong>Environmental Impact Mitigation:</strong> The property’s advanced septic system (BioMicrobics MicroFAST ATU, 115–125 ft from the arroyo), 5,000-gallon cistern, swales, basins, and vegetative buffers (prickly pear, cholla) minimize runoff, reducing potential federal oversight.</li>
+            </ul>
+            <p><strong>Conclusion:</strong> Camino Rio is unlikely to be classified as WOTUS under the 2023 *Sackett* ruling and March 2025 guidance. A jurisdictional determination from the U.S. Army Corps of Engineers would provide final confirmation.</p>
+        </section>
+
+        <!-- Arroyo Specifications -->
+        <section id="arroyo-specs" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Arroyo Specifications 📏</h2>
+            <ul class="list-none space-y-2">
+                <li>📍 <strong>Location:</strong> 20–30 ft southeast of the lot’s southern boundary (25 ft in diagram), 5–10 ft below the lot’s SE corner (5390 ft elevation).</li>
+                <li>📐 <strong>Orientation:</strong> Runs diagonally southwest to northeast across the property’s southern boundary.</li>
+                <li>🌊 <strong>Flow:</strong> Ephemeral, dry 99.9% of the time, with annual runoff of ~9–10 inches (approximately 0.75–0.83 ft/year).</li>
+                <li>📏 <strong>Dimensions:</strong> Channel width approximately 10–15 ft, depth 2–4 ft (based on typical arroyo morphology in the region).</li>
+                <li>🪨 <strong>Substrate:</strong> Sandy loam with gravel, consistent with the lot’s well-draining soil, supporting minimal water retention.</li>
+                <li>🌵 <strong>Vegetation:</strong> Sparse, with prickly pear and cholla along the banks, providing natural erosion control.</li>
+                <li>📈 <strong>Topography Impact:</strong> The lot’s 3.33% slope (NW at 5400 ft to SE at 5390 ft) directs runoff toward the arroyo, managed by swales, basins, and a cistern to prevent erosion.</li>
+            </ul>
+        </section>
+
+        <!-- Arroyo Classification -->
+        <section id="classification" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Arroyo Classification 🗂️</h2>
+            <p>The Camino Rio arroyo is classified by the National Wetlands Inventory (NWI) as:</p>
+            <ul class="list-none space-y-2 mt-4">
+                <li>📜 <strong>Code:</strong> R4SBJ</li>
+                <li>📜 <strong>Breakdown:</strong>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><strong>R:</strong> Riverine system (waters within channels).</li>
+                        <li><strong>4:</strong> Intermittent flow (flows only part of the year).</li>
+                        <li><strong>SB:</strong> Streambed (channel bottom).</li>
+                        <li><strong>J:</strong> Intermittently flooded (water present only during certain times).</li>
+                    </ul>
+                </li>
+                <li>🌊 <strong>Implication:</strong> Confirms the arroyo’s ephemeral nature, with no wetland characteristics (e.g., standing water or saturated soils) that might trigger additional regulatory oversight.</li>
+            </ul>
+            <h3 class="text-xl cinzel text-terracotta-500 mt-6 mb-2">Local Regulatory Compliance</h3>
+            <ul class="list-none space-y-2">
+                <li>📏 <strong>Setbacks:</strong> Structures are 35 ft and septic systems 100 ft from the arroyo, per NMAC § 20.7.3, due to potential Rio Grande connection during extreme events.</li>
+                <li>🛡️ <strong>FEMA Zone:</strong> Zone X (minimal flood risk), supported by eco-friendly runoff controls (swales, basins).</li>
+                <li>🚽 <strong>Septic Compliance:</strong> BioMicrobics MicroFAST ATU ensures effluent quality (<5 mg/L BOD/TSS, <10 mg/L total nitrogen, <1 mg/L phosphorus, no pathogens), exceeding NMED standards (20.6.4 and 20.6.2 NMAC).</li>
+            </ul>
+        </section>
+
+        <!-- Arroyo Network -->
+        <section id="network" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Regional Arroyo Network 🌐</h2>
+            <p>Camino Rio is part of a broader hydrological network in Valencia County, connecting to the Rio Grande via several regional arroyos:</p>
+            <ul class="list-none space-y-2 mt-4">
+                <li>🌊 <strong>Arroyo del Cuervo:</strong> Joins Camino Rio to the northeast, flowing toward Rio del Oro Loop.</li>
+                <li>🌊 <strong>Cañon del Trigo:</strong> Converges with Camino Rio near Loma Trigo, contributing to the same drainage system.</li>
+                <li>🌊 <strong>Cañada Ancha:</strong> A larger arroyo west of the property, part of the network feeding into the Rio Grande.</li>
+                <li>🌊 <strong>Rio del Oro Loop (S/N):</strong> Main conduit for regional runoff, connecting to the Rio Grande 10–15 miles away.</li>
+            </ul>
+            <p>Despite this network, the ephemeral nature of Camino Rio and its indirect, infrequent connection to the Rio Grande (only during extreme events) support its non-WOTUS status. Runoff often disperses into the desert before reaching the Rio Grande, minimizing environmental impact.</p>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section id="gallery" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Arroyo and Regional Documentation 📸</h2>
+            <p>Explore visual documentation of the Camino Rio arroyo and its surrounding environment, including maps and satellite imagery used in the WOTUS assessment.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+                <img src="epa1.png" alt="EPA Map 1" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                <img src="epa2.png" alt="EPA Map 2" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                <img src="epa3.png" alt="EPA Map 3" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                <img src="epa4.png" alt="EPA Map 4" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                <img src="epa5.png" alt="EPA Satellite View" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-terracotta-500 text-beige-100 text-center py-6">
+        <p>© 2025 Kenny - A Sustainable Ecotech Living Project 🌞</p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Gallery Image">
+    </div>
+
+    <!-- JavaScript for Lightbox -->
+    <script>
+        const galleryImages = document.querySelectorAll('.gallery-img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        // Keyboard navigation for accessibility
+        lightbox.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+
+    <!-- Custom Tailwind Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'beige-100': '#F5F5DC',
+                        'terracotta-500': '#E2725B',
+                        'terracotta-600': '#C95A47',
+                        'sage-200': '#A9BA9D',
+                        'turquoise-500': '#40C4B7',
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Animation Keyframes -->
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-in;
+        }
+    </style>
+</body>
+</html>
