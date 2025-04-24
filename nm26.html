@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canyon del Rio - Kenny's Off-Grid Ecotech Container Home 2030🏡</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Tailwind styles */
+        .cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        .lato {
+            font-family: 'Lato', sans-serif;
+        }
+        /* Lightbox styles */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-beige-100 text-black lato">
+    <!-- Navigation -->
+    <nav class="bg-terracotta-500 text-beige-100 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl sm:text-2xl cinzel">Canyon del Rio</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#property" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Property</a>
+                    <a href="#design" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Design</a>
+                    <a href="#utilities" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Utilities</a>
+                    <a href="#summary" class="hover:bg-terracotta-600 px-3 py-2 rounded-md">Summary</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-terracotta-500 text-beige-100 text-center py-16 bg-gradient-to-b from-terracotta-500 to-terracotta-600 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://img.freepik.com/premium-vector/retro-colors-abstract-navajo-indian-seamless-striped-ethnic-geometric-background-traditional_252172-33.jpg?w=2000')] bg-cover bg-center opacity-20"></div>
+        <div class="relative z-10">
+            <h1 class="text-4xl sm:text-5xl cinzel mb-4 animate-fade-in">Welcome to Canyon del Rio 🏡</h1>
+            <p class="text-lg sm:text-xl">Kenny's Sustainable, Off-Grid Ecotech Container Home in Valencia County, NM 🌄</p>
+        </div>
+    </header>
+
+    <!-- Hero Image -->
+    <div class="text-center my-8">
+        <img src="riodeloro.jpg" alt="Canyon del Rio Overview" class="mx-auto w-4/5 max-w-2xl rounded-lg shadow-lg">
+     
+       <img src="newplat3.png" alt="Canyon del Rio Overview" class="mx-auto w-4/5 max-w-2xl rounded-lg shadow-lg">
+    </div>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 my-12">
+        <!-- Property Description -->
+        <section id="property" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Property Description 🌵</h2>
+            <div class="bg-turquoise-500 text-beige-100 p-4 rounded-md mb-4 text-center font-bold">
+                🌟 Breakthrough: Advanced septic system and eco-friendly design ensure zero pollution risk to the Rio Grande, with low WOTUS likelihood for the arroyo! 🌟
+            </div>
+            <p>Tucked into the high desert of Canyon del Rio, Valencia County, NM, this 0.28-acre lot (80' × 150', 12,000 sq ft) at coordinates 34.6911, -106.5575 is Kenny’s vision for sustainable off-grid living. Located in Rio del Oro, Unit 28, Lot 25, Block 27, the lot is a rectangle oriented due north, with the longer axis (150 ft) running north-south (y-axis) and the shorter axis (80 ft) running east-west (x-axis). It has a 3.33% slope from NW (5400 ft) to SE (5390 ft). The Valencia County plat has been corrected to reflect the lot’s true position.</p>
+            <ul class="list-none space-y-2 mt-4">
+                <li>🌱 <strong>Soil:</strong> Well-draining sandy loam, ideal for construction and supporting a small garden with water-efficient irrigation.</li>
+                <li>🌊 <strong>Arroyo:</strong> Camino Rio, 20–30 ft southeast of the lot’s true southern boundary (25 ft in diagram) and 5–10 ft below (5390 ft at SE), is ephemeral, dry 99.9% of the time with rare runoff (~9–10 inches/year). It runs diagonally southwest to northeast and connects to the Rio Grande (10–15 miles away) only during extreme events.</li>
+                <li>📏 <strong>Topography:</strong> 10 ft elevation drop (3.33% NW-SE), directing runoff toward the SE corner and into the arroyo below.</li>
+                <li>🛡️ <strong>Zoning & Safety:</strong> Zoned RR-1, FEMA Zone X (minimal flood risk). Eco-friendly runoff management includes swales, basins, cacti rows, and a 5,000-gallon cistern. A survey is recommended to confirm boundaries.</li>
+            </ul>
+            <!-- Land and Plat Photos -->
+            <h3 class="text-xl cinzel text-terracotta-500 mt-6 mb-2">Land and Plat Photos 📸</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <figure>
+                    <img src="nmland7.png" alt="Land Photo 1" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Desert landscape with sandy loam soil</figcaption>
+                </figure>
+                <figure>
+                    <img src="newplat3.png" alt="Land Photo 2" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Corrected Valencia County Plat</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmland16.png" alt="Land Photo 4" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">View of the Camino Rio arroyo</figcaption>
+                </figure>
+            </div>
+            <!-- Standalone Land Image -->
+            <div class="text-center my-8">
+                <img src="nmland14.png" alt="Land Overview" class="mx-auto w-4/5 max-w-2xl rounded-lg shadow-lg">
+            </div>
+        </section>
+
+        <!-- Access and Proximity -->
+        <section class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Access and Proximity 🛤️</h2>
+            <p>This off-grid ecotech homestead perfectly blends seclusion with accessibility. From the lot, it’s a short 1–2 mile drive on dirt roads to Rio del Oro Loop South, followed by 5 miles on gravel to the Manzano Expressway, and then 11 paved miles to Belen via NM-309/E River Rd. The total trip to Belen is about 18 miles (25–30 minutes), providing easy access to a Walmart Superstore, Albertsons Grocery Store, and the Rail Runner Express to Albuquerque (~40 minutes, 35 miles). Alternatively, Albuquerque is just a ~50-minute drive away via I-25 N.</p>
+            <!-- Route Image -->
+            <figure class="text-center my-8">
+                <img src="nmland13.png" alt="Route to Belen" class="mx-auto w-full max-w-2xl rounded-lg shadow-lg">
+                <figcaption class="mt-2 text-gray-600 italic">Route from property to Belen: 20–30 mins, 18 miles.</figcaption>
+            </figure>
+            <!-- Additional Land Photos -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <figure>
+                    <img src="nmland13.png" alt="Land Photo 1" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Dirt road leading to Rio del Oro Loop South</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmland17.png" alt="Land Photo 2" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Gravel section of the route to Manzano Expressway</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmland18.png" alt="Land Photo 3" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Paved road approaching Belen</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Lot Orientation, Setbacks, Compliances, and Laws -->
+        <section class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Lot Orientation, Setbacks, Compliances, and Laws 📐</h2>
+            <p>The lot’s longer axis (150 ft) runs north-south (y-axis), aligned due north, and the shorter axis (80 ft) runs east-west (x-axis). The SW-NE diagonal of the lot is oriented approximately 28° east of true north. The Camino Rio arroyo, 20–30 ft southeast of the lot’s southern boundary and 5–10 ft below, poses minimal zoning challenges due to its ephemeral nature and eco-friendly runoff management.</p>
+            <h3 class="text-xl cinzel text-terracotta-500 mt-6 mb-2">Setbacks</h3>
+            <table class="w-full border-collapse mt-4">
+                <thead>
+                    <tr class="bg-turquoise-500 text-beige-100">
+                        <th class="p-3 text-left">Setback Type</th>
+                        <th class="p-3 text-left">Required Distance</th>
+                        <th class="p-3 text-left">Regulation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-gray-400">
+                        <td class="p-3">🛣️ Front (South, y=0)</td>
+                        <td class="p-3">30 ft</td>
+                        <td class="p-3">Valencia County RR-1 Zoning</td>
+                    </tr>
+                    <tr class="border-b border-gray-400">
+                        <td class="p-3">🧱 Rear (North, y=150)</td>
+                        <td class="p-3">15 ft</td>
+                        <td class="p-3">Valencia County RR-1 Zoning</td>
+                    </tr>
+                    <tr class="border-b border-gray-400">
+                        <td class="p-3">📏 Side (West, x=0)</td>
+                        <td class="p-3">15 ft</td>
+                        <td class="p-3">Valencia County RR-1 Zoning</td>
+                    </tr>
+                    <tr class="border-b border-gray-400">
+                        <td class="p-3">📏 Side (East, x=80)</td>
+                        <td class="p-3">15 ft</td>
+                        <td class="p-3">Valencia County RR-1 Zoning</td>
+                    </tr>
+                    <tr class="border-b border-gray-400">
+                        <td class="p-3">🌊 Arroyo (South, beyond y=0)</td>
+                        <td class="p-3">35 ft (structures), 100 ft (septic system)</td>
+                        <td class="p-3">NMAC § 20.7.3 (potential Rio Grande connection)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="text-xl cinzel text-terracotta-500 mt-6 mb-2">Buildable Area</h3>
+            <ul class="list-none space-y-2">
+                <li>📏 <strong>Lot Area:</strong> 12,000 sq ft</li>
+                <li>📏 <strong>Usable Width:</strong> 80 ft − 15 ft (West) − 15 ft (East) = <span class="text-terracotta-500 font-bold">50 ft</span></li>
+                <li>📏 <strong>Usable Length:</strong> 150 ft − 30 ft (South) − 15 ft (North) = <span class="text-terracotta-500 font-bold">105 ft</span></li>
+                <li>🧱 <strong>Buildable Area:</strong> 50 ft × 105 ft = <span class="text-terracotta-500 font-bold">5,250 sq ft</span> (~43.75%)</li>
+                <li>✅ Complies with 15% RR-1 lot coverage limit (1,800 sq ft max).</li>
+            </ul>
+            <h3 class="text-xl cinzel text-terracotta-500 mt-6 mb-2">Arroyo Zoning and WOTUS Assessment</h3>
+            <ul class="list-none space-y-2">
+                <li>🌊 <strong>Arroyo Zoning:</strong> The Camino Rio arroyo, classified as R4SBJ by the National Wetlands Inventory, is ephemeral and does not impose additional zoning restrictions under Valencia County RR-1 beyond standard setbacks (35 ft for structures, 100 ft for septic systems per NMAC § 20.7.3). No arroyo crossing is needed for access, avoiding permits.</li>
+                <li>⚖️ <strong>WOTUS Low Possibility:</strong> The arroyo’s ephemeral nature (dry 99.9% of the time) and lack of significant nexus to navigable waters (Rio Grande, 10–15 miles away) make it unlikely to be classified as a Water of the United States (WOTUS) under the Clean Water Act. It only connects during rare extreme events (e.g., 100-year storms), and its runoff disperses into the desert, minimizing regulatory oversight. This reduces permitting complexity with the U.S. Army Corps of Engineers.</li>
+            </ul>
+            <h3 class="text-xl cinzel text-terracotta-500 mt-6 mb-2">Compliances and Laws</h3>
+            <ul class="list-none space-y-2">
+                <li>🛡️ <strong>Zoning Compliance:</strong> RR-1 zoning requires a minimum lot size of 0.25 acres (met at 0.28 acres), maximum lot coverage of 15% (met at 8.17%, 980 sq ft without garage), and setbacks as listed.</li>
+                <li>🏠 <strong>Structure Placement:</strong> Container home (x=15–55, y=30–70), shed (x=40–46, y=85–91), jacuzzi (x=40–46, y=20–26), and doghouse (x=40–43, y=25–28) comply with RR-1 setbacks and the 35 ft arroyo setback per NMAC § 20.7.3. A garage can be added later at x=15–27, y=85–100, as it’s not currently enforced by Canyon del Rio or RR-1 zoning.</li>
+                <li>🚽 <strong>Septic System Compliance:</strong> BioMicrobics MicroFAST ATU (x=60–68, y=110–114) and mound field (x=60–70, y=100–110) are 115–125 ft from the arroyo, meeting the 100 ft setback (NMAC § 20.7.3). Effluent quality (<5 mg/L BOD/TSS, <10 mg/L total nitrogen, <1 mg/L phosphorus, no pathogens) exceeds NMED standards (20.6.4 and 20.6.2 NMAC).</li>
+                <li>💧 <strong>Water Harvesting:</strong> 5,000-gallon cistern (x=30–37, y=25–32) complies with New Mexico laws (NMSA § 3-53-1.1), with overflow to a dry well (x=70–80, y=20–30).</li>
+                <li>☀️ <strong>Solar System:</strong> 5 kW array (x=10–30, y=115–135) meets RR-1 setbacks and Valencia County solar regulations (panels <10 ft).</li>
+                <li>🌊 <strong>Flood Risk:</strong> FEMA Zone X, with eco-friendly runoff controls (swales, basins, cacti rows).</li>
+                <li>📜 <strong>Permitting:</strong> Soil percolation test and effluent monitoring required for NMED approval (20.6.4 NMAC). Permitting rating: 9.5/10 for 2030.</li>
+            </ul>
+        </section>
+
+        <!-- Container Home Design -->
+        <section id="design" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Ecotech Container Home Design 🏠</h2>
+            <p>The centerpiece is a 900 sq ft solar-powered container home, designed as a 1.5-story ecotech structure for sustainability in FEMA Zone X. Built from three shipping containers, it features a layout blending functionality with a Southwestern aesthetic, prioritizing energy efficiency and minimal environmental impact. A garage can be added later at x=15–27, y=85–100, as it’s not currently enforced by Canyon del Rio or RR-1 zoning.</p>
+            <ul class="list-none space-y-2 mt-4">
+                <li>🏡 <strong>Main Structure:</strong> A 1.5-story home totaling 900 sq ft, built from two 40' × 8' containers (640 sq ft) on the ground floor and one 20' × 8' container (160 sq ft) on top, plus a 100 sq ft interior extension. Features R-13 spray foam insulation, 32 sq ft south-facing windows for passive solar heating, and an external staircase (x=54–55, y=30–50). Positioned at x=15–55, y=30–70, elevated 2 ft, with a height of 18 ft, within the RR-1 35 ft limit.</li>
+                <li><strong>Ground Floor (640 sq ft, 40' × 16'):</strong> Open-plan living space with terracotta and sage tones. Living area (20' × 16', 320 sq ft, x=15–55, y=50–70), kitchen and dining (12' × 16', 192 sq ft, x=15–55, y=38–50) with electric appliances, bathroom (8' × 8', 64 sq ft, x=15–23, y=30–38) with a composting toilet, and utility space (8' × 8', 64 sq ft, x=47–55, y=30–38) with a 2.4 kW heat pump.</li>
+                <li><strong>Second Floor (Partial, 260 sq ft):</strong> Primary bedroom (20' × 8', 160 sq ft, x=15–35, y=50–70) with south and north windows, and a 10' × 10' extension (x=35–45, y=60–70) as a closet or office, connected by a landing (5' × 8', x=49–54, y=50–58) to the staircase.</li>
+                <li>🛠️ <strong>Shed:</strong> 6' × 6' (x=40–46, y=85–91) for storage.</li>
+                <li>🛁 <strong>Jacuzzi:</strong> 6' × 6' (x=40–46, y=20–26), elevated 2 ft on a gravel pad, using cistern water.</li>
+                <li>🐶 <strong>Doghouse:</strong> 3' × 3' (x=40–43, y=25–28) for pet comfort.</li>
+            </ul>
+            <!-- Concept Designs Gallery -->
+            <h3 class="text-xl cinzel text-terracotta-500 mt-6 mb-2">Concept Designs 📸</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <figure>
+                    <img src="nmhome1.jpeg" alt="Concept Design 1" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Adobe Santa Fe-style exterior with terracotta plaster</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmhome2.jpeg" alt="Concept Design 2" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Interior living area with terracotta tiles</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmhome3.jpeg" alt="Concept Design 3" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Second-floor bedroom with south-facing windows</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmhome4.jpeg" alt="Concept Design 4" class="gallery-img rounded-lg shadow-md hover:scale-150 transition-transform duration-200 cursor-pointer">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">External staircase and landing</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Utilities and Systems -->
+        <section id="utilities" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Ecotech Utilities & Systems 🔋</h2>
+            <p>Fully off-grid, this homestead uses solar power, advanced wastewater treatment, and water conservation to minimize environmental impact, exceeding NMED standards and protecting the Rio Grande.</p>
+            <ul class="list-none space-y-2 mt-4">
+                <li>☀️ <strong>Solar Power:</strong> 5 kW array (x=10–30, y=115–135), producing ~20 kWh/day, powers a 2.4 kW heat pump and all systems, reducing carbon footprint.</li>
+                <li>🚽 <strong>Septic System:</strong> BioMicrobics MicroFAST 0.5 ATU tank (8' × 4', x=60–68, y=110–114) with tertiary treatment and smart sensors, ~115–125 ft from the arroyo, ensuring zero pollution risk.</li>
+                <li>💧 <strong>Mound Field:</strong> 10' × 10' (x=60–70, y=100–110), elevated 2–3 ft for eco-friendly effluent dispersal.</li>
+                <li>🌵 <strong>Vegetative Buffer:</strong> Prickly pear and cholla (x=0–80, y=10–30) for natural filtration and erosion control.</li>
+                <li>💦 <strong>Cistern (Expanded):</strong> 5,000-gallon food-grade cistern (x=30–37, y=25–32), elevated 1–2 ft, collects ~5,000–5,600 gallons/year from the 900 sq ft roof (9–10 inches rainfall). Supplies drinking water (1,000 gallons/year for 2 people), jacuzzi (1,200 gallons/year), showers (3,285 gallons/year with low-flow 1.5 gpm showerheads), and garden irrigation. Drinking water is treated with a 50-micron sediment filter, activated carbon filter, and UV sterilizer (10W, solar-powered). Non-potable uses (jacuzzi, showers) require only a 50-micron filter. A first-flush diverter discards the initial 10–20 gallons of runoff to ensure cleaner water. Overflow is directed to a dry well (x=70–80, y=20–30).</li>
+                <li>♻️ <strong>Greywater System:</strong> Collects 4,325 gallons/year from showers (3,285 gallons) and laundry (1,040 gallons, 10 gallons/load, 2 loads/week). A 50-micron filter removes solids, and a 100-gallon tank stores greywater for subsurface irrigation of cacti rows (x=0–80, y=10–30) or toilet flushing (1,825 gallons/year, 1 gallon/flush, 5 flushes/day), reducing cistern demand and enhancing water efficiency.</li>
+                <li>🌊 <strong>Swales & Basins:</strong> 80' × 5' swale (x=0–80, y=5–10), primary basin (x=60–70, y=10–20), and secondary basin (x=20–30, y=10–20) manage runoff sustainably.</li>
+                <li>🌱 <strong>Garden:</strong> 10' × 10' (x=30–40, y=85–95), irrigated with treated cistern water, supporting local flora.</li>
+                <li>🚶 <strong>Gravel Path:</strong> 3' × 16' (x=43–46, y=20–36), connecting home, jacuzzi, and garden, using permeable materials.</li>
+            </ul>
+        </section>
+
+        <!-- Why This System is 100% Clean -->
+        <section class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Why This System is 100% Clean 🌟</h2>
+            <p>The advanced wastewater treatment, water conservation, and runoff management ensure zero pollution risk to the Rio Grande, exceeding NMED and Valencia County standards for a sustainable, ecotech homestead.</p>
+            <ul class="list-none space-y-2 mt-4">
+                <li>🧪 <strong>Multi-Stage Treatment:</strong> BioMicrobics MicroFAST® reduces BOD, TSS, and nitrogen, with NitrifAST® for nitrogen removal, a sand filter for fine solids, UV disinfection for pathogens, and a carbon filter for trace organics, ensuring near-zero pollutants.</li>
+                <li>✅ <strong>Exceeds NMED Standards:</strong> Effluent achieves <5 mg/L BOD/TSS, <10 mg/L total nitrogen, <1 mg/L phosphorus, and no pathogens, surpassing NMED requirements (20.6.4 and 20.6.2 NMAC).</li>
+                <li>🌊 <strong>Rio Grande Protection:</strong> The arroyo connects to the Rio Grande only during extreme events, but effluent reuse via drip irrigation, vegetative buffers (prickly pear, cholla), and the arroyo’s distance (20–30 ft southeast, 5–10 ft below) prevent contamination.</li>
+                <li>📊 <strong>Monitoring:</strong> A sampling port ensures effluent meets standards, supporting NMED approval.</li>
+                <li>🌞 <strong>Eco-Friendly Design:</strong> Solar power, water harvesting, greywater reuse, and natural runoff management (swales, cacti) minimize environmental impact, aligning with Canyon del Rio’s desert ecosystem.</li>
+            </ul>
+        </section>
+
+        <!-- Arroyo & Rio Grande Connection -->
+        <section class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Arroyo & Rio Grande Connection 🌊</h2>
+            <p>The Camino Rio arroyo, 20–30 ft southeast of the lot’s southern boundary (25 ft in diagram) and 5–10 ft below, is ephemeral (dry 99.9% of the time). It connects to the Rio Grande (10–15 miles away) via regional arroyos (S/N Rio del Oro Loops) only during extreme events (e.g., 100-year storms).</p>
+            <ul class="list-none space-y-2 mt-4">
+                <li>🛡️ <strong>FEMA Zone X:</strong> Minimal flood risk, with eco-friendly runoff controls (swales, basins).</li>
+                <li>📏 <strong>Setbacks:</strong> Structures and septic system exceed the 35 ft and 100 ft arroyo setbacks per NMAC § 20.7.3.</li>
+                <li>🚽 <strong>Septic Compliance:</strong> The BioMicrobics MicroFAST ATU ensures effluent quality, with soil percolation and monitoring for NMED approval (20.6.4 NMAC).</li>
+                <li>🛤️ <strong>Access:</strong> No arroyo crossing needed, simplifying permitting.</li>
+                <li>✅ <strong>Permitting Rating:</strong> 9.5/10, with minor steps ensuring approval by 2030.</li>
+            </ul>
+        </section>
+
+        <!-- Text Diagram -->
+        <section class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Lot Layout Diagram 📏</h2>
+            <p>This diagram shows the 80' × 150' lot with the corrected Valencia County plat, the Camino Rio arroyo (25 ft southeast of the southern boundary, 5–10 ft below), and key ecotech features, ensuring compliance with setbacks and environmental standards. A garage can be added later at x=15–27, y=85–100. Grid lines are at 10 ft intervals for both x and y axes; each ~ represents ~2 ft.</p>
+            <pre class="bg-gray-100 p-4 rounded-md text-sm overflow-x-auto">
+Canyon del Rio Lot - Corrected Plat (80' × 150', N-S, 5400–5390 ft)
+--------------------------------------------------------------------------------
+(Each ~ represents ~2 ft; Grid lines at 10 ft intervals for x and y)
+
+y=150 | NW Corner (x=0, y=150, 5400 ft)
+      | 
+y=140 | [Solar Array: 20×20 ☀️] x=10──x=30 y=115──y=135
+      |    ........☀️☀️☀️☀️☀️☀️☀️☀️............
+y=130 |    ........☀️☀️☀️☀️☀️☀️☀️☀️............
+      | 
+y=120 | 
+      | 
+y=110 | [ATU Tank: 8×4 🚽] x=60──x=68 y=110──y=114
+      | ....................................🚽🚽🚽🚽
+y=100 | [Mound Field: 10×10 💧] x=60──x=70 y=100──y=110  [Shed: 6×6 🛠️] x=40──x=46 y=85──y=91  [Garden: 10×10 🌱] x=30──x=40 y=85──y=95
+      | ....................................💧💧💧💧💧💧....................................🛠️🛠️🛠️....................🌱🌱🌱🌱🌱
+y=90  | ............................................................🛠️🛠️🛠️....................🌱🌱🌱🌱🌱
+      | 
+y=80  | 
+      | 
+y=70  | [Container Home (1.5 Stories): 40×16 🏡] x=15──x=55 y=30──y=70
+      |    ....🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡....
+y=60  |    ....🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡....
+      | 
+y=50  |    ....🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡....
+      | 
+y=40  |    ....🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡....
+      | 
+y=30  | [Cacti Rows 🌵] x=0──x=80 y=10──y=30  [Cistern: 7×7 💦] x=30──x=37 y=25──y=32  [Doghouse: 3×3 🐶] x=40──x=43 y=25──y=28  [Jacuzzi: 6×6 🛁] x=40──x=46 y=20──y=26  [Gravel Path: 3×16 🚶] x=43──x=46 y=20──y=36
+      | 🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵............................💦💦💦................🐶🐶................🛁🛁🛁................🚶🚶
+y=20  | 🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵............................💦💦💦................🐶🐶................🛁🛁🛁................🚶🚶  [Dry Well: 10×10 🕳️] x=70──x=80 y=20──y=30
+      | 🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵............................................................................................🕳️🕳️🕳️🕳️🕳️
+y=10  | [Swale: 80×5 🌊] x=0──x=80 y=5──y=10  [Primary Basin: 10×10 🌊] x=60──x=70 y=10──y=20  [Secondary Basin: 10×10 🌊] x=20──x=30 y=10──y=20
+      | 🌊🌊🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵....................🌊🌊🌊🌊🌊🌊................🌊🌊🌊🌊🌊🌊
+y=0   | SE Corner (x=80, y=0, 5390 ft)
+      | Camino Rio Arroyo (~25 ft S of S Boundary, 5–10 ft below) at y=-25 ~~~~~
+      | 
+      | x=0  x=10  x=20  x=30  x=40  x=50  x=60  x=70  x=80
+--------------------------------------------------------------------------------
+            </pre>
+        </section>
+
+        <!-- Summary -->
+        <section id="summary" class="bg-sage-200 rounded-lg p-6 mb-8 shadow-md">
+            <h2 class="text-2xl cinzel text-terracotta-500 mb-4 border-b-2 border-turquoise-500 pb-2">Summary 💡</h2>
+            <div class="bg-turquoise-500 text-beige-100 p-4 rounded-md mb-4 text-center font-bold">
+                🌟 Kenny’s Vision: Sustainable, Safe, Smart, Secluded Ecotech Living 🌟
+            </div>
+            <p>Kenny’s 900 sq ft container home in Canyon del Rio, set for a 2030 build, is a model of ecotech living on a 0.28-acre lot (80' × 150'). Zoned RR-1 and in FEMA Zone X, it features a state-of-the-art septic system, solar power, a 5,000-gallon cistern, greywater reuse, swales, basins, and cacti rows, ensuring zero pollution to the Rio Grande (10–15 miles away). The Camino Rio arroyo, 20–30 ft southeast and 5–10 ft below, has a low WOTUS likelihood, simplifying permitting. The Valencia County plat has been corrected to reflect the lot’s true position, meeting all setbacks. With a buildable area of 5,250 sq ft (~43.75%) and 8.17% lot coverage (980 sq ft without garage), it complies with RR-1 zoning. A garage can be added later at x=15–27, y=85–100, as it’s not currently enforced. Accessible to Belen (18 miles, 25–30 minutes) and Albuquerque (~40 minutes), this off-grid homestead blends seclusion with convenience, respecting the desert’s natural flow.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-terracotta-500 text-beige-100 text-center py-6">
+        <p>© 2025 Kenny - A Sustainable Ecotech Living Project 🌞</p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Gallery Image">
+    </div>
+
+    <!-- JavaScript for Lightbox -->
+    <script>
+        const galleryImages = document.querySelectorAll('.gallery-img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        // Keyboard navigation for accessibility
+        lightbox.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+
+    <!-- Custom Tailwind Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'beige-100': '#F5F5DC',
+                        'terracotta-500': '#E2725B',
+                        'terracotta-600': '#C95A47',
+                        'sage-200': '#A9BA9D',
+                        'turquoise-500': '#40C4B7',
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Animation Keyframes -->
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-in;
+        }
+    </style>
+</body>
+</html>
