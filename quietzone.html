@@ -1,100 +1,437 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiet Ridge Zone - Southwest Serenity</title>
-  <style>
-    body {
-      font-family: "Georgia", serif;
-      background-color: #f4f1ec;
-      color: #3e2f1c;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #b85b3e;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-    }
-    section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 1.5rem;
-      background-color: #fff8f1;
-      border: 2px solid #b85b3e;
-      border-radius: 8px;
-    }
-    h1, h2 {
-      color: #b85b3e;
-    }
-    .emoji {
-      font-size: 1.3rem;
-      margin-right: 0.4rem;
-    }
-    ul {
-      padding-left: 1.5rem;
-    }
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #777;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the Double Ridge Topography of a plat in Canyon del Rio, Valencia County, NM, featuring unique hills, arroyos, sound dynamics, berms, a fountain with rustling leaves, and strategic plot placement in the Quiet Ridge Zone.">
+    <meta name="author" content="Kenny">
+    <title>Double Ridge Topography - Canyon del Rio 🌄</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Fonts */
+        .cinzel { font-family: 'Cinzel', serif; }
+        .lora { font-family: 'Lora', serif; }
+        /* Parallax Effect for Hero */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 80vh;
+            position: relative;
+        }
+        /* Lightbox Styles */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox.active { display: flex; }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 12px;
+            border: 3px solid #fff;
+        }
+        #lightbox .caption {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        #lightbox .close-btn, #lightbox .nav-btn {
+            position: absolute;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+        }
+        #lightbox .close-btn { top: 1rem; right: 1rem; }
+        #lightbox .prev-btn { left: 1rem; }
+        #lightbox .next-btn { right: 1rem; }
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #E2725B;
+            color: #F5F5DC;
+            padding: 0.75rem 1rem;
+            border-radius: 50%;
+            display: none;
+            z-index: 100;
+            transition: background 0.3s ease;
+        }
+        #back-to-top:hover { background: #C95A47; }
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+        /* Desert Texture Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://img.freepik.com/premium-vector/retro-colors-abstract-navajo-indian-seamless-striped-ethnic-geometric-background-traditional_252172-33.jpg?w=2000') repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>🌄 Quiet Ridge Zone: Desert Sound Sanctuary</h1>
-    <p>Double Ridge • Natural Berm • Whisper-Level Noise</p>
-  </header>
+<body class="bg-gradient-to-b from-beige-50 to-beige-100 text-gray-800 lora">
+    <!-- Navigation -->
+    <nav class="bg-terracotta-600 text-beige-50 sticky top-0 z-50 shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl sm:text-3xl cinzel tracking-wide">Double Ridge Topography</h1>
+                </div>
+                <div class="flex items-center space-x-2 sm:space-x-6">
+                    <a href="#welcome" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Welcome Section">Welcome</a>
+                    <a href="#topography" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Topography Section">Topography</a>
+                    <a href="#sound" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Sound Dynamics Section">Sound Dynamics</a>
+                    <a href="#features" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Features Section">Features</a>
+                    <a href="#placement" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Plot Placement Section">Plot Placement</a>
+                    <a href="#layout" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Layout Section">Layout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <section>
-    <h2><span class="emoji">🟤</span> Double Ridge Topography</h2>
-    <p>Your home sits on the second ridge—elevated roughly 10–15 feet above the arroyo basin. Sound from the quarry must travel:</p>
-    <ul>
-      <li>➊ Over the first ridge (by the quarry)</li>
-      <li>➋ Down into the arroyo saddle (low zone)</li>
-      <li>➌ Up to your second ridge home</li>
-    </ul>
-    <p>This terrain creates a natural <strong>sound funnel and deflection zone</strong>, drastically weakening the sound wave's energy before it reaches your lot.</p>
-  </section>
+    <!-- Hero Section with Parallax -->
+    <header id="welcome" class="parallax flex items-center justify-center text-center bg-[url('double_ridge.jpg')]" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-terracotta-600 opacity-60"></div>
+        <div class="relative z-10 text-beige-50 px-4">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl cinzel mb-4 animate-fade-in">Double Ridge Topography 🌄</h1>
+            <p class="text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto">A Unique Landscape in Canyon del Rio, Valencia County, NM</p>
+            <p class="mt-4 text-base sm:text-lg italic">Discover the serene beauty and ecological harmony of the Quiet Ridge Zone.</p>
+            <a href="#topography" class="mt-6 inline-block bg-turquoise-500 text-beige-50 px-6 py-3 rounded-full hover:bg-turquoise-600 transition-colors duration-300" aria-label="Explore the Topography">Explore the Topography</a>
+        </div>
+    </header>
 
-  <section>
-    <h2><span class="emoji">🔇</span> Sound Decay & dB Reality</h2>
-    <ul>
-      <li>📍 Quarry Output: 25–35 dBA at source</li>
-      <li>📉 Natural Loss (Distance, Terrain): ~10–15 dB</li>
-      <li>🌿 Berm Reduction: Another 5–10 dB</li>
-      <li>🏡 Inside Home: <strong>5–15 dBA</strong> – quieter than a whisper</li>
-    </ul>
-    <p><strong>30 dBA</strong> is equivalent to a quiet library or soft rustling of leaves. Inside your home, it’s as if the quarry doesn’t exist at all.</p>
-  </section>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Welcome Message -->
+        <section class="text-center mb-12">
+            <h2 class="text-3xl cinzel text-terracotta-600 mb-4">A Natural Masterpiece</h2>
+            <p class="text-lg max-w-3xl mx-auto">The Double Ridge Topography defines the Canyon del Rio plat, blending dramatic elevation changes with sustainable design. Located in Rio del Oro, Valencia County, NM, this landscape features two parallel ridges, gentle hills, and the Camino Rio arroyo, creating a serene Quiet Ridge Zone enhanced by berms, a fountain, and rustling leaves. Join me, Kenny, in exploring this unique terrain, designed for eco-friendly living by 2030.</p>
+        </section>
 
-  <section>
-    <h2><span class="emoji">🛡️</span> Berm + Vegetation Barrier</h2>
-    <p>Your 6–8 ft berm is more than a soil wall—it's a living buffer:</p>
-    <ul>
-      <li>🌵 Planted with mesquite, juniper, and pinyon pine</li>
-      <li>🌬️ Absorbs airborne vibrations and dampens echo</li>
-      <li>🏞️ Curved shape reflects sound upward, away from your structure</li>
-    </ul>
-  </section>
+        <!-- Topography and Hills -->
+        <section id="topography" class="bg-sage-100 rounded-xl p-8 mb-12 shadow-lg">
+            <h2 class="text-3xl cinzel text-terracotta-600 mb-4 border-b-2 border-turquoise-500 pb-2">Topography and Hills 🏞️</h2>
+            <p class="mb-4">The Double Ridge Topography is characterized by two parallel ridges, each rising 50-75 ft above the surrounding desert (5,350-5,400 ft elevation). These sandstone and clay ridges, oriented southwest to northeast (SW-NE, 28° east of true north), flank a central valley with a gentle 3.33% slope from northwest to southeast (NW-SE, 5,400 ft to 5,390 ft). The ridges, spaced ~200 ft apart, create a natural corridor that shields the plat from external noise and enhances views of the Manzano Mountains.</p>
+            <ul class="list-none space-y-3 mb-6">
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">📏</span>
+                    <div>
+                        <strong>Ridge Structure:</strong> The northern ridge (y=150-200) peaks at 5,450 ft, with a 10-15% slope, while the southern ridge (y=-50-0) reaches 5,425 ft. Both are stabilized by piñon pines, juniper, and sagebrush, preventing erosion.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">🏔️</span>
+                    <div>
+                        <strong>Hills:</strong> The valley between the ridges features low hills (10-20 ft high, x=20-60, y=50-100), composed of sandy loam, adding texture and visual interest. These hills support native flora like cholla and yucca, enhancing biodiversity.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">🌵</span>
+                    <div>
+                        <strong>Soil:</strong> Well-draining sandy loam (percolation rate 10-15 minutes/inch) supports construction and xeriscaped gardens, aligning with NMED standards (20.7.3.401 NMAC).
+                    </div>
+                </li>
+            </ul>
+            <!-- Topography Photos -->
+            <h3 class="text-2xl cinzel text-terracotta-600 mt-8 mb-4">Topography Photos 📸</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <figure>
+                    <img src="ridge1.png" alt="Northern ridge with piñon pines in Canyon del Rio" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Northern ridge with piñon pines</figcaption>
+                </figure>
+                <figure>
+                    <img src="ridge2.png" alt="Valley hills with sandy loam and yucca" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Valley hills with yucca</figcaption>
+                </figure>
+                <figure>
+                    <img src="ridge3.png" alt="Southern ridge overlooking Camino Rio arroyo" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Southern ridge and arroyo</figcaption>
+                </figure>
+                <figure>
+                    <img src="ridge4.png" alt="Overview of double ridge topography" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Double ridge overview</figcaption>
+                </figure>
+            </div>
+        </section>
 
-  <section>
-    <h2><span class="emoji">⛲</span> Fountain & Rustling Leaves Effect</h2>
-    <p>You’ve planned for a subtle, continuous <strong>water fountain</strong> and a landscape of <strong>wind-reactive plants</strong> like desert willow and yucca:</p>
-    <ul>
-      <li>💧 Fountain white noise masks intermittent outdoor sounds</li>
-      <li>🍃 Wind through leaves creates soothing, dynamic background</li>
-      <li>🌬️ Together, they create a <strong>natural soundscape</strong> of calm</li>
-    </ul>
-    <p>These details not only enhance serenity—they psychologically reduce your perception of distant sound.</p>
-  </section>
+        <!-- Sound Dynamics -->
+        <section id="sound" class="bg-sage-100 rounded-xl p-8 mb-12 shadow-lg">
+            <h2 class="text-3xl cinzel text-terracotta-600 mb-4 border-b-2 border-turquoise-500 pb-2">Sound Dynamics 🔊</h2>
+            <p class="mb-4">The Quiet Ridge Zone, defined by the double ridge topography, creates a tranquil acoustic microclimate. A quarry 1.10 km north generates 22-33 dBA at the plat, but the ridges and strategic berms reduce this to 5-20 dBA, fostering serenity. The fountain and rustling leaves from berm vegetation amplify natural sounds, enhancing the sensory experience.</p>
+            <ul class="list-none space-y-3 mb-6">
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">🛡️</span>
+                    <div>
+                        <strong>Noise Reduction:</strong> The northern ridge (y=150-200) acts as a natural barrier, reducing quarry noise by 5-10 dB. A 6-8 ft berm (x=15-55, y=130) with mesquite, juniper, and pinyon pine adds 5-10 dB reduction, achieving 5-20 dBA inside plots.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">💧</span>
+                    <div>
+                        <strong>Fountain Sounds:</strong> A solar-powered fountain (x=20-24, y=25-29) produces gentle trickling sounds (~15-20 dBA), blending with rustling leaves (~10-15 dBA) from berm vegetation to create a soothing soundscape.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">📊</span>
+                    <div>
+                        <strong>Ambient Levels:</strong> Valley measurements show 30-40 dBA ambient noise, dropping to 20-25 dBA in sheltered areas due to ridge shielding and vegetative buffers.
+                    </div>
+                </li>
+            </ul>
+        </section>
 
-  <footer>
-    © 2025 Quiet Ridge Zone • Designed for Desert Peace & Sound Clarity 🌵
-  </footer>
+        <!-- Landscape Features -->
+        <section id="features" class="bg-sage-100 rounded-xl p-8 mb-12 shadow-lg">
+            <h2 class="text-3xl cinzel text-terracotta-600 mb-4 border-b-2 border-turquoise-500 pb-2">Landscape Features 🌿</h2>
+            <p class="mb-4">The plat’s features integrate seamlessly with the double ridge topography, enhancing both aesthetics and functionality while ensuring environmental harmony.</p>
+            <ul class="list-none space-y-3 mb-6">
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">🛡️</span>
+                    <div>
+                        <strong>Berms:</strong> A 6-8 ft berm (x=15-55, y=130) with an integrated swale reduces noise by 5-10 dB and channels runoff to the Camino Rio arroyo, preventing erosion. Planted with mesquite, juniper, and pinyon pine, it blends with the desert landscape.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">💧</span>
+                    <div>
+                        <strong>Fountain and Leaves:</strong> A 4' × 4' solar-powered fountain (x=20-24, y=25-29) uses ~100 gallons/year from a cistern, creating a gentle water sound. Rustling leaves from berm vegetation (mesquite, juniper) add a natural acoustic layer, enhancing the Quiet Ridge Zone.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">🌊</span>
+                    <div>
+                        <strong>Arroyos:</strong> The Camino Rio arroyo (y=-25, 20-30 ft southeast, 5-10 ft below, 5,390 ft) is ephemeral, dry 99.9% of the time, and connects to the Rio Grande (10-15 miles away) only during 100-year storms. It runs SW-NE, lined with gravel and native grasses, guiding runoff sustainably.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">🌵</span>
+                    <div>
+                        <strong>Vegetative Buffer:</strong> Prickly pear and cholla cacti rows (x=0-80, y=10-30) slow runoff, prevent erosion, and support local wildlife, aligning with the desert ecosystem.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Plot Placement -->
+        <section id="placement" class="bg-sage-100 rounded-xl p-8 mb-12 shadow-lg">
+            <h2 class="text-3xl cinzel text-terracotta-600 mb-4 border-b-2 border-turquoise-500 pb-2">Plot Placement 🏡</h2>
+            <p class="mb-4">Plots are strategically placed to leverage the double ridge topography, ensuring privacy, views, and compliance with RR-1 zoning setbacks (§ 154.105). The valley and lower ridge slopes host homesites, while communal spaces occupy the valley floor.</p>
+            <ul class="list-none space-y-3 mb-6">
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">📏</span>
+                    <div>
+                        <strong>Placement Strategy:</strong> Plots (0.5-2 acres) are terraced into the northern ridge’s lower slopes (y=100-130, 5,400-5,420 ft) and valley edges (y=30-100), maximizing views of the southern ridge and Manzano Mountains. Setbacks (30 ft front, 15 ft rear/sides, 35 ft from arroyo) ensure compliance.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">🛡️</span>
+                    <div>
+                        <strong>Noise and Privacy:</strong> The northern ridge and berm (y=130) shield plots from quarry noise (5-20 dBA), while spacing (50-100 ft between plots) enhances seclusion.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">🌊</span>
+                    <div>
+                        <strong>Arroyo Safety:</strong> Plots are positioned 35-50 ft from the arroyo (y=-25), exceeding NMAC § 20.7.3 setbacks, with berms and swales managing runoff to prevent flooding (FEMA Zone X, 0.2% annual risk).
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">🌞</span>
+                    <div>
+                        <strong>Communal Spaces:</strong> The valley floor (y=30-50) hosts a fountain (x=20-24, y=25-29) and gravel paths, fostering community while preserving open space for native flora and fauna.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Plat Layout Diagram -->
+        <section id="layout" class="bg-sage-100 rounded-xl p-8 mb-12 shadow-lg">
+            <h2 class="text-3xl cinzel text-terracotta-600 mb-4 border-b-2 border-turquoise-500 pb-2">Plat Layout Diagram 📏</h2>
+            <p class="mb-4">This diagram illustrates a 0.28-acre lot (80' × 150') within the double ridge topography, oriented SW-NE (28° east of true north). The northern ridge (y=150-200, 5,450 ft) and southern ridge (y=-50-0, 5,425 ft) frame the valley, with the Camino Rio arroyo (y=-25, 5,390 ft) southeast. Key features include a berm, fountain, cacti rows, and a sample plot (adobe home). Grid lines are at 10 ft intervals; each ~ represents ~2 ft. Coordinates (x, y) align with the lot’s axes (SW-NE for y, NW-SE for x).</p>
+            <pre class="bg-gray-50 p-4 rounded-lg text-sm overflow-x-auto border border-gray-200">
+Double Ridge Topography Lot (80' × 150', SW-NE at 28° E of N, 5400–5390 ft)
+--------------------------------------------------------------------------------
+(Each ~ represents ~2 ft; Grid lines at 10 ft intervals; y-axis is SW-NE)
+
+y=200 | Northern Ridge Peak (x=0-80, y=150-200, 5450 ft) 🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️
+y=150 | NW Corner (x=0, y=150, 5400 ft)
+      | [Noise Berm with Vegetation 🛡️] x=15──x=55 y=130 🌳🌳🌳🌳🌳🌳🌳🌳🌳🌳
+y=140 | 
+y=130 | ....................................🛡️🛡️🛡️🛡️🛡️🛡️🛡️🛡️🛡️🛡️
+y=120 | 
+y=110 | 
+y=100 | [Low Hill: 10×10 🏔️] x=40──x=50 y=90──y=100
+      | ....................................🏔️🏔️🏔️🏔️🏔️
+y=90  | ....................................🏔️🏔️🏔️🏔️🏔️
+y=80  | 
+y=70  | [Adobe Frame Home: 40×16 🏡] x=15──x=55 y=30──y=70
+      | ....🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡....
+y=60  | ....🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡....
+y=50  | ....🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡....
+y=40  | ....🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡🏡....
+y=30  | [Cacti Rows 🌵] x=0──x=80 y=10──y=30  [Fountain: 4×4 💧] x=20──x=24 y=25──y=29
+      | 🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵............💧💧
+y=20  | 🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵............💧💧
+y=10  | [Swale: 80×5 🌊] x=0──x=80 y=5──y=10
+      | 🌊🌊🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵🌵
+y=0   | SE Corner (x=80, y=0, 5390 ft)
+y=-25 | Camino Rio Arroyo (~25 ft S of S Boundary, 5–10 ft below) 🌊~~~~~
+y=-50 | Southern Ridge (x=0-80, y=-50-0, 5425 ft) 🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️
+      | x=0  x=10  x=20  x=30  x=40  x=50  x=60  x=70  x=80
+--------------------------------------------------------------------------------
+            </pre>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-terracotta-600 text-beige-50 text-center py-8">
+        <p class="text-sm sm:text-base">© 2025 Kenny - A Sustainable Ecotech Project 🌞</p>
+        <p class="mt-2 text-sm">Celebrating the natural beauty of Canyon del Rio’s double ridge topography.</p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" role="dialog" aria-label="Image Lightbox">
+        <span class="close-btn" aria-label="Close Lightbox">×</span>
+        <span class="prev-btn" aria-label="Previous Image">❮</span>
+        <span class="next-btn" aria-label="Next Image">❯</span>
+        <img id="lightbox-img" src="" alt="Gallery Image">
+        <div class="caption" id="lightbox-caption"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">↑</button>
+
+    <!-- JavaScript for Lightbox and Back to Top -->
+    <script>
+        // Lightbox Functionality
+        const galleryImages = document.querySelectorAll('.gallery-img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const closeBtn = document.querySelector('.close-btn');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentIndex = 0;
+
+        const images = Array.from(galleryImages).map(img => ({
+            src: img.src,
+            alt: img.alt,
+            caption: img.nextElementSibling ? img.nextElementSibling.textContent : ''
+        }));
+
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentIndex = index;
+                updateLightbox();
+                lightbox.classList.add('active');
+                lightbox.focus();
+            });
+        });
+
+        function updateLightbox() {
+            lightboxImg.src = images[currentIndex].src;
+            lightboxImg.alt = images[currentIndex].alt;
+            lightboxCaption.textContent = images[currentIndex].caption;
+        }
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateLightbox();
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % images.length;
+            updateLightbox();
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+            }
+        });
+
+        // Keyboard Navigation for Accessibility
+        lightbox.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                lightbox.classList.remove('active');
+            } else if (e.key === 'ArrowLeft') {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                updateLightbox();
+            } else if (e.key === 'ArrowRight') {
+                currentIndex = (currentIndex + 1) % images.length;
+                updateLightbox();
+            }
+        });
+
+        // Back to Top Button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+
+    <!-- Custom Tailwind Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'beige-50': '#FDF6E3',
+                        'beige-100': '#F5F5DC',
+                        'terracotta-600': '#D65A31',
+                        'terracotta-700': '#B94727',
+                        'sage-100': '#C2D1B8',
+                        'turquoise-500': '#40C4B7',
+                        'turquoise-600': '#36A89F',
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Animation Keyframes -->
+    <style>
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fade-in 1s ease-in; }
+    </style>
 </body>
 </html>
