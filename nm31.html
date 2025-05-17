@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Kenny's sustainable off-grid ecotech adobe frame home in Canyon del Rio, Valencia County, NM, set for a 2030 build. Explore the design, utilities, permitting, and eco-friendly features of La Zona de Silencio en Doble Loma, with a serene soundscape and exceptional stargazing.">
+    <meta name="author" content="Kenny">
+    <title>Canyon del Rio - La Zona de Silencio en Doble Loma - Kenny's Off-Grid Ecotech Adobe 900sq ft Home 2030 🏡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        .cinzel { font-family: 'Cinzel', serif; letter-spacing: 0.05em; text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        .lora { font-family: 'Lora', serif; line-height: 1.6; }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 80vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+        #lightbox.active { display: flex; }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 12px;
+            border: 4px solid #fff;
+            object-fit: cover;
+        }
+        #lightbox .caption {
+            color: #fff;
+            font-size: 1.25rem;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-family: 'Lora', serif;
+        }
+        #lightbox .close-btn, #lightbox .nav-btn {
+            position: absolute;
+            color: #fff;
+            font-size: 2.5rem;
+            cursor: pointer;
+            background: rgba(0,0,0,0.6);
+            padding: 0.75rem;
+            border-radius: 50%;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        #lightbox .close-btn:hover, #lightbox .nav-btn:hover {
+            background: rgba(0,0,0,0.8);
+            transform: scale(1.1);
+        }
+        #lightbox .close-btn { top: 1.5rem; right: 1.5rem; }
+        #lightbox .prev-btn { left: 1.5rem; }
+        #lightbox .next-btn { right: 1.5rem; }
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #E2725B;
+            color: #FDFDF5;
+            padding: 1rem;
+            border-radius: 50%;
+            display: none;
+            z-index: 100;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        #back-to-top:hover {
+            background: #D95A47;
+            transform: rotate(360deg);
+        }
+        html { scroll-behavior: smooth; }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://img.freepik.com/premium-vector/seamless-desert-pattern_23-2148987890.jpg') repeat;
+            opacity: 0.03;
+            z-index: -1;
+        }
+        .text-backdrop {
+            background: rgba(253,253,245,0.95);
+            padding: 1rem;
+            border-radius: 8px;
+            position: relative;
+            z-index: 1;
+        }
+        nav.scrolled {
+            background: rgba(226,114,91,0.9);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .gallery-img:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 640px) {
+            .parallax h1 { font-size: 2.5rem; }
+            .parallax p { font-size: 1rem; }
+            section { padding: 1.5rem; }
+            h2 { font-size: 1.75rem; }
+            .text-backdrop { padding: 0.75rem; }
+        }
+    </style>
+</head>
+<body class="bg-[#FDFDF5] text-gray-800 lora">
+    <nav class="bg-[#E2725B] text-[#FDFDF5] sticky top-0 z-50 shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl sm:text-3xl cinzel tracking-wider">Canyon del Rio</h1>
+                </div>
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <a href="#welcome" class="hover:bg-[#D95A47] px-3 py-2 rounded-md text-sm sm:text-base transition-all duration-200 hover:scale-105" aria-label="Welcome Section">Welcome</a>
+                    <a href="#property" class="hover:bg-[#D95A47] px-3 py-2 rounded-md text-sm sm:text-base transition-all duration-200 hover:scale-105" aria-label="Property Section">Property</a>
+                    <a href="#access" class="hover:bg-[#D95A47] px-3 py-2 rounded-md text-sm sm:text-base transition-all duration-200 hover:scale-105" aria-label="Access Section">Access</a>
+                    <a href="#orientation" class="hover:bg-[#D95A47] px-3 py-2 rounded-md text-sm sm:text-base transition-all duration-200 hover:scale-105" aria-label="Orientation Section">Orientation</a>
+                    <a href="#design" class="hover:bg-[#D95A47] px-3 py-2 rounded-md text-sm sm:text-base transition-all duration-200 hover:scale-105" aria-label="Design Section">Design</a>
+                    <a href="#utilities" class="hover:bg-[#D95A47] px-3 py-2 rounded-md text-sm sm:text-base transition-all duration-200 hover:scale-105" aria-label="Utilities Section">Utilities</a>
+                    <a href="#permitting" class="hover:bg-[#D95A47] px-3 py-2 rounded-md text-sm sm:text-base transition-all duration-200 hover:scale-105" aria-label="Permitting Section">Permitting</a>
+                    <a href="#clean-system" class="hover:bg-[#D95A47] px-3 py-2 rounded-md text-sm sm:text-base transition-all duration-200 hover:scale-105" aria-label="Clean System Section">Clean System</a>
+                    <a href="#sustainability" class="hover:bg-[#D95A47] px-3 py-2 rounded-md text-sm sm:text-base transition-all duration-200 hover:scale-105" aria-label="Sustainability Section">Sustainability</a>
+                    <a href="#arroyo" class="hover:bg-[#D95A47] px-3 py-2 rounded-md text-sm sm:text-base transition-all duration-200 hover:scale-105" aria-label="Arroyo Section">Arroyo</a>
+                    <a href="#lot-layout" class="hover:bg-[#D95A47] px-3 py-2 rounded-md text-sm sm:text-base transition-all duration-200 hover:scale-105" aria-label="Lot Layout Section">Lot Layout</a>
+                    <a href="#summary" class="hover:bg-[#D95A47] px-3 py-2 rounded-md text-sm sm:text-base transition-all duration-200 hover:scale-105" aria-label="Summary Section">Summary</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header id="welcome" class="parallax text-center bg-[url('riodeloro.jpg')] relative overflow-hidden">
+        <div class="absolute inset-0 bg-[#E2725B] opacity-50"></div>
+        <div class="relative z-10 text-[#FDFDF5] px-4">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl cinzel mb-4 animate-fade-in">Welcome to Canyon del Rio 🏡</h1>
+            <p class="text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto text-backdrop">Kenny’s Sustainable Off-Grid Ecotech Adobe Home in La Zona de Silencio en Doble Loma 🌄</p>
+            <p class="mt-4 text-base sm:text-lg italic text-backdrop">A vision of eco-friendly living, blending modern technology with the timeless beauty of the high desert.</p>
+            <a href="#property" class="mt-6 inline-block bg-[#4ECDC4] text-[#FDFDF5] px-6 py-3 rounded-full hover:bg-[#3DB8B0] transition-all duration-300 hover:scale-105" aria-label="Explore the Property">Explore the Property</a>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm: px-6 lg:px-8 py-12">
+        <section class="text-center mb-12">
+            <h2 class="text-3xl cinzel text-[#E2725B] mb-4">A Personal Vision</h2>
+            <p class="text-lg max-w-3xl mx-auto text-backdrop">Hi, I’m Kenny! I’m planning to build my dream—a sustainable, off-grid ecotech adobe home in Canyon del Rio. This project reflects my passion for the environment, my love for the desert, and my journey as a screenwriter seeking a low-stress, creative haven. Join me as I bring this vision to life by 2030!</p>
+        </section>
+
+        <section id="property" class="bg-[#D4DED4] rounded-xl p-8 mb-12 shadow-md">
+            <h2 class="text-3xl cinzel text-[#E2725B] mb-4 border-b-2 border-[#4ECDC4] pb-2">Property Description 🌵</h2>
+            <div class="bg-[#4ECDC4] text-[#FDFDF5] p-4 rounded-lg mb-6 text-center font-bold text-backdrop">
+                🌟 Breakthrough: Advanced septic system, noise mitigation, and eco-friendly design ensure zero pollution risk to the Rio Grande, with low WOTUS likelihood for the arroyo! 🌟
+            </div>
+            <p class="mb-4 text-backdrop">Nestled in the high desert of Canyon del Rio, Valencia County, NM, this 0.28-acre lot (80' × 150', 12,000 sq ft) at coordinates 34.6911, -106.5575 is the foundation of my sustainable off-grid vision, named <strong>La Zona de Silencio en Doble Loma (The Silent Zone in Double Ridge)</strong>. The moniker reflects its serene ~18 dBA soundscape and Bortle 2–3 stargazing skies, enabled by double ridges—northern (y=150–200, 5,450 ft) and southern (y=-50–0, 5,425 ft), 50–75 ft high, ~200 ft apart—that reduce quarry noise (1.10 km north, 25 dBA baseline) to 6 dBA at the plat (~18 dBA with fountain and leaves) and block light pollution from Belen (18 miles), Los Lunas (20 miles), and Albuquerque (50 miles). Located in Rio del Oro, Unit 28, Lot 25, Block 27, the lot’s longer axis (150 ft) is oriented southwest to northeast (SW-NE), approximately 28° east of true north, with the shorter axis (80 ft) northwest to southeast (NW-SE). It features a 3.33% NW-SE slope (5,400–5,390 ft), directing runoff to the Camino Rio arroyo. A 6–8 ft berm (x=15–55, y=45.72) with mesquite, juniper, and pinyon pine, and a solar-powered fountain (x=20–24, y=0–4) create a tranquil acoustic microclimate, detailed in the <a href="#utilities" class="text-[#4ECDC4] hover:underline">Sound Path Map</a>. The lot’s Bortle 2–3 skies offer exceptional stargazing opportunities, despite Manzano Mountains obstructing below 20–30° SE. The corrected Valencia County plat ensures RR-1 zoning compliance (§ 154.105), qualifying as a pre-existing lot of record.</p>
+            <ul class="list-none space-y-3 mb-6">
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🌱</span>
+                    <div class="text-backdrop">
+                        <strong>Soil:</strong> Well-draining sandy loam, ideal for construction and supporting a small xeriscaped garden with water-efficient drip irrigation. Soil tests confirm suitability for the BioMicrobics MicroFAST® septic system, with a percolation rate of 10-15 minutes per inch, meeting NMED requirements (20.7.3.401 NMAC).
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🌊</span>
+                    <div class="text-backdrop">
+                        <strong>Arroyo:</strong> The Camino Rio arroyo, located 20-30 ft southeast of the lot’s true southern boundary (25 ft in diagrams) and 5-10 ft below (5,390 ft), is ephemeral, dry 99.9% of the time with rare runoff (~9-10 inches/year). It runs diagonally southwest to northeast and connects to the Rio Grande (10-15 miles away) only during extreme 100-year storm events, as mapped by the National Wetlands Inventory (R4SBJ classification).
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">📏</span>
+                    <div class="text-backdrop">
+                        <strong>Topography:</strong> A 10 ft elevation drop (3.33% NW-SE slope) directs runoff toward the SE corner and into the arroyo below. Eco-friendly runoff management includes a berm with an integrated swale, basins, and cacti rows, minimizing erosion and flood risk while reducing quarry noise.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🛡️</span>
+                    <div class="text-backdrop">
+                        <strong>Zoning & Safety:</strong> Zoned RR-1 (Rural Residential, 0.25-acre minimum), the 0.28-acre lot qualifies for the lot-of-record exception (§ 154.105), allowing building with compliance to setbacks and coverage. FEMA Zone X designation indicates minimal flood risk (0.2% annual chance). A professional survey is recommended to confirm boundaries and arroyo setbacks, ensuring compliance with NMAC § 20.7.3.
+                    </div>
+                </li>
+            </ul>
+            <h3 class="text-2xl cinzel text-[#E2725B] mt-8 mb-4">Land and Plat Photos 📸</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <figure>
+                    <img src="nmland7.png" alt="Desert landscape with sandy loam soil in Canyon del Rio" class="gallery-img rounded-lg shadow-md transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Desert landscape with sandy loam soil</figcaption>
+                </figure>
+                <figure>
+                    <img src="newplat3.png" alt="Corrected Valencia County Plat Map for Canyon del Rio Lot" class="gallery-img rounded-lg shadow-md transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Corrected Valencia County Plat</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmland16.png" alt="View of the Camino Rio arroyo near the lot" class="gallery-img rounded-lg shadow-md transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">View of the Camino Rio arroyo</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmland14.png" alt="Overview of the 0.28-acre lot in Canyon del Rio" class="gallery-img rounded-lg shadow-md transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Lot overview</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="access" class="bg-[#D4DED4] rounded-xl p-8 mb-12 shadow-md">
+            <h2 class="text-3xl cinzel text-[#E2725B] mb-4 border-b-2 border-[#4ECDC4] pb-2">Access and Proximity 🛤️</h2>
+            <p class="mb-4 text-backdrop">This off-grid ecotech homestead balances seclusion with accessibility, making it ideal for sustainable living while staying connected. From the lot, it’s a 1-2 mile drive on well-maintained dirt roads to Rio del Oro Loop South, then 5 miles on gravel to the Manzano Expressway, and 11 paved miles to Belen via NM-309/E River Rd. A driveway/road-access permit from Valencia County is required for any new approach. The total trip to Belen is 18 miles (25-30 minutes), offering access to essentials like a Walmart Superstore, Albertsons Grocery Store, and the Rail Runner Express to Albuquerque (~40 minutes, 35 miles). Albuquerque is also a direct 50-55 minute drive via I-25 N, providing urban amenities and ABQ-LAX flights (2 hours, $66-$178 round-trip) for screenwriting trips to LA.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
+                <figure class="text-center">
+                    <img src="nmland13.png" alt="Dirt road route from Canyon del Rio to Rio del Oro Loop South en route to Belen" class="rounded-lg shadow-md transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic">Rio del Oro Loop South route to Belen</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="nmland17.png" alt="Gravel road on Manzano Expressway route to Los Lunas from Canyon del Rio" class="rounded-lg shadow-md transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic">Manzano Expressway route to Los Lunas</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="nmland18.png" alt="Route map from Canyon del Rio property to Albuquerque, approximately 35 miles" class="rounded-lg shadow-md transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic">Route to Albuquerque: ~50-55 minutes, 35 miles</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="orientation" class="bg-[#D4DED4] rounded-xl p-8 mb-12 shadow-md">
+            <h2 class="text-3xl cinzel text-[#E2725B] mb-4 border-b-2 border-[#4ECDC4] pb-2">Lot Orientation, Setbacks, Compliances, and Laws 📐</h2>
+            <p class="mb-4 text-backdrop">The lot’s longer axis (150 ft) runs southwest to northeast (SW-NE), oriented approximately 28° east of true north, as the entire subdivision is rotated in this direction. The shorter axis (80 ft) runs northwest to southeast (NW-SE). This orientation optimizes solar exposure for the 5 kW solar array. The Camino Rio arroyo, 20-30 ft southeast of the southern boundary and 5-10 ft below (5,390 ft), poses minimal zoning challenges due to its ephemeral nature and eco-friendly runoff management.</p>
+            <h3 class="text-2xl cinzel text-[#E2725B] mt-6 mb-4">Setbacks</h3>
+            <table class="w-full border-collapse mt-4 bg-white rounded-lg shadow-sm">
+                <thead>
+                    <tr class="bg-[#4ECDC4] text-[#FDFDF5]">
+                        <th class="p-4 text-left">Setback Type</th>
+                        <th class="p-4 text-left">Required Distance</th>
+                        <th class="p-4 text-left">Regulation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b border-gray-200">
+                        <td class="p-4">🛣️ Front (SE)</td>
+                        <td class="p-4">30 ft</td>
+                        <td class="p-4">Valencia County RR-1 Zoning (§ 154.105)</td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <td class="p-4">🧱 Rear (NW)</td>
+                        <td class="p-4">15 ft</td>
+                        <td class="p-4">Valencia County RR-1 Zoning (§ 154.105)</td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <td class="p-4">📏 Side (SW)</td>
+                        <td class="p-4">15 ft</td>
+                        <td class="p-4">Valencia County RR-1 Zoning (§ 154.105)</td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <td class="p-4">📏 Side (NE)</td>
+                        <td class="p-4">15 ft</td>
+                        <td class="p-4">Valencia County RR-1 Zoning (§ 154.105)</td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <td class="p-4">🌊 Arroyo (SE, beyond lot boundary)</td>
+                        <td class="p-4">35 ft (structures), 100 ft (septic system)</td>
+                        <td class="p-4">NMAC § 20.7.3</td>
+                    </tr>
+                    <tr class="border-b border-gray-200">
+                        <td class="p-4">💧 Well (if drilled)</td>
+                        <td class="p-4">50 ft (from septic)</td>
+                        <td class="p-4">State Engineer Regulations</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3 class="text-2xl cinzel text-[#E2725B] mt-6 mb-4">Buildable Area</h3>
+            <ul class="list-none space-y-3">
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">📏</span>
+                    <div><strong>Lot Area:</strong> 12,000 sq ft (80' × 150')</div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">📏</span>
+                    <div><strong>Usable Width (NW-SE):</strong> 80 ft − 15 ft (SW) − 15 ft (NE) = <span class="text-[#E2725B] font-bold">50 ft</span></div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">📏</span>
+                    <div><strong>Usable Length (SW-NE):</strong> 150 ft − 30 ft (SE) − 15 ft (NW) = <span class="text-[#E2725B] font-bold">105 ft</span></div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🧱</span>
+                    <div><strong>Buildable Area:</strong> 50 ft × 105 ft = <span class="text-[#E2725B] font-bold">5,250 sq ft</span> (~43.75% of lot area)</div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">✅</span>
+                    <div><strong>Lot Coverage:</strong> 980 sq ft (without garage) = 8.17%, well below the RR-1 15% limit (1,800 sq ft max).</div>
+                </li>
+            </ul>
+            <h3 class="text-2xl cinzel text-[#E2725B] mt-6 mb-4">Arroyo Zoning and WOTUS Assessment</h3>
+            <ul class="list-none space-y-3">
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🌊</span>
+                    <div>
+                        <strong>Arroyo Zoning:</strong> Classified as R4SBJ by the National Wetlands Inventory, the Camino Rio arroyo is ephemeral (dry 99.9% of the time) and does not impose additional zoning restrictions under RR-1 beyond standard setbacks (35 ft for structures, 100 ft for septic systems per NMAC § 20.7.3). No arroyo crossing is required for access, avoiding additional permits.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">⚖️</span>
+                    <div>
+                        <strong>WOTUS Assessment:</strong> The arroyo’s ephemeral nature and lack of significant nexus to navigable waters (Rio Grande, 10-15 miles away) result in a low likelihood of being classified as a Water of the United States (WOTUS) under the Clean Water Act. It only connects during rare 100-year storms, and runoff disperses into the desert, minimizing regulatory oversight by the U.S. Army Corps of Engineers. A jurisdictional determination may be requested for confirmation, but the risk of WOTUS designation is minimal.
+                    </div>
+                </li>
+            </ul>
+            <h3 class="text-2xl cinzel text-[#E2725B] mt-6 mb-4">Compliances and Laws</h3>
+            <ul class="list-none space-y-3">
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🛡️</span>
+                    <div><strong>Zoning Compliance:</strong> RR-1 zoning requires a minimum lot size of 0.25 acres (met at 0.28 acres), maximum lot coverage of 15% (met at 8.17%), and setbacks as listed above (§ 154.105). No active CC&Rs are enforced, as confirmed by the Valencia County Clerk and VIA’s dissolution, leaving zoning as the primary regulation.</div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🏠</span>
+                    <div><strong>Structure Placement:</strong> Adobe frame home (x=15-55, y=30-70), shed (x=40-46, y=85-91), jacuzzi (x=40-46, y=20-26), and doghouse (x=40-43, y=25-28) comply with RR-1 setbacks and the 35 ft arroyo setback (NMAC § 20.7.3). A future garage can be added at x=15-27, y=85-100, as it’s not currently enforced by Canyon del Rio or RR-1 zoning.</div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🚽</span>
+                    <div><strong>Septic System Compliance:</strong> BioMicrobics MicroFAST® 0.5 ATU (x=60-68, y=110-114) and mound field (x=60-70, y=100-110) are 115-125 ft from the arroyo, exceeding the 100 ft setback (NMAC § 20.7.3). Effluent quality (<5 mg/L BOD/TSS, <10 mg/L total nitrogen, <1 mg/L phosphorus, no pathogens) exceeds NMED standards (20.6.4 and 20.6.2 NMAC).</div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">💧</span>
+                    <div><strong>Water Harvesting:</strong> 5,000-gallon cistern (x=30-37, y=25-32) complies with New Mexico laws (NMSA § 3-53-1.1), with overflow directed to a dry well (x=70-80, y=20-30).</div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">☀️</span>
+                    <div><strong>Solar System:</strong> 5 kW array (x=10-30, y=115-135) meets RR-1 setbacks and Valencia County solar regulations (panels <10 ft height).</div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🌊</span>
+                    <div><strong>Flood Risk:</strong> FEMA Zone X, with eco-friendly runoff controls (berm with swale, basins, cacti rows) ensuring minimal flood risk.</div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">📜</span>
+                    <div><strong>Permitting:</strong> Soil percolation test (10-15 minutes/inch), arroyo survey, and effluent-monitoring plan are required for NMED Liquid Waste Permit (20.7.3.401 NMAC). Permitting rating: 9.5/10 for a 2030 build, with all systems designed to exceed compliance standards.</div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="design" class="bg-[#D4DED4] rounded-xl p-8 mb-12 shadow-md">
+            <h2 class="text-3xl cinzel text-[#E2725B] mb-4 border-b-2 border-[#4ECDC4] pb-2">Ecotech Adobe Frame Home Design 🏠</h2>
+            <p class="mb-4 text-backdrop">The centerpiece of this homestead is a 900 sq ft solar-powered adobe frame home, designed as a 1.5-story ecotech structure in FEMA Zone X, compliant with the 2021 New Mexico Residential Code (14.7.4 NMAC). Built with a stick frame and adobe walls, it blends functionality with a Southwestern aesthetic, featuring terracotta plaster, sage green accents, and turquoise details. The design prioritizes energy efficiency, water conservation, and minimal environmental impact, with a future garage option at x=15-27, y=85-100 (not currently enforced by RR-1 zoning). A 6-8 ft berm with dense vegetation (mesquite, juniper, pinyon pine) along the northern boundary (y=45.72) ensures tranquility by reducing quarry noise (1.10 km away) to 6 dBA (~18 dBA with fountain and leaves), creating La Zona de Silencio en Doble Loma, as detailed in the <a href="#utilities" class="text-[#4ECDC4] hover:underline">Sound Path Map</a>.</p>
+            <ul class="list-none space-y-3 mb-6">
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🏡</span>
+                    <div>
+                        <strong>Main Structure:</strong> A 1.5-story home totaling 900 sq ft, constructed with a stick frame and adobe walls (640 sq ft) on the ground floor and a partial second floor (260 sq ft). Features R-13 spray foam insulation, 32 sq ft south-facing windows for passive solar heating, and an external staircase (x=54-55, y=30-50). Positioned at x=15-55, y=30-70, elevated 2 ft on a concrete foundation with footings per 2021 NM Residential Code, with a total height of 18 ft (within RR-1’s 35 ft limit).
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🛋️</span>
+                    <div>
+                        <strong>Ground Floor (640 sq ft, 40' × 16'):</strong> Open-plan living space with terracotta tiles and sage green walls. Includes a living area (20' × 16', 320 sq ft, x=15-55, y=50-70), kitchen and dining area (12' × 16', 192 sq ft, x=15-55, y=38-50) with energy-efficient electric appliances (induction stove, refrigerator), a bathroom (8' × 8', 64 sq ft, x=15-23, y=30-38) with a composting toilet and low-flow fixtures, and a utility space (8' × 8', 64 sq ft, x=47-55, y=30-38) housing a 2.4 kW heat pump for heating and cooling. Meets egress and energy efficiency standards (14.7.4 NMAC).
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🛏️</span>
+                    <div>
+                        <strong>Second Floor (Partial, 260 sq ft):</strong> Primary bedroom (20' × 8', 160 sq ft, x=15-35, y=50-70) with south and north-facing windows for natural light and ventilation, and a 10' × 10' extension (x=35-45, y=60-70) serving as a closet or home office for screenwriting. Connected by a landing (5' × 8', x=49-54, y=50-58) to the external staircase.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🛠️</span>
+                    <div><strong>Shed:</strong> 6' × 6' (x=40-46, y=85-91) for storage of tools, solar equipment, and garden supplies, requiring zoning and flood review as it exceeds 120 sq ft.</div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🛁</span>
+                    <div><strong>Jacuzzi:</strong> 6' × 6' (x=40-46, y=20-26), elevated 2 ft on a gravel pad, using cistern water with a 50-micron filter, offering a relaxing desert oasis.</div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🐶</span>
+                    <div><strong>Doghouse:</strong> 3' × 3' (x=40-43, y=25-28), insulated for pet comfort in the desert climate.</div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">💧</span>
+                    <div><strong>Fountain:</strong> A 4' × 4' solar-powered fountain (x=20-24, y=0-4), positioned near the berm, enhances the Quiet Ridge Zone with gentle water sounds, using ~100 gallons/year from the cistern, filtered with a 50-micron filter, and designed to blend with the desert aesthetic.</div>
+                </li>
+            </ul>
+            <h3 class="text-2xl cinzel text-[#E2725B] mt-8 mb-4">Concept Designs 📸</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <figure>
+                    <img src="nmhome1.jpeg" alt="Adobe Santa Fe-style exterior with terracotta plaster on adobe frame home" class="gallery-img rounded-lg shadow-md transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Adobe Santa Fe-style exterior with terracotta plaster</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmhome2.jpeg" alt="Interior living area with terracotta tiles and sage green accents" class="gallery-img rounded-lg shadow-md transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Interior living area with terracotta tiles</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmhome3.jpeg" alt="Second-floor bedroom with south-facing windows for passive solar heating" class="gallery-img rounded-lg shadow-md transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Second-floor bedroom with south-facing windows</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmhome4.jpeg" alt="External staircase and landing connecting ground and second floors" class="gallery-img rounded-lg shadow-md transition-transform duration-300 cursor-pointer" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">External staircase and landing</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="utilities" class="bg-[#D4DED4] rounded-xl p-8 mb-12 shadow-md">
+            <h2 class="text-3xl cinzel text-[#E2725B] mb-4 border-b-2 border-[#4ECDC4] pb-2">Ecotech Utilities & Systems 🔋</h2>
+            <p class="mb-4 text-backdrop">This homestead is fully off-grid, utilizing solar power, advanced wastewater treatment, and water conservation to achieve net-zero environmental impact. The Quiet Ridge Zone, part of La Zona de Silencio en Doble Loma, achieves a serene ~18 dBA soundscape via double ridges (northern: y=150–200, 5,450 ft; southern: y=-50–0, 5,425 ft) and a 6–8 ft berm (x=15–55, y=45.72) with mesquite, juniper, and pinyon pine, reducing quarry noise (25 dBA baseline, 1.10 km north) to 6 dBA at the plat. A fountain (x=20–24, y=0–4) and rustling leaves (10–15 dBA) enhance this acoustic microclimate, as detailed in the Sound Path Map below. All systems exceed New Mexico Environment Department (NMED) standards, ensuring protection of the Rio Grande and alignment with the desert ecosystem.</p>
+            <ul class="list-none space-y-3 mb-6">
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">☀️</span>
+                    <div>
+                        <strong>Solar Power:</strong> A 5 kW solar array (x=10-30, y=115-135) with 20 panels (250W each) produces ~20 kWh/day, exceeding the homestead’s 15 kWh/day demand (2.4 kW heat pump, appliances, lighting). Paired with a 27 kWh lithium-ion battery (e.g., Tesla Powerwall), it ensures 24/7 power. The system reduces the carbon footprint by ~7 tons of CO2/year compared to grid reliance.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🚽</span>
+                    <div>
+                        <strong>Septic System:</strong> BioMicrobics MicroFAST® 0.5 ATU tank (8' × 4', x=60-68, y=110-114) with tertiary treatment, smart sensors, and UV disinfection, located 115-125 ft from the arroyo, exceeding the 100 ft setback (NMAC § 20.7.3). Treats 150 gallons/day, ensuring zero pollution risk to groundwater or the Rio Grande. Requires soil percolation test and effluent-monitoring plan for NMED Liquid Waste Permit (20.7.3.401 NMAC).
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">💧</span>
+                    <div>
+                        <strong>Mound Field:</strong> 10' × 10' (x=60-70, y=100-110), elevated 2-3 ft for eco-friendly effluent dispersal, with a vegetative cover of native grasses to enhance soil filtration.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🛡️</span>
+                    <div>
+                        <strong>Noise Berm:</strong> A 6-8 ft high berm (x=15–55, y=45.72) with an integrated swale reduces quarry noise (25 dBA baseline) by 7 dB to 6 dBA at the plat (~18 dBA with fountain/leaves). Planted with mesquite, juniper, and pinyon pine (20-30 ft wide), it adds further sound attenuation and channels runoff southeast to the arroyo. Rustling leaves (10–15 dBA) and the fountain (15–20 dBA) create a soothing soundscape, as mapped below.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🌵</span>
+                    <div>
+                        <strong>Vegetative Buffer:</strong> Prickly pear and cholla cacti rows (x=0-80, y=10-30) act as a natural filtration system, reducing runoff velocity and preventing erosion along the arroyo.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">💦</span>
+                    <div>
+                        <strong>Cistern (Expanded):</strong> A 5,000-gallon food-grade cistern (x=30-37, y=25-32), elevated 1-2 ft, collects ~5,000-5,600 gallons/year from the 900 sq ft roof (9-10 inches rainfall). Supplies drinking water (1,000 gallons/year for 2 people, 1.5 gallons/day/person), jacuzzi (1,200 gallons/year), showers (3,285 gallons/year with 1.5 gpm low-flow showerheads, 15 minutes/day), garden irrigation (~300 gallons/year), and the fountain (~100 gallons/year). Drinking water is treated with a 50-micron sediment filter, activated carbon filter, and 10W solar-powered UV sterilizer (99.99% pathogen removal). Non-potable uses (jacuzzi, showers, fountain) use a 50-micron filter. A first-flush diverter discards the initial 10-20 gallons of runoff to ensure cleaner water. Overflow is directed to a dry well (x=70-80, y=20-30).
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">♻️</span>
+                    <div>
+                        <strong>Greywater System:</strong> Collects 4,325 gallons/year from showers (3,285 gallons) and laundry (1,040 gallons, 10 gallons/load, 2 loads/week). A 50-micron filter removes solids, and a 100-gallon tank stores greywater for subsurface irrigation of cacti rows (x=0-80, y=10-30) or toilet flushing (1,825 gallons/year, 1 gallon/flush, 5 flushes/day), reducing cistern demand by 42%.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🌊</span>
+                    <div>
+                        <strong>Swales & Basins:</strong> An 80' × 5' swale (x=0-80, y=5-10), primary basin (x=60-70, y=10-20), and secondary basin (x=20-30, y=10-20) manage runoff sustainably, capturing ~2,000 gallons/year during rainfall events and preventing arroyo erosion.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🌱</span>
+                    <div>
+                        <strong>Garden:</strong> 10' × 10' (x=30-40, y=85-95), irrigated with treated cistern water, supporting native flora like agave, yucca, and desert marigolds, enhancing local biodiversity.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🚶</span>
+                    <div>
+                        <strong>Gravel Path:</strong> 3' × 16' (x=43-46, y=20-36), connecting the home, jacuzzi, and garden, using permeable gravel to reduce runoff and maintain desert aesthetics.
+                    </div>
+                </li>
+            </ul>
+            <h3 class="text-2xl cinzel text-[#E2725B] mt-6 mb-4">Sound Dynamics 🔊</h3>
+            <p class="mb-4 text-backdrop">The Quiet Ridge Zone achieves tranquility through double ridges, hills, arroyos, and a berm, reducing quarry noise (25 dBA at y=1,100 m) to 6 dBA at the plat (~18 dBA with fountain/leaves). The SW-NE sound path (1.10 km) is detailed below:</p>
+            <ul class="list-none space-y-3 mb-6">
+                <li class="flex items-start"><span class="text-[#4ECDC4] mr-2">🏭</span><div><strong>Quarry Start (y=1,100 m):</strong> 25 dBA, from 90 dB source, attenuated by distance (-60 dB inverse square law) and atmospheric absorption (-5.5 dB).</div></li>
+                <li class="flex items-start"><span class="text-[#4ECDC4] mr-2">🏔️</span><div><strong>Northern Ridge (y=150–200, 5,450 ft):</strong> 5–10 dB reduction, to 15 dBA at y=600 m (lull/arroyo base, 5,390 ft).</div></li>
+                <li class="flex items-start"><span class="text-[#4ECDC4] mr-2">⛰️</span><div><strong>Hill 1 Peak (y=400 m, 5,420 ft):</strong> 9 dB reduction via elevation and vegetation, to 6 dBA.</div></li>
+                <li class="flex items-start"><span class="text-[#4ECDC4] mr-2">🌊</span><div><strong>Two Arroyos (y=200 m, 5,390 ft):</strong> 10 dB reduction, with 1 dB lull effect, to 20 dBA due to ambient noise.</div></li>
+                <li class="flex items-start"><span class="text-[#4ECDC4] mr-2">⛰️</span><div><strong>Hill 2 Peak (y=100 m, 5,410 ft):</strong> 7 dB reduction, to 13 dBA.</div></li>
+                <li class="flex items-start"><span class="text-[#4ECDC4] mr-2">🛡️</span><div><strong>Plat with Berm (y=0–45.72 m, 5,390–5,420 ft):</strong> 7 dB reduction via berm (x=15–55, y=45.72), to 6 dBA quarry noise. Fountain (15–20 dBA) and leaves (10–15 dBA) yield ~18 dBA total.</div></li>
+                <li class="flex items-start"><span class="text-[#4ECDC4] mr-2">🌊</span><div><strong>Final Arroyo (y=-25 m):</strong> 5 dB reduction, to 13 dBA, dominated by natural sounds.</div></li>
+                <li class="flex items-start"><span class="text-[#4ECDC4] mr-2">📊</span><div><strong>Scenarios:</strong> No berm: 19.7 dBA (13 dBA quarry + 15 dBA leaves + 16.17 dBA desert sounds). No fountain: 15.5 dBA (6 dBA quarry + 15 dBA leaves).</div></li>
+            </ul>
+            <h4 class="text-xl cinzel text-[#E2725B] mt-4 mb-2">Textual Scaled Sound Path Map</h4>
+            <pre class="bg-gray-50 p-4 rounded-lg text-sm overflow-x-auto border border-gray-200">
+Sound Path Map (1.10 km SW-NE Path, 5,390-5,450 ft)
+--------------------------------------------------------------------------------
+(Each ~ represents ~10 m; Grid lines at 100 m intervals; y-axis is SW-NE; x-axis is NW-SE)
+y=1100 m | [Quarry Start: 25 dBA] (x=0-80 ft, ~1.10 km north) 🏭~~~~~~~~~~~~~~~
+y=1000 m | Northern Ridge Base (x=0-80 ft, ~5,450 ft) 🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️
+y=900 m  | ....................................[15 dBA after ridge shielding].......
+y=800 m  | ....................................[15 dBA]........................
+y=700 m  | ....................................[15 dBA]........................
+y=600 m  | Lull/Arroyo Base (x=0-80 ft, ~5,390 ft) [15 dBA] 🌊~~~~~~~~~~~~~~
+y=500 m  | ....................................[15 dBA]........................
+y=400 m  | Hill 1 Peak (x=40-50 ft, ~5,420 ft) [6 dBA] 🏔️🏔️🏔️🏔️🏔️
+y=300 m  | ....................................[6 dBA]........................
+y=200 m  | Lull After Two Arroyos (x=0-80 ft, ~5,390 ft) [20 dBA] 🌊🌊~~~~~
+y=100 m  | Hill 2 Peak (x=15-55 ft, ~5,410 ft) [13 dBA] 🏔️🏔️🏔️🏔️🏔️
+y=45.72 m| [Berm: 6-8 ft] (x=15-55 ft, ~5,400 ft) 🛡️🛡️🛡️🛡️🛡️🛡️🛡️🛡️
+y=30-0 m | Plat (x=0-80 ft, y=0-45.72 m, 5,390-5,420 ft) [18 dBA] 🏡🏡🏡🏡🏡
+         | [Fountain: 4×4] (x=20-24 ft, y=0-4 m) 💧💧 [Cacti Rows] 🌵🌵🌵🌵
+y=0 m    | SE Corner (x=80 ft, y=0 m, 5,390 ft) 🌊~~~~~
+y=-25 m  | Final Arroyo (x=0-80 ft, ~5-10 ft below) 🌊~~~~~ [13 dBA]
+         | x=0 ft  x=20 ft  x=40 ft  x=60 ft  x=80 ft
+--------------------------------------------------------------------------------
+            </pre>
+        </section>
+
+        <section id="permitting" class="bg-[#D4DED4] rounded-xl p-8 mb-12 shadow-md">
+            <h2 class="text-3xl cinzel text-[#E2725B] mb-4 border-b-2 border-[#4ECDC4] pb-2">Permitting and Compliance 📜</h2>
+            <p class="mb-4 text-backdrop">The homestead’s design meets or exceeds Valencia County and New Mexico regulations, ensuring a smooth permitting process through Valencia County Planning & Zoning and NMED’s On-Site Wastewater Program. The 0.28-acre lot, zoned RR-1, qualifies as a lot of record (§ 154.105), and all systems comply with setback, coverage, and environmental standards.</p>
+            <ul class="list-none space-y-3 mb-6">
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🏠</span>
+                    <div>
+                        <strong>Building Permit:</strong> Structures ≥ 120 sq ft (900 sq ft home, cistern pad, shed, fountain) require zoning and flood review through Valencia County Code Enforcement before a building permit is issued. The home complies with the 2021 New Mexico Residential Code (14.7.4 NMAC) for footings, insulation, egress, and energy efficiency, including adobe-wall standards.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🚽</span>
+                    <div>
+                        <strong>Septic System Approval:</strong> The BioMicrobics MicroFAST® 0.5 ATU is NMED-approved (20.7.3 NMAC), with the tank and mound field 115-125 ft from the arroyo, exceeding the 100 ft setback. A soil percolation test (10-15 minutes/inch), arroyo survey, and effluent-monitoring plan are required for the NMED Liquid Waste Permit (20.7.3.401 NMAC).
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">💧</span>
+                    <div>
+                        <strong>Well Permit:</strong> If a well is drilled, a permit from the State Engineer is required, with a 50 ft setback from the septic system to ensure groundwater safety.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🛣️</span>
+                    <div>
+                        <strong>Driveway/Road-Access Permit:</strong> A permit from Valencia County is required for any new driveway approach, ensuring safe access to the lot.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">✅</span>
+                    <div>
+                        <strong>Compliance Summary:</strong> The lot size (0.28 acres), setbacks, advanced treatment unit, lot coverage (8.17%), flood zone (FEMA Zone X), and off-grid utilities meet or exceed Valencia County and NMED requirements. Final engineered site drawings will ensure permit approval.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="clean-system" class="bg-[#D4DED4] rounded-xl p-8 mb-12 shadow-md">
+            <h2 class="text-3xl cinzel text-[#E2725B] mb-4 border-b-2 border-[#4ECDC4] pb-2">Why This System is 100% Clean 🌟</h2>
+            <p class="mb-4 text-backdrop">The homestead’s advanced wastewater treatment, water conservation, noise mitigation, and runoff management ensure zero pollution risk to the Rio Grande, exceeding NMED and Valencia County standards for a truly sustainable ecotech design. The Quiet Ridge Zone, with its ~18 dBA soundscape, and Bortle 2–3 skies enhance environmental harmony, as detailed in the <a href="#utilities" class="text-[#4ECDC4] hover:underline">Sound Path Map</a>.</p>
+            <ul class="list-none space-y-3">
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🧪</span>
+                    <div>
+                        <strong>Multi-Stage Treatment:</strong> The BioMicrobics MicroFAST® system reduces BOD and TSS to <5 mg/L, with NitrifAST® for nitrogen removal (<10 mg/L), a sand filter for fine solids, UV disinfection for pathogens (99.99% removal), and a carbon filter for trace organics, ensuring near-zero pollutants.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">✅</span>
+                    <div>
+                        <strong>Exceeds NMED Standards:</strong> Effluent quality surpasses NMED requirements (20.6.4 and 20.6.2 NMAC), achieving <5 mg/L BOD/TSS, <10 mg/L total nitrogen, <1 mg/L phosphorus, and no detectable pathogens.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🌊</span>
+                    <div>
+                        <strong>Rio Grande Protection:</strong> The arroyo connects to the Rio Grande only during extreme 100-year storms (10-15 miles away), but effluent is reused via drip irrigation and vegetative buffers (prickly pear, cholla cacti rows at x=0-80, y=10-30). The septic system’s 115-125 ft setback from the arroyo and advanced treatment ensure no groundwater or surface water contamination.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">💧</span>
+                    <div>
+                        <strong>Water Conservation:</strong> The 5,000-gallon cistern and greywater system reduce freshwater demand by 42%, with overflow directed to a dry well (x=70-80, y=20-30) to prevent runoff pollution. Low-flow fixtures (1.5 gpm showerheads, 1 gallon/flush toilet) minimize water use.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🛡️</span>
+                    <div>
+                        <strong>Noise and Light Pollution:</strong> The double ridges and berm reduce quarry noise to 6 dBA (~18 dBA total) and block light pollution, preserving the Bortle 2–3 skies and creating a tranquil environment for La Zona de Silencio en Doble Loma.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🌱</span>
+                    <div>
+                        <strong>Eco-Friendly Runoff:</strong> Swales (x=0-80, y=5-10), basins (x=60-70, y=10-20; x=20-30, y=10-20), and cacti rows manage runoff, capturing ~2,000 gallons/year and preventing arroyo erosion, ensuring no sediment or pollutants reach the Camino Rio arroyo or Rio Grande. This system integrates with the Quiet Ridge Zone’s soundscape (~18 dBA, with fountain and leaves) and supports the lot’s xeriscaped garden, enhancing biodiversity without environmental impact.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="sustainability" class="bg-[#D4DED4] rounded-xl p-8 mb-12 shadow-md">
+            <h2 class="text-3xl cinzel text-[#E2725B] mb-4 border-b-2 border-[#4ECDC4] pb-2">Sustainability 🌱</h2>
+            <p class="mb-4 text-backdrop">This homestead embodies sustainability through off-grid systems, minimal environmental impact, and harmony with the high desert ecosystem. Named La Zona de Silencio en Doble Loma, it leverages double ridges (northern: y=150–200, 5,450 ft; southern: y=-50–0, 5,425 ft) and a 6–8 ft berm (x=15–55, y=45.72) to achieve a serene ~18 dBA soundscape (6 dBA quarry noise, 15–20 dBA fountain/leaves) and Bortle 2–3 skies for exceptional stargazing. All systems are designed for a 2030 build, ensuring long-term eco-friendly living.</p>
+            <ul class="list-none space-y-3 mb-6">
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">☀️</span>
+                    <div>
+                        <strong>Renewable Energy:</strong> The 5 kW solar array (x=10-30, y=115-135) produces ~20 kWh/day, exceeding the 15 kWh/day demand, with a 27 kWh battery ensuring reliability. This reduces the carbon footprint by ~7 tons of CO2/year compared to grid power.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">💧</span>
+                    <div>
+                        <strong>Water Efficiency:</strong> The 5,000-gallon cistern (x=30-37, y=25-32) collects ~5,000-5,600 gallons/year, supplemented by a greywater system reusing 4,325 gallons/year for irrigation and toilet flushing, reducing freshwater demand by 42%. Low-flow fixtures and a UV sterilizer ensure efficient, safe water use.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🚽</span>
+                    <div>
+                        <strong>Zero-Waste Septic:</strong> The BioMicrobics MicroFAST® 0.5 ATU (x=60-68, y=110-114) and mound field (x=60-70, y=100-110) treat 150 gallons/day to near-drinking-water quality, with no risk to the Rio Grande, exceeding NMED standards (20.6.4 NMAC).
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🌵</span>
+                    <div>
+                        <strong>Biodiversity:</strong> The 10' × 10' garden (x=30-40, y=85-95) supports native flora (agave, yucca, desert marigolds), while cacti rows (x=0-80, y=10-30) and the berm’s vegetation (mesquite, juniper, pinyon pine) enhance local ecosystems and reduce runoff.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🛡️</span>
+                    <div>
+                        <strong>Environmental Harmony:</strong> The Quiet Ridge Zone’s ~18 dBA soundscape, achieved via double ridges and the berm, and Bortle 2–3 skies minimize noise and light pollution, creating a sanctuary for both residents and wildlife.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="arroyo" class="bg-[#D4DED4] rounded-xl p-8 mb-12 shadow-md">
+            <h2 class="text-3xl cinzel text-[#E2725B] mb-4 border-b-2 border-[#4ECDC4] pb-2">Camino Rio Arroyo 🌊</h2>
+            <p class="mb-4 text-backdrop">The Camino Rio arroyo, located 20-30 ft southeast of the lot’s southern boundary (y=-25 m, 5–10 ft below, 5,390 ft), is an ephemeral feature, dry 99.9% of the time with rare runoff (~9-10 inches/year). Classified as R4SBJ by the National Wetlands Inventory, it runs diagonally southwest to northeast and connects to the Rio Grande (10-15 miles away) only during extreme 100-year storms. Its role in the Quiet Ridge Zone includes a 5 dB sound reduction at y=-25 m, contributing to the ~18 dBA soundscape, as detailed in the <a href="#utilities" class="text-[#4ECDC4] hover:underline">Sound Path Map</a>. Eco-friendly runoff management ensures no environmental impact.</p>
+            <ul class="list-none space-y-3 mb-6">
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🌊</span>
+                    <div>
+                        <strong>Ephemeral Nature:</strong> The arroyo’s dry state 99.9% of the time minimizes flood risk (FEMA Zone X) and regulatory oversight, with runoff dispersing into the desert rather than reaching the Rio Grande.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">⚖️</span>
+                    <div>
+                        <strong>WOTUS Assessment:</strong> Its lack of significant nexus to navigable waters and ephemeral flow result in a low likelihood of WOTUS designation under the Clean Water Act, reducing permitting hurdles.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🛡️</span>
+                    <div>
+                        <strong>Sound Dynamics:</strong> At y=-25 m, the arroyo provides a 5 dB noise reduction, lowering ambient sounds to 13 dBA (post-berm), enhancing the Quiet Ridge Zone’s tranquility (~18 dBA with fountain/leaves).
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">🌱</span>
+                    <div>
+                        <strong>Runoff Management:</strong> Swales, basins, and cacti rows capture ~2,000 gallons/year, preventing erosion and ensuring no sediment or pollutants enter the arroyo, protecting the Rio Grande.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-[#4ECDC4] mr-2">📏</span>
+                    <div>
+                        <strong>Zoning Compliance:</strong> The arroyo’s 35 ft setback for structures and 100 ft for the septic system (115-125 ft met) comply with NMAC § 20.7.3, ensuring regulatory approval.
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="lot-layout" class="bg-[#D4DED4] rounded-xl p-8 mb-12 shadow-md">
+            <h2 class="text-3xl cinzel text-[#E2725B] mb-4 border-b-2 border-[#4ECDC4] pb-2">Lot Layout Diagram 📍</h2>
+            <p class="mb-4 text-backdrop">This diagram illustrates the 0.28-acre lot (80' × 150', SW-NE at 28° E of N) in La Zona de Silencio en Doble Loma, highlighting the double ridges (northern: y=150–200, 5,450 ft; southern: y=-50–0, 5,425 ft), berm (x=15–55, y=45.72), and sound path overlay showing the ~18 dBA soundscape (6 dBA quarry noise, 15–20 dBA fountain/leaves). Coordinates and elevations ensure compliance with RR-1 zoning and NMED standards.</p>
+            <pre class="bg-gray-50 p-4 rounded-lg text-sm overflow-x-auto border border-gray-200">
+Lot Layout Diagram (80' × 150', SW-NE at 28° E of N, 5,390-5,400 ft)
+--------------------------------------------------------------------------------
+(Coordinates in ft; y=0 at SE corner, x=0 at SW corner; ~18 dBA soundscape)
+y=150 | Northern Ridge (y=150-200, 5,450 ft) 🏔️🏔️🏔️🏔️🏔️🏔️🏔️🏔️
+y=135 | [Solar Array: 5 kW, 20×20] (x=10-30) ☀️☀️☀️
+y=114 | [Septic Tank: 8×4] (x=60-68) 🚽~~ [Dry Well: 10×10] (x=70-80)
+y=110 | [Mound Field: 10×10] (x=60-70) 💧💧
+y=100 | ...............................................................
+y=95  | [Shed: 6×6] (x=40-46) 🛠️ [Garden: 10×10] (x=30-40) 🌱🌱
+y=85  | ...............................................................
+y=70  | [Home: 40×16, 900 sq ft] (x=15-55) 🏡🏡🏡🏡🏡
+y=55  | [Staircase: 1×20] (x=54-55) 🚶
+y=45.72 | [Berm: 6-8 ft, 40×20-30] (x=15-55) 🛡️🛡️🛡️🛡️🛡️
+y=32  | [Cistern: 7×7] (x=30-37) 💦
+y=28  | [Doghouse: 3×3] (x=40-43) 🐶
+y=26  | [Jacuzzi: 6×6] (x=40-46) 🛁
+y=20  | [Secondary Basin: 10×10] (x=20-30) 🌊 [Primary Basin: 10×10] (x=60-70)
+y=10  | [Swale: 80×5] (x=0-80) 🌊🌊 [Cacti Rows: 80×20] (x=0-80) 🌵🌵🌵🌵
+y=4   | [Fountain: 4×4] (x=20-24) 💧💧
+y=0   | SE Corner (x=80, 5,390 ft) 🌊~~~~~
+y=-25 | Camino Rio Arroyo (20-30 ft SE, 5-10 ft below, 5,390 ft) 🌊🌊🌊🌊
+--------------------------------------------------------------------------------
+</pre>
+    </section>
+
+    <section id="summary" class="bg-[#D4DED4] rounded-xl p-8 mb-12 shadow-md">
+        <h2 class="text-3xl cinzel text-[#E2725B] mb-4 border-b-2 border-[#4ECDC4] pb-2">Summary and Next Steps 🌄</h2>
+        <p class="mb-4 text-backdrop">Canyon del Rio’s La Zona de Silencio en Doble Loma is more than a homestead—it’s a vision of sustainable, serene living in harmony with the high desert. By 2030, this 900 sq ft ecotech adobe home will leverage off-grid systems (5 kW solar, 5,000-gallon cistern, BioMicrobics MicroFAST® septic), a Quiet Ridge Zone (~18 dBA soundscape via double ridges and berm), and Bortle 2–3 skies to create a low-stress haven for creativity and stargazing. The lot’s eco-friendly design, with zero pollution risk to the Rio Grande and compliance with RR-1 zoning and NMED standards, sets a new standard for off-grid living. Next steps include finalizing engineered site drawings, securing permits, and breaking ground. I’m excited to share this journey and welcome feedback to refine this vision!</p>
+        <div class="text-center">
+            <a href="mailto:kenny@canyondelrio.com" class="inline-block bg-[#4ECDC4] text-[#FDFDF5] px-6 py-3 rounded-full hover:bg-[#3DB8B0] transition-all duration-300 hover:scale-105" aria-label="Contact Kenny for Feedback">Share Your Feedback</a>
+        </div>
+    </section>
+
+    <footer class="bg-[#E2725B] text-[#FDFDF5] text-center py-6">
+        <p class="text-backdrop inline-block">© 2025 Canyon del Rio - La Zona de Silencio en Doble Loma | Designed by Kenny</p>
+    </footer>
+
+    <div id="lightbox">
+        <span class="close-btn" aria-label="Close Lightbox">×</span>
+        <span class="nav-btn prev-btn" aria-label="Previous Image">❮</span>
+        <img src="" alt="Lightbox Image">
+        <span class="nav-btn next-btn" aria-label="Next Image">❯</span>
+        <div class="caption"></div>
+    </div>
+
+    <button id="back-to-top" aria-label="Back to Top">⇧</button>
+
+    <script>
+        const galleryImages = document.querySelectorAll('.gallery-img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const caption = lightbox.querySelector('.caption');
+        const closeBtn = lightbox.querySelector('.close-btn');
+        const prevBtn = lightbox.querySelector('.prev-btn');
+        const nextBtn = lightbox.querySelector('.next-btn');
+        const backToTop = document.getElementById('back-to-top');
+        const nav = document.querySelector('nav');
+        let currentIndex = 0;
+
+        galleryImages.forEach((img, index) => {
+            img.addEventListener('click', () => {
+                currentIndex = index;
+                updateLightbox();
+                lightbox.classList.add('active');
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateLightbox();
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % galleryImages.length;
+            updateLightbox();
+        });
+
+        function updateLightbox() {
+            const img = galleryImages[currentIndex];
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            caption.textContent = img.nextElementSibling.textContent;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'block';
+                nav.classList.add('scrolled');
+            } else {
+                backToTop.style.display = 'none';
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
