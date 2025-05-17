@@ -11,102 +11,121 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Custom Fonts */
-        .cinzel {
-            font-family: 'Cinzel', serif;
-        }
-        .lora {
-            font-family: 'Lora', serif;
-        }
-        /* Parallax Effect for Hero */
-        .parallax {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 80vh;
-            position: relative;
-        }
-        /* Lightbox Styles */
-        #lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-        #lightbox.active {
-            display: flex;
-        }
-        #lightbox img {
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: 12px;
-            border: 3px solid #fff;
-        }
-        #lightbox .caption {
-            color: #fff;
-            font-size: 1.2rem;
-            margin-top: 1rem;
-            text-align: center;
-        }
-        #lightbox .close-btn, #lightbox .nav-btn {
-            position: absolute;
-            color: #fff;
-            font-size: 2rem;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 0.5rem 1rem;
-            border-radius: 50%;
-        }
-        #lightbox .close-btn {
-            top: 1rem;
-            right: 1rem;
-        }
-        #lightbox .prev-btn {
-            left: 1rem;
-        }
-        #lightbox .next-btn {
-            right: 1rem;
-        }
-        /* Back to Top Button */
-        #back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #E2725B;
-            color: #F5F5DC;
-            padding: 0.75rem 1rem;
-            border-radius: 50%;
-            display: none;
-            z-index: 100;
-            transition: background 0.3s ease;
-        }
-        #back-to-top:hover {
-            background: #C95A47;
-        }
-        /* Smooth Scroll */
-        html {
-            scroll-behavior: smooth;
-        }
-        /* Desert Texture Overlay */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://img.freepik.com/premium-vector/retro-colors-abstract-navajo-indian-seamless-striped-ethnic-geometric-background-traditional_252172-33.jpg?w=2000') repeat;
-            opacity: 0.05;
-            z-index: -1;
-        }
-    </style>
+     /* Custom Fonts */
+     .cinzel {
+         font-family: 'Cinzel', serif;
+     }
+     .lora {
+         font-family: 'Lora', serif;
+     }
+     /* Parallax Effect for Hero */
+     .parallax {
+         background-attachment: fixed;
+         background-position: center;
+         background-repeat: no-repeat;
+         background-size: cover;
+         height: 80vh;
+         position: relative;
+     }
+     /* Lightbox Styles */
+     #lightbox {
+         display: none;
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: rgba(0, 0, 0, 0.9);
+         z-index: 1000;
+         align-items: center;
+         justify-content: center;
+     }
+     #lightbox.active {
+         display: flex;
+     }
+     #lightbox img {
+         max-width: 90%;
+         max-height: 80%;
+         border-radius: 12px;
+         border: 3px solid #fff;
+     }
+     #lightbox .caption {
+         color: #fff;
+         font-size: 1.2rem;
+         margin-top: 1rem;
+         text-align: center;
+     }
+     #lightbox .close-btn, #lightbox .nav-btn {
+         position: absolute;
+         color: #fff;
+         font-size: 2rem;
+         cursor: pointer;
+         background: rgba(0, 0, 0, 0.5);
+         padding: 0.5rem 1rem;
+         border-radius: 50%;
+     }
+     #lightbox .close-btn {
+         top: 1rem;
+         right: 1rem;
+     }
+     #lightbox .prev-btn {
+         left: 1rem;
+     }
+     #lightbox .next-btn {
+         right: 1rem;
+     }
+     /* Back to Top Button */
+     #back-to-top {
+         position: fixed;
+         bottom: 2rem;
+         right: 2rem;
+         background: #E2725B;
+         color: #F5F5DC;
+         padding: 0.75rem 1rem;
+         border-radius: 50%;
+         display: none;
+         z-index: 100;
+         transition: background 0.3s ease;
+     }
+     #back-to-top:hover {
+         background: #C95A47;
+     }
+     /* Smooth Scroll */
+     html {
+         scroll-behavior: smooth;
+     }
+     /* Desert Texture Overlay */
+     body::before {
+         content: '';
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: url('https://img.freepik.com/premium-vector/retro-colors-abstract-navajo-indian-seamless-striped-ethnic-geometric-background-traditional_252172-33.jpg?w=2000') repeat;
+         opacity: 0.05;
+         z-index: -1;
+     }
+     /* Text Backdrop */
+     .text-backdrop {
+         position: relative;
+         padding: 1rem;
+         border-radius: 8px;
+         background: linear-gradient(rgba(229, 231, 235, 0.7), rgba(229, 231, 235, 0.7)), url('https://img.freepik.com/free-photo/sand-dunes-sunset_23-2148671526.jpg?w=2000') center/cover no-repeat;
+         z-index: 1;
+     }
+     .text-backdrop::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background: rgba(245, 245, 220, 0.3);
+         z-index: -1;
+         border-radius: 8px;
+     }
+ </style>
 </head>
 <body class="bg-gradient-to-b from-beige-50 to-beige-100 text-gray-800 lora">
     <!-- Navigation -->
@@ -130,78 +149,77 @@
     </nav>
 
     <!-- Hero Section with Parallax -->
-    <header id="welcome" class="parallax flex items-center justify-center text-center bg-[url('riodeloro.jpg')] relative overflow-hidden">
-        <div class="absolute inset-0 bg-terracotta-600 opacity-60"></div>
-        <div class="relative z-10 text-beige-50 px-4">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl cinzel mb-4 animate-fade-in">Welcome to Canyon del Rio 🏡</h1>
-            <p class="text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto">Kenny’s Sustainable Off-Grid Ecotech Adobe Home in La Zona de Silencio en Doble Loma 🌄</p>
-            <p class="mt-4 text-base sm:text-lg italic">A vision of eco-friendly living, blending modern technology with the timeless beauty of the high desert.</p>
-            <a href="#property" class="mt-6 inline-block bg-turquoise-500 text-beige-50 px-6 py-3 rounded-full hover:bg-turquoise-600 transition-colors duration-300" aria-label="Explore the Property">Explore the Property</a>
-        </div>
-    </header>
+   <header id="welcome" class="parallax flex items-center justify-center text-center bg-[url('riodeloro.jpg')] relative overflow-hidden">
+     <div class="absolute inset-0 bg-terracotta-600 opacity-60"></div>
+     <div class="relative z-10 text-beige-50 px-4">
+         <h1 class="text-4xl sm:text-5xl lg:text-6xl cinzel mb-4 animate-fade-in">Welcome to Canyon del Rio 🏡</h1>
+         <p class="text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto text-backdrop">Kenny’s Sustainable Off-Grid Ecotech Adobe Home in La Zona de Silencio en Doble Loma 🌄</p>
+         <p class="mt-4 text-base sm:text-lg italic text-backdrop">A vision of eco-friendly living, blending modern technology with the timeless beauty of the high desert.</p>
+         <a href="#property" class="mt-6 inline-block bg-turquoise-500 text-beige-50 px-6 py-3 rounded-full hover:bg-turquoise-600 transition-colors duration-300" aria-label="Explore the Property">Explore the Property</a>
+     </div>
+ </header>
 
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <!-- Welcome Message -->
-        <section class="text-center mb-12">
-            <h2 class="text-3xl cinzel text-terracotta-600 mb-4">A Personal Vision</h2>
-            <p class="text-lg max-w-3xl mx-auto">Hi, I’m Kenny! I’m planning to build my dream—a sustainable, off-grid ecotech adobe home in Canyon del Rio. This project reflects my passion for the environment, my love for the desert, and my journey as a screenwriter seeking a low-stress, creative haven. Join me as I bring this vision to life by 2030!</p>
-        </section>
-
+       <section class="text-center mb-12">
+     <h2 class="text-3xl cinzel text-terracotta-600 mb-4">A Personal Vision</h2>
+     <p class="text-lg max-w-3xl mx-auto text-backdrop">Hi, I’m Kenny! I’m planning to build my dream—a sustainable, off-grid ecotech adobe home in Canyon del Rio. This project reflects my passion for the environment, my love for the desert, and my journey as a screenwriter seeking a low-stress, creative haven. Join me as I bring this vision to life by 2030!</p>
+ </section>
         <!-- Property Description -->
-        <section id="property" class="bg-sage-100 rounded-xl p-8 mb-12 shadow-lg">
-            <h2 class="text-3xl cinzel text-terracotta-600 mb-4 border-b-2 border-turquoise-500 pb-2">Property Description 🌵</h2>
-            <div class="bg-turquoise-500 text-beige-50 p-4 rounded-lg mb-6 text-center font-bold">
-                🌟 Breakthrough: Advanced septic system, noise mitigation, and eco-friendly design ensure zero pollution risk to the Rio Grande, with low WOTUS likelihood for the arroyo! 🌟
-            </div>
-            <p class="mb-4">Nestled in the high desert of Canyon del Rio, Valencia County, NM, this 0.28-acre lot (80' × 150', 12,000 sq ft) at coordinates 34.6911, -106.5575 is the foundation of my sustainable off-grid vision, named <strong>La Zona de Silencio en Doble Loma (The Silent Zone in Double Ridge)</strong>. The moniker reflects its serene ~18 dBA soundscape and Bortle 2–3 stargazing skies, enabled by double ridges—northern (y=150–200, 5,450 ft) and southern (y=-50–0, 5,425 ft), 50–75 ft high, ~200 ft apart—that reduce quarry noise (1.10 km north, 25 dBA baseline) to 6 dBA at the plat (~18 dBA with fountain and leaves) and block light pollution from Belen (18 miles), Los Lunas (20 miles), and Albuquerque (50 miles). Located in Rio del Oro, Unit 28, Lot 25, Block 27, the lot’s longer axis (150 ft) is oriented southwest to northeast (SW-NE), approximately 28° east of true north, with the shorter axis (80 ft) northwest to southeast (NW-SE). It features a 3.33% NW-SE slope (5,400–5,390 ft), directing runoff to the Camino Rio arroyo. A 6–8 ft berm (x=15–55, y=45.72) with mesquite, juniper, and pinyon pine, and a solar-powered fountain (x=20–24, y=0–4) create a tranquil acoustic microclimate, detailed in the <a href="#utilities" class="text-turquoise-500 hover:underline">Sound Path Map</a>. The lot’s Bortle 2–3 skies offer exceptional stargazing opportunities, despite Manzano Mountains obstructing below 20–30° SE. The corrected Valencia County plat ensures RR-1 zoning compliance (§ 154.105), qualifying as a pre-existing lot of record.</p>
-            <ul class="list-none space-y-3 mb-6">
-                <li class="flex items-start">
-                    <span class="text-turquoise-500 mr-2">🌱</span>
-                    <div>
-                        <strong>Soil:</strong> Well-draining sandy loam, ideal for construction and supporting a small xeriscaped garden with water-efficient drip irrigation. Soil tests confirm suitability for the BioMicrobics MicroFAST® septic system, with a percolation rate of 10-15 minutes per inch, meeting NMED requirements (20.7.3.401 NMAC).
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-turquoise-500 mr-2">🌊</span>
-                    <div>
-                        <strong>Arroyo:</strong> The Camino Rio arroyo, located 20-30 ft southeast of the lot’s true southern boundary (25 ft in diagrams) and 5-10 ft below (5,390 ft), is ephemeral, dry 99.9% of the time with rare runoff (~9-10 inches/year). It runs diagonally southwest to northeast and connects to the Rio Grande (10-15 miles away) only during extreme 100-year storm events, as mapped by the National Wetlands Inventory (R4SBJ classification).
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-turquoise-500 mr-2">📏</span>
-                    <div>
-                        <strong>Topography:</strong> A 10 ft elevation drop (3.33% NW-SE slope) directs runoff toward the SE corner and into the arroyo below. Eco-friendly runoff management includes a berm with an integrated swale, basins, and cacti rows, minimizing erosion and flood risk while reducing quarry noise.
-                    </div>
-                </li>
-                <li class="flex items-start">
-                    <span class="text-turquoise-500 mr-2">🛡️</span>
-                    <div>
-                        <strong>Zoning & Safety:</strong> Zoned RR-1 (Rural Residential, 0.25-acre minimum), the 0.28-acre lot qualifies for the lot-of-record exception (§ 154.105), allowing building with compliance to setbacks and coverage. FEMA Zone X designation indicates minimal flood risk (0.2% annual chance). A professional survey is recommended to confirm boundaries and arroyo setbacks, ensuring compliance with NMAC § 20.7.3.
-                    </div>
-                </li>
-            </ul>
-            <!-- Land and Plat Photos -->
-            <h3 class="text-2xl cinzel text-terracotta-600 mt-8 mb-4">Land and Plat Photos 📸</h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <figure>
-                    <img src="nmland7.png" alt="Desert landscape with sandy loam soil in Canyon del Rio" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
-                    <figcaption class="mt-2 text-gray-600 italic text-center">Desert landscape with sandy loam soil</figcaption>
-                </figure>
-                <figure>
-                    <img src="newplat3.png" alt="Corrected Valencia County Plat Map for Canyon del Rio Lot" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
-                    <figcaption class="mt-2 text-gray-600 italic text-center">Corrected Valencia County Plat</figcaption>
-                </figure>
-                <figure>
-                    <img src="nmland16.png" alt="View of the Camino Rio arroyo near the lot" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
-                    <figcaption class="mt-2 text-gray-600 italic text-center">View of the Camino Rio arroyo</figcaption>
-                </figure>
-                <figure>
-                    <img src="nmland14.png" alt="Overview of the 0.28-acre lot in Canyon del Rio" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
-                    <figcaption class="mt-2 text-gray-600 italic text-center">Lot overview</figcaption>
-                </figure>
-            </div>
-        </section>
+         <section id="property" class="bg-sage-100 rounded-xl p-8 mb-12 shadow-lg">
+     <h2 class="text-3xl cinzel text-terracotta-600 mb-4 border-b-2 border-turquoise-500 pb-2">Property Description 🌵</h2>
+     <div class="bg-turquoise-500 text-beige-50 p-4 rounded-lg mb-6 text-center font-bold text-backdrop">
+         🌟 Breakthrough: Advanced septic system, noise mitigation, and eco-friendly design ensure zero pollution risk to the Rio Grande, with low WOTUS likelihood for the arroyo! 🌟
+     </div>
+     <p class="mb-4 text-backdrop">Nestled in the high desert of Canyon del Rio, Valencia County, NM, this 0.28-acre lot (80' × 150', 12,000 sq ft) at coordinates 34.6911, -106.5575 is the foundation of my sustainable off-grid vision, named <strong>La Zona de Silencio en Doble Loma (The Silent Zone in Double Ridge)</strong>. The moniker reflects its serene ~18 dBA soundscape and Bortle 2–3 stargazing skies, enabled by double ridges—northern (y=150–200, 5,450 ft) and southern (y=-50–0, 5,425 ft), 50–75 ft high, ~200 ft apart—that reduce quarry noise (1.10 km north, 25 dBA baseline) to 6 dBA at the plat (~18 dBA with fountain and leaves) and block light pollution from Belen (18 miles), Los Lunas (20 miles), and Albuquerque (50 miles). Located in Rio del Oro, Unit 28, Lot 25, Block 27, the lot’s longer axis (150 ft) is oriented southwest to northeast (SW-NE), approximately 28° east of true north, with the shorter axis (80 ft) northwest to southeast (NW-SE). It features a 3.33% NW-SE slope (5,400–5,390 ft), directing runoff to the Camino Rio arroyo. A 6–8 ft berm (x=15–55, y=45.72) with mesquite, juniper, and pinyon pine, and a solar-powered fountain (x=20–24, y=0–4) create a tranquil acoustic microclimate, detailed in the <a href="#utilities" class="text-turquoise-500 hover:underline">Sound Path Map</a>. The lot’s Bortle 2–3 skies offer exceptional stargazing opportunities, despite Manzano Mountains obstructing below 20–30° SE. The corrected Valencia County plat ensures RR-1 zoning compliance (§ 154.105), qualifying as a pre-existing lot of record.</p>
+     <ul class="list-none space-y-3 mb-6">
+         <li class="flex items-start">
+             <span class="text-turquoise-500 mr-2">🌱</span>
+             <div class="text-backdrop">
+                 <strong>Soil:</strong> Well-draining sandy loam, ideal for construction and supporting a small xeriscaped garden with water-efficient drip irrigation. Soil tests confirm suitability for the BioMicrobics MicroFAST® septic system, with a percolation rate of 10-15 minutes per inch, meeting NMED requirements (20.7.3.401 NMAC).
+             </div>
+         </li>
+         <li class="flex items-start">
+             <span class="text-turquoise-500 mr-2">🌊</span>
+             <div class="text-backdrop">
+                 <strong>Arroyo:</strong> The Camino Rio arroyo, located 20-30 ft southeast of the lot’s true southern boundary (25 ft in diagrams) and 5-10 ft below (5,390 ft), is ephemeral, dry 99.9% of the time with rare runoff (~9-10 inches/year). It runs diagonally southwest to northeast and connects to the Rio Grande (10-15 miles away) only during extreme 100-year storm events, as mapped by the National Wetlands Inventory (R4SBJ classification).
+             </div>
+         </li>
+         <li class="flex items-start">
+             <span class="text-turquoise-500 mr-2">📏</span>
+             <div class="text-backdrop">
+                 <strong>Topography:</strong> A 10 ft elevation drop (3.33% NW-SE slope) directs runoff toward the SE corner and into the arroyo below. Eco-friendly runoff management includes a berm with an integrated swale, basins, and cacti rows, minimizing erosion and flood risk while reducing quarry noise.
+             </div>
+         </li>
+         <li class="flex items-start">
+             <span class="text-turquoise-500 mr-2">🛡️</span>
+             <div class="text-backdrop">
+                 <strong>Zoning & Safety:</strong> Zoned RR-1 (Rural Residential, 0.25-acre minimum), the 0.28-acre lot qualifies for the lot-of-record exception (§ 154.105), allowing building with compliance to setbacks and coverage. FEMA Zone X designation indicates minimal flood risk (0.2% annual chance). A professional survey is recommended to confirm boundaries and arroyo setbacks, ensuring compliance with NMAC § 20.7.3.
+             </div>
+         </li>
+     </ul>
+     <!-- Land and Plat Photos -->
+     <h3 class="text-2xl cinzel text-terracotta-600 mt-8 mb-4">Land and Plat Photos 📸</h3>
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+         <figure>
+             <img src="nmland7.png" alt="Desert landscape with sandy loam soil in Canyon del Rio" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
+             <figcaption class="mt-2 text-gray-600 italic text-center">Desert landscape with sandy loam soil</figcaption>
+         </figure>
+         <figure>
+             <img src="newplat3.png" alt="Corrected Valencia County Plat Map for Canyon del Rio Lot" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
+             <figcaption class="mt-2 text-gray-600 italic text-center">Corrected Valencia County Plat</figcaption>
+         </figure>
+         <figure>
+             <img src="nmland16.png" alt="View of the Camino Rio arroyo near the lot" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
+             <figcaption class="mt-2 text-gray-600 italic text-center">View of the Camino Rio arroyo</figcaption>
+         </figure>
+         <figure>
+             <img src="nmland14.png" alt="Overview of the 0.28-acre lot in Canyon del Rio" class="gallery-img rounded-lg shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer" loading="lazy">
+             <figcaption class="mt-2 text-gray-600 italic text-center">Lot overview</figcaption>
+         </figure>
+     </div>
+ </section>
 
         <!-- Access and Proximity -->
         <section id="access" class="bg-sage-100 rounded-xl p-8 mb-12 shadow-lg">
