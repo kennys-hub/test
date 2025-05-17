@@ -11,6 +11,9 @@
     <style>
         .cinzel { font-family: 'Cinzel', serif; letter-spacing: 0.05em; text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
         .lora { font-family: 'Lora', serif; line-height: 1.6; }
+         .glow-text {
+    text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+  }
         .parallax {
             background-attachment: fixed;
             background-position: center;
@@ -152,7 +155,8 @@
     <header id="welcome" class="parallax text-center bg-[url('ridge3d1.png')] relative overflow-hidden">
         <div class="absolute inset-0 bg-white opacity-20"></div>
         <div class="relative z-10 text-[#c90076] px-4">
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl cinzel mb-4 animate-fade-in">Welcome to Kenny’s La Zona de Silencio in Doble Loma at Cañón del Río 🏡</h1>
+           <h1 class="text-xl md:text-2xl font-bold glow-text">
+             Welcome to Kenny’s La Zona de Silencio in Doble Loma at Cañón del Río</h1>
             <p class="text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto text-backdrop">Kenny’s Zone of Silence in Double Hill at Canyon of the River 🌄</p>
             <a href="#property" class="mt-6 inline-block bg-[#4ECDC4] text-[#FDFDF5] px-6 py-3 rounded-full hover:bg-[#3DB8B0] transition-all duration-300 hover:scale-105" aria-label="Explore the Property">Explore the Property</a>
         </div>
