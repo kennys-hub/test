@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Kenny's sustainable off-grid ecotech adobe frame home in Canyon del Rio, Valencia County, NM, set for a 2030 build. Explore the design, utilities, permitting, and eco-friendly features of this desert homestead with a new fountain and rustling leaves in the Quiet Ridge Zone.">
+    <meta name="author" content="Kenny">
+    <title>Canyon del Rio - Kenny's Off-Grid Ecotech Adobe 900sq ft Home 2030 🏡</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Fonts */
+        .cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        .lora {
+            font-family: 'Lora', serif;
+        }
+        /* Parallax Effect for Hero */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 80vh;
+            position: relative;
+        }
+        /* Lightbox Styles */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        #lightbox.active {
+            display: flex;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 12px;
+            border: 3px solid #fff;
+        }
+        #lightbox .caption {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+        #lightbox .close-btn, #lightbox .nav-btn {
+            position: absolute;
+            color: #fff;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: 50%;
+        }
+        #lightbox .close-btn {
+            top: 1rem;
+            right: 1rem;
+        }
+        #lightbox .prev-btn {
+            left: 1rem;
+        }
+        #lightbox .next-btn {
+            right: 1rem;
+        }
+        /* Back to Top Button */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #E2725B;
+            color: #F5F5DC;
+            padding: 0.75rem 1rem;
+            border-radius: 50%;
+            display: none;
+            z-index: 100;
+            transition: background 0.3s ease;
+        }
+        #back-to-top:hover {
+            background: #C95A47;
+        }
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Desert Texture Overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://img.freepik.com/premium-vector/retro-colors-abstract-navajo-indian-seamless-striped-ethnic-geometric-background-traditional_252172-33.jpg?w=2000') repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+        /* Glow effect for the main header text */
+        .glow-text {
+            text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white;
+            color: #c90076;
+        }
+        /* White semi-transparent box behind subtitle */
+        .text-backdrop {
+            background: rgba(253, 253, 245, 0.95);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            display: inline-block;
+            color: #333;
+            max-width: 400px;
+        }
+        /* Gallery Image Styles */
+        .gallery-img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            object-fit: cover;
+        }
+        @media (min-width: 640px) {
+            .gallery-img {
+                max-width: 350px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .gallery-img {
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-b from-beige-50 to-beige-100 text-gray-800 lora">
+    <!-- Navigation -->
+    <nav class="bg-terracotta-600 text-beige-50 sticky top-0 z-50 shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-2xl sm:text-3xl cinzel tracking-wide">Canyon del Rio</h1>
+                </div>
+                <div class="flex items-center space-x-2 sm:space-x-6">
+                    <a href="#welcome" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Welcome Section">Welcome</a>
+                    <a href="#property" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Property Section">Property</a>
+                    <a href="#design" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Design Section">Design</a>
+                    <a href="#utilities" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Utilities Section">Utilities</a>
+                    <a href="#permitting" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Permitting Section">Permitting</a>
+                    <a href="#sustainability" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Sustainability Section">Sustainability</a>
+                    <a href="#summary" class="hover:bg-terracotta-700 px-3 py-2 rounded-md text-sm sm:text-base transition-colors duration-200" aria-label="Summary Section">Summary</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Parallax -->
+    <header id="welcome" class="parallax text-center bg-[url('ridge3d1.png')] relative overflow-hidden" style="height: 80vh;">
+        <div class="absolute inset-0 bg-white opacity-20"></div>
+        <div class="relative z-10 text-[#c90076] px-4 py-24">
+            <h1 class="text-4xl md:text-6xl font-serif glow-text">
+                Welcome to Kenny’s La Zona de Silencio in Doble Loma at Cañón del Río
+            </h1>
+            <br>
+            <p class="text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto text-backdrop">
+                Kenny’s Zone of Silence in Double Hill at Canyon of the River 🌄
+            </p>
+            <br>
+            <a href="#property" class="mt-6 inline-block bg-[#4ECDC4] text-[#FDFDF5] px-6 py-3 rounded-full hover:bg-[#3DB8B0] transition-all duration-300 hover:scale-105" aria-label="Explore the Property">
+                Explore the Property
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Welcome Message -->
+        <section class="text-center mb-12">
+            <h2 class="text-3xl cinzel text-terracotta-600 mb-4">A Personal Vision</h2>
+            <p class="text-lg max-w-3xl mx-auto">Hi, I’m Kenny! I’m planning to build my dream—a sustainable, off-grid ecotech adobe home in Canyon del Rio. This project reflects my passion for the environment, my love for the desert, and my journey as a screenwriter seeking a low-stress, creative haven. Join me as I bring this vision to life by 2030!</p>
+        </section>
+
+        <!-- Property Description -->
+        <section id="property" class="bg-sage-100 rounded-xl p-8 mb-12 shadow-lg">
+            <h2 class="text-3xl cinzel text-terracotta-600 mb-4 border-b-2 border-turquoise-500 pb-2">Property Description 🌵</h2>
+            <div class="bg-turquoise-500 text-beige-50 p-4 rounded-lg mb-6 text-center font-bold">
+                🌟 Breakthrough: Advanced septic system, noise mitigation, and eco-friendly design ensure zero pollution risk to the Rio Grande, with low WOTUS likelihood for the arroyo! 🌟
+            </div>
+            <p class="mb-4">Nestled in the high desert of Canyon del Rio, Valencia County, NM, this 0.28-acre lot (80' × 150', 12,000 sq ft) at coordinates 34.6911, -106.5575 is the foundation of my sustainable off-grid vision. Located in Rio del Oro, Unit 28, Lot 25, Block 27, the lot is a rectangle with its longer axis (150 ft) oriented southwest to northeast (SW-NE), approximately 28° east of true north, as the entire subdivision is rotated in this direction. The shorter axis (80 ft) runs northwest to southeast (NW-SE). It features a gentle 3.33% slope from NW (5,400 ft) to SE (5,390 ft), directing natural runoff toward the Camino Rio arroyo. A quarry 1.10 km north generates noise (22-33 dBA at the lot), but the hilly terrain and a planned 6-8 ft berm with vegetation (mesquite, juniper, pinyon pine) along the northern boundary reduce this to 5-15 dBA inside the home, ensuring peace. The Valencia County plat has been corrected to reflect the lot’s true position, ensuring all zoning and setback compliance under RR-1 zoning (§ 154.105), with the lot qualifying as a pre-existing lot of record for building despite the 0.25-acre minimum. This area, known as the Quiet Ridge Zone, benefits from a second ridge position 10-15 ft above the arroyo, offering natural sound shielding and enhanced views, with a new fountain and rustling leaves from the berm adding to the serene acoustic microclimate.</p>
+            <ul class="list-none space-y-3 mb-6">
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">🌱</span>
+                    <div>
+                        <strong>Soil:</strong> Well-draining sandy loam, ideal for construction and supporting a small xeriscaped garden with water-efficient drip irrigation. Soil tests confirm suitability for the BioMicrobics MicroFAST® septic system, with a percolation rate of 10-15 minutes per inch, meeting NMED requirements (20.7.3.401 NMAC).
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">🌊</span>
+                    <div>
+                        <strong>Arroyo:</strong> The Camino Rio arroyo, located 20-30 ft southeast of the lot’s true southern boundary (25 ft in diagrams) and 5-10 ft below (5,390 ft), is ephemeral, dry 99.9% of the time with rare runoff (~9-10 inches/year). It runs diagonally southwest to northeast and connects to the Rio Grande (10-15 miles away) only during extreme 100-year storm events, as mapped by the National Wetlands Inventory (R4SBJ classification).
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">📏</span>
+                    <div>
+                        <strong>Topography:</strong> A 10 ft elevation drop (3.33% NW-SE slope) directs runoff toward the SE corner and into the arroyo below. Eco-friendly runoff management includes a berm with an integrated swale, basins, and cacti rows, minimizing erosion and flood risk while reducing quarry noise.
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-turquoise-500 mr-2">🛡️</span>
+                    <div>
+                        <strong>Zoning & Safety:</strong> Zoned RR-1 (Rural Residential, 0.25-acre minimum), the 0.28-acre lot qualifies for the lot-of-record exception (§ 154.105), allowing building with compliance to setbacks and coverage. FEMA Zone X designation indicates minimal flood risk (0.2% annual chance). A professional survey is recommended to confirm boundaries and arroyo setbacks, ensuring compliance with NMAC § 20.7.3.
+                    </div>
+                </li>
+            </ul>
+            <!-- Land and Plat Photos -->
+            <h3 class="text-2xl cinzel text-terracotta-600 mt-8 mb-4">Land and Plat Photos 📸</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <figure>
+                    <img src="nmland7.png" alt="Desert landscape with sandy loam soil in Canyon del Rio" class="gallery-img rounded-lg shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer" data-caption="Desert landscape with sandy loam soil" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Desert landscape with sandy loam soil</figcaption>
+                </figure>
+                <figure>
+                    <img src="newplat3.png" alt="Corrected Valencia County Plat Map for Canyon del Rio Lot" class="gallery-img rounded-lg shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer" data-caption="Corrected Valencia County Plat" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Corrected Valencia County Plat</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmland16.png" alt="View of the Camino Rio arroyo near the lot" class="gallery-img rounded-lg shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer" data-caption="View of the Camino Rio arroyo" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">View of the Camino Rio arroyo</figcaption>
+                </figure>
+                <figure>
+                    <img src="nmland14.png" alt="Overview of the 0.28-acre lot in Canyon del Rio" class="gallery-img rounded-lg shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer" data-caption="Lot overview" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic text-center">Lot overview</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Access and Proximity -->
+        <section id="access" class="bg-sage-100 rounded-xl p-8 mb-12 shadow-lg">
+            <h2 class="text-3xl cinzel text-terracotta-600 mb-4 border-b-2 border-turquoise-500 pb-2">Access and Proximity 🛤️</h2>
+            <p class="mb-4">This off-grid ecotech homestead balances seclusion with accessibility, making it ideal for sustainable living while staying connected. From the lot, it’s a 1-2 mile drive on well-maintained dirt roads to Rio del Oro Loop South, then 5 miles on gravel to the Manzano Expressway, and 11 paved miles to Belen via NM-309/E River Rd. A driveway/road-access permit from Valencia County is required for any new approach. The total trip to Belen is 18 miles (25-30 minutes), offering access to essentials like a Walmart Superstore, Albertsons Grocery Store, and the Rail Runner Express to Albuquerque (~40 minutes, 35 miles). Albuquerque is also a direct 50-55 minute drive via I-25 N, providing urban amenities and ABQ-LAX flights (2 hours, $66-$178 round-trip) for screenwriting trips to LA.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 place-items-center">
+                <figure class="text-center">
+                    <img src="nmland13.png" alt="Dirt road route from Canyon del Rio to Rio del Oro Loop South en route to Belen" class="gallery-img rounded-lg shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer" data-caption="Rio del Oro Loop South route to Belen" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic">Rio del Oro Loop South route to Belen</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="nmland17.png" alt="Gravel road on Manzano Expressway route to Los Lunas from Canyon del Rio" class="gallery-img rounded-lg shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer" data-caption="Manzano Expressway route to Los Lunas" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic">Manzano Expressway route to Los Lunas</figcaption>
+                </figure>
+                <figure class="text-center">
+                    <img src="nmland18.png" alt="Route map from Canyon del Rio property to Albuquerque, approximately 35 miles" class="gallery-img rounded-lg shadow-md hover:scale-110 transition-transform duration-300 cursor-pointer" data-caption="Route to Albuquerque: ~50-55 minutes, 35 miles" loading="lazy">
+                    <figcaption class="mt-2 text-gray-600 italic">Route to Albuquerque: ~50-55 minutes, 35 miles</figcaption>
+                </figure>
+            </div>
+        </section>
+
+      
