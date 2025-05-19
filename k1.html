@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kenny the Storyteller - Skills</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #F5F5DC; /* Chalky white text */
+    }
+    h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('chalkboard.jpg') repeat;
+      background-size: cover;
+      z-index: -1;
+      opacity: 0.9;
+    }
+    .skill-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+    }
+    .hover\:scale-105:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-chalk-white">
+  <section id="skills" class="py-20 px-6 md:px-12 lg:px-24">
+    <div class="max-w-6xl mx-auto text-center">
+      <!-- Centered Framed Photo -->
+      <div class="mb-12">
+        <img src="kennyai3.jpg" alt="Kenny the Storyteller" class="mx-auto w-48 h-48 md:w-64 md:h-64 object-cover rounded-xl border-4 border-amber-600 shadow-lg hover:shadow-xl transition-shadow duration-300">
+      </div>
+
+      <h2 class="text-5xl font-bold text-amber-500 mb-4">🎤 Kenny the Storyteller</h2>
+      <p class="text-xl italic text-turquoise-400 mb-3">"Shakespeare of the 21st Century"</p>
+      <p class="text-md italic text-gray-300 mb-12">— Anointed by coworkers at CPK in Glendale. Now scripting futures from film reels to archival fields.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+        <!-- Narrative Craft -->
+        <div class="skill-card p-8 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105">
+          <h3 class="text-3xl text-turquoise-300 mb-6">✍️ Narrative Craft</h3>
+          <ul class="text-left space-y-4">
+            <li><strong class="text-amber-400">🎬 Screenwriting:</strong> Comedic + dramatic storytelling with emotional precision. Featured works include <em>Early Bird Special</em> (vampires in a retirement community) & <em>Cult of Change</em> (darkly satirical take on self-help).</li>
+            <li><strong class="text-amber-400">📚 Storytelling Across Platforms:</strong> From courtroom satire in <em>OCD on Trial</em> to vintage deep dives in <em>Box Office Chronicles 1925</em>, transforming neuroses + nostalgia into rich narrative universes.</li>
+          </ul>
+        </div>
+
+        <!-- Research & Preservation -->
+        <div class="skill-card p-8 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105">
+          <h3 class="text-3xl text-turquoise-300 mb-6">🔍 Research & Preservation</h3>
+          <ul class="text-left space-y-4">
+            <li><strong class="text-amber-400">🎓 MLIS Expertise:</strong> Dual power: narrative architect & librarian. Digging up truth with academic rigor, fueling authenticity in screenplays + archival content alike.</li>
+            <li><strong class="text-amber-400">📦 AI Archiving Visionary:</strong> Innovator in AI-powered archival workflows using Arweave. Every story—permanently preserved in the blockchain ether.</li>
+          </ul>
+        </div>
+
+        <!-- Design & Technology -->
+        <div class="skill-card p-8 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105">
+          <h3 class="text-3xl text-turquoise-300 mb-6">🧑‍💻 Design & Technology</h3>
+          <ul class="text-left space-y-4">
+            <li><strong class="text-amber-400">🌐 Web Design:</strong> Elegant builds with Tailwind CSS, including this portfolio and future-forward micro-sites like Canyon del Rio—a fusion of storytelling + interactivity.</li>
+            <li><strong class="text-amber-400">🏡 Sustainable Innovation:</strong> Designing off-grid ecotech treehomes with adobe, solar arrays, and environmental themes baked into their blueprint.</li>
+            <li><strong class="text-amber-400">🔗 Decentralized Archives:</strong> Preserving digital ephemera and screenplays with Libr Coin-powered permanence on Arweave.</li>
+          </ul>
+        </div>
+
+        <!-- Creative Hustle -->
+        <div class="skill-card p-8 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105">
+          <h3 class="text-3xl text-turquoise-300 mb-6">🚀 Creative Hustle</h3>
+          <ul class="text-left space-y-4">
+            <li><strong class="text-amber-400">📱 Content Creation:</strong> Short-form clips that spark discussion & delight. TikToks/X Reels like "OCD on Trial: Guilty for Checking the Door 10x" & vintage trivia nuggets from <em>Box Office Chronicles</em>.</li>
+            <li><strong class="text-amber-400">👥 Community Building:</strong> Bridging niche fandoms—mental health, classic film, off-grid living—into thriving ecosystems powered by empathy + originality.</li>
+            <li><strong class="text-amber-400">🧠 Meta-Narrative Strategy:</strong> Turning personal struggle into public storytelling. From CPK to AFI to AI—Kenny channels neurosis into genius.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="mt-20 text-center">
+        <h3 class="text-3xl text-amber-500 font-playfair mb-4">📺 See My Work in Action</h3>
+        <p class="text-md text-gray-300 italic mb-6">Watch, laugh, learn, and maybe cry—on YouTube, X, or wherever you stream your soul.</p>
+        <a href="https://youtube.com/yourchannel" target="_blank" class="inline-block bg-turquoise-600 text-chalk-white px-8 py-3 rounded-full hover:bg-turquoise-700 transition">🔗 Visit My Channel</a>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
