@@ -64,7 +64,13 @@
             padding: 10px;
             margin-bottom: 15px;
         }
+        canvas {
+            max-width: 100%;
+            margin-bottom: 20px;
+        }
     </style>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <img src="quarry3d2.png" alt="3D Quarry Image" width="500">
@@ -81,7 +87,7 @@
     </ul>
 
     <h2>Step 2: Analyze the Sound Path with Topographic Effects</h2>
-    <p>The green path on the map traces the sound route from the quarry (5460 ft, with lower areas at 5300 ft) to the plat (5320 ft). Below is a text map, followed by segment analysis factoring in topographic features, vegetation, and environmental conditions at 05:10 AM MDT on May 20, 2025.</p>
+    <p>The green path on the map traces the sound route from the quarry (5460 ft, with lower areas at 5300 ft) to the plat (5320 ft). Below is a text map, followed by segment analysis factoring in topographic features, vegetation, and environmental conditions at 05:15 AM MDT on May 20, 2025.</p>
     <div class="text-map">
         Text Map of Sound Path (North to South):
         [Quarry: 5460 ft (lower areas 5300 ft)]
@@ -157,7 +163,7 @@
     </ul>
 
     <h3>Segment 5: Descent to Your Plat</h3>
-    <p>Topography: The plat is at ~5320 ft. The due north view shows the quarry’s elevation (~5460 ft, with lower areas at 5300 ft), adding 1-2 dB from inversions, and wind (5-10 mph northerly) adds 1-3 dB at 05:10 AM MDT.</p>
+    <p>Topography: The plat is at ~5320 ft. The due north view shows the quarry’s elevation (~5460 ft, with lower areas at 5300 ft), adding 1-2 dB from inversions, and wind (5-10 mph northerly) adds 1-3 dB at 05:15 AM MDT.</p>
     <p>Sound Dynamics:</p>
     <ul>
         <li>Berm Effect: A 6-8 ft berm reduces noise by 7 dB; a 10-12 ft berm (planned) reduces by 10-12 dB.</li>
@@ -252,50 +258,54 @@
 
     <h2>Charts</h2>
     <h3>Noise Level Reduction Chart</h3>
-    <pre><code class="chartjs">
-    {
-        "type": "line",
-        "data": {
-            "labels": ["Starting Point", "Lull/Arroyo Base", "Hill 1 Peak", "Lull After Arroyos", "Hill 2 Peak", "Plat (No Berm)", "Plat (6-8 ft Berm)", "Plat (10-12 ft Berm)", "Plat (Total)", "Final Arroyo"],
-            "datasets": [{
-                "label": "Noise Level (dBA)",
-                "data": [25, 17, 10, 20, 13, 15, 8, 3, 18, 13],
-                "borderColor": "#3498db",
-                "backgroundColor": "rgba(52, 152, 219, 0.2)",
-                "fill": true
-            }]
-        },
-        "options": {
-            "scales": {
-                "y": {
-                    "beginAtZero": true
+    <canvas id="noiseLevelChart"></canvas>
+    <script>
+        const noiseLevelCtx = document.getElementById('noiseLevelChart').getContext('2d');
+        new Chart(noiseLevelCtx, {
+            type: 'line',
+            data: {
+                labels: ['Starting Point', 'Lull/Arroyo Base', 'Hill 1 Peak', 'Lull After Arroyos', 'Hill 2 Peak', 'Plat (No Berm Min)', 'Plat (No Berm Max)', 'Plat (6-8 ft Berm Min)', 'Plat (6-8 ft Berm Max)', 'Plat (10-12 ft Berm Min)', 'Plat (10-12 ft Berm Max)', 'Plat (Total)', 'Final Arroyo'],
+                datasets: [{
+                    label: 'Noise Level (dBA)',
+                    data: [25, 17, 10, 20, 13, 15, 17, 8, 10, 3, 7, 18, 13],
+                    borderColor: '#3498db',
+                    backgroundColor: 'rgba(52, 152, 219, 0.2)',
+                    fill: true
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    }
-    </code></pre>
+        });
+    </script>
 
     <h3>Reduction Factors Chart</h3>
-    <pre><code class="chartjs">
-    {
-        "type": "bar",
-        "data": {
-            "labels": ["Ridge", "Vegetation", "Ground", "Hill 1", "Arroyos", "Hill 2", "Berm (6-8 ft)", "Berm (10-12 ft)"],
-            "datasets": [{
-                "label": "dB Reduction",
-                "data": [5, 1, 2, 5, 10, 5, 7, 10],
-                "backgroundColor": ["#e74c3c", "#2ecc71", "#f1c40f", "#9b59b6", "#3498db", "#e67e22", "#1abc9c", "#8e44ad"]
-            }]
-        },
-        "options": {
-            "scales": {
-                "y": {
-                    "beginAtZero": true
+    <canvas id="reductionFactorsChart"></canvas>
+    <script>
+        const reductionFactorsCtx = document.getElementById('reductionFactorsChart').getContext('2d');
+        new Chart(reductionFactorsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Ridge', 'Vegetation', 'Ground', 'Hill 1', 'Arroyos', 'Hill 2', 'Berm (6-8 ft)', 'Berm (10-12 ft)'],
+                datasets: [{
+                    label: 'dB Reduction',
+                    data: [5, 1, 2, 5, 10, 5, 7, 10],
+                    backgroundColor: ['#e74c3c', '#2ecc71', '#f1c40f', '#9b59b6', '#3498db', '#e67e22', '#1abc9c', '#8e44ad']
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
                 }
             }
-        }
-    }
-    </code></pre>
+        });
+    </script>
 
     <h2>Table Key</h2>
     <ol>
@@ -318,12 +328,12 @@
     <p>Ambient Noise: 20-25 dBA aligns with rural desert measurements.</p>
 
     <h2>Step 5: Limitations and Recommendations</h2>
-    <p>Wind and Inversions: Wind (1-3 dB) and inversions (1-2 dB) at 05:10 AM MDT require on-site measurement.</p>
+    <p>Wind and Inversions: Wind (1-3 dB) and inversions (1-2 dB) at 05:15 AM MDT require on-site measurement.</p>
     <p>Hill 1 Size: May enhance shielding beyond 5 dB; LiDAR or surveys recommended.</p>
     <p>Real-Time Data: OpenTopography or noise mapping could improve accuracy.</p>
     <p class="note">This achieves the 5-20 dBA Quiet Ridge Zone target, dominated by natural sounds.</p>
 
     <h2>Summary and Conclusion</h2>
-    <p>Quarry noise starts at 25 dBA, reduced to 15-17 dBA at the plat without a berm, reflecting 10 dB topographic reduction and 2-4 dB from inversions/wind at 05:10 AM MDT on May 20, 2025. A 6-8 ft berm lowers it to 8-10 dBA, while a 10-12 ft berm reduces it to 3-7 dBA, meeting the 5-20 dBA target. Natural sounds (~18 dBA) dominate, keeping the total at 18 dBA. Quarry noise alone is 8-10 dBA (6-8 ft berm) or 3-7 dBA (10-12 ft berm), a 15-22 dB reduction (32- to 158-fold decrease), quieter than a library (30 dBA). The quarry’s lower areas (5300 ft) slightly reduce shielding effectiveness. Limitations include wind/inversion effects and Hill 1’s potential shielding; LiDAR or measurements are suggested.</p>
+    <p>Quarry noise starts at 25 dBA, reduced to 15-17 dBA at the plat without a berm, reflecting 10 dB topographic reduction and 2-4 dB from inversions/wind at 05:15 AM MDT on May 20, 2025. A 6-8 ft berm lowers it to 8-10 dBA, while a 10-12 ft berm reduces it to 3-7 dBA, meeting the 5-20 dBA target. Natural sounds (~18 dBA) dominate, keeping the total at 18 dBA. Quarry noise alone is 8-10 dBA (6-8 ft berm) or 3-7 dBA (10-12 ft berm), a 15-22 dB reduction (32- to 158-fold decrease), quieter than a library (30 dBA). The quarry’s lower areas (5300 ft) slightly reduce shielding effectiveness. Limitations include wind/inversion effects and Hill 1’s potential shielding; LiDAR or measurements are suggested.</p>
 </body>
 </html>
