@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fibonacci Screenplay Structure</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2937;
+    }
+    .emoji {
+      font-size: 1.2em;
+    }
+    .section-title {
+      @apply mt-8 text-2xl font-bold text-gray-800;
+    }
+    .math {
+      font-style: italic;
+      display: inline-block;
+      margin: 0 0.2em;
+    }
+    .golden-highlight {
+      background-color: #fefcbf;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="max-w-7xl mx-auto p-6">
+  <header class="text-center mb-8">
+    <h1 class="text-4xl font-extrabold text-gray-900">🎬 Fibonacci Screenplay Structure</h1>
+    <p class="mt-2 text-lg text-gray-600"><em>A mathematically elegant narrative structure for a 90-page screenplay, inspired by nature’s patterns.</em> 🌿</p>
+  </header>
+
+  <section class="mb-12">
+    <h2 class="section-title">📊 Beat Sheet Overview</h2>
+    <p class="text-gray-700 mb-4">This structure uses 34 beats (<span class="math">F(9) = 34</span>) across five acts, with lengths proportional to Fibonacci numbers 2, 3, 5, 8, 13, scaled to 90 pages. Key turning points align with golden ratio intervals (<span class="math">P_k = \lfloor N / \phi^k \rfloor</span>, where <span class="math">\phi \approx 1.618</span>), at pages 56, 34, 21, 13, 8, 5, 3, and 1, highlighted in the table.</p>
+
+    <table class="w-full border-collapse bg-white shadow-md rounded-lg overflow-hidden">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="border p-4 text-left">🎭 Act</th>
+          <th class="border p-4 text-left">🔢 Beat Count (Pages)</th>
+          <th class="border p-4 text-left">🎬 Scene Purpose</th>
+          <th class="border p-4 text-left">💫 Emotional Tone</th>
+          <th class="border p-4 text-left">🎼 Musical Comparison</th>
+          <th class="border p-4 text-left">⚖️ Mathematical Elegance</th>
+          <th class="border p-4 text-left">📏 Percentage</th>
+          <th class="border p-4 text-left">⭐ Golden Ratio Highlight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border p-4"><strong>Act 1: Setup</strong></td>
+          <td class="border p-4">3 (<span class="math">F(4)</span>) (~6 pages)</td>
+          <td class="border p-4">
+            1️⃣ Establish world and protagonist<br>
+            2️⃣ Inciting incident sparks conflict<br>
+            3️⃣ Protagonist reacts, sets goal
+          </td>
+          <td class="border p-4">🌱 Curious, hopeful, slightly tense</td>
+          <td class="border p-4">🎹 Gentle piano, introducing theme</td>
+          <td class="border p-4">📏 Simple symmetry, story begins</td>
+          <td class="border p-4">~6.7% (pages 1–6)</td>
+          <td class="border p-4 golden-highlight">⭐ Page 1: World established<br>⭐ Page 3: Protagonist’s goal set<br>⭐ Page 5: Near act’s end</td>
+        </tr>
+        <tr>
+          <td class="border p-4"><strong>Act 2: Exploration</strong></td>
+          <td class="border p-4">5 (<span class="math">F(5)</span>) (~9 pages)</td>
+          <td class="border p-4">
+            4️⃣ First obstacle challenges protagonist<br>
+            5️⃣ Subplot introduced<br>
+            6️⃣ Initial success or hope<br>
+            7️⃣ Setback reveals stakes<br>
+            8️⃣ Protagonist commits fully
+          </td>
+          <td class="border p-4">🌤️ Optimistic, growing tension</td>
+          <td class="border p-4">🎺 Strings build, theme develops</td>
+          <td class="border p-4">📐 Spiral widens, complexity grows</td>
+          <td class="border p-4">~10% (pages 7–15)</td>
+          <td class="border p-4 golden-highlight">⭐ Page 8: Protagonist’s commitment</td>
+        </tr>
+        <tr>
+          <td class="border p-4"><strong>Act 3: Midpoint Shift</strong></td>
+          <td class="border p-4">8 (<span class="math">F(6)</span>) (~15 pages)</td>
+          <td class="border p-4">
+            9️⃣ Major reveal changes perspective<br>
+            1️⃣0️⃣ Stakes escalate<br>
+            1️⃣1️⃣ Protagonist’s decision<br>
+            1️⃣2️⃣ New plan forms<br>
+            1️⃣3️⃣ Emotional low point<br>
+            1️⃣4️⃣ Subplot deepens<br>
+            1️⃣5️⃣ Rising conflict<br>
+            1️⃣6️⃣ Midpoint twist
+          </td>
+          <td class="border p-4">🌪️ Intense, uncertain, transformative</td>
+          <td class="border p-4">🎻 Crescendo, dramatic shift</td>
+          <td class="border p-4">🌀 Golden mean at ~61.8%</td>
+          <td class="border p-4">~16.7% (pages 16–30)</td>
+          <td class="border p-4 golden-highlight">⭐ Page 13: Emotional low point<br>⭐ Page 21: Rising conflict</td>
+        </tr>
+        <tr>
+          <td class="border p-4"><strong>Act 4: Escalation</strong></td>
+          <td class="border p-4">8 (<span class="math">F(6)</span>) (~23 pages)</td>
+          <td class="border p-4">
+            1️⃣7️⃣ Plans unravel<br>
+            1️⃣8️⃣ Relationships strain<br>
+            1️⃣9️⃣ False victory<br>
+            2️⃣0️⃣ Major setback<br>
+            2️⃣1️⃣ Protagonist regroups<br>
+            2️⃣2️⃣ Final plan forms<br>
+            2️⃣3️⃣ Subplot climax<br>
+            2️⃣4️⃣ Setup for final battle
+          </td>
+          <td class="border p-4">🔥 Urgent, fractured, high stakes</td>
+          <td class="border p-4">🥁 Percussion rises, tension peaks</td>
+          <td class="border p-4">⏳ Spiral tightens, urgency builds</td>
+          <td class="border p-4">~25.6% (pages 31–53)</td>
+          <td class="border p-4 golden-highlight">⭐ Page 34: Major setback</td>
+        </tr>
+        <tr>
+          <td class="border p-4"><strong>Act 5: Climax & Resolution</strong></td>
+          <td class="border p-4">10 (~37 pages)</td>
+          <td class="border p-4">
+            2️⃣5️⃣ Final confrontation begins<br>
+            2️⃣6️⃣ All hope seems lost<br>
+            2️⃣7️⃣ Protagonist’s breakthrough<br>
+            2️⃣8️⃣ Antagonist defeated<br>
+            2️⃣9️⃣ Emotional climax<br>
+            3️⃣0️⃣ Subplot resolution<br>
+            3️⃣1️⃣ New equilibrium established<br>
+            3️⃣2️⃣ Reflection on journey<br>
+            3️⃣3️⃣ Final twist or reveal<br>
+            3️⃣4️⃣ Closing image
+          </td>
+          <td class="border p-4">🌈 Cathartic, triumphant, reflective</td>
+          <td class="border p-4">🎼 Full orchestra, theme resolves</td>
+          <td class="border p-4">🌻 Spiral completes, harmony achieved</td>
+          <td class="border p-4">~41.1% (pages 54–90)</td>
+          <td class="border p-4 golden-highlight">⭐ Page 56: Final confrontation begins</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="section-title">📐 Mathematical Foundation</h2>
+    <p class="text-gray-700 mb-4">The Fibonacci sequence is defined as <span class="math">F(n) = F(n-1) + F(n-2)</span>, with <span class="math">F(0) = 0</span>, <span class="math">F(1) = 1</span>, yielding 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, etc. The golden ratio is <span class="math">\lim_{n \to \infty} F(n+1) / F(n) \approx 1.618</span>. Act lengths are proportional to Fibonacci numbers (2, 3, 5, 8, 13), scaled to 90 pages. Golden ratio points are calculated as <span class="math">P_k = \lfloor N / \phi^k \rfloor</span>, where <span class="math">\phi \approx 1.618</span>. For <span class="math">N = 90</span>, these are pages 56, 34, 21, 13, 8, 5, 3, and 1, aligning with key narrative moments.</p>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="section-title">🧠 Why This Works: Scientific and Mathematical Insights</h2>
+    <ul class="list-disc pl-6 text-gray-700">
+      <li><strong>Natural Patterns</strong>: Fibonacci numbers appear in nature’s patterns, such as leaf arrangements (phyllotaxis) and galaxy spirals, optimizing growth and space for visual harmony. 🌿 In art, the golden ratio shapes works like Leonardo da Vinci’s <em>Vitruvian Man</em> and Salvador Dalí’s <em>The Sacrament of the Last Supper</em>, creating balanced compositions. Stories using these patterns feel intuitive ([GeeksforGeeks](https://www.geeksforgeeks.org/fibonacci-sequence/)).</li>
+      <li><strong>Cognitive Appeal</strong>: Research by Adrian Bejan suggests golden ratio proportions are easier for the brain to process, enhancing engagement. Giacomo Rizzolatti and Cinzia Di Dio’s studies indicate human preference for these proportions, likely due to evolutionary familiarity with nature’s patterns. 🌿</li>
+      <li><strong>Narrative Momentum</strong>: Fibonacci-based act lengths create organic escalation, with Act 5’s 10 beats allowing complex resolution, mirroring nature’s patterns like tree branching. 🌿 Golden ratio points (e.g., page 56) mark critical shifts, aligning with audience expectations.</li>
+      <li><strong>Storytelling Examples</strong>: Eleanor Catton’s <em>The Luminaries</em> uses an inverse Fibonacci sequence for part lengths, enhancing flow. Films like <em>The Godfather</em> use golden ratio framing, and top RoI films may follow Fibonacci-like structures ([StoryAlity](https://storyality.wordpress.com/2012/12/23/storyality-50-the-storyality-screenplay-syntagm/)). Debussy’s music (e.g., <em>Reflets dans l’eau</em>) uses golden ratio intervals, suggesting a model for pacing.</li>
+      <li><strong>Historical Context</strong>: Introduced by Leonardo of Pisa in 1202 via <em>Liber Abaci</em>, the Fibonacci sequence has roots in Indian mathematics (circa 200 BC) through Pingala’s poetic patterns, linking it to narrative arts ([Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_sequence)).</li>
+    </ul>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="section-title">💡 How to Use It: Advanced Storytelling Techniques</h2>
+    <ul class="list-disc pl-6 text-gray-700">
+      <li><strong>Subplot Structure</strong>: Use smaller Fibonacci numbers (e.g., 3 for setup, complication, resolution; or 5 for a complex arc) to ensure subplots harmonize with the main narrative.</li>
+      <li><strong>Golden Ratio Beats</strong>: Place key moments at <span class="math">P_k = \lfloor N / \phi^k \rfloor</span> (e.g., pages 56, 34, 21, 13, 8, 5, 3, 1 for <span class="math">N = 90</span>) to maximize emotional impact.</li>
+      <li><strong>Practical Application</strong>: Adapt the beat sheet for different script lengths (e.g., for a 120-page script, scale act lengths to 8, 12, 19, 31, 50 pages). The structure suits various genres, maintaining mathematical harmony.</li>
+    </ul>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="section-title">🌐 Interactive Website Vision</h2>
+    <p class="text-gray-700 mb-4">A website could enhance this structure’s usability:</p>
+    <ul class="list-disc pl-6 text-gray-700">
+      <li><strong>Beat Calculator</strong>: Input script length to generate a Fibonacci-based beat sheet with golden ratio points highlighted.</li>
+      <li><strong>Golden Spiral Visualization</strong>: Display the story as a golden spiral using D3.js, with acts and beats mapped to spiral turns.</li>
+      <li><strong>Educational Content</strong>: Explain Fibonacci in nature’s patterns (e.g., sunflowers, galaxy spirals) 🌿, art, and storytelling, with scientific insights.</li>
+      <li><strong>User-Friendly Design</strong>: Use emojis, visuals, and downloadable templates for accessibility.</li>
+    </ul>
+  </section>
+
+  <footer class="text-center text-gray-500 mt-12">
+    <p>Craft compelling screenplays with the harmony of Fibonacci and golden ratio principles.</p>
+  </footer>
+</body>
+</html>
