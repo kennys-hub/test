@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fibonacci Screenplay Structure</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <script src="https://unpkg.com/vis-timeline@7.7.2/dist/vis-timeline-graph2d.min.js"></script>
+  <link href="https://unpkg.com/vis-timeline@7.7.2/dist/vis-timeline-graph2d.min.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -26,17 +29,21 @@
       background-color: #fefcbf;
       font-weight: bold;
     }
+    canvas, #timeline {
+      max-width: 100%;
+      margin: 2rem auto;
+    }
   </style>
 </head>
 <body class="max-w-7xl mx-auto p-6">
   <header class="text-center mb-8">
     <h1 class="text-4xl font-extrabold text-gray-900">🎬 Fibonacci Screenplay Structure</h1>
-    <p class="mt-2 text-lg text-gray-600"><em>A mathematically elegant narrative structure for a 90-page screenplay, inspired by nature’s patterns.</em> 🌿</p>
+    <p class="mt-2 text-lg text-gray-600"><em>A 90-page screenplay blending Fibonacci mathematics, Hero’s Journey, and three-act structure, inspired by nature’s patterns.</em> 🌿</p>
   </header>
 
   <section class="mb-12">
     <h2 class="section-title">📊 Beat Sheet Overview</h2>
-    <p class="text-gray-700 mb-4">This structure uses 34 beats (<span class="math">F(9) = 34</span>) across five acts, with lengths proportional to Fibonacci numbers 2, 3, 5, 8, 13, scaled to 90 pages. Key turning points align with golden ratio intervals (<span class="math">P_k = \lfloor N / \phi^k \rfloor</span>, where <span class="math">\phi \approx 1.618</span>), at pages 56, 34, 21, 13, 8, 5, 3, and 1, highlighted in the table.</p>
+    <p class="text-gray-700 mb-4">This structure uses 21 beats (<span class="math">F(8) = 21</span>) across three acts, aligned with pages 1–25, 26–75, and 76–90, using Fibonacci numbers 5, 13, 3. The golden ratio spiral peaks at page 55, marking a critical narrative turn.</p>
 
     <table class="w-full border-collapse bg-white shadow-md rounded-lg overflow-hidden">
       <thead>
@@ -48,125 +55,247 @@
           <th class="border p-4 text-left">🎼 Musical Comparison</th>
           <th class="border p-4 text-left">⚖️ Mathematical Elegance</th>
           <th class="border p-4 text-left">📏 Percentage</th>
-          <th class="border p-4 text-left">⭐ Golden Ratio Highlight</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="border p-4"><strong>Act 1: Setup</strong></td>
-          <td class="border p-4">3 (<span class="math">F(4)</span>) (~6 pages)</td>
+          <td class="border p-4"><strong>Act I: Setup</strong></td>
+          <td class="border p-4">5 (<span class="math">F(5)</span>) (1–25)</td>
           <td class="border p-4">
-            1️⃣ Establish world and protagonist<br>
-            2️⃣ Inciting incident sparks conflict<br>
-            3️⃣ Protagonist reacts, sets goal
+            1️⃣ Opening Image: Snapshot of protagonist’s world<br>
+            2️⃣ Setup: Introduce protagonist, stakes<br>
+            3️⃣ Theme Stated: Hint at story’s core theme<br>
+            4️⃣ Inciting Incident: Event disrupts norm<br>
+            5️⃣ Debate: Hero resists action
           </td>
           <td class="border p-4">🌱 Curious, hopeful, slightly tense</td>
           <td class="border p-4">🎹 Gentle piano, introducing theme</td>
-          <td class="border p-4">📏 Simple symmetry, story begins</td>
-          <td class="border p-4">~6.7% (pages 1–6)</td>
-          <td class="border p-4 golden-highlight">⭐ Page 1: World established<br>⭐ Page 3: Protagonist’s goal set<br>⭐ Page 5: Near act’s end</td>
+          <td class="border p-4">📏 Simple Fibonacci symmetry, with turns at <span class="math">P_8 \approx 1</span>, <span class="math">P_7 \approx 3</span>, <span class="math">P_6 \approx 5</span>, <span class="math">P_5 \approx 8</span></td>
+          <td class="border p-4">~27.8% (pages 1–25)</td>
         </tr>
         <tr>
-          <td class="border p-4"><strong>Act 2: Exploration</strong></td>
-          <td class="border p-4">5 (<span class="math">F(5)</span>) (~9 pages)</td>
+          <td class="border p-4"><strong>Act II: Confrontation</strong></td>
+          <td class="border p-4">13 (<span class="math">F(7)</span>) (26–75)</td>
           <td class="border p-4">
-            4️⃣ First obstacle challenges protagonist<br>
-            5️⃣ Subplot introduced<br>
-            6️⃣ Initial success or hope<br>
-            7️⃣ Setback reveals stakes<br>
-            8️⃣ Protagonist commits fully
+            6️⃣ Break into Act II: Hero enters new world<br>
+            7️⃣ Fun and Games: Explore new world<br>
+            8️⃣ Tests, Allies, Enemies: Challenges arise<br>
+            9️⃣ Fun and Games: Deepen exploration<br>
+            1️⃣0️⃣ Approach to Inmost Cave: Near central crisis<br>
+            1️⃣1️⃣ Midpoint: False victory or defeat<br>
+            1️⃣2️⃣ Bad Guys Close In: Enemies tighten grip<br>
+            1️⃣3️⃣ Bad Guys Close In: Struggles intensify<br>
+            1️⃣4️⃣ All Is Lost: Rock bottom moment<br>
+            1️⃣5️⃣ Dark Night of the Soul: Emotional low<br>
+            1️⃣6️⃣ Reward: Hero gains insight or power<br>
+            1️⃣7️⃣ Road Back: Begin return journey<br>
+            1️⃣8️⃣ Break into Act III: Final plan formed
           </td>
-          <td class="border p-4">🌤️ Optimistic, growing tension</td>
-          <td class="border p-4">🎺 Strings build, theme develops</td>
-          <td class="border p-4">📐 Spiral widens, complexity grows</td>
-          <td class="border p-4">~10% (pages 7–15)</td>
-          <td class="border p-4 golden-highlight">⭐ Page 8: Protagonist’s commitment</td>
+          <td class="border p-4">🌪️ Optimistic, intense, despairing</td>
+          <td class="border p-4">🎻 Strings crescendo, then soften</td>
+          <td class="border p-4">🌀 Golden ratio spiral peaks at <span class="math">P_1 \approx 55</span>, with turns at <span class="math">P_4 \approx 13</span>, <span class="math">P_3 \approx 21</span>, <span class="math">P_2 \approx 34</span></td>
+          <td class="border p-4">~55.6% (pages 26–75)</td>
         </tr>
         <tr>
-          <td class="border p-4"><strong>Act 3: Midpoint Shift</strong></td>
-          <td class="border p-4">8 (<span class="math">F(6)</span>) (~15 pages)</td>
+          <td class="border p-4"><strong>Act III: Resolution</strong></td>
+          <td class="border p-4">3 (<span class="math">F(4)</span>) (76–90)</td>
           <td class="border p-4">
-            9️⃣ Major reveal changes perspective<br>
-            1️⃣0️⃣ Stakes escalate<br>
-            1️⃣1️⃣ Protagonist’s decision<br>
-            1️⃣2️⃣ New plan forms<br>
-            1️⃣3️⃣ Emotional low point<br>
-            1️⃣4️⃣ Subplot deepens<br>
-            1️⃣5️⃣ Rising conflict<br>
-            1️⃣6️⃣ Midpoint twist
-          </td>
-          <td class="border p-4">🌪️ Intense, uncertain, transformative</td>
-          <td class="border p-4">🎻 Crescendo, dramatic shift</td>
-          <td class="border p-4">🌀 Golden mean at ~61.8%</td>
-          <td class="border p-4">~16.7% (pages 16–30)</td>
-          <td class="border p-4 golden-highlight">⭐ Page 13: Emotional low point<br>⭐ Page 21: Rising conflict</td>
-        </tr>
-        <tr>
-          <td class="border p-4"><strong>Act 4: Escalation</strong></td>
-          <td class="border p-4">8 (<span class="math">F(6)</span>) (~23 pages)</td>
-          <td class="border p-4">
-            1️⃣7️⃣ Plans unravel<br>
-            1️⃣8️⃣ Relationships strain<br>
-            1️⃣9️⃣ False victory<br>
-            2️⃣0️⃣ Major setback<br>
-            2️⃣1️⃣ Protagonist regroups<br>
-            2️⃣2️⃣ Final plan forms<br>
-            2️⃣3️⃣ Subplot climax<br>
-            2️⃣4️⃣ Setup for final battle
-          </td>
-          <td class="border p-4">🔥 Urgent, fractured, high stakes</td>
-          <td class="border p-4">🥁 Percussion rises, tension peaks</td>
-          <td class="border p-4">⏳ Spiral tightens, urgency builds</td>
-          <td class="border p-4">~25.6% (pages 31–53)</td>
-          <td class="border p-4 golden-highlight">⭐ Page 34: Major setback</td>
-        </tr>
-        <tr>
-          <td class="border p-4"><strong>Act 5: Climax & Resolution</strong></td>
-          <td class="border p-4">10 (~37 pages)</td>
-          <td class="border p-4">
-            2️⃣5️⃣ Final confrontation begins<br>
-            2️⃣6️⃣ All hope seems lost<br>
-            2️⃣7️⃣ Protagonist’s breakthrough<br>
-            2️⃣8️⃣ Antagonist defeated<br>
-            2️⃣9️⃣ Emotional climax<br>
-            3️⃣0️⃣ Subplot resolution<br>
-            3️⃣1️⃣ New equilibrium established<br>
-            3️⃣2️⃣ Reflection on journey<br>
-            3️⃣3️⃣ Final twist or reveal<br>
-            3️⃣4️⃣ Closing image
+            1️⃣9️⃣ Finale: Climax, confront biggest challenge<br>
+            2️⃣0️⃣ Resurrection: Hero transforms, overcomes<br>
+            2️⃣1️⃣ Final Image: New equilibrium established
           </td>
           <td class="border p-4">🌈 Cathartic, triumphant, reflective</td>
           <td class="border p-4">🎼 Full orchestra, theme resolves</td>
-          <td class="border p-4">🌻 Spiral completes, harmony achieved</td>
-          <td class="border p-4">~41.1% (pages 54–90)</td>
-          <td class="border p-4 golden-highlight">⭐ Page 56: Final confrontation begins</td>
+          <td class="border p-4">🌻 Fibonacci spiral completes</td>
+          <td class="border p-4">~16.7% (pages 76–90)</td>
         </tr>
       </tbody>
     </table>
   </section>
 
   <section class="mb-12">
+    <h2 class="section-title">🌀 Golden Ratio Highlights</h2>
+    <p class="text-gray-700 mb-4">The following table lists golden ratio points calculated as <span class="math">P_k = \lfloor N / \phi^k \rfloor</span>, where <span class="math">N = 90</span>, <span class="math">\phi \approx 1.618</span>, and their corresponding story beats.</p>
+    <table class="w-full border-collapse bg-white shadow-md rounded-lg overflow-hidden">
+      <thead>
+        <tr class="bg-gray-100">
+          <th class="border p-4 text-left">⭐ Golden Ratio Point</th>
+          <th class="border p-4 text-left">Page</th>
+          <th class="border p-4 text-left">Story Beat</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="golden-highlight">
+          <td class="border p-4"><span class="math">P_8</span></td>
+          <td class="border p-4">1</td>
+          <td class="border p-4">Opening Image: Snapshot of protagonist’s world</td>
+        </tr>
+        <tr class="golden-highlight">
+          <td class="border p-4"><span class="math">P_7</span></td>
+          <td class="border p-4">3</td>
+          <td class="border p-4">Setup: Introduce protagonist, stakes</td>
+        </tr>
+        <tr class="golden-highlight">
+          <td class="border p-4"><span class="math">P_6</span></td>
+          <td class="border p-4">5</td>
+          <td class="border p-4">Theme Stated: Hint at story’s core theme</td>
+        </tr>
+        <tr class="golden-highlight">
+          <td class="border p-4"><span class="math">P_5</span></td>
+          <td class="border p-4">8</td>
+          <td class="border p-4">Inciting Incident: Event disrupts norm</td>
+        </tr>
+        <tr class="golden-highlight">
+          <td class="border p-4"><span class="math">P_4</span></td>
+          <td class="border p-4">13</td>
+          <td class="border p-4">Tests, Allies, Enemies: Challenges arise</td>
+        </tr>
+        <tr class="golden-highlight">
+          <td class="border p-4"><span class="math">P_3</span></td>
+          <td class="border p-4">21</td>
+          <td class="border p-4">Break into Act II: Hero enters new world</td>
+        </tr>
+        <tr class="golden-highlight">
+          <td class="border p-4"><span class="math">P_2</span></td>
+          <td class="border p-4">34</td>
+          <td class="border p-4">Midpoint: False victory or defeat</td>
+        </tr>
+        <tr class="golden-highlight">
+          <td class="border p-4"><span class="math">P_1</span></td>
+          <td class="border p-4">55</td>
+          <td class="border p-4">All Is Lost: Rock bottom moment</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="section-title">📈 Storyline Emotional Arc</h2>
+    <p class="text-gray-700 mb-4">The graph visualizes emotional intensity across 21 beats, with golden ratio points and key Hero’s Journey/three-act milestones marked.</p>
+    <canvas id="emotionalArcChart" width="800" height="400"></canvas>
+    <script>
+      const ctx = document.getElementById('emotionalArcChart').getContext('2d');
+      const emotionalArcChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: Array.from({length: 21}, (_, i) => i + 1),
+          datasets: [{
+            label: 'Emotional Intensity',
+            data: [
+              3, 4, 4, 5, 5,  // Act I: Curious, hopeful
+              6, 6, 7, 7, 8, 8, 9, 9, 10, 8, 7, 6, 7,  // Act II: Optimistic to despairing
+              10, 9, 4  // Act III: Cathartic, reflective
+            ],
+            borderColor: '#2563eb',
+            fill: false,
+            tension: 0.4
+          }]
+        },
+        options: {
+          responsive: true,
+          scales: {
+            x: {
+              title: { display: true, text: 'Beat Number (Pages 1–90)' }
+            },
+            y: {
+              title: { display: true, text: 'Emotional Intensity (1–10)' },
+              min: 0,
+              max: 10
+            }
+          },
+          plugins: {
+            annotation: {
+              annotations: [
+                { type: 'line', xMin: 1, xMax: 1, yMin: 0, yMax: 10, borderColor: '#f59e0b', borderWidth: 2, label: { content: 'Page 1: Opening Image', enabled: true } },
+                { type: 'line', xMin: 2, xMax: 2, yMin: 0, yMax: 10, borderColor: '#f59e0b', borderWidth: 2, label: { content: 'Page 3: Setup', enabled: true } },
+                { type: 'line', xMin: 4, xMax: 4, yMin: 0, yMax: 10, borderColor: '#f59e0b', borderWidth: 2, label: { content: 'Page 5: Theme Stated', enabled: true } },
+                { type: 'line', xMin: 5, xMax: 5, yMin: 0, yMax: 10, borderColor: '#f59e0b', borderWidth: 2, label: { content: 'Page 8: Inciting Incident', enabled: true } },
+                { type: 'line', xMin: 8, xMax: 8, yMin: 0, yMax: 10, borderColor: '#f59e0b', borderWidth: 2, label: { content: 'Page 13: Tests, Allies, Enemies', enabled: true } },
+                { type: 'line', xMin: 10, xMax: 10, yMin: 0, yMax: 10, borderColor: '#f59e0b', borderWidth: 2, label: { content: 'Page 21: Break into Act II', enabled: true } },
+                { type: 'line', xMin: 14, xMax: 14, yMin: 0, yMax: 10, borderColor: '#f59e0b', borderWidth: 2, label: { content: 'Page 34: Midpoint', enabled: true } },
+                { type: 'line', xMin: 17, xMax: 17, yMin: 0, yMax: 10, borderColor: '#f59e0b', borderWidth: 2, label: { content: 'Page 55: All Is Lost', enabled: true } }
+              ]
+            }
+          }
+        }
+      });
+    </script>
+  </section>
+
+  <section class="mb-12">
+    <h2 class="section-title">⏳ Narrative Timeline</h2>
+    <p class="text-gray-700 mb-4">The timeline below visualizes the progression of the 21 beats across three acts, with golden ratio points highlighted and page numbers displayed.</p>
+    <div id="timeline"></div>
+    <script>
+      const container = document.getElementById('timeline');
+      const items = new vis.DataSet([
+        { id: 1, content: '1️⃣ Opening Image', start: 1, group: 1, className: 'golden' },
+        { id: 2, content: '2️⃣ Setup', start: 3, group: 1, className: 'golden' },
+        { id: 3, content: '3️⃣ Theme Stated', start: 5, group: 1, className: 'golden' },
+        { id: 4, content: '4️⃣ Inciting Incident', start: 8, group: 1, className: 'golden' },
+        { id: 5, content: '5️⃣ Debate', start: 12, group: 1 },
+        { id: 6, content: '6️⃣ Break into Act II', start: 21, group: 2, className: 'golden' },
+        { id: 7, content: '7️⃣ Fun and Games', start: 26, group: 2 },
+        { id: 8, content: '8️⃣ Tests, Allies, Enemies', start: 30, group: 2, className: 'golden' },
+        { id: 9, content: '9️⃣ Fun and Games', start: 34, group: 2 },
+        { id: 10, content: '1️⃣0️⃣ Approach to Inmost Cave', start: 38, group: 2 },
+        { id: 11, content: '1️⃣1️⃣ Midpoint', start: 42, group: 2, className: 'golden' },
+        { id: 12, content: '1️⃣2️⃣ Bad Guys Close In', start: 46, group: 2 },
+        { id: 13, content: '1️⃣3️⃣ Bad Guys Close In', start: 50, group: 2 },
+        { id: 14, content: '1️⃣4️⃣ All Is Lost', start: 55, group: 2, className: 'golden' },
+        { id: 15, content: '1️⃣5️⃣ Dark Night of the Soul', start: 60, group: 2 },
+        { id: 16, content: '1️⃣6️⃣ Reward', start: 65, group: 2 },
+        { id: 17, content: '1️⃣7️⃣ Road Back', start: 68, group: 2 },
+        { id: 18, content: '1️⃣8️⃣ Break into Act III', start: 71, group: 2 },
+        { id: 19, content: '1️⃣9️⃣ Finale', start: 76, group: 3 },
+        { id: 20, content: '2️⃣0️⃣ Resurrection', start: 82, group: 3 },
+        { id: 21, content: '2️⃣1️⃣ Final Image', start: 88, group: 3 }
+      ]);
+      const groups = new vis.DataSet([
+        { id: 1, content: 'Act I: Setup' },
+        { id: 2, content: 'Act II: Confrontation' },
+        { id: 3, content: 'Act III: Resolution' }
+      ]);
+      const options = {
+        height: '300px',
+        start: 1,
+        end: 90,
+        format: {
+          minorLabels: function (date, scale, step) {
+            return 'Page ' + Math.round(date);
+          },
+          majorLabels: function (date, scale, step) {
+            return '';
+          }
+        },
+        showMajorLabels: false
+      };
+      const timeline = new vis.Timeline(container, items, groups, options);
+    </script>
+  </section>
+
+  <section class="mb-12">
     <h2 class="section-title">📐 Mathematical Foundation</h2>
-    <p class="text-gray-700 mb-4">The Fibonacci sequence is defined as <span class="math">F(n) = F(n-1) + F(n-2)</span>, with <span class="math">F(0) = 0</span>, <span class="math">F(1) = 1</span>, yielding 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, etc. The golden ratio is <span class="math">\lim_{n \to \infty} F(n+1) / F(n) \approx 1.618</span>. Act lengths are proportional to Fibonacci numbers (2, 3, 5, 8, 13), scaled to 90 pages. Golden ratio points are calculated as <span class="math">P_k = \lfloor N / \phi^k \rfloor</span>, where <span class="math">\phi \approx 1.618</span>. For <span class="math">N = 90</span>, these are pages 56, 34, 21, 13, 8, 5, 3, and 1, aligning with key narrative moments.</p>
+    <p class="text-gray-700 mb-4">The Fibonacci sequence is defined as <span class="math">F(n) = F(n-1) + F(n-2)</span>, with <span class="math">F(0) = 0</span>, <span class="math">F(1) = 1</span>, yielding 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, etc. The golden ratio is <span class="math">\lim_{n \to \infty} F(n+1) / F(n) \approx 1.618</span>. Beat counts (5, 13, 3) are Fibonacci numbers, summing to 21 (<span class="math">F(8)</span>). Golden ratio points (<span class="math">P_k = \lfloor N / \phi^k \rfloor</span>, <span class="math">\phi \approx 1.618</span>) for <span class="math">N = 90</span> are pages 55, 34, 21, 13, 8, 5, 3, 1, aligning with key narrative moments.</p>
   </section>
 
   <section class="mb-12">
     <h2 class="section-title">🧠 Why This Works: Scientific and Mathematical Insights</h2>
     <ul class="list-disc pl-6 text-gray-700">
-      <li><strong>Natural Patterns</strong>: Fibonacci numbers appear in nature’s patterns, such as leaf arrangements (phyllotaxis) and galaxy spirals, optimizing growth and space for visual harmony. 🌿 In art, the golden ratio shapes works like Leonardo da Vinci’s <em>Vitruvian Man</em> and Salvador Dalí’s <em>The Sacrament of the Last Supper</em>, creating balanced compositions. Stories using these patterns feel intuitive ([GeeksforGeeks](https://www.geeksforgeeks.org/fibonacci-sequence/)).</li>
-      <li><strong>Cognitive Appeal</strong>: Research by Adrian Bejan suggests golden ratio proportions are easier for the brain to process, enhancing engagement. Giacomo Rizzolatti and Cinzia Di Dio’s studies indicate human preference for these proportions, likely due to evolutionary familiarity with nature’s patterns. 🌿</li>
-      <li><strong>Narrative Momentum</strong>: Fibonacci-based act lengths create organic escalation, with Act 5’s 10 beats allowing complex resolution, mirroring nature’s patterns like tree branching. 🌿 Golden ratio points (e.g., page 56) mark critical shifts, aligning with audience expectations.</li>
-      <li><strong>Storytelling Examples</strong>: Eleanor Catton’s <em>The Luminaries</em> uses an inverse Fibonacci sequence for part lengths, enhancing flow. Films like <em>The Godfather</em> use golden ratio framing, and top RoI films may follow Fibonacci-like structures ([StoryAlity](https://storyality.wordpress.com/2012/12/23/storyality-50-the-storyality-screenplay-syntagm/)). Debussy’s music (e.g., <em>Reflets dans l’eau</em>) uses golden ratio intervals, suggesting a model for pacing.</li>
-      <li><strong>Historical Context</strong>: Introduced by Leonardo of Pisa in 1202 via <em>Liber Abaci</em>, the Fibonacci sequence has roots in Indian mathematics (circa 200 BC) through Pingala’s poetic patterns, linking it to narrative arts ([Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_sequence)).</li>
+      <li><strong>Natural Patterns</strong>: Fibonacci numbers shape nature’s patterns, like phyllotaxis and galaxy spirals, optimizing space and harmony. 🌿 In art, the golden ratio defines works like da Vinci’s <em>Vitruvian Man</em>, making stories intuitive (<a href="https://www.geeksforgeeks.org/fibonacci-sequence/">GeeksforGeeks</a>).</li>
+      <li><strong>Cognitive Appeal</strong>: Research by Adrian Bejan suggests golden ratio proportions reduce cognitive load, enhancing engagement (<a href="https://www.theguardian.com/artanddesign/2009/dec/28/golden-ratio-us-academic">The Guardian</a>). Giacomo Rizzolatti and Cinzia Di Dio’s studies indicate preference for these patterns, tied to evolutionary familiarity with nature’s designs. 🌿</li>
+      <li><strong>Narrative Momentum</strong>: The 13-beat Act II mirrors Fibonacci growth, escalating conflict naturally, like tree branching. 🌿 Golden ratio points (e.g., page 55) anchor pivotal shifts, resonating with audience expectations.</li>
+      <li><strong>Storytelling Examples</strong>: Eleanor Catton’s <em>The Luminaries</em> uses inverse Fibonacci pacing. Films like <em>The Godfather</em> leverage golden ratio framing, and high-RoI films align with Fibonacci structures (<a href="https://storyality.wordpress.com/2013/04/09/storyality-50-the-storyality-screenplay-syntagm/">StoryAlity</a>).</li>
+      <li><strong>Historical Context</strong>: Leonardo of Pisa’s 1202 <em>Liber Abaci</em> introduced Fibonacci numbers, rooted in Indian mathematics (200 BC) via Pingala’s poetic patterns, linking to storytelling (<a href="https://en.wikipedia.org/wiki/Fibonacci_sequence">Wikipedia</a>).</li>
     </ul>
   </section>
 
   <section class="mb-12">
     <h2 class="section-title">💡 How to Use It: Advanced Storytelling Techniques</h2>
     <ul class="list-disc pl-6 text-gray-700">
-      <li><strong>Subplot Structure</strong>: Use smaller Fibonacci numbers (e.g., 3 for setup, complication, resolution; or 5 for a complex arc) to ensure subplots harmonize with the main narrative.</li>
-      <li><strong>Golden Ratio Beats</strong>: Place key moments at <span class="math">P_k = \lfloor N / \phi^k \rfloor</span> (e.g., pages 56, 34, 21, 13, 8, 5, 3, 1 for <span class="math">N = 90</span>) to maximize emotional impact.</li>
-      <li><strong>Practical Application</strong>: Adapt the beat sheet for different script lengths (e.g., for a 120-page script, scale act lengths to 8, 12, 19, 31, 50 pages). The structure suits various genres, maintaining mathematical harmony.</li>
+      <li><strong>Subplot Structure</strong>: Use Fibonacci numbers (e.g., 3 for setup, complication, resolution) for subplots, harmonizing with the main arc.</li>
+      <li><strong>Golden Ratio Beats</strong>: Place key moments at <span class="math">P_k = \lfloor N / \phi^k \rfloor</span> (pages 55, 34, 21, 13, 8, 5, 3, 1) for emotional impact, using Hero’s Journey and three-act milestones.</li>
+      <li><strong>Practical Application</strong>: Scale for different lengths (e.g., 120 pages: Act I 33 pages, Act II 67 pages, Act III 20 pages). The structure adapts to all genres, maintaining harmony.</li>
     </ul>
   </section>
 
@@ -174,15 +303,15 @@
     <h2 class="section-title">🌐 Interactive Website Vision</h2>
     <p class="text-gray-700 mb-4">A website could enhance this structure’s usability:</p>
     <ul class="list-disc pl-6 text-gray-700">
-      <li><strong>Beat Calculator</strong>: Input script length to generate a Fibonacci-based beat sheet with golden ratio points highlighted.</li>
-      <li><strong>Golden Spiral Visualization</strong>: Display the story as a golden spiral using D3.js, with acts and beats mapped to spiral turns.</li>
-      <li><strong>Educational Content</strong>: Explain Fibonacci in nature’s patterns (e.g., sunflowers, galaxy spirals) 🌿, art, and storytelling, with scientific insights.</li>
-      <li><strong>User-Friendly Design</strong>: Use emojis, visuals, and downloadable templates for accessibility.</li>
+      <li><strong>Beat Calculator</strong>: Input script length for a Fibonacci-based beat sheet with golden ratio points.</li>
+      <li><strong>Golden Spiral Visualization</strong>: Map acts and beats to a D3.js golden spiral.</li>
+      <li><strong>Educational Content</strong>: Explore Fibonacci in nature’s patterns (e.g., sunflowers) 🌿, art, and storytelling.</li>
+      <li><strong>User-Friendly Design</strong>: Emojis, visuals, and downloadable templates ensure accessibility.</li>
     </ul>
   </section>
 
   <footer class="text-center text-gray-500 mt-12">
-    <p>Craft compelling screenplays with the harmony of Fibonacci and golden ratio principles.</p>
+    <p>Craft compelling screenplays with Fibonacci, Hero’s Journey, and three-act harmony.</p>
   </footer>
 </body>
 </html>
