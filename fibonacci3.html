@@ -171,7 +171,7 @@
 
   <section class="mb-12">
     <h2 class="section-title">📈 Storyline Emotional Arc</h2>
-    <p class="text-gray-700 mb-4">The graph visualizes emotional intensity across 21 beats, with golden ratio points and key Hero’s Journey/three-act milestones marked.</p>
+    <p class="text-gray-700 mb-4">The graph visualizes emotional intensity across 21 beats, with golden ratio points and key Hero’s Journey/three-act milestones marked. </p>
     <canvas id="emotionalArcChart" width="800" height="400"></canvas>
     <script>
       const ctx = document.getElementById('emotionalArcChart').getContext('2d');
@@ -272,8 +272,23 @@
       };
       const timeline = new vis.Timeline(container, items, groups, options);
     </script>
-  </section>
-
+  </section> 
+<section class="mb-12">
+  <h2 class="section-title">📽️ Example Scene Count in Practice</h2>
+  <p class="text-gray-700 mb-4">For a 90-minute film with 21 major beats:</p>
+  <ul class="list-disc pl-6 text-gray-700">
+    <li><strong>Major Beats</strong>: 21 scenes (~4.3 pages each, ~90 pages total).</li>
+    <li><strong>Minor Scenes</strong>: Add ~20–30 shorter scenes (e.g., 1–2 pages) for transitions, subplots, or pacing, reaching ~40–50 scenes total.</li>
+    <li><strong>Example Mapping</strong>:
+      <ul class="list-circle pl-6">
+        <li>Beat 1 (Opening Image, page 1): 1 scene (~3 pages).</li>
+        <li>Beat 7 (Fun and Games, page 26): Split into 2–3 scenes (e.g., 2 pages each) for exploration.</li>
+      </ul>
+    </li>
+    <li>Total: ~45 scenes, with 21 major beats and ~24 minor scenes.</li>
+  </ul>
+  <p class="text-gray-700 mt-4">This approach keeps the Fibonacci structure intact while meeting typical scene count expectations.</p>
+</section>
   <section class="mb-12">
     <h2 class="section-title">📐 Mathematical Foundation</h2>
     <p class="text-gray-700 mb-4">The Fibonacci sequence is defined as <span class="math">F(n) = F(n-1) + F(n-2)</span>, with <span class="math">F(0) = 0</span>, <span class="math">F(1) = 1</span>, yielding 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, etc. The golden ratio is <span class="math">\lim_{n \to \infty} F(n+1) / F(n) \approx 1.618</span>. Beat counts (5, 13, 3) are Fibonacci numbers, summing to 21 (<span class="math">F(8)</span>). Golden ratio points (<span class="math">P_k = \lfloor N / \phi^k \rfloor</span>, <span class="math">\phi \approx 1.618</span>) for <span class="math">N = 90</span> are pages 55, 34, 21, 13, 8, 5, 3, 1, aligning with key narrative moments.</p>
