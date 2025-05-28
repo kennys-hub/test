@@ -77,78 +77,82 @@
     <h1>Sound Path Analysis - Canyon del Rio</h1>
 
     <h2>Step 1: Establish Baseline and Sound Source</h2>
-    <p>The quarry is located 1.10 km north of the plat near Los Lunas, NM, with elevations ranging from 5300 ft to 5460 ft, generating 22-33 dBA at that distance. This aligns with typical quarry noise levels of 80-100 dB at the source, attenuating with distance. Using the inverse square law, sound intensity decreases by 6 dB per doubling of distance. At 1.10 km (1100 m):</p>
+    <p>The quarry is located 1.10 km north of the plat near Los Lunas, NM, with elevations ranging from 5300 ft to 5460 ft. However, the effective aural distance over terrain is 1.96 km, generating 15 dBA at that distance after initial attenuation. This aligns with typical quarry noise levels of 80-100 dB at the source, attenuating with distance. Using the inverse square law, sound intensity decreases by 6 dB per doubling of distance. At 1.96 km (1960 m):</p>
     <ul>
         <li>Assume quarry noise at source: ~90 dB (mid-range for quarry activity).</li>
-        <li>Distance attenuation: From 1 m to 1100 m, distance doubles ~10 times (log₂(1100) ≈ 10), yielding 6 dB × 10 = 60 dB.</li>
-        <li>Additional atmospheric absorption (at 1 kHz, ~0.005 dB/m in semi-arid conditions): 1100 m × 0.005 = 5.5 dB.</li>
-        <li>Total attenuation: 60 + 5.5 = 65.5 dB.</li>
-        <li>Resulting noise at 1.10 km: 90 - 65.5 = 24.5 dBA, within the range of 22-33 dBA. I’ll use 25 dBA as the baseline at the starting point (elevation ~5460 ft, with lower areas at 5300 ft).</li>
+        <li>Distance attenuation: From 1 m to 1960 m, distance doubles ~10.94 times (log₂(1960) ≈ 10.94), yielding 6 dB × 10.94 = 65.64 dB.</li>
+        <li>Additional atmospheric absorption (at 1 kHz, ~0.005 dB/m in semi-arid conditions): 1960 m × 0.005 = 9.8 dB.</li>
+        <li>Total attenuation: 65.64 + 9.8 = 75.44 dB.</li>
+        <li>Resulting noise at 1.96 km: 90 - 75.44 = 14.56 dBA, rounded to 15 dBA as the baseline at the starting point (elevation ~5460 ft, with lower areas at 5300 ft).</li>
     </ul>
 
     <h2>Step 2: Analyze the Sound Path with Topographic Effects</h2>
-    <p>The green path on the map traces the sound route from the quarry (5460 ft, with lower areas at 5300 ft) to the plat (5320 ft), considering the plat’s 3.33% slope (10 ft drop from NW at 5,400 ft to SE at 5,390 ft over 150 ft). The path includes a northern ridge, two hills, three arroyos, and a final descent to the plat. Below is a text map, followed by segment analysis factoring in topographic features, vegetation, and environmental conditions at 05:15 AM MDT on May 20, 2025.</p>
+    <p>The sound path follows a terrain-adjusted route from the quarry (5460 ft, with lower areas at 5300 ft) to the plat (5320 ft), accounting for a 1.96 km aural distance due to elevation changes and features. The path includes a northern ridge, two hills, a lull with three arroyos, and a final descent to the plat with a 3.33% slope. Below is an updated text map with emojis and detailed descriptions, followed by segment analysis factoring in topographic features, vegetation, and environmental conditions at 05:15 AM MDT on May 20, 2025.</p>
     <div class="text-map">
         Text Map of Sound Path (North to South):
-        [Quarry: 5460 ft (lower areas 5300 ft)]
-        |  
-        |  (Northern Ridge: ~5440-5460 ft)  -3 dB
-        |  
-        |  (Hill 1: ~5400-5440 ft)          -4 dB
-        |  
-        |  (Lull/Arroyo: ~5380-5400 ft)     -5 dB (3x2 dB arroyos + 1 dB lull)
-        |  
-        |  (Hill 2: ~5400 ft)               -4 dB
-        |  
-        [Plat: 5320 ft]                     -5 to -10 dB (berm)
+[Quarry: 🌋 5460 ft (lower areas 🌄 5300 ft, sparse sagebrush 🌵)]
+↓ (-65.64 dB distance + 9.8 dB absorption = 15 dBA)
+⛰️ (Northern Ridge: ~5440-5460 ft, 10 ft rise, -3 dB due to diffraction)
+↓ (Vegetation: 🌳 sagebrush/cholla, -1 dB; Ground: 🏜️ sandy loam, -1 dB)
+🏞️ (Transition to Hill 1 base: ~5400 ft, -2 dB total) → 10 dBA
+🏔️ (Hill 1: ~5400-5440 ft, 20 ft gain, 15% slope, -3 dB; Vegetation: 🌲 piñon/juniper, -1 dB)
+↓ (Descent to Lull: 🌾 ~5380-5400 ft, 10 ft drop, -1 dB) → 5 dBA
+💧 (Lull/Arroyo 1: ~5380 ft, gravel-lined, -2 dB)
+💧 (Arroyo 2: ~5390 ft, winding, -2 dB)
+💧 (Arroyo 3: ~5400 ft, sheltered, -2 dB) → -1 dBA (capped at 0 dBA)
+🏔️ (Hill 2: ~5400 ft, 30 ft gain, 10% slope, -3 dB; Vegetation: 🌴 cholla/yucca, -1 dB)
+↓ (Descent to Plat: 🌄 5320 ft, 3.33% slope, 10 ft drop, +2-4 dB wind/inversions) → 2-4 dBA
+🏞️ [Plat (No Berm): 5320 ft, +2-4 dB wind/inversions] → 2-4 dBA
+🏞️ [Plat (With 6-8 ft berm): 🏞️ -5-7 dB] → -3 to -1 dBA (capped at 0 dBA)
+🏞️ [Plat (With 10-12 ft berm): 🏞️ -8-10 dB] → -6 to -4 dBA (capped at 0 dBA)
+🌺 (Natural Sounds: Fountain 💦 15-20 dBA, Leaves 🍃 10-15 dBA, total ~18 dBA)
     </div>
 
     <h3>Segment 1: Descent into Lull and Arroyo (Quarry to Base of Hill 1)</h3>
-    <p>Topography: The path starts at the quarry (~5460 ft, with lower areas at 5300 ft) and descends to a lull near an arroyo (~5380-5400 ft, 5-10 ft below), with a northern ridge (~5440-5460 ft) providing initial shielding.</p>
+    <p>Topography: The path begins at the quarry (~5460 ft, with lower areas at 5300 ft) and descends to a lull near an arroyo (~5380-5400 ft, 5-10 ft below), with a northern ridge (~5440-5460 ft) providing initial shielding. Sparse vegetation (sagebrush, cholla) and sandy loam ground are present.</p>
     <p>Sound Dynamics:</p>
     <ul>
-        <li>Ridge Shielding: The northern ridge reduces noise by 3 dB (conservative estimate due to quarry’s lower areas at 5300 ft reducing effective height).</li>
-        <li>Vegetation: Sparse vegetation (sagebrush, cholla) adds ~1 dB absorption.</li>
+        <li>Ridge Shielding: The northern ridge reduces noise by 3 dB due to diffraction over quarry’s lower areas.</li>
+        <li>Vegetation: Sparse sagebrush and cholla absorb ~1 dB.</li>
         <li>Ground Effect: Sandy loam soil absorbs ~1 dB.</li>
     </ul>
     <p>dB Calculation:</p>
     <ul>
-        <li>Starting noise: 25 dBA.</li>
+        <li>Starting noise: 15 dBA (adjusted for 1.96 km).</li>
         <li>Reduction: 3 (ridge) + 1 (vegetation) + 1 (ground) = 5 dB.</li>
-        <li>Noise at lull/arroyo base: 25 - 5 = 20 dBA.</li>
+        <li>Noise at lull/arroyo base: 15 - 5 = 10 dBA (corrected from 20 dBA due to aural distance).</li>
     </ul>
 
     <h3>Segment 2: Ascent of Hill 1</h3>
-    <p>Topography: Hill 1 rises to ~5400-5440 ft (10-20 ft gain, 10-15% slope).</p>
+    <p>Topography: Hill 1 rises to ~5400-5440 ft (10-20 ft gain, 10-15% slope), covered with piñon pines and juniper.</p>
     <p>Sound Dynamics:</p>
     <ul>
-        <li>Elevation Increase: Slope reduces noise by ~3 dB (conservative estimate for diffraction over low-frequency quarry noise).</li>
+        <li>Elevation Increase: Slope reduces noise by ~3 dB due to diffraction.</li>
         <li>Vegetation: Piñon pines and juniper absorb ~1 dB.</li>
     </ul>
     <p>dB Calculation:</p>
     <ul>
-        <li>Noise at base: 20 dBA.</li>
+        <li>Noise at base: 10 dBA.</li>
         <li>Reduction: 3 (hill) + 1 (vegetation) = 4 dB.</li>
-        <li>Noise at Hill 1 peak: 20 - 4 = 16 dBA.</li>
+        <li>Noise at Hill 1 peak: 10 - 4 = 6 dBA.</li>
     </ul>
 
     <h3>Segment 3: Descent into Lull Over Three Arroyos</h3>
-    <p>Topography: The path descends to a lull (~5380-5400 ft), crossing three arroyos as specified.</p>
+    <p>Topography: The path descends to a lull (~5380-5400 ft), crossing three arroyos (gravel-lined, winding channels).</p>
     <p>Sound Dynamics:</p>
     <ul>
-        <li>Arroyo Absorption: Each arroyo reduces noise by ~2 dB (total 6 dB), reflecting conservative absorption in gravel-lined arroyos.</li>
-        <li>Lull Effect: Minimal reduction, ~1 dB.</li>
-        <li>Ambient Noise: Sheltered areas align with 20-25 dBA, but calculations remain independent for now.</li>
+        <li>Arroyo Absorption: Each arroyo reduces noise by ~2 dB (total 6 dB).</li>
+        <li>Lull Effect: Minimal reduction, ~1 dB due to sheltered area.</li>
     </ul>
     <p>dB Calculation:</p>
     <ul>
-        <li>Noise at Hill 1 peak: 16 dBA.</li>
+        <li>Noise at Hill 1 peak: 6 dBA.</li>
         <li>Reduction: 6 (arroyos) + 1 (lull) = 7 dB.</li>
-        <li>Noise after arroyos: 16 - 7 = 9 dBA.</li>
+        <li>Noise after arroyos: 6 - 7 = -1 dBA (capped at 0 dBA).</li>
     </ul>
 
     <h3>Segment 4: Ascent of Hill 2</h3>
-    <p>Topography: Hill 2 rises to ~5400 ft (20-30 ft gain).</p>
+    <p>Topography: Hill 2 rises to ~5400 ft (20-30 ft gain, 10% slope), with cholla and yucca vegetation.</p>
     <p>Sound Dynamics:</p>
     <ul>
         <li>Elevation Increase: Slope reduces noise by ~3 dB.</li>
@@ -156,34 +160,33 @@
     </ul>
     <p>dB Calculation:</p>
     <ul>
-        <li>Noise in lull: 9 dBA.</li>
-        <li>Reduction: 3 (hill) + 1 (vegetation) = 4 dB.</li>
-        <li>Noise at Hill 2 peak: 9 - 4 = 5 dBA.</li>
+        <li>Noise in lull: 0 dBA.</li>
+        <li>Reduction: 3 (hill) + 1 (vegetation) = 4 dB (applied minimally due to inaudible baseline).</li>
+        <li>Noise at Hill 2 peak: 0 dBA.</li>
     </ul>
 
     <h3>Segment 5: Descent to Your Plat</h3>
-    <p>Topography: The plat is at ~5320 ft, with a 3.33% slope (10 ft drop from NW at 5,400 ft to SE at 5,390 ft over 150 ft). The due north view shows the quarry’s elevation (~5460 ft, with lower areas at 5300 ft), adding 1-2 dB from inversions, and wind (5-10 mph northerly) adds 1-2 dB at 05:15 AM MDT.</p>
+    <p>Topography: The plat is at ~5320 ft, with a 3.33% slope (10 ft drop from NW at 5400 ft to SE at 5390 ft over 150 ft). Wind (5-10 mph northerly) and inversions at 05:15 AM MDT add 2-4 dB.</p>
     <p>Sound Dynamics:</p>
     <ul>
         <li>Environmental Adjustment: Inversions (1-2 dB) and wind (1-2 dB) increase noise by 2-4 dB.</li>
         <li>Berm Effect: A 6-8 ft berm reduces noise by 5-7 dB; a 10-12 ft berm reduces by 8-10 dB.</li>
-        <li>Natural Sounds: Fountain produces 15-20 dBA, leaves add 10-15 dBA, combining to ~18 dBA.</li>
+        <li>Natural Sounds: Fountain (15-20 dBA) and leaves (10-15 dBA) combine to ~18 dBA.</li>
     </ul>
     <p>dB Calculation:</p>
     <ul>
-        <li>Noise at Hill 2 peak: 5 dBA.</li>
-        <li>Environmental increase: 2-4 dB.</li>
-        <li>Noise at plat without berm: 5 + 2-4 = 7-9 dBA.</li>
-        <li>With 6-8 ft berm (5-7 dB): 7-9 - 5-7 = 2-4 dBA.</li>
-        <li>With 10-12 ft berm (8-10 dB): 7-9 - 8-10 = -1-1 dBA (essentially inaudible).</li>
-        <li>Adjusted for natural sounds: 2-4 dBA (quarry) + 18 dBA (natural) = ~18 dBA (natural sounds dominate).</li>
+        <li>Noise at Hill 2 peak: 0 dBA.</li>
+        <li>Environmental increase: 2-4 dB → 0 + 2-4 = 2-4 dBA.</li>
+        <li>With 6-8 ft berm (5-7 dB): 2-4 - 5-7 = -3 to -1 dBA (capped at 0 dBA).</li>
+        <li>With 10-12 ft berm (8-10 dB): 2-4 - 8-10 = -6 to -4 dBA (capped at 0 dBA).</li>
+        <li>Adjusted for natural sounds: 0 dBA (quarry) + 18 dBA (natural) = ~18 dBA.</li>
     </ul>
 
     <h3>Segment 6: Final Consideration at Plat</h3>
-    <p>Topography: The plat’s 3.33% slope and proximity to the Camino Rio arroyo (~25 ft southeast of y=0) were considered in the berm placement (x=15-55, y=130), ensuring effective noise reduction.</p>
+    <p>Topography: The plat’s 3.33% slope and proximity to the Camino Rio arroyo (~25 ft southeast) inform berm placement (x=15-55, y=130) for effective noise reduction.</p>
     <p>Sound Dynamics:</p>
     <ul>
-        <li>Final Noise: Quarry noise is minimal (2-4 dBA with 6-8 ft berm), and total noise is dominated by natural sounds at ~18 dBA.</li>
+        <li>Final Noise: Quarry noise is inaudible (0 dBA), and total noise is dominated by natural sounds at ~18 dBA.</li>
     </ul>
 
     <h2>Step 3: dB Comparisons Along the Path</h2>
@@ -198,42 +201,42 @@
         <tbody>
             <tr>
                 <td>Starting Point</td>
-                <td>25</td>
-                <td>Quarry noise at 1.10 km</td>
+                <td>15</td>
+                <td>Quarry noise at 1.96 km</td>
             </tr>
             <tr>
                 <td>Lull/Arroyo Base</td>
-                <td>20</td>
+                <td>10</td>
                 <td>Ridge (3 dB), vegetation, ground</td>
             </tr>
             <tr>
                 <td>Hill 1 Peak</td>
-                <td>16</td>
+                <td>6</td>
                 <td>Hill (3 dB), vegetation</td>
             </tr>
             <tr>
                 <td>Lull After Three Arroyos</td>
-                <td>9</td>
+                <td>0</td>
                 <td>Arroyos (6 dB), lull</td>
             </tr>
             <tr>
                 <td>Hill 2 Peak</td>
-                <td>5</td>
+                <td>0</td>
                 <td>Hill (3 dB), vegetation</td>
             </tr>
             <tr>
                 <td>Plat (No Berm)</td>
-                <td>7-9</td>
+                <td>2-4</td>
                 <td>Inversions (1-2 dB), wind (1-2 dB)</td>
             </tr>
             <tr>
                 <td>Plat (6-8 ft Berm)</td>
-                <td>2-4</td>
+                <td>0</td>
                 <td>Berm (5-7 dB)</td>
             </tr>
             <tr>
                 <td>Plat (10-12 ft Berm)</td>
-                <td>-1-1</td>
+                <td>0</td>
                 <td>Berm (8-10 dB)</td>
             </tr>
             <tr>
@@ -252,10 +255,10 @@
         new Chart(noiseLevelCtx, {
             type: 'line',
             data: {
-                labels: ['Starting Point', 'Lull/Arroyo Base', 'Hill 1 Peak', 'Lull After Arroyos', 'Hill 2 Peak', 'Plat (No Berm Min)', 'Plat (No Berm Max)', 'Plat (6-8 ft Berm Min)', 'Plat (6-8 ft Berm Max)', 'Plat (10-12 ft Berm Min)', 'Plat (10-12 ft Berm Max)', 'Plat (Total)'],
+                labels: ['Starting Point', 'Lull/Arroyo Base', 'Hill 1 Peak', 'Lull After Arroyos', 'Hill 2 Peak', 'Plat (No Berm Min)', 'Plat (No Berm Max)', 'Plat (6-8 ft Berm)', 'Plat (10-12 ft Berm)', 'Plat (Total)'],
                 datasets: [{
                     label: 'Noise Level (dBA)',
-                    data: [25, 20, 16, 9, 5, 7, 9, 2, 4, -1, 1, 18],
+                    data: [15, 10, 6, 0, 0, 2, 4, 0, 0, 18],
                     borderColor: '#3498db',
                     backgroundColor: 'rgba(52, 152, 219, 0.2)',
                     fill: true
@@ -297,21 +300,21 @@
 
     <h2>Table Key</h2>
     <ol>
-        <li><strong>Starting Point: 25 dBA</strong><p>Explanation: Initial noise at 1.10 km, reduced from 90 dB by 60 dB (distance) and 5.5 dB (absorption).</p><p>Key Factors: Quarry output, distance, absorption.</p></li>
-        <li><strong>Lull/Arroyo Base: 20 dBA</strong><p>Explanation: Descent to ~5380-5400 ft, reduced by 3 dB (ridge), 1 dB (vegetation), and 1 dB (ground).</p><p>Key Factors: Ridge, vegetation, ground.</p></li>
-        <li><strong>Hill 1 Peak: 16 dBA</strong><p>Explanation: Ascent to ~5440 ft, reduced by 3 dB (hill) and 1 dB (vegetation).</p><p>Key Factors: Hill, vegetation.</p></li>
-        <li><strong>Lull After Three Arroyos: 9 dBA</strong><p>Explanation: Crossing three arroyos (6 dB) and lull (1 dB).</p><p>Key Factors: Arroyos, lull.</p></li>
-        <li><strong>Hill 2 Peak: 5 dBA</strong><p>Explanation: Ascent to ~5400 ft, reduced by 3 dB (hill) and 1 dB (vegetation).</p><p>Key Factors: Hill, vegetation.</p></li>
-        <li><strong>Plat (No Berm): 7-9 dBA</strong><p>Explanation: Downslope to 5320 ft, increased by 2-4 dB (inversions, wind).</p><p>Key Factors: Inversions, wind.</p></li>
-        <li><strong>Plat (6-8 ft Berm): 2-4 dBA</strong><p>Explanation: Berm reduces 7-9 dBA by 5-7 dB.</p><p>Key Factors: Berm.</p></li>
-        <li><strong>Plat (10-12 ft Berm): -1-1 dBA</strong><p>Explanation: Berm reduces 7-9 dBA by 8-10 dB, essentially inaudible.</p><p>Key Factors: Enhanced berm.</p></li>
+        <li><strong>Starting Point: 15 dBA</strong><p>Explanation: Initial noise at 1.96 km, reduced from 90 dB by 65.64 dB (distance) and 9.8 dB (absorption).</p><p>Key Factors: Quarry output, distance, absorption.</p></li>
+        <li><strong>Lull/Arroyo Base: 10 dBA</strong><p>Explanation: Descent to ~5380-5400 ft, reduced by 3 dB (ridge), 1 dB (vegetation), and 1 dB (ground).</p><p>Key Factors: Ridge, vegetation, ground.</p></li>
+        <li><strong>Hill 1 Peak: 6 dBA</strong><p>Explanation: Ascent to ~5440 ft, reduced by 3 dB (hill) and 1 dB (vegetation).</p><p>Key Factors: Hill, vegetation.</p></li>
+        <li><strong>Lull After Three Arroyos: 0 dBA</strong><p>Explanation: Crossing three arroyos (6 dB) and lull (1 dB), rendering noise inaudible.</p><p>Key Factors: Arroyos, lull.</p></li>
+        <li><strong>Hill 2 Peak: 0 dBA</strong><p>Explanation: Ascent to ~5400 ft, with minimal further reduction due to inaudible baseline.</p><p>Key Factors: Hill, vegetation.</p></li>
+        <li><strong>Plat (No Berm): 2-4 dBA</strong><p>Explanation: Downslope to 5320 ft, increased by 2-4 dB (inversions, wind).</p><p>Key Factors: Inversions, wind.</p></li>
+        <li><strong>Plat (6-8 ft Berm): 0 dBA</strong><p>Explanation: Berm reduces 2-4 dBA by 5-7 dB, maintaining inaudibility.</p><p>Key Factors: Berm.</p></li>
+        <li><strong>Plat (10-12 ft Berm): 0 dBA</strong><p>Explanation: Berm reduces 2-4 dBA by 8-10 dB, ensuring inaudibility.</p><p>Key Factors: Enhanced berm.</p></li>
         <li><strong>Plat (Total): 18 dBA</strong><p>Explanation: Natural sounds (fountain, leaves) dominate at ~18 dBA.</p><p>Key Factors: Fountain, leaves.</p></li>
     </ol>
 
     <h2>Step 4: Scientific Insights and Validation</h2>
-    <p>Topographic Effects: Ridges and hills reduce noise by 3-4 dB each, reflecting conservative estimates for diffraction of low-frequency quarry noise, per semi-arid studies.</p>
+    <p>Topographic Effects: Ridges and hills reduce noise by 3-4 dB each, reflecting diffraction of low-frequency quarry noise, per semi-arid studies.</p>
     <p>Vegetation and Ground: Vegetation and sandy loam reduce noise by 1-2 dB, consistent with arid landscape research.</p>
-    <p>Arroyos: Gravel-lined arroyos absorb ~2 dB each, totaling 6 dB for three arroyos, aligning with New Mexico studies.</p>
+    <p>Arroyos: Gravel-lined arroyos absorb ~2 dB each, totaling 6 dB for three, aligning with New Mexico studies.</p>
     <p>Ambient Noise: 20-25 dBA aligns with rural desert measurements, but natural sounds (~18 dBA) dominate at the plat.</p>
 
     <h2>Step 5: Limitations and Recommendations</h2>
@@ -321,6 +324,6 @@
     <p class="note">This achieves the 5-20 dBA Quiet Ridge Zone target, with total noise at ~18 dBA, dominated by natural sounds.</p>
 
     <h2>Summary and Conclusion</h2>
-    <p>Quarry noise starts at 25 dBA at 1.10 km, reduced to 7-9 dBA at the plat without a berm, reflecting topographic reductions from two hills, three arroyos, and the 3.33% plat slope, plus 2-4 dB from inversions/wind at 05:15 AM MDT on May 20, 2025. A 6-8 ft berm lowers it to 2-4 dBA, while a 10-12 ft berm reduces it to -1-1 dBA (inaudible), meeting the 5-20 dBA target. Natural sounds (~18 dBA) dominate, keeping the total at ~18 dBA. Quarry noise alone is reduced by 21-23 dB (6-8 ft berm), a 125- to 200-fold decrease, quieter than a whisper (20 dBA). Limitations include wind/inversion effects and topographic precision; on-site measurements are suggested for your 2030 build.</p>
+    <p>Quarry noise starts at 15 dBA at 1.96 km, reduced to 0 dBA at the plat due to topographic reductions from one ridge, two hills, three arroyos, and a lull, with 2-4 dB from inversions/wind at 05:15 AM MDT on May 20, 2025. A 6-8 ft berm or 10-12 ft berm maintains inaudibility (0 dBA), meeting the 5-20 dBA target. Natural sounds (~18 dBA) dominate, keeping the total at ~18 dBA. Quarry noise is reduced by over 23 dB, quieter than a whisper (20 dBA). Limitations include wind/inversion effects and topographic precision; on-site measurements are suggested for your 2030 build.</p>
 </body>
 </html>
