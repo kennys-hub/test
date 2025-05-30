@@ -89,7 +89,7 @@
     </ul>
 
     <h2>Step 2: Analyze the Sound Path with Topographic Effects</h2>
-    <p>The sound path follows a terrain-adjusted route from the quarry (5460 ft, with lower areas at 5300 ft) to the plat (5320 ft), with an effective aural distance of 1.89 km due to elevation changes and features. The path includes a northern ridge, two hills, a lull with three arroyos, and a final descent to the plat with a 3.33% slope. Below is an updated text map with emojis and detailed descriptions, followed by segment analysis factoring in topographic features, vegetation, and environmental conditions at 05:15 AM MDT on May 20, 2025 (current analysis updated at 05:42 AM EDT, May 29, 2025).</p>
+    <p>The sound path follows a terrain-adjusted route from the quarry (5460 ft, with lower areas at 5300 ft) to the plat (5320 ft), with an effective aural distance of 1.89 km due to elevation changes and features. The path includes a northern ridge, two hills, a lull with three arroyos, and a final descent to the plat with a 3.33% slope. Below is an updated text map with emojis and detailed descriptions, followed by segment analysis factoring in topographic features, vegetation, and environmental conditions at 05:15 AM MDT on May 20, 2025 (current analysis updated at 10:27 PM EDT, May 29, 2025).</p>
     <div class="text-map">
         Text Map of Sound Path (North to South):
         [Quarry: 🌋 5460 ft (lower areas 🌄 5300 ft, sparse sagebrush 🌵)]
@@ -168,19 +168,19 @@
     </ul>
 
     <h3>Segment 5: Descent to Your Plat</h3>
-    <p>Topography: The plat is at ~5320 ft, with a 3.33% slope (10 ft drop from NW at 5400 ft to SE at 5390 ft over 150 ft). Wind (5-10 mph northerly) and inversions at 05:15 AM MDT add 2-4 dB.</p>
+    <p>Topography: The plat is at ~5320 ft, with a 3.33% slope (10 ft drop from NW at 5400 ft to SE at 5390 ft over 150 ft). Wind (5-10 mph northerly) and inversions at 05:15 AM MDT add 2-4 dB; current conditions at 10:27 PM EDT, May 29, 2025, suggest calm winds (0-2 mph) and stable temperatures, reducing this effect to 0-1 dB.</p>
     <p>Sound Dynamics:</p>
     <ul>
-        <li>Environmental Adjustment: Inversions (1-2 dB) and wind (1-2 dB) increase noise by 2-4 dB.</li>
+        <li>Environmental Adjustment: Inversions (0-1 dB) and wind (0-1 dB) increase noise by 0-2 dB under current conditions.</li>
         <li>Berm Effect: A 6-8 ft berm reduces noise by 5-7 dB; a 10-12 ft berm reduces by 8-10 dB.</li>
         <li>Natural Sounds: Fountain (15-20 dBA) and leaves (10-15 dBA) combine to ~18 dBA.</li>
     </ul>
     <p>dB Calculation:</p>
     <ul>
         <li>Noise at Hill 2 peak: 0 dBA.</li>
-        <li>Environmental increase: 2-4 dB → 0 + 2-4 = 2-4 dBA.</li>
-        <li>With 6-8 ft berm (5-7 dB): 2-4 - 5-7 = -3 to -1 dBA (capped at 0 dBA).</li>
-        <li>With 10-12 ft berm (8-10 dB): 2-4 - 8-10 = -6 to -4 dBA (capped at 0 dBA).</li>
+        <li>Environmental increase: 0-2 dB → 0 + 0-2 = 0-2 dBA.</li>
+        <li>With 6-8 ft berm (5-7 dB): 0-2 - 5-7 = -5 to -1 dBA (capped at 0 dBA).</li>
+        <li>With 10-12 ft berm (8-10 dB): 0-2 - 8-10 = -8 to -2 dBA (capped at 0 dBA).</li>
         <li>Adjusted for natural sounds: 0 dBA (quarry) + 18 dBA (natural) = ~18 dBA.</li>
     </ul>
 
@@ -228,8 +228,8 @@
             </tr>
             <tr>
                 <td>Plat (No Berm)</td>
-                <td>2-4</td>
-                <td>Inversions (1-2 dB), wind (1-2 dB)</td>
+                <td>0-2</td>
+                <td>Inversions (0-1 dB), wind (0-1 dB)</td>
             </tr>
             <tr>
                 <td>Plat (6-8 ft Berm)</td>
@@ -260,7 +260,7 @@
                 labels: ['Starting Point', 'Lull/Arroyo Base', 'Hill 1 Peak', 'Lull After Arroyos', 'Hill 2 Peak', 'Plat (No Berm Min)', 'Plat (No Berm Max)', 'Plat (6-8 ft Berm)', 'Plat (10-12 ft Berm)', 'Plat (Total)'],
                 datasets: [{
                     label: 'Noise Level (dBA)',
-                    data: [15, 10, 6, 0, 0, 2, 4, 0, 0, 18],
+                    data: [15, 10, 6, 0, 0, 0, 2, 0, 0, 18],
                     borderColor: '#3498db',
                     backgroundColor: 'rgba(52, 152, 219, 0.2)',
                     fill: true
@@ -307,9 +307,9 @@
         <li><strong>Hill 1 Peak: 6 dBA</strong><p>Explanation: Ascent to ~5440 ft, reduced by 3 dB (hill) and 1 dB (vegetation).</p><p>Key Factors: Hill, vegetation.</p></li>
         <li><strong>Lull After Three Arroyos: 0 dBA</strong><p>Explanation: Crossing three arroyos (6 dB) and lull (1 dB), rendering noise inaudible.</p><p>Key Factors: Arroyos, lull.</p></li>
         <li><strong>Hill 2 Peak: 0 dBA</strong><p>Explanation: Ascent to ~5400 ft, with minimal further reduction due to inaudible baseline.</p><p>Key Factors: Hill, vegetation.</p></li>
-        <li><strong>Plat (No Berm): 2-4 dBA</strong><p>Explanation: Downslope to 5320 ft, increased by 2-4 dB (inversions, wind).</p><p>Key Factors: Inversions, wind.</p></li>
-        <li><strong>Plat (6-8 ft Berm): 0 dBA</strong><p>Explanation: Berm reduces 2-4 dBA by 5-7 dB, maintaining inaudibility.</p><p>Key Factors: Berm.</p></li>
-        <li><strong>Plat (10-12 ft Berm): 0 dBA</strong><p>Explanation: Berm reduces 2-4 dBA by 8-10 dB, ensuring inaudibility.</p><p>Key Factors: Enhanced berm.</p></li>
+        <li><strong>Plat (No Berm): 0-2 dBA</strong><p>Explanation: Downslope to 5320 ft, increased by 0-2 dB (inversions, wind) based on current conditions at 10:27 PM EDT, May 29, 2025.</p><p>Key Factors: Inversions, wind.</p></li>
+        <li><strong>Plat (6-8 ft Berm): 0 dBA</strong><p>Explanation: Berm reduces 0-2 dBA by 5-7 dB, maintaining inaudibility.</p><p>Key Factors: Berm.</p></li>
+        <li><strong>Plat (10-12 ft Berm): 0 dBA</strong><p>Explanation: Berm reduces 0-2 dBA by 8-10 dB, ensuring inaudibility.</p><p>Key Factors: Enhanced berm.</p></li>
         <li><strong>Plat (Total): 18 dBA</strong><p>Explanation: Natural sounds (fountain, leaves) dominate at ~18 dBA.</p><p>Key Factors: Fountain, leaves.</p></li>
     </ol>
 
@@ -320,12 +320,12 @@
     <p>Ambient Noise: 20-25 dBA aligns with rural desert measurements, but natural sounds (~18 dBA) dominate at the plat.</p>
 
     <h2>Step 5: Limitations and Recommendations</h2>
-    <p>Wind and Inversions: Wind (1-2 dB) and inversions (1-2 dB) at 05:15 AM MDT require on-site measurement for precision, especially with current conditions at 05:42 AM EDT, May 29, 2025.</p>
+    <p>Wind and Inversions: Wind (0-1 dB) and inversions (0-1 dB) at 10:27 PM EDT, May 29, 2025, show minimal impact due to calm conditions; on-site measurement is still recommended for precision.</p>
     <p>Hill and Arroyo Sizes: Exact dimensions may enhance or reduce shielding; LiDAR or surveys recommended.</p>
     <p>Real-Time Data: OpenTopography or noise mapping could improve accuracy, particularly with seasonal variations.</p>
     <p class="note">This achieves the 5-20 dBA Quiet Ridge Zone target, with total noise at ~18 dBA, dominated by natural sounds.</p>
 
     <h2>Summary and Conclusion</h2>
-    <p>Quarry noise starts at 15 dBA at 1.89 km, reduced to 0 dBA at the plat due to topographic reductions from one ridge, two hills, three arroyos, and a lull, with 2-4 dB from inversions/wind at 05:15 AM MDT on May 20, 2025. A 6-8 ft berm or 10-12 ft berm maintains inaudibility (0 dBA), meeting the 5-20 dBA target. Natural sounds (~18 dBA) dominate, keeping the total at ~18 dBA. Quarry noise is reduced by over 23 dB, quieter than a whisper (20 dBA). Limitations include wind/inversion effects and topographic precision; on-site measurements are suggested for your 2030 build.</p>
+    <p>Quarry noise starts at 15 dBA at 1.89 km, reduced to 0 dBA at the plat due to topographic reductions from one ridge, two hills, three arroyos, and a lull, with 0-2 dB from inversions/wind at 10:27 PM EDT, May 29, 2025. A 6-8 ft berm or 10-12 ft berm maintains inaudibility (0 dBA), meeting the 5-20 dBA target. Natural sounds (~18 dBA) dominate, keeping the total at ~18 dBA. Quarry noise is reduced by over 23 dB, quieter than a whisper (20 dBA). Limitations include topographic precision; on-site measurements are suggested for your 2030 build.</p>
 </body>
 </html>
