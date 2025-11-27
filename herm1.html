@@ -337,15 +337,6 @@
     </footer>
   </main>
 
-  <script>
-    function copyToClipboard(){
-      const html = document.documentElement.outerHTML;
-      navigator.clipboard?.writeText(html).then(()=> {
-        alert('Page HTML copied to clipboard. Paste into a new file (index.html) and commit to your repo.');
-      }).catch(()=> {
-        prompt('Copy the HTML below:', html);
-      });
-    }
-  </script>
+ 
 </body>
 </html>
