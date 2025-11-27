@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Non-Autonomous Map with Internal State and External Context</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px; line-height: 1.6; }
+  h1, h2, h3 { color: #333; }
+  code { background: #f0f0f0; padding: 3px 5px; border-radius: 4px; }
+  .formula { padding: 12px; background: #fafafa; border-left: 4px solid #444; margin: 20px 0; }
+</style>
+</head>
+<body>
+<h1>Non-Autonomous Map with Internal State Variable and External Context</h1>
+
+<p>This page summarizes the mathematical framework for a <strong>non-autonomous discrete map</strong> that includes:</p>
+<ul>
+  <li><strong>Internal state variable</strong>: \(x_n\)</li>
+  <li><strong>External context or control parameter</strong>: \(c_n\)</li>
+  <li><strong>Time-dependent rule</strong> (non-autonomous): Update rule changes with \(n\)</li>
+</ul>
+
+<h2>1. General Mathematical Form</h2>
+<p>A non-autonomous map has an update rule that explicitly depends on time \(n\). The general form is:</p>
+<div class="formula">\[ x_{n+1} = f_n(x_n, c_n) \]</div>
+<p>Here:</p>
+<ul>
+  <li>\(x_n\) = internal state at step \(n\)</li>
+  <li>\(c_n\) = external context / environment modifying the state</li>
+  <li>\(f_n\) = update function that changes with time</li>
+</ul>
+<p>This is the most general and correct representation.</p>
+
+<h2>2. Expanded Equivalent Form</h2>
+<p>We can break the update rule into components:</p>
+<div class="formula">\[ x_{n+1} = f(x_n) + g(c_n) + h(n) \]</div>
+<p>Where:</p>
+<ul>
+  <li><strong>\(f(x_n)\)</strong> — internal deterministic evolution</li>
+  <li><strong>\(g(c_n)\)</strong> — influence of external context</li>
+  <li><strong>\(h(n)\)</strong> — explicit time-based forcing</li>
+</ul>
+<p>If the internal state and context interact directly, we add a coupling term:</p>
+<div class="formula">\[ x_{n+1} = f(x_n) + g(c_n) + k(x_n, c_n) \]</div>
+
+<h2>3. Fully General Non-Autonomous System</h2>
+<p>The most complete mathematical description is:</p>
+<div class="formula">\[ x_{n+1} = F(n, x_n, c_n) \]</div>
+<p>Here all parts — time, internal state, and external context — jointly determine the next state.</p>
+
+<h2>4. When Context Also Evolves (Coupled System)</h2>
+<p>Sometimes the external context \(c_n\) is itself dynamic. Then the system becomes:</p>
+<div class="formula">
+\[
+\begin{cases}
+ x_{n+1} = F(n, x_n, c_n) \\
+ c_{n+1} = G(n, c_n)
+\end{cases}
+\]
+</div>
+<p>This expresses a bidirectional relationship between internal state and external forces.</p>
+
+<h2>5. Example: Non-Autonomous Logistic Map</h2>
+<p>A concrete example: the logistic map with a time-varying parameter \(r_n\):</p>
+<div class="formula">\[ x_{n+1} = r_n \, x_n (1 - x_n) \]</div>
+<p>Where:</p>
+<div class="formula">\[ r_n = r_0 + \alpha \sin(n) \]</div>
+<p>In this case:</p>
+<ul>
+  <li>\(x_n\) = internal state</li>
+  <li>\(c_n = r_n\) = external context (varies with time)</li>
+  <li>\(f_n = r_n x_n(1-x_n)\)</li>
+</ul>
+
+<h2>6. Bidirectional Interaction Form (↔ Interpretation)</h2>
+<p>If the system requires a representation of feedback between state and context, the correct mathematical form is:</p>
+<div class="formula">
+\[
+\begin{aligned}
+ x_{n+1} &= F(x_n, c_n) \\
+ c_{n+1} &= C(c_n, x_n)
+\end{aligned}
+\]
+</div>
+<p>This expresses <strong>mutual influence</strong> (↔) between internal and external components.</p>
+
+</body>
+</html>
