@@ -1,91 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>Non-Autonomous Map with Internal State and External Context</title>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<style>
-  body { font-family: Arial, sans-serif; max-width: 900px; margin: auto; padding: 20px; line-height: 1.6; }
-  h1, h2, h3 { color: #333; }
-  code { background: #f0f0f0; padding: 3px 5px; border-radius: 4px; }
-  .formula { padding: 12px; background: #fafafa; border-left: 4px solid #444; margin: 20px 0; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Loop vs Spiral — Math, Key & Explanation</title>
+  <!-- MathJax -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <style>
+    body{font-family:Inter, Roboto, Arial, sans-serif; max-width:980px; margin:28px auto; padding:20px; color:#102030; line-height:1.6}
+    h1{font-size:28px;margin-bottom:6px}
+    h2{margin-top:20px;color:#0b3b5a}
+    .card{background:#fff;border-radius:10px;padding:16px;margin-top:14px;box-shadow:0 8px 20px rgba(10,20,30,0.04)}
+    .formula{background:#fbfdff;border-left:4px solid #2b6cb0;padding:10px;margin:12px 0;border-radius:6px;font-size:18px}
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{border:1px solid #e6eef7;padding:10px;text-align:left;vertical-align:top}
+    th{background:#f3f8fd}
+    .muted{color:#506070}
+    .badge{display:inline-block;background:#eef6ff;color:#094a82;padding:6px 10px;border-radius:999px;font-weight:700;margin-bottom:8px}
+    .keygrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+    footer{margin-top:18px;color:#405060;font-size:14px}
+    pre { background:#f6f9fc; padding:8px; border-radius:6px; overflow:auto }
+  </style>
 </head>
 <body>
-<h1>Non-Autonomous Map with Internal State Variable and External Context</h1>
 
-<p>This page summarizes the mathematical framework for a <strong>non-autonomous discrete map</strong> that includes:</p>
-<ul>
-  <li><strong>Internal state variable</strong>: \(x_n\)</li>
-  <li><strong>External context or control parameter</strong>: \(c_n\)</li>
-  <li><strong>Time-dependent rule</strong> (non-autonomous): Update rule changes with \(n\)</li>
-</ul>
+<h1>🔁 Loop → 🌀 Spiral — Clear Math, Labels & Key</h1>
+<p class="muted">This page contains exactly the pieces you requested, with formulas and short explanations. Use the Quick Key to tag cases as Loop/Spiral and Simple/Deep.</p>
 
-<h2>1. General Mathematical Form</h2>
-<p>A non-autonomous map has an update rule that explicitly depends on time \(n\). The general form is:</p>
-<div class="formula">\[ x_{n+1} = f_n(x_n, c_n) \]</div>
-<p>Here:</p>
-<ul>
-  <li>\(x_n\) = internal state at step \(n\)</li>
-  <li>\(c_n\) = external context / environment modifying the state</li>
-  <li>\(f_n\) = update function that changes with time</li>
-</ul>
-<p>This is the most general and correct representation.</p>
-
-<h2>2. Expanded Equivalent Form</h2>
-<p>We can break the update rule into components:</p>
-<div class="formula">\[ x_{n+1} = f(x_n) + g(c_n) + h(n) \]</div>
-<p>Where:</p>
-<ul>
-  <li><strong>\(f(x_n)\)</strong> — internal deterministic evolution</li>
-  <li><strong>\(g(c_n)\)</strong> — influence of external context</li>
-  <li><strong>\(h(n)\)</strong> — explicit time-based forcing</li>
-</ul>
-<p>If the internal state and context interact directly, we add a coupling term:</p>
-<div class="formula">\[ x_{n+1} = f(x_n) + g(c_n) + k(x_n, c_n) \]</div>
-
-<h2>3. Fully General Non-Autonomous System</h2>
-<p>The most complete mathematical description is:</p>
-<div class="formula">\[ x_{n+1} = F(n, x_n, c_n) \]</div>
-<p>Here all parts — time, internal state, and external context — jointly determine the next state.</p>
-
-<h2>4. When Context Also Evolves (Coupled System)</h2>
-<p>Sometimes the external context \(c_n\) is itself dynamic. Then the system becomes:</p>
-<div class="formula">
-\[
-\begin{cases}
- x_{n+1} = F(n, x_n, c_n) \\
- c_{n+1} = G(n, c_n)
-\end{cases}
-\]
+<!-- Checklist -->
+<div class="card">
+  <strong>Contents (checklist)</strong>
+  <ul>
+    <li>✅ What a <strong>Loop</strong> is (mathematically)</li>
+    <li>✅ What a <strong>Spiral</strong> is (mathematically)</li>
+    <li>✅ <strong>Simple</strong> vs <strong>Deep</strong> view (formulas + label)</li>
+    <li>✅ Full explanation of the <em>Non-Autonomous Map</em> and a Quick Key (Loop/Spiral ? Simple/Deep)</li>
+  </ul>
 </div>
-<p>This expresses a bidirectional relationship between internal state and external forces.</p>
 
-<h2>5. Example: Non-Autonomous Logistic Map</h2>
-<p>A concrete example: the logistic map with a time-varying parameter \(r_n\):</p>
-<div class="formula">\[ x_{n+1} = r_n \, x_n (1 - x_n) \]</div>
-<p>Where:</p>
-<div class="formula">\[ r_n = r_0 + \alpha \sin(n) \]</div>
-<p>In this case:</p>
-<ul>
-  <li>\(x_n\) = internal state</li>
-  <li>\(c_n = r_n\) = external context (varies with time)</li>
-  <li>\(f_n = r_n x_n(1-x_n)\)</li>
-</ul>
+<!-- Loop -->
+<section class="card" id="loop">
+  <h2>✅ What is a <strong>LOOP</strong> (mathematically)?</h2>
+  <p class="muted">Definition: a closed/repeating update that depends only on internal state — no external/contextual input.</p>
 
-<h2>6. Bidirectional Interaction Form (↔ Interpretation)</h2>
-<p>If the system requires a representation of feedback between state and context, the correct mathematical form is:</p>
-<div class="formula">
-\[
-\begin{aligned}
- x_{n+1} &= F(x_n, c_n) \\
- c_{n+1} &= C(c_n, x_n)
-\end{aligned}
-\]
-</div>
-<p>This expresses <strong>mutual influence</strong> (↔) between internal and external components.</p>
+  <div class="formula">
+    \[\boxed{\,x_{n+1} = f(x_n)\,}\]
+  </div>
+
+  <p><strong>Explanation:</strong> The next state \\(x_{n+1}\\) is computed only from \\(x_n\\). If the orbit repeats (e.g. \\(x_{n+k}=x_n\\)), the system cycles — a limit cycle or fixed recurrent path.</p>
+  <p><strong>Mapping:</strong> <em>Simple View</em> — internal recursion (thoughts/feelings feed themselves). Example interpretation: “I failed → I’m the problem.”</p>
+</section>
+
+<!-- Spiral -->
+<section class="card" id="spiral">
+  <h2>✅ What is a <strong>SPIRAL</strong> (mathematically)?</h2>
+  <p class="muted">Definition: revisiting similar states while steadily changing along an added dimension (context/perspective). Geometrically a helix/spiral.</p>
+
+  <div class="formula">
+    \[\boxed{\,x_{n+1} = f(x_n,\, c_n)\,}\]
+    <br/>
+    \[\boxed{\,z_{n+1} = z_n + \varepsilon\,,\quad \varepsilon>0\,}\]
+  </div>
+
+  <p><strong>Explanation:</strong> \\(x_{n+1}\\) depends on internal state \\(x_n\\) and external context \\(c_n\\). Additionally, \\(z_n\\) accumulates perspective (a slowly increasing coordinate). Each revisit is similar in \\(x\\) but higher in \\(z\\) → spiral.</p>
+  <p><strong>Mapping:</strong> <em>Deeper View</em> — you add context and perspective, so meaning evolves. Example: “The system failed, not me — and I see more clearly each time.”</p>
+</section>
+
+<!-- Simple vs Deep -->
+<section class="card" id="simple-deep">
+  <h2>✅ Simple vs Deep view — formulas & labels</h2>
+
+  <h3 class="muted">Simple View = <strong>Loop</strong></h3>
+  <div class="formula"> \[ x_{n+1} = f(x_n) \] </div>
+  <p class="muted">Label: <strong>Loop — Simple</strong>. No context parameter, no extra dimension. Interpretation stays the same across iterations.</p>
+
+  <h3 class="muted">Deep/Deeper View = <strong>Spiral</strong></h3>
+  <div class="formula"> \[ x_{n+1} = f(x_n, c_n), \qquad z_{n+1} = z_n + \varepsilon \] </div>
+  <p class="muted">Label: <strong>Spiral — Deep</strong>. External context \\(c_n\\) and perspective accumulation \\(z_n\\) change the update and meaning across revisits.</p>
+</section>
+
+<!-- Non-Autonomous Map -->
+<section class="card" id="non-autonomous">
+  <h2>✅ Full explanation of the <em>Non-Autonomous Map</em> (with key)</h2>
+
+  <div class="muted">Canonical non-autonomous form:</div>
+  <div class="formula"> \[ x_{n+1} = F(n,\, x_n,\, c_n) \] </div>
+
+  <p><strong>Meaning of symbols</strong></p>
+  <ul>
+    <li><strong>\\(x_n\\)</strong> — internal state (emotion/thought at step n)</li>
+    <li><strong>\\(c_n\\)</strong> — external context/control parameter (workplace conditions, COVID, disasters, management, etc.)</li>
+    <li><strong>\\(F\\)</strong> — update function that may explicitly depend on time n (non-autonomous)</li>
+  </ul>
+
+  <h3 class="muted">Expanded (component) form</h3>
+  <div class="formula">
+    \[ x_{n+1} = f(x_n)\;+\; g(c_n)\;+\; k(x_n,c_n)\;+\; h(n) \]
+  </div>
+  <p class="muted"><strong>Components:</strong></p>
+  <ul>
+    <li><strong>f(x_n)</strong> — baseline internal dynamics</li>
+    <li><strong>g(c_n)</strong> — direct contextual forcing</li>
+    <li><strong>k(x_n,c_n)</strong> — coupling / interaction term</li>
+    <li><strong>h(n)</strong> — explicit time forcing (shocks, seasons, policy)</li>
+  </ul>
+
+  <h3 class="muted">Coupled context (if context evolves)</h3>
+  <div class="formula">
+    \[
+      \begin{cases}
+        x_{n+1} = F(n,x_n,c_n) \\
+        c_{n+1} = G(n,c_n,x_n)
+      \end{cases}
+    \]
+  </div>
+  <p class="muted">This is mutual influence: the context evolves and affects the internal state, and the internal state can influence future context.</p>
+</section>
+
+<!-- Quick Key -->
+<section class="card" id="key">
+  <h2>✅ Quick Key — Loop / Spiral / Simple / Deep</h2>
+
+  <div class="keygrid">
+    <div>
+      <div class="badge">Loop</div>
+      <p><strong>Equation:</strong> <code>\(x_{n+1} = f(x_n)\)</code></p>
+      <p><strong>Label:</strong> Simple View (no context)</p>
+      <p><strong>Meaning:</strong> Internal recursion; same meaning each iteration.</p>
+    </div>
+
+    <div>
+      <div class="badge">Spiral</div>
+      <p><strong>Equation:</strong> <code>\(x_{n+1} = f(x_n, c_n),\; z_{n+1}=z_n+\varepsilon\)</code></p>
+      <p><strong>Label:</strong> Deep View (context + perspective)</p>
+      <p><strong>Meaning:</strong> Context/perspective cause evolving meaning across revisits.</p>
+    </div>
+  </div>
+
+  <hr/>
+  <p class="muted">Tagging rule: if your model lacks <code>c_n</code> and <code>z_n</code> → classify as <strong>Loop / Simple</strong>. If it includes either <code>c_n</code> or an accumulating <code>z_n</code> → classify as <strong>Spiral / Deep</strong>.</p>
+</section>
+
+<!-- Side-by-side -->
+<section class="card">
+  <h2>Side-by-side summary (concise)</h2>
+  <table>
+    <tr><th>Aspect</th><th>Loop — Simple</th><th>Spiral — Deep</th></tr>
+    <tr><td>Equation</td><td><code>\(x_{n+1}=f(x_n)\)</code></td><td><code>\(x_{n+1}=f(x_n,c_n),\; z_{n+1}=z_n+\varepsilon\)</code></td></tr>
+    <tr><td>Context</td><td>none</td><td>explicit \\(c_n\\)</td></tr>
+    <tr><td>Extra dimension</td><td>no</td><td>yes, \\(z_n\\)</td></tr>
+    <tr><td>Geometry</td><td>circle / closed orbit</td><td>helix / spiral (expanding)</td></tr>
+    <tr><td>Psych. interpretation</td><td>"It's my fault"</td><td>"This was structural"</td></tr>
+    <tr><td>Effect</td><td>shame, stuck</td><td>clarity, growth</td></tr>
+  </table>
+</section>
+
+<footer>
+  <p>(C) 2025.</p>
+</footer>
 
 </body>
 </html>
