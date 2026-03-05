@@ -1,0 +1,1041 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1746 N Gramercy Place — A Property History</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink:        #1a1510;
+      --ink-mid:    #2e2820;
+      --ink-light:  #5a5045;
+      --parchment:  #f7f2e8;
+      --parchment2: #ede7d8;
+      --parchment3: #e0d8c5;
+      --amber:      #b8892a;
+      --amber-lt:   #d4a84a;
+      --amber-pale: #f2e8cc;
+      --rust:       #8b3a22;
+      --rust-lt:    #b04e32;
+      --teal:       #1e5c5a;
+      --teal-lt:    #2a7a76;
+      --slate:      #2c3a4a;
+      --gold-rule:  #c9a84c;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 48px; }
+
+    body {
+      background: var(--parchment);
+      color: var(--ink-mid);
+      font-family: 'Crimson Pro', Georgia, serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* ── GRAIN OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.5;
+    }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      background: var(--ink);
+      color: var(--parchment);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .masthead::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--amber), var(--amber-lt), var(--amber), transparent);
+    }
+    .masthead-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 56px 36px 48px;
+      position: relative;
+    }
+    .masthead-address {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--amber-lt);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .masthead-address::before {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--amber);
+    }
+    .masthead-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5.5vw, 68px);
+      font-weight: 300;
+      line-height: 1.08;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+    }
+    .masthead-title strong {
+      font-weight: 700;
+      color: var(--amber-lt);
+    }
+    .masthead-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #a09080;
+      margin-bottom: 28px;
+      letter-spacing: 0.02em;
+    }
+    .masthead-intro {
+      max-width: 680px;
+      font-size: 1.05rem;
+      color: #c8bfaf;
+      line-height: 1.75;
+      border-left: 2px solid var(--amber);
+      padding-left: 18px;
+    }
+
+    /* image placeholder in masthead */
+    .masthead-img-wrap {
+      margin-top: 32px;
+      width: 100%;
+      max-width: 700px;
+    }
+    .img-placeholder {
+      width: 100%;
+      height: 220px;
+      border: 1.5px dashed #c9a84c55;
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--amber);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.12em;
+      background: #ffffff08;
+      opacity: 0.8;
+    }
+    .img-placeholder svg { opacity: 0.5; }
+
+    /* ── NAV ── */
+    .nav-strip {
+      background: var(--ink-mid);
+      border-bottom: 1px solid var(--amber);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 36px;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-inner a {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #8a7a65;
+      text-decoration: none;
+      padding: 11px 13px;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-inner a:hover { color: var(--amber-lt); border-bottom-color: var(--amber); }
+
+    /* ── PAGE WRAPPER ── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 36px 100px;
+    }
+
+    /* ── CHAPTER ── */
+    .chapter {
+      margin-top: 72px;
+      padding-top: 4px;
+    }
+
+    .chapter-header {
+      margin-bottom: 28px;
+    }
+    .chapter-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .chapter-tag::after {
+      content: '';
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: var(--amber);
+      opacity: 0.4;
+    }
+    .chapter-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.15;
+    }
+    .chapter-dates {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--rust-lt);
+      letter-spacing: 0.16em;
+      margin-top: 6px;
+    }
+    .chapter-rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, var(--gold-rule) 0%, var(--parchment3) 100%);
+      margin: 16px 0 28px;
+    }
+
+    /* ── SECTION WITHIN CHAPTER ── */
+    .section {
+      margin-bottom: 36px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--slate);
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--parchment3);
+    }
+
+    /* ── YEAR ENTRY ── */
+    .entry {
+      margin-bottom: 24px;
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 0 20px;
+    }
+    @media (max-width: 580px) {
+      .entry { grid-template-columns: 1fr; }
+      .entry-year { margin-bottom: 4px; }
+    }
+    .entry-year {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--rust);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding-top: 4px;
+      text-align: right;
+      border-right: 2px solid var(--parchment3);
+      padding-right: 18px;
+      line-height: 1.4;
+    }
+    .entry-body {
+      padding-left: 2px;
+    }
+    .entry-body p { margin-bottom: 10px; }
+    .entry-body p:last-child { margin-bottom: 0; }
+
+    /* ── PROSE ── */
+    .prose p {
+      margin-bottom: 14px;
+      color: var(--ink-mid);
+    }
+    .prose p:last-child { margin-bottom: 0; }
+
+    /* ── HIGHLIGHTS ── */
+    .hl-amber { font-weight: 600; color: #7a5a10; background: #f5e8c0; padding: 1px 4px; border-radius: 2px; }
+    .hl-rust   { font-weight: 600; color: var(--rust); }
+    .hl-teal   { font-weight: 600; color: var(--teal); }
+    .hl-slate  { font-weight: 600; color: var(--slate); }
+    .hl-ink    { font-weight: 700; color: var(--ink); }
+
+    /* ── PULL QUOTE ── */
+    .pull-quote {
+      margin: 28px 0;
+      padding: 22px 28px;
+      background: var(--ink);
+      border-left: 4px solid var(--amber);
+      border-radius: 0 4px 4px 0;
+      position: relative;
+    }
+    .pull-quote::before {
+      content: '\201C';
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      color: var(--amber);
+      opacity: 0.2;
+      position: absolute;
+      top: -10px; left: 12px;
+      line-height: 1;
+    }
+    .pull-quote p {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--parchment);
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+      margin: 0;
+    }
+    .pull-quote .q-attr {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.12em;
+      color: var(--amber-lt);
+      margin-top: 12px;
+      text-transform: uppercase;
+    }
+
+    /* ── PERSON CARD ── */
+    .person-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin: 20px 0;
+    }
+    .person-card {
+      background: var(--parchment2);
+      border: 1px solid var(--parchment3);
+      border-top: 3px solid var(--amber);
+      padding: 16px 18px;
+      border-radius: 2px;
+    }
+    .person-card .p-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+    .person-card .p-dates {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58rem;
+      color: var(--rust);
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .person-card .p-desc {
+      font-size: 0.92rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+    }
+
+    /* ── BULLET LIST ── */
+    .doc-list {
+      list-style: none;
+      margin: 12px 0 16px;
+      padding: 0;
+    }
+    .doc-list li {
+      padding: 8px 0 8px 22px;
+      position: relative;
+      border-bottom: 1px solid var(--parchment3);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .doc-list li:last-child { border-bottom: none; }
+    .doc-list li::before {
+      content: '◆';
+      color: var(--amber);
+      position: absolute;
+      left: 2px;
+      font-size: 0.55rem;
+      top: 13px;
+    }
+
+    /* ── CALLOUT / INSIGHT BOX ── */
+    .callout {
+      background: var(--ink);
+      color: var(--parchment);
+      border-radius: 4px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+    .callout-label {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--amber-lt);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .callout-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--amber);
+      opacity: 0.3;
+    }
+    .callout p {
+      font-size: 1rem;
+      color: #d0c5b5;
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .callout p:last-child { margin-bottom: 0; }
+
+    /* ── TIMELINE TABLE ── */
+    .tl-table-wrap {
+      overflow-x: auto;
+      margin: 24px 0;
+      border: 1px solid var(--parchment3);
+    }
+    .tl-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+      min-width: 580px;
+    }
+    .tl-table thead tr {
+      background: var(--ink);
+    }
+    .tl-table thead th {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--amber-lt);
+      padding: 11px 14px;
+      text-align: left;
+      white-space: nowrap;
+    }
+    .tl-table tbody tr {
+      border-bottom: 1px solid var(--parchment3);
+      transition: background 0.12s;
+    }
+    .tl-table tbody tr:nth-child(even) { background: var(--parchment2); }
+    .tl-table tbody tr:hover { background: var(--amber-pale); }
+    .tl-table td {
+      padding: 10px 14px;
+      vertical-align: top;
+      line-height: 1.55;
+    }
+    .tl-table td:first-child {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--rust);
+      white-space: nowrap;
+      font-weight: 700;
+    }
+    .tl-table td:nth-child(2) {
+      font-weight: 600;
+      color: var(--ink);
+      min-width: 160px;
+    }
+
+    /* ── SECTION IMAGE PLACEHOLDER ── */
+    .sec-img {
+      width: 100%;
+      height: 180px;
+      border: 1.5px dashed var(--parchment3);
+      border-radius: 3px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      color: var(--amber);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      background: var(--parchment2);
+      margin: 20px 0;
+      opacity: 0.75;
+    }
+
+    /* ── RESEARCH GAPS ── */
+    .gap-list {
+      counter-reset: gap;
+      list-style: none;
+      padding: 0;
+      margin: 16px 0;
+    }
+    .gap-list li {
+      counter-increment: gap;
+      padding: 10px 14px 10px 52px;
+      position: relative;
+      border-bottom: 1px solid var(--parchment3);
+      font-size: 1rem;
+      line-height: 1.65;
+    }
+    .gap-list li:last-child { border-bottom: none; }
+    .gap-list li::before {
+      content: counter(gap, decimal-leading-zero);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--amber);
+      position: absolute;
+      left: 14px;
+      top: 12px;
+      font-weight: 700;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: #5a4e40;
+      text-align: center;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 22px 36px;
+      margin-top: 60px;
+      border-top: 1px solid var(--amber);
+    }
+
+    /* ── SANBORN DETAIL BOX ── */
+    .sanborn-box {
+      background: var(--parchment2);
+      border: 1px solid var(--parchment3);
+      border-left: 4px solid var(--teal);
+      padding: 20px 24px;
+      margin: 20px 0;
+      border-radius: 0 4px 4px 0;
+    }
+    .sanborn-box .sb-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--teal);
+      margin-bottom: 10px;
+    }
+    .sanborn-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .sanborn-box ul li {
+      padding: 5px 0 5px 18px;
+      position: relative;
+      font-size: 0.95rem;
+      border-bottom: 1px solid #d8d0bc;
+      line-height: 1.6;
+    }
+    .sanborn-box ul li:last-child { border-bottom: none; }
+    .sanborn-box ul li::before { content: '▸'; color: var(--teal); position: absolute; left: 0; font-size: 0.7rem; top: 8px; }
+
+    @media (max-width: 600px) {
+      .page { padding: 0 18px 80px; }
+      .masthead-inner { padding: 40px 18px 40px; }
+      .nav-inner { padding: 0 12px; }
+      .person-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <p class="masthead-address">Property History &nbsp;·&nbsp; Los Angeles, California</p>
+    <h1 class="masthead-title">
+      <strong>1746 North Gramercy Place</strong><br>
+      A History of a Hollywood Property
+    </h1>
+    <p class="masthead-subtitle">Hollywood, California &nbsp;·&nbsp; c. 1888 – Present</p>
+    <p class="masthead-intro">
+      The property at 1746 North Gramercy Place tells the story of Hollywood itself — from semi-rural orchard land to a quiet middle-class suburb, through the golden age of the film capital, and into the postwar urban density that reshaped the neighborhood.
+    </p>
+    <div class="masthead-img-wrap">
+      <div class="img-placeholder">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span>[ HERO IMAGE — e.g., aerial or street view of Gramercy Place ]</span>
+        <span style="opacity:0.5">Recommended: 1400 × 600px</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="nav-strip">
+  <div class="nav-inner">
+    <a href="#lick">1877 · Lick</a>
+    <a href="#busseyer">1888 · Busseyer</a>
+    <a href="#morgan">Morgan Tract</a>
+    <a href="#sanborn">Sanborn Maps</a>
+    <a href="#film">Film Industry</a>
+    <a href="#lohman">Lohman Family</a>
+    <a href="#demolition">Demolition</a>
+    <a href="#salkin">Salkin</a>
+    <a href="#queer">Murphy &amp; Club Tarimino</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#gaps">Research Gaps</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <!-- ══ CHAPTER: LAND ORIGINS ══════════════════════════ -->
+  <section class="chapter" id="lick">
+    <div class="chapter-header">
+      <div class="chapter-tag">Chapter I</div>
+      <h2 class="chapter-title">The Lick Estate &amp; Busseyer Farmland</h2>
+      <p class="chapter-dates">Pre-1888 – 1905</p>
+    </div>
+    <div class="chapter-rule"></div>
+
+    <div class="section prose">
+      <p>The site was part of the broader Cahuenga Valley ranch and orchard lands — semi-rural, with farms, grazing, and scattered horticultural operations dotting the dry hills before the real-estate subdividers arrived.</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">The 1877 Map and the James Lick Tract</h3>
+      <div class="prose">
+        <p>An 1877 land ownership map of the Cahuenga Valley pushes the documented history of the future 1746 N Gramercy parcel back eleven years before the 1888 map. The map shows the land labeled: <span class="hl-amber">James Lick — 1,500 Acres</span>, directly where the future Gramercy Place neighborhood would be built.</p>
+        <p><span class="hl-ink">James Lick (1796–1876)</span> was at the time of his death the wealthiest man in California — a Pennsylvania-born carpenter's son who built a piano-making fortune in South America, arrived in San Francisco just before the Gold Rush, and parlayed the resulting real estate boom into an estimated <span class="hl-rust">$4–5 million fortune</span>. He owned large areas of Santa Clara County, all of Santa Catalina Island, and approximately 1,500 acres in the Cahuenga Valley. Lick died October 1, 1876 — leaving his estate to fund a series of public bequests, most celebrated of which was the <span class="hl-teal">Lick Observatory on Mount Hamilton</span> — the first major astronomical observatory on the West Coast.</p>
+        <p>The land under 1746 N Gramercy Place was once, in short, <strong>part of the endowment that built the observatory where humanity first systematically studied the stars.</strong></p>
+      </div>
+    </div>
+
+    <div class="section" id="busseyer">
+      <h3 class="section-title">The 1888 Map: Busseyer Land &amp; the Railroad</h3>
+      <div class="prose">
+        <p>By 1888, the same parcel appears under the <span class="hl-amber">Busseyer family's name</span> — the first identified private owners of what would become the 1746 N Gramercy lot, likely German immigrant farmers typical of the Cahuenga Valley in the 1880s. Surrounding landowners include Mrs. Groket, Neiet, Sullivan, Barrow, and Lopez — a patchwork of small private holdings.</p>
+        <p>Also visible on the 1888 map: a diagonal rail line running along what becomes Hollywood Boulevard. This is the <span class="hl-teal">Cahuenga Valley Railroad</span>, which built its tracks along Hollywood Boulevard between Western and Wilcox in 1888, connecting the remote Cahuenga Valley to downtown Los Angeles for the first time. <strong>Without this railroad, Jeremiah Morgan's 1905 subdivision — and the house at 1746 N Gramercy — might never have been built when they were.</strong></p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">The Water Lily Nursery &amp; Immaculate Heart</h3>
+      <div class="prose">
+        <p>Nearby on Franklin Avenue, <span class="hl-slate">Edmund D. Sturtevant</span> operated his commercial water lily nursery — relocated to Hollywood ca. 1894 — featuring large fenced ponds of sacred Egyptian lotus and water lilies set amid the dry hills, contributing to Hollywood's early reputation as a garden-filled picturesque suburb.</p>
+        <p>Just blocks north, the <span class="hl-amber">Sisters of the Immaculate Heart of Mary</span> broke ground on April 24, 1905 on what would become Immaculate Heart High School. At the time the site sat outside the city limits entirely, flanked by olive and orange trees — confirming the semi-rural character of the neighborhood at the very moment Jeremiah Morgan was platting the lots along Gramercy Place.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CHAPTER: MORGAN TRACT ══════════════════════════ -->
+  <section class="chapter" id="morgan">
+    <div class="chapter-header">
+      <div class="chapter-tag">Chapter II</div>
+      <h2 class="chapter-title">Jeremiah J. Morgan &amp; the Creation of Morgan Place</h2>
+      <p class="chapter-dates">1903 – 1926</p>
+    </div>
+    <div class="chapter-rule"></div>
+
+    <div class="section prose">
+      <p>The street that became Gramercy Place was created by one man: <span class="hl-ink">Jeremiah J. "Jerry" Morgan</span> — Civil War veteran, Iowa cattle rancher, and Los Angeles real-estate developer. Born in Illinois in 1841, Morgan first visited Los Angeles during the land boom of 1886 and settled permanently in February 1902.</p>
+      <p>Morgan was already 64 years old when he began platting the tract. His personal life was as colorful as his business career: after divorcing his longtime wife, he married <span class="hl-rust">Joeanna (Annie) Wagner — a 20-year-old telephone operator</span> — on July 10, 1909. Canny to the last, he had his young bride sign a prenuptial agreement barring any claim on his estate in exchange for $5,000 cash. He died May 31, 1925, age 84, leaving an estate valued at approximately <span class="hl-amber">$1,250,000</span> — with bequests conditioned on relatives becoming Christians.</p>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">The Subdivision</h3>
+      <div class="prose">
+        <p>In 1905, Morgan formally subdivided <span class="hl-teal">Morgan's Hollywood Tract</span> — approximately 10 acres of former ranch and orchard land. The tract created 97 lots along a new street he named Morgan Place, running north-south through the center. The lots were <span class="hl-amber">50 feet wide by 200 feet deep</span> on a street 80 feet wide, improved with cement sidewalks and shade trees. The lot that became 1746 N Gramercy was Lot 58 and the south 25 feet of Lot 59.</p>
+      </div>
+
+      <div class="pull-quote">
+        <p>"The magnificent gateway, erected at a large cost, facing the car line, being the handsomest of its kind in Hollywood."</p>
+        <div class="q-attr">Los Angeles Times advertisement, Morgan's Hollywood Tract, c. 1905–1911</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">Morgan Place Becomes Gramercy Place</h3>
+      <div class="prose">
+        <p>Morgan died in May 1925. In May 1926, the <span class="hl-slate">Los Angeles City Planning Commission</span> proposed changing Morgan Place to Gramercy Place. A group calling itself the "Hollywood Boulevard, Western to Cahuenga, Improvement Association" formally protested — getting his middle initial wrong, calling him "Jeremiah P. Morgan" (it was J). The protest was unsuccessful. Ironically, the renaming happened just one year before Dorothy Lohman's Pi Beta Phi sorority record first places the Lohman family at the address in March 1927.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CHAPTER: SANBORN MAPS ══════════════════════════ -->
+  <section class="chapter" id="sanborn">
+    <div class="chapter-header">
+      <div class="chapter-tag">Chapter III</div>
+      <h2 class="chapter-title">What the Sanborn Maps Show</h2>
+      <p class="chapter-dates">March 1907 &amp; January 1913</p>
+    </div>
+    <div class="chapter-rule"></div>
+
+    <div class="prose section">
+      <p>Hollywood in 1907 was not yet the suburb it would become, let alone the film capital. The Sanborn Fire Insurance Atlas documents its commercial character with precision: a <span class="hl-amber">Hollywood Fuel &amp; Feed Yard</span>, the Pacific Mercantile Co., D.I. Noftziger Lumber (valued at $300,000), a Skating Rink, and the Church of the Blessed Sacrament. <strong>There is not a single film-related building anywhere on the 1907 Hollywood Sanborn maps</strong> — the entire industry that would define the neighborhood was still four years away.</p>
+    </div>
+
+    <div class="sanborn-box">
+      <div class="sb-title">March 1907 Sanborn — Sheet 14</div>
+      <ul>
+        <li>Future 1746 N Gramercy lot: <strong>completely vacant</strong></li>
+        <li>Surrounding blocks labeled "TO BE SUBDIVIDED SOON"</li>
+        <li>No film industry presence anywhere in Hollywood</li>
+        <li>Noftziger Lumber ($300k) likely supplied construction timber for nearby houses</li>
+      </ul>
+    </div>
+
+    <div class="sanborn-box" style="border-left-color: var(--rust);">
+      <div class="sb-title" style="color: var(--rust);">January 1913 Sanborn — Close-Up Details</div>
+      <ul>
+        <li><strong>House footprint confirmed</strong> — small yellow rectangle (wood-frame), labeled "1746"</li>
+        <li>Roughly 20–30 ft wide × 30–40 ft deep with front porch extension</li>
+        <li>Rear yard: <strong>LATTICE area</strong> (wooden trellis/arbor)</li>
+        <li><strong>AUTO symbol</strong> — early detached garage/parking space, reflecting rapid car ownership spread</li>
+        <li>Same month, same cartographers also mapped <span class="hl-rust">Mov'g Picture M'fg complex at Sunset &amp; Gower</span> — 8 blocks away</li>
+      </ul>
+    </div>
+
+    <div class="sec-img">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span>[ IMAGE PLACEHOLDER — 1913 Sanborn map detail of 1746 N Gramercy ]</span>
+    </div>
+  </section>
+
+  <!-- ══ CHAPTER: FILM INDUSTRY ══════════════════════════ -->
+  <section class="chapter" id="film">
+    <div class="chapter-header">
+      <div class="chapter-tag">Chapter IV</div>
+      <h2 class="chapter-title">The Film Industry at the Doorstep</h2>
+      <p class="chapter-dates">1911 – 1981</p>
+    </div>
+    <div class="chapter-rule"></div>
+
+    <div class="prose section">
+      <p>By the time the house at 1746 N Gramercy Place went up, the world immediately around it was transforming at a pace its first residents could barely have anticipated.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-year">Oct 27, 1911</div>
+      <div class="entry-body">
+        <p>The <span class="hl-amber">Nestor Film Company</span> — the Horsley brothers — rented an abandoned tavern at the northwest corner of Sunset and Gower for <span class="hl-rust">$30 a month</span>. They converted the old Blondeau Tavern's bar into a carpenter shop, its dining rooms into dressing rooms. Local residents were scandalized — signs appeared at nearby hotels reading <em>"No Dogs, No Actors."</em> This was <strong>8 blocks from 1746 N Gramercy Place.</strong></p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-year">April 1911</div>
+      <div class="entry-body">
+        <p><em>Moving Picture World</em> published a landmark article by <span class="hl-slate">Richard V. Spencer</span> titled "Los Angeles as a Producing Center," citing 320 days per year suitable for photography. He named studios operating within miles of the future Gramercy Place neighborhood: Selig at Edendale with a $75,000 plant, Pathé West Coast, Bison Studio, Biograph, Kalem near Glendale.</p>
+        <div class="pull-quote">
+          <p>"It is predicted that Los Angeles will become known to the world not as the second largest picture producing center, but the largest, bar none."</p>
+          <div class="q-attr">Richard V. Spencer · Moving Picture World · April 1911 · Six months before Nestor opened at Sunset &amp; Gower</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-year">Dec 1913</div>
+      <div class="entry-body">
+        <p><span class="hl-ink">Cecil B. DeMille, Samuel Goldwyn, and Jesse Lasky</span> rented a horse barn at the corner of Selma and Vine Streets — <strong>10 blocks from 1746 N Gramercy</strong> — and produced <em>The Squaw Man</em>, the first feature-length film made in Hollywood. That barn became the seed of what is now <span class="hl-amber">Paramount Pictures</span>.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-year">1981 / 1983</div>
+      <div class="entry-body">
+        <p>The <span class="hl-teal">American Film Institute Conservatory</span> moved into the former Immaculate Heart College building at 2021 North Western Avenue in 1981 — purchasing the Student Union Building in 1983. Critically, this was the <em>college</em> building only: <span class="hl-ink">Immaculate Heart High School</span>, which had broken ground on the same hill in April 1905 in the same season Jeremiah Morgan was platting Gramercy Place, remains there to this day and shares the Western Avenue entrance with AFI. The institution that has watched over the Gramercy neighborhood since its very first year of residential development has never left.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">The Neighborhood &amp; Hollywood's Birth</div>
+      <p>The neighborhood's homes and Hollywood's first studios were being built simultaneously, by the same builders, from the same lumber yards. All of it — houses and studio alike — was built from the same yellow wood-frame timber construction visible throughout both Sanborn surveys.</p>
+      <p>Hollywood's first residents went from <strong>skating rinks to movie theaters</strong> in the span of two years.</p>
+    </div>
+  </section>
+
+  <!-- ══ CHAPTER: LOHMAN FAMILY ══════════════════════════ -->
+  <section class="chapter" id="lohman">
+    <div class="chapter-header">
+      <div class="chapter-tag">Chapter V</div>
+      <h2 class="chapter-title">The Lohman Family Era</h2>
+      <p class="chapter-dates">By March 1927 – 1950s</p>
+    </div>
+    <div class="chapter-rule"></div>
+
+    <div class="prose section">
+      <p>By the late 1920s, the house was home to the <span class="hl-ink">Lohman family</span>, a middle-to-upper-middle-class household representative of early Hollywood's professional residents. The family's presence at 1746 N Gramercy can be precisely dated to at least <span class="hl-rust">March 22, 1927</span> — the date daughter Dorothy was initiated into the Pi Beta Phi sorority at USC, with her address listed as "1746 N. Gramercy, Hollywood, Calif."</p>
+    </div>
+
+    <div class="person-grid">
+      <div class="person-card">
+        <div class="p-name">Luther C. Lohman</div>
+        <div class="p-dates">1866 – 1937 &nbsp;·&nbsp; Head of Household</div>
+        <div class="p-desc">Born Minnesota to German immigrants. Co-owner of <strong>Lohman Brothers Plumbing</strong> at 105 E 2nd Street with brother Theodore. By 1920 working as plumbing salesman "on his own account." Owned the home; died 1937.</div>
+      </div>
+      <div class="person-card">
+        <div class="p-name">Anna Margaret Young Lohman</div>
+        <div class="p-dates">1875 – 1954 &nbsp;·&nbsp; Wife, Businesswoman</div>
+        <div class="p-desc">Far from a passive housewife — the 1916 city directory confirms she was managing <strong>multiple apartment properties</strong> simultaneously while Luther ran the plumbing business. Became widowed head of household after Luther's 1937 death.</div>
+      </div>
+      <div class="person-card">
+        <div class="p-name">Dorothy Margaret Lohman Harrison</div>
+        <div class="p-dates">March 23, 1907 – March 14, 1960</div>
+        <div class="p-desc">Initiated Pi Beta Phi at USC, March 22, 1927 — earliest confirmed Lohman occupancy date. Hosted bridal shower at house November 1932. Married attorney George Harrison 1933. Still at 1746 N Gramercy with family through February 1942.</div>
+      </div>
+      <div class="person-card">
+        <div class="p-name">George Revelle Harrison</div>
+        <div class="p-dates">Jan 31, 1904 – 1960 &nbsp;·&nbsp; Attorney</div>
+        <div class="p-desc">Dorothy's husband. Offices at 639 S. Spring St., Los Angeles. Physically: <strong>6'1", 195 lbs, blue eyes, blonde hair.</strong> WWII Draft Card (Feb 15, 1942) lists 1746 N Gramercy — last confirmed record at address. Family relocated to Glendale sometime between 1942 and 1950.</div>
+      </div>
+      <div class="person-card">
+        <div class="p-name">John Tyrell Lohman</div>
+        <div class="p-dates">1900 – 1967 &nbsp;·&nbsp; Son</div>
+        <div class="p-desc">Despite marrying in 1925, still living at 1746 N Gramercy in 1940 at age 40 — listed as a plumber. Returned to or never fully left the family home.</div>
+      </div>
+      <div class="person-card">
+        <div class="p-name">Louise Bealin</div>
+        <div class="p-dates">Born c.1907 &nbsp;·&nbsp; Live-in Maid, 1930</div>
+        <div class="p-desc">Confirmed in the <strong>1930 U.S. Census</strong> as live-in domestic staff at 1746 N Gramercy. Present during the household's early years at the address, when Luther was still alive and the family at full strength.</div>
+      </div>
+      <div class="person-card">
+        <div class="p-name">Elsie Holle</div>
+        <div class="p-dates">Born c.1916 · Kansas &nbsp;·&nbsp; Live-in Maid, 1940</div>
+        <div class="p-desc">Confirmed in the <strong>1940 U.S. Census</strong>. Replaced Louise Bealin as the household's live-in domestic staff by the time of the 1940 enumeration — by then managing a seven-person, three-generation household.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">The 1930 Household — The Early Years</h3>
+      <div class="prose">
+        <p>The <span class="hl-rust">1930 U.S. Census</span> documents the Lohman household three years after Dorothy's 1927 sorority record first places the family at the address. At this point Luther was still alive and head of household, with Anna, their children, and live-in maid <span class="hl-amber">Louise Bealin</span> in residence. Eldest son Rowland had married in 1926 and moved out; son John and daughter Dorothy were both still at home. The household was at its most prosperous — Luther's plumbing business and Anna's apartment properties both still running, Dorothy at USC, the house fully occupied.</p>
+        <p>Who lived at 1746 N Gramercy between the house's construction (~1910–1912) and the Lohmans' confirmed March 1927 arrival remains an open research question. City directories from 1914–1926 would fill this approximately 15-year gap in the property's occupancy record.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">The 1940 Household — Three Generations Under One Roof</h3>
+      <div class="prose">
+        <p>The 1940 U.S. Census paints the fullest picture of life at 1746 N Gramercy: <span class="hl-ink">seven people</span> across three generations — Anna Lohman (widowed head, 62), son John (40, plumber), daughter Dorothy (33), son-in-law George (36, attorney), daughter Revelle (5 — <span class="hl-rust">incorrectly recorded as male</span> by the enumerator, confirmed female in 1950), infant daughter Ann (½), and maid Elsie Holle (24).</p>
+        <p>All household members listed their 1935 residence as "Same House" — meaning the entire multi-generational family had been at 1746 N Gramercy <strong>since at least 1935</strong>, two years before Luther's death.</p>
+        <p>By <span class="hl-rust">February 15, 1942</span> — the date of George Harrison's WWII Draft Registration Card, which lists 1746 N Gramercy and Dorothy as emergency contact — the family was still in residence. Sometime between that date and the <span class="hl-rust">April 1950 census</span>, George and Dorothy Harrison relocated to Glendale with their four children: Revelle (15), Ann (10), John R. (5), and Nina (2). The exact year of their departure is unknown — mid-to-late 1940s as the family grew is the most likely window.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3 class="section-title">The Marsden Apartments — Across the Street</h3>
+      <div class="prose">
+        <p>Directly across Gramercy Place at 1745 N Gramercy stood the <span class="hl-amber">Marsden Apartments</span> — an Art Deco building completed in 1935, designed by architect Frank Green, built by Charlotte Pickford's estate (Mary Pickford's mother). 68 single apartments, 22 double apartments, and a 3-bedroom penthouse.</p>
+        <p>Los Angeles historic preservation reports state that <span class="hl-ink">Jack Benny (1894–1974)</span> is said to have used the Marsden penthouse as his Hollywood pied-à-terre during his NBC radio years. <span class="hl-teal">NBC Radio City opened October 17, 1938 at Sunset and Vine — just 6 blocks away.</span> The overlap window with the Lohman-Harrison family directly across the street at 1746 is specific: from the Marsden's 1935 completion through at least February 1942, Benny's reported penthouse use and the Harrison household's documented occupancy run in direct parallel, <strong>separated only by the width of Gramercy Place.</strong></p>
+      </div>
+    </div>
+
+    <div class="sec-img">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+      <span>[ IMAGE PLACEHOLDER — Marsden Apartments / 1745 N Gramercy Place, c. 1935 ]</span>
+    </div>
+  </section>
+
+  <!-- ══ CHAPTER: FINAL YEARS & DEMOLITION ══════════════ -->
+  <section class="chapter" id="demolition">
+    <div class="chapter-header">
+      <div class="chapter-tag">Chapter VI</div>
+      <h2 class="chapter-title">The Final Years &amp; Demolition</h2>
+      <p class="chapter-dates">1942 – 1956</p>
+    </div>
+    <div class="chapter-rule"></div>
+
+    <div class="prose section">
+      <p>With George Harrison's February 1942 draft card as the last confirmed occupancy record, the house enters a documented gap. The Harrisons departed for Glendale at some point in the mid-to-late 1940s; Anna Lohman, aging and widowed since 1937, likely remained — but the 1950 census offers no clarity. The address does not appear in the main enumeration for the street that April, and surrounding addresses show vacant apartment units. <strong>Whether the house was occupied, rented out, or already standing empty in its final years before demolition is not currently documented.</strong></p>
+      <p>What is clear is what happened next. By the mid-1950s, postwar Hollywood was transforming rapidly. Single-family bungalows across the neighborhood — built in the same 1907–1915 timber-frame construction wave that had produced 1746 N Gramercy — were being torn down lot by lot to meet the explosive demand for multi-family rental housing. The city's population had surged, the GI Bill was fueling new household formation, and developers were moving quickly on underutilized residential lots near commercial corridors like Hollywood Boulevard.</p>
+      <p>The house at 1746 N Gramercy Place was demolished in <span class="hl-rust">1956</span> — ending a residential life on the lot that had begun approximately four decades earlier. It was not singled out; it was simply one of hundreds of Hollywood bungalows that gave way to apartment buildings during that decade. The lot's story might have ended there, an unremarkable casualty of urban densification, had the man who replaced it not turned out to be one of the most remarkable and ultimately tragic figures in postwar Los Angeles architecture.</p>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">An Unresolved Gap</div>
+      <p>Who occupied 1746 N Gramercy between the Harrison family's departure (sometime 1942–1950) and the 1956 demolition remains unknown. City directories from 1943–1955 would be the most direct route to filling this gap — and may also reveal whether Anna Lohman remained at the address until her 1954 death, just two years before the wrecking crew arrived.</p>
+    </div>
+  </section>
+
+  <!-- ══ CHAPTER: SALKIN ══════════════════════════════════ -->
+  <section class="chapter" id="salkin">
+    <div class="chapter-header">
+      <div class="chapter-tag">Chapter VII</div>
+      <h2 class="chapter-title">Jules G. Salkin — Developer, Musician, Architect, Fugitive</h2>
+      <p class="chapter-dates">1956 – 1980</p>
+    </div>
+    <div class="chapter-rule"></div>
+
+    <div class="prose section">
+      <p>The man who built the current apartment building at 1746 N Gramercy was one of the most extraordinary — and ultimately tragic — figures in postwar Los Angeles history. <span class="hl-ink">Jules G. Salkin (1916–1998)</span> was simultaneously a concert violist, WWII paratrooper, Hollywood studio musician, licensed architect, attorney, real-estate developer, and co-founder of one of LA's most celebrated modernist housing cooperatives.</p>
+    </div>
+
+    <ul class="doc-list">
+      <li><span class="hl-teal">The Musician:</span> First-chair violist with the Indianapolis Symphony. Played viola in the Taliesin String Quartet during summers of 1938 and 1939 at <strong>Frank Lloyd Wright's Taliesin Fellowship</strong> in Wisconsin — where he met architect <span class="hl-amber">John Lautner</span>.</li>
+      <li><span class="hl-teal">The Architect:</span> Licensed architect 1954; AIA member 1957. Co-founded the <strong>Mutual Housing Association (MHA)</strong> responsible for the landmark Crestwood Hills cooperative development in Brentwood, involving architects A. Quincy Jones and Whitney Smith.</li>
+      <li><span class="hl-teal">The Lautner Connection:</span> Commissioned John Lautner to design his own home at 1430 Avon Terrace in Echo Park (built 1948), now designated <strong>Los Angeles Historic-Cultural Monument No. 1111</strong> — known as the "Lost Lautner."</li>
+      <li><span class="hl-rust">The Scandal:</span> Misappropriated funds from MHA during Crestwood Hills. In 1968 indicted for defrauding the SBA of <strong>$445,000</strong>, compounded by tax evasion. Rather than face prosecution, Salkin <strong>fled to England</strong>.</li>
+      <li><span class="hl-rust">The Fugitive:</span> Lived in England 12 years, working in construction and playing viola with orchestras. Returned under a <strong>false passport</strong>. FBI arrested him on return. Pleaded guilty — <em>Los Angeles Times</em>, April 2, 1980. Sentenced to <strong>18 months in prison</strong> — <em>Los Angeles Times</em>, June 3, 1980.</li>
+    </ul>
+
+    <div class="callout">
+      <div class="callout-label">The Erasure</div>
+      <p>The LA City Planning Department's own assessment is blunt: <em>"Jules Salkin was a prominent real estate developer but is largely forgotten due to a financial scandal that forced him to move abroad."</em></p>
+      <p>The 22-unit apartment building at 1746 N Gramercy Place — built in 1956 — now stands as one of the few surviving physical traces of a man who helped shape postwar Los Angeles and then vanished from its history.</p>
+    </div>
+  </section>
+
+  <!-- ══ CHAPTER: QUEER HISTORY ══════════════════════════ -->
+  <section class="chapter" id="queer">
+    <div class="chapter-header">
+      <div class="chapter-tag">Chapter VIII</div>
+      <h2 class="chapter-title">Joseph Chase Murphy &amp; the Hidden Queer History</h2>
+      <p class="chapter-dates">Late 1950s – Post-2000</p>
+    </div>
+    <div class="chapter-rule"></div>
+
+    <div class="prose section">
+      <p>The apartment building Jules Salkin constructed in 1956 quickly acquired a social identity no official record would ever capture. Its story from the late 1950s onward is inseparable from the hidden queer history of Hollywood.</p>
+    </div>
+
+    <div class="entry">
+      <div class="entry-year">One Block West</div>
+      <div class="entry-body">
+        <p>At the corner of Hollywood Boulevard and Van Ness Avenue stood the <span class="hl-amber">Richfield Oil gas station at 5777 Hollywood Boulevard</span> — made legendary by <span class="hl-ink">Scotty Bowers</span>, a WWII Marine veteran who from 1946 to 1950 used it as the hub of Hollywood's covert gay underground. The station served closeted stars including Cary Grant, Spencer Tracy, Katharine Hepburn, Charles Laughton, Tennessee Williams and Gore Vidal — during an era when the LAPD vice squad ran what one documentary director described as a <span class="hl-rust">"fascistic sexual gestapo."</span> The plot is now a fire station.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-year">Club Tarimino</div>
+      <div class="entry-body">
+        <p>Under the ownership of <span class="hl-ink">Joseph Chase Murphy</span> — a gay man who came to Los Angeles in the 1940s and worked in architecture during the postwar building boom — 1746 N Gramercy Place became known among residents and community as <strong>"Club Tarimino."</strong> In a neighborhood already quietly networked into Hollywood's queer underground through the Richfield station one block away, Murphy's stewardship created <span class="hl-teal">a safe harbor for gay residents</span> during an era when such safety was genuinely hard to find.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-year">1980s</div>
+      <div class="entry-body">
+        <p>The AIDS epidemic arrived at 1746 N Gramercy as it did across Hollywood. A previous resident, <span class="hl-slate">Mavis Anderson</span>, shared first-hand testimony that she knew AIDS victims among former residents who had survived into the mid-1990s — placing the building directly within the human story of that epidemic's devastating passage through the gay community of Hollywood.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-year">Mid-1990s</div>
+      <div class="entry-body">
+        <p>Murphy began renting units to students from the <span class="hl-teal">American Film Institute Conservatory</span> — located at the former Immaculate Heart College campus on Western Avenue, just blocks away — informally dubbing the building the <strong>"AFI dorm."</strong> This brought 1746 N Gramercy into direct connection with the institution that occupies the hill above Gramercy Place, closing yet another circle in the building's long relationship with the film world born at Sunset and Gower in 1911.</p>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-year">Post-2000</div>
+      <div class="entry-body">
+        <p>Murphy died sometime after 2000. He left the property structured within a <span class="hl-amber">trust</span> — a deliberate legal arrangement that included <span class="hl-ink">Tony Diaz</span>, his longtime maintenance man, and other members of the community Murphy had built around the building. Diaz's family now lives in and maintains the apartments. The property's current trust structure reflects Murphy's intentions: to keep the building in the hands of people connected to it, rather than to allow it to pass through commercial transaction to outside investors.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-label">A Note on Sources</div>
+      <p>The oral history in this section derives from the first-hand testimony of a resident and visitor to 1746 N Gramercy Place in 1998, and from conversations with Mavis Anderson, a previous resident. It is presented as oral history rather than documented record — and is the more valuable for it. Primary witness accounts of hidden social history are irreplaceable, precisely because official records never captured this world at all.</p>
+    </div>
+  </section>
+
+  <!-- ══ TIMELINE ══════════════════════════════════════════ -->
+  <section class="chapter" id="timeline">
+    <div class="chapter-header">
+      <div class="chapter-tag">Reference</div>
+      <h2 class="chapter-title">Visual Timeline</h2>
+      <p class="chapter-dates">1877 – Present</p>
+    </div>
+    <div class="chapter-rule"></div>
+
+    <div class="tl-table-wrap">
+      <table class="tl-table">
+        <thead>
+          <tr>
+            <th>Period</th>
+            <th>Key Event</th>
+            <th>Context</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1877</td><td>James Lick — 1,500 Acres</td><td>Future parcel part of estate funding Lick Observatory; Lick died 1876</td></tr>
+          <tr><td>1888</td><td>Busseyer family farming parcel</td><td>Cahuenga Valley Railroad opens; area becomes accessible to developers</td></tr>
+          <tr><td>1894+</td><td>Sturtevant's water lily nursery, Franklin Ave</td><td>Hollywood's pre-urban garden character; semi-rural suburb forming</td></tr>
+          <tr><td>April 24, 1905</td><td>Immaculate Heart High School breaks ground</td><td>Outside city limits; flanked by olive and orange trees</td></tr>
+          <tr><td>1905</td><td>Morgan subdivides Hollywood Tract — 97 lots</td><td>Lot 58 + S 25ft Lot 59 = future 1746 N Gramercy; ornamental gateway erected</td></tr>
+          <tr><td>March 1907</td><td>Sanborn map: lot completely vacant</td><td>Hollywood a farm town; no film industry anywhere</td></tr>
+          <tr><td>1907–1912</td><td>Original house constructed</td><td>Modest wood-frame home; likely ~1910–1911</td></tr>
+          <tr><td>April 1911</td><td>Spencer predicts LA becomes largest film center</td><td>Moving Picture World; 320 filming days/year cited</td></tr>
+          <tr><td>Oct 27, 1911</td><td>Nestor Film Co. opens — Sunset &amp; Gower, 8 blocks away</td><td>"No Dogs, No Actors" signs; $30/month tavern becomes Hollywood's first studio</td></tr>
+          <tr><td>January 1913</td><td>Sanborn: house documented + Mov'g Picture complex at Sunset/Gower</td><td>Same cartographer, same month — neighborhood homes &amp; studios built together</td></tr>
+          <tr><td>December 1913</td><td>DeMille, Goldwyn &amp; Lasky — barn at Selma &amp; Vine, 10 blocks away</td><td>The Squaw Man — first Hollywood feature; seed of Paramount Pictures</td></tr>
+          <tr><td>May 31, 1925</td><td>J.J. Morgan dies, age 84; estate $1.25M</td><td>Bequests conditional on relatives becoming Christians</td></tr>
+          <tr><td>May 1926</td><td>Morgan Place renamed Gramercy Place</td><td>Protest group gets his middle initial wrong; renamed anyway</td></tr>
+          <tr><td>March 22, 1927</td><td>Dorothy Lohman — Pi Beta Phi, USC; 1746 N Gramercy listed</td><td>Earliest confirmed Lohman occupancy; primary source date</td></tr>
+          <tr><td>Nov 25, 1932</td><td>Dorothy hosts bridal shower/tea at home</td><td>Los Angeles Times "Of Interest to Women"</td></tr>
+          <tr><td>1935</td><td>Marsden Apartments completed across street</td><td>Art Deco, 68+22 units + penthouse; built by Charlotte Pickford estate/Mary Pickford</td></tr>
+          <tr><td>Oct 17, 1938</td><td>NBC Radio City opens, Sunset &amp; Vine, 6 blocks away</td><td>Jack Benny said to use Marsden penthouse; Harrison family directly across street</td></tr>
+          <tr><td>April 11, 1940</td><td>1940 Census: 7 people, 3 generations at 1746 N Gramercy</td><td>Anna Lohman, John Lohman, Dorothy &amp; George Harrison, children, maid</td></tr>
+          <tr><td>Feb 15, 1942</td><td>George Harrison WWII draft card — 1746 N Gramercy</td><td>Last confirmed occupancy record at address</td></tr>
+          <tr><td>1942–1956</td><td>House enters undocumented final years; demolished 1956</td><td>Harrisons departed mid-to-late 1940s for Glendale; who occupied until demolition unknown</td></tr>
+          <tr><td>1956</td><td>Jules G. Salkin builds 22-unit apartment complex</td><td>Mid-Century Modern; licensed architect 1954; AIA 1957; Taliesin/Lautner connected</td></tr>
+          <tr><td>1968</td><td>Salkin indicted; flees to England</td><td>SBA fraud $445,000 + tax evasion; 12 years abroad playing viola</td></tr>
+          <tr><td>1980</td><td>Salkin returns, arrested by FBI; 18 months prison</td><td>LA Times April 2 + June 3, 1980</td></tr>
+          <tr><td>Late 1950s+</td><td>"Club Tarimino" — Joseph Chase Murphy's stewardship</td><td>Gay-friendly community; Richfield/Scotty Bowers one block west</td></tr>
+          <tr><td>1981 / 1983</td><td>AFI Conservatory moves into former Immaculate Heart College building</td><td>School still operates on same hill; AFI and IHH share Western Ave entrance</td></tr>
+          <tr><td>1980s</td><td>AIDS crisis reaches building</td><td>Mavis Anderson first-hand testimony; residents affected</td></tr>
+          <tr><td>Mid-1990s</td><td>Murphy rents to AFI students — "AFI dorm"</td><td>Film school connection closes another circle</td></tr>
+          <tr><td>Post-2000</td><td>Murphy dies; property held in trust with Diaz family and community</td><td>Deliberate structure — not commercial sale; stewardship through personal loyalty</td></tr>
+          <tr><td>2018–2019</td><td>Seismic retrofits &amp; termite repairs</td><td>Last major structural work on record</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ══ RESEARCH GAPS ══════════════════════════════════════ -->
+  <section class="chapter" id="gaps">
+    <div class="chapter-header">
+      <div class="chapter-tag">Appendix</div>
+      <h2 class="chapter-title">Research Gaps Worth Pursuing</h2>
+    </div>
+    <div class="chapter-rule"></div>
+
+    <ol class="gap-list">
+      <li>The exact identity and history of the <span class="hl-amber">Busseyer family</span> — LA County deed records from the 1880s–1900s would trace when and how the land passed from Busseyer to Morgan.</li>
+      <li>Who occupied the house between its construction (~1910–1912) and the Lohmans' confirmed arrival in March 1927? City directories from <span class="hl-rust">1914–1926</span> would fill this 15-year gap.</li>
+      <li>The exact year the <span class="hl-slate">Harrison family vacated</span> 1746 N Gramercy (between February 1942 and April 1950) and who if anyone occupied it in those final years before demolition.</li>
+      <li><span class="hl-ink">Jack Benny's precise dates</span> of residence at the Marsden penthouse (1745 N Gramercy) and whether his tenure overlapped with the Lohman-Harrison family at 1746.</li>
+      <li>The exact nature of the <span class="hl-amber">"J. Di Maggio" business listing</span> on Hollywood Blvd at Gramercy Place visible on the late-1950s cross-directory map.</li>
+      <li>The exact timeline of <span class="hl-rust">Jules Salkin's financial scandal</span> — specifically when the MHA misappropriation occurred relative to his 1956 construction of 1746 N Gramercy.</li>
+      <li>Whether the 1960 Tokyo orphans contact listing corresponds to a specific tenant — a <span class="hl-teal">1960 city directory cross-reference</span> would confirm this.</li>
+      <li>Further documentation on <span class="hl-slate">Revelle W. Harrison's life</span> after 1950, and the subsequent histories of John R. and Nina S. Harrison.</li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  1746 North Gramercy Place, Los Angeles, CA 90028 &nbsp;·&nbsp; Property History Research &nbsp;·&nbsp; c. 1888 – Present
+</footer>
+
+</body>
+</html>
