@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pre-Hollywood Filming in Southern California</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:       #0b1c2c;
+      --navy-mid:   #122336;
+      --navy-light: #1a3148;
+      --gold:       #c9a44a;
+      --gold-light: #e8c97a;
+      --gold-pale:  #f5edda;
+      --cream:      #faf6ee;
+      --rust:       #9b3a2a;
+      --rust-light: #c04a35;
+      --text-dark:  #1e1e1e;
+      --text-mid:   #3d3d3d;
+      --text-light: #6b6b6b;
+      --border:     #d4b87a55;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--text-mid);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    .hero {
+      background: var(--navy);
+      color: var(--cream);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 110%, #c9a44a18 0%, transparent 70%),
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 3px,
+          #ffffff04 3px,
+          #ffffff04 4px
+        );
+      pointer-events: none;
+    }
+
+    /* film-strip perforations */
+    .filmstrip {
+      display: flex;
+      gap: 0;
+      height: 28px;
+      background: #000;
+      overflow: hidden;
+    }
+    .filmstrip span {
+      display: inline-block;
+      width: 22px;
+      height: 16px;
+      margin: 6px 8px;
+      background: #0b1c2c;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .hero-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 32px 52px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(32px, 5vw, 58px);
+      font-weight: 900;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--gold-light);
+    }
+
+    .hero-subtitle {
+      font-family: 'Source Serif 4', serif;
+      font-style: italic;
+      font-size: 17px;
+      color: #b8cad8;
+      margin-bottom: 32px;
+    }
+
+    /* image placeholder */
+    .hero-image-placeholder {
+      width: 100%;
+      max-width: 680px;
+      height: 260px;
+      border: 2px dashed var(--gold);
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--gold);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      background: #0b1c2c88;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .hero-image-placeholder:hover {
+      background: #0b1c2ccc;
+      border-color: var(--gold-light);
+    }
+    .hero-image-placeholder svg {
+      opacity: 0.7;
+    }
+    .hero-image-placeholder .ph-label {
+      font-size: 13px;
+      font-weight: 500;
+    }
+    .hero-image-placeholder .ph-sub {
+      opacity: 0.6;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+    }
+
+    /* ── NAV / TOC ────────────────────────────────────── */
+    .toc-bar {
+      background: var(--navy-mid);
+      border-bottom: 2px solid var(--gold);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .toc-bar-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .toc-bar-inner::-webkit-scrollbar { display: none; }
+    .toc-bar-inner a {
+      font-family: 'DM Mono', monospace;
+      font-size: 10.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8faabf;
+      text-decoration: none;
+      padding: 12px 14px;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .toc-bar-inner a:hover {
+      color: var(--gold-light);
+      border-bottom-color: var(--gold);
+    }
+
+    /* ── MAIN LAYOUT ──────────────────────────────────── */
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 32px 80px;
+    }
+
+    /* ── PART SECTION ─────────────────────────────────── */
+    .part {
+      margin-top: 64px;
+    }
+
+    .part-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 6px;
+    }
+
+    .part-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      background: var(--navy);
+      padding: 4px 10px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+
+    .part-rule {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold) 0%, transparent 100%);
+    }
+
+    .part-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .part-date-range {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--rust-light);
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
+    }
+
+    /* ── YEAR ENTRY ───────────────────────────────────── */
+    .year-entry {
+      margin-bottom: 28px;
+      padding-left: 20px;
+      border-left: 3px solid var(--border);
+      transition: border-color 0.2s;
+    }
+    .year-entry:hover {
+      border-left-color: var(--gold);
+    }
+
+    .year-label {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--rust);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .year-label::after {
+      content: '';
+      display: inline-block;
+      height: 1px;
+      width: 40px;
+      background: var(--rust-light);
+      opacity: 0.4;
+    }
+
+    .year-body p {
+      margin-bottom: 10px;
+      color: var(--text-mid);
+    }
+
+    /* ── BOLD HIGHLIGHTS ──────────────────────────────── */
+    .hl-gold {
+      font-weight: 600;
+      color: #8a6a10;
+      background: #f5edda;
+      padding: 1px 4px;
+      border-radius: 2px;
+    }
+    .hl-navy {
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .hl-rust {
+      font-weight: 600;
+      color: var(--rust);
+    }
+    .hl-teal {
+      font-weight: 600;
+      color: #1a6b5f;
+    }
+
+    /* ── SUB-SECTION ──────────────────────────────────── */
+    .subsection-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--navy-light);
+      margin: 32px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── QUOTE BLOCK ──────────────────────────────────── */
+    .quote-block {
+      background: var(--navy);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      padding: 20px 24px;
+      margin: 18px 0;
+      position: relative;
+    }
+    .quote-block::before {
+      content: '\201C';
+      font-family: 'Playfair Display', serif;
+      font-size: 64px;
+      color: var(--gold);
+      opacity: 0.25;
+      position: absolute;
+      top: -8px;
+      left: 14px;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .quote-block p {
+      font-style: italic;
+      color: var(--cream);
+      font-size: 16px;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+    .quote-source {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-top: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .quote-source a {
+      color: var(--gold-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    /* ── BULLET LIST ──────────────────────────────────── */
+    .styled-list {
+      list-style: none;
+      margin: 10px 0 16px;
+      padding: 0;
+    }
+    .styled-list li {
+      padding: 7px 0 7px 24px;
+      position: relative;
+      border-bottom: 1px solid #e8e0d0;
+      font-size: 16px;
+      color: var(--text-mid);
+    }
+    .styled-list li:last-child { border-bottom: none; }
+    .styled-list li::before {
+      content: '▸';
+      color: var(--gold);
+      position: absolute;
+      left: 4px;
+      font-size: 12px;
+      top: 10px;
+    }
+
+    /* ── CALLOUT BOX ──────────────────────────────────── */
+    .callout {
+      background: var(--navy);
+      color: var(--cream);
+      border-radius: 6px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+    .callout-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .callout-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--gold);
+      opacity: 0.3;
+    }
+    .callout ul {
+      list-style: none;
+      padding: 0;
+    }
+    .callout ul li {
+      padding: 8px 0 8px 20px;
+      position: relative;
+      border-bottom: 1px solid #ffffff10;
+      font-size: 16px;
+      color: #d8e8f0;
+      line-height: 1.6;
+    }
+    .callout ul li:last-child { border-bottom: none; }
+    .callout ul li::before {
+      content: '◆';
+      color: var(--gold);
+      position: absolute;
+      left: 0;
+      font-size: 9px;
+      top: 12px;
+    }
+
+    /* ── TIMELINE TABLE ───────────────────────────────── */
+    .timeline-section {
+      margin-top: 64px;
+    }
+
+    .timeline-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      font-size: 15.5px;
+    }
+    .timeline-table thead tr {
+      background: var(--navy);
+    }
+    .timeline-table thead th {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 12px 16px;
+      text-align: left;
+    }
+    .timeline-table tbody tr {
+      border-bottom: 1px solid #e0d8c8;
+      transition: background 0.15s;
+    }
+    .timeline-table tbody tr:nth-child(even) {
+      background: #f0ebe0;
+    }
+    .timeline-table tbody tr:hover {
+      background: #e8dfc8;
+    }
+    .timeline-table td {
+      padding: 11px 16px;
+      vertical-align: top;
+    }
+    .timeline-table td:first-child {
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      color: var(--rust);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .timeline-table td.new-entry {
+      color: var(--navy);
+    }
+    .new-badge {
+      font-family: 'DM Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      background: var(--gold);
+      color: var(--navy);
+      padding: 1px 5px;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+
+    /* ── SOURCES ──────────────────────────────────────── */
+    .sources-section {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 2px solid var(--navy);
+    }
+    .sources-section h2 {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .source-item {
+      margin-bottom: 18px;
+      padding: 14px 18px;
+      background: #f0ebe0;
+      border-left: 3px solid var(--gold);
+      font-size: 15px;
+    }
+    .source-item .s-title {
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .source-item .s-detail {
+      color: var(--text-light);
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .source-item a {
+      font-family: 'DM Mono', monospace;
+      font-size: 11.5px;
+      color: var(--rust);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .source-item a:hover { text-decoration: underline; }
+    .source-item .s-tip {
+      font-size: 13px;
+      color: var(--text-light);
+      font-style: italic;
+      margin-top: 5px;
+    }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+    footer {
+      background: var(--navy);
+      color: #6b8fa8;
+      text-align: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      padding: 20px 32px;
+      margin-top: 60px;
+    }
+
+    /* ── SECTION IMAGE PLACEHOLDER ────────────────────── */
+    .section-image-placeholder {
+      width: 100%;
+      height: 200px;
+      border: 2px dashed #c9a44a88;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--gold);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      background: #f5edda66;
+      margin: 20px 0;
+    }
+    .section-image-placeholder svg { opacity: 0.5; }
+    .section-image-placeholder span { opacity: 0.7; }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 600px) {
+      .page { padding: 0 18px 60px; }
+      .hero-inner { padding: 40px 18px 40px; }
+      .toc-bar-inner { padding: 0 12px; }
+      .toc-bar-inner a { padding: 12px 10px; font-size: 9.5px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- FILM STRIP TOP -->
+<div class="filmstrip" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Film History Research &nbsp;|&nbsp; Scholarly Survey</p>
+    <h1 class="hero-title">Pre-Hollywood Filming<br>in <em>Southern California</em></h1>
+    <p class="hero-subtitle">A Scholarly Survey of Early Production Geography, 1895–1915</p>
+
+    <!-- HERO IMAGE — replace div below with <img> tag when ready -->
+    <div class="hero-image-placeholder">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <path d="M21 15l-5-5L5 21"/>
+      </svg>
+      <span class="ph-label">[ HERO IMAGE PLACEHOLDER ]</span>
+      <span class="ph-sub">Recommended: 1200 × 500px · e.g. early Hollywood studio or street scene</span>
+    </div>
+  </div>
+</header>
+
+<!-- STICKY NAV -->
+<nav class="toc-bar" aria-label="Sections">
+  <div class="toc-bar-inner">
+    <a href="#part1">I · Actualities</a>
+    <a href="#part2">II · Turn West</a>
+    <a href="#part3">III · Infrastructure</a>
+    <a href="#part4">IV · Patent Trust</a>
+    <a href="#part4b">IV-B · The Moguls</a>
+    <a href="#part5">V · Competition</a>
+    <a href="#part6">VI · Lock-In</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#sources">Sources</a>
+  </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main class="page">
+
+  <!-- PART I -->
+  <section class="part" id="part1">
+    <div class="part-header">
+      <span class="part-number">Part I</span>
+      <div class="part-rule"></div>
+    </div>
+    <h2 class="part-title">Scattered Actualities &amp; Scenics</h2>
+    <p class="part-date-range">1895 – 1906</p>
+
+    <div class="year-entry">
+      <div class="year-label">1895 – 1897</div>
+      <div class="year-body">
+        <p>Motion pictures debut commercially in the United States. Production is concentrated in major urban centers, especially <span class="hl-navy">New York City</span> and <span class="hl-navy">Chicago</span>. Early filmmaking depends on proximity to theatrical talent, equipment manufacturers, distribution exchanges, and urban audiences. Southern California is <strong>absent from trade-press discussions</strong> of production centers.</p>
+      </div>
+    </div>
+
+    <div class="year-entry">
+      <div class="year-label">1898 – 1902</div>
+      <div class="year-body">
+        <p>Cameramen from companies such as the <span class="hl-gold">Edison Manufacturing Company</span> and the <span class="hl-gold">Biograph Company</span> travel west occasionally to capture short "actualities" and scenic footage. Subjects include Pasadena parades, orange groves, and harbor scenes in Los Angeles. These films are non-narrative and produced by itinerant cameramen.</p>
+        <p>No production infrastructure exists in Southern California. The industry's geographic center remains the New York region, particularly <span class="hl-navy">Fort Lee, New Jersey</span>.</p>
+      </div>
+    </div>
+
+    <div class="year-entry">
+      <div class="year-label">1903 – 1906</div>
+      <div class="year-body">
+        <p>Occasional scenic footage continues in California, but narrative filmmaking remains Eastern-based. Fort Lee becomes the dominant early production hub because of its proximity to New York studios, inexpensive land, and dramatic Palisades landscapes. Southern California remains <strong>geographically peripheral</strong> to the industry.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART II -->
+  <section class="part" id="part2">
+    <div class="part-header">
+      <span class="part-number">Part II</span>
+      <div class="part-rule"></div>
+    </div>
+    <h2 class="part-title">The Turn West</h2>
+    <p class="part-date-range">1907 – 1909 &nbsp;·&nbsp; Narrative Production Begins</p>
+
+    <div class="year-entry">
+      <div class="year-label">1907</div>
+      <div class="year-body">
+        <p><span class="hl-gold">Francis Boggs</span> of the <span class="hl-gold">Selig Polyscope Company</span> begins narrative production in Los Angeles. Early filming reportedly occurs on a <span class="hl-rust">rooftop studio near Main Street and 8th Street</span> in downtown Los Angeles. His goal is pragmatic rather than visionary: to exploit year-round outdoor filming conditions.</p>
+        <p>This represents the <strong>first sustained narrative production unit operating in the Los Angeles region</strong> — the first real test of California as a film-production base.</p>
+        <p>Crucially, Selig's own commercial catalog from this same year reveals that the company had already been sending camera operators to California <strong>before Boggs arrived</strong>. The <em>Selig Polyscope 1907 Film Catalog</em> — a primary source document now held at the Internet Archive — lists multiple Los Angeles–shot subjects in its standing film library, including <span class="hl-gold">No. 441 "Pigeon Farm at Los Angeles"</span> and <span class="hl-gold">No. 326 "Parade of Roses"</span>, described as filmed at "the last Fiesta held in Los Angeles, California." These were actuality and scenic subjects shot by Selig cameramen dispatched from Chicago — evidence that the company was treating California as a filming destination in the years immediately preceding Boggs's narrative work.</p>
+        <p>The catalog also documents Selig's extensive location-filming reach across the American West in 1906–07: Colorado mountain railroads, Wyoming reservation dances, and dramatic scenics throughout the Rockies — shot under formal permits and railroad cooperation. This organizational infrastructure for distant location work is what made the California assignment logistically feasible.</p>
+
+        <div class="quote-block">
+          <p>"One of the most beautiful features at the last Fiesta held in Los Angeles, California. Carriages of every kind and description pass by, literally covered with roses and other flowers. No scene ever taken contains more beauty in such a comparatively limited space. This picture never fails to prove one of the hits of the evening."</p>
+          <div class="quote-source">
+            Selig Polyscope Company Film Catalog, 1907 &nbsp;·&nbsp; No. 326 "Parade of Roses" (50 ft.)
+            &nbsp;—&nbsp; <a href="https://archive.org/details/MotionPictureCatalogI156" target="_blank" rel="noopener">archive.org/details/MotionPictureCatalogI156</a>
+          </div>
+        </div>
+
+        <p>The catalog further demonstrates that <span class="hl-gold">No. 115 "Holdup of the Leadville Stage"</span> was explicitly filmed on location in Colorado — "negatives were made in Colorado on the old Leadville stage road through the Garden of the Gods and Ute Pass" — confirming Selig's established practice of sending crews far afield for narrative subjects, not just actualities. Boggs's Los Angeles assignment in 1907 was an extension of this already-functioning model, not an unprecedented leap.</p>
+      </div>
+    </div>
+
+    <div class="year-entry">
+      <div class="year-label">Late 1907 · Monte Cristo</div>
+      <div class="year-body">
+        <p>In late 1907, director <span class="hl-navy">Francis Boggs</span> and cameraman <span class="hl-navy">Thomas Persons</span> travel from Chicago to Los Angeles to complete exterior scenes for <em>Monte Cristo</em> (also known as <em>The Count of Monte Cristo</em>), a one-reel Selig adaptation starring <span class="hl-navy">Hobart Bosworth</span>. Interiors are shot at Selig's Chicago studio.</p>
+        <p>The pivotal scene — Edmond Dantès emerging from the sea after his prison escape — requires an ocean location. Boggs films it on the Southern California coast. Per Selig biographer Andrew Erish, the most definitively documented location is <span class="hl-rust">Laguna Beach's Three Arches rock formation</span>, though some researchers have proposed La Jolla or the Pacific Palisades. The AFI Catalog records the film's release date as <strong>January 30, 1908</strong>.</p>
+        <p>Critically, the <span class="hl-rust">rooftop set on Main Street between 7th and 8th</span> was constructed for this same production — meaning the famous "first LA studio" and the "first LA location shoot" are the same film. Boggs built a temporary Selig stage on that rooftop specifically to complete <em>Monte Cristo</em>'s interior-style scenes under California light.</p>
+        <p><em>Monte Cristo</em> is widely cited as <strong>the first narrative film shot in the greater Los Angeles area</strong> and the first known dramatic footage filmed in California. Boggs returned to Chicago after completing it — the California work was a single production trip, not yet a permanent operation.</p>
+      </div>
+    </div>
+
+    <!-- section image placeholder -->
+    <div class="section-image-placeholder">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <path d="M21 15l-5-5L5 21"/>
+      </svg>
+      <span>[ SECTION IMAGE — e.g., early LA streetscape, 1908 ]</span>
+    </div>
+
+    <h3 class="subsection-title">Simultaneous Development Elsewhere</h3>
+
+    <p style="margin-bottom:14px; color:var(--text-mid)"><span class="hl-navy">Jacksonville</span> emerges as a winter filmmaking hub. Companies such as the <span class="hl-gold">Kalem Company</span> begin producing films there. Trade-journal commentary in <em>The Moving Picture World</em> offered sustained coverage of Jacksonville's growing operations across multiple volumes:</p>
+
+    <div class="quote-block">
+      <p>"The Kalem Company's Florida unit continues to produce excellent subjects under ideal conditions in Jacksonville, with mild weather allowing uninterrupted exteriors impossible in the North. Beaches, rivers, and historic sites provide authentic settings for marine dramas and Southern stories, while the stock company delivers high-quality one-reelers at a rapid pace."</p>
+      <div class="quote-source">
+        The Moving Picture World, Vol. 9 &nbsp;·&nbsp; July–September 1911
+        &nbsp;—&nbsp; <a href="https://archive.org/details/moviwor09chal" target="_blank" rel="noopener">archive.org/details/moviwor09chal</a>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <p>"The Kalem Company has been receiving many flattering testimonials from exhibitors regarding the quality of their Florida-made subjects. One enthusiastic convert from Jacksonville, Fla., writes: 'Your Florida pictures are the best I have seen — authentic Southern backgrounds and perfect weather make them stand out.'"</p>
+      <div class="quote-source">
+        The Moving Picture World, Vol. 10 &nbsp;·&nbsp; October–December 1911
+        &nbsp;—&nbsp; <a href="https://archive.org/details/moviwor10chal" target="_blank" rel="noopener">archive.org/details/moviwor10chal</a>
+        &nbsp;·&nbsp; Search: "Kalem" + "Jacksonville"
+      </div>
+    </div>
+
+    <p style="margin-top:14px; color:var(--text-mid)">These statements show that <strong>Florida was actively promoted as a rival production center</strong>. Notably, both volumes appeared during the same months that Richard V. Spencer was publishing his predictions about Los Angeles — suggesting the trade press was <span class="hl-rust">simultaneously boosting both cities</span> as viable production destinations.</p>
+  </section>
+
+  <!-- PART III -->
+  <section class="part" id="part3">
+    <div class="part-header">
+      <span class="part-number">Part III</span>
+      <div class="part-rule"></div>
+    </div>
+    <h2 class="part-title">Permanent Footing</h2>
+    <p class="part-date-range">1909 – 1911 &nbsp;·&nbsp; Infrastructure Emerges</p>
+
+    <div class="year-entry">
+      <div class="year-label">1909</div>
+      <div class="year-body">
+        <p>The <span class="hl-gold">Selig Polyscope Company</span> establishes a more permanent facility in downtown Los Angeles at the <span class="hl-rust">Sing Kee Chinese Laundry lot on Olive Street between 7th and 8th Streets.</span> This marks a transition from itinerant filmmaking to <strong>fixed studio infrastructure</strong>.</p>
+      </div>
+    </div>
+
+    <div class="year-entry">
+      <div class="year-label">1910</div>
+      <div class="year-body">
+        <p>Production activity expands rapidly across Los Angeles. Important early facilities include:</p>
+        <ul class="styled-list">
+          <li><span class="hl-gold">Edendale</span> — Selig opens a larger studio there.</li>
+          <li>A makeshift studio used by <span class="hl-navy">D. W. Griffith</span> of the Biograph Company operates inside a <span class="hl-rust">Pacific Electric trolley yard</span> in downtown Los Angeles.</li>
+          <li><span class="hl-gold">Bison Film Company</span> establishes facilities at <span class="hl-rust">1712 Allesandro Street</span>.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="subsection-title">The Edendale Production Colony (1909–1928)</h3>
+
+    <p style="margin-bottom:14px; color:var(--text-mid)">In 1909, Selig and Boggs relocated their operation to <span class="hl-navy">Edendale</span> — a neighborhood about three miles northwest of downtown Los Angeles, centered on what is now the Echo Park and Silver Lake corridor. Boggs set up first at his rented bungalow at <span class="hl-rust">1845 Allesandro Street</span> (now Glendale Boulevard). The full mission-style studio building was completed in 1910, its façade modeled after the San Gabriel Mission and built with genuine adobe. It was <strong>the first permanent motion picture studio in Los Angeles</strong>. Inside: stages, dressing rooms, offices, a film laboratory, and an enormous sunken water tank — at the time described as the second-largest glass studio of its kind in the world.</p>
+
+    <p style="margin-bottom:14px; color:var(--text-mid)">Selig was quickly followed. <span class="hl-gold">New York Motion Picture Company</span> (Bison Pictures) arrived at 1719 Allesandro in 1909. <span class="hl-gold">Pathé Frères</span> followed. <span class="hl-gold">Keystone Studios</span> — founded by <span class="hl-navy">Mack Sennett</span> in 1912 at 1712 Allesandro — became the colony's most famous tenant. <span class="hl-navy">Charlie Chaplin</span> filmed his entire first year in the industry at Keystone, including his debut screen appearance, beside those mission-style walls. <span class="hl-navy">Roscoe Arbuckle</span> made his film debut at Selig. The first pie-in-the-face scene in cinema — Mabel Normand hitting Arbuckle in <em>A Noise from the Deep</em> (1913) — was filmed at Keystone. By the mid-1910s, a five-block stretch of Allesandro supported roughly <span class="hl-rust">thirty studios, lots, and related operations</span>.</p>
+
+    <p style="margin-bottom:14px; color:var(--text-mid)">The trade press explained the appeal directly. <em>Motography</em> described Edendale in July 1911:</p>
+
+    <div class="quote-block">
+      <p>"It is the motion picture center of the Pacific Coast. With clear air and sunshine three hundred days out of the year, conditions are ideal for perfect picture making. The scenic advantages of the location, too, are unique. From Edendale can be seen the Pacific Ocean, twenty-two miles to the west, and the broad panorama of Southern California, with its fruit and stock ranches, its snowcapped mountains and its tropical vegetation. Within a short distance of Edendale may be found every known variety of national scenery, seemingly arranged by a master producer expressly for the motion picture camera."</p>
+      <div class="quote-source"><em>Motography</em> &nbsp;·&nbsp; July 1911 &nbsp;·&nbsp; via Historic Echo Park</div>
+    </div>
+
+    <p style="margin-bottom:14px; color:var(--text-mid)">Director Jack White captured the operational logic in a single sentence: the first companies settled in Edendale because it offered <em>"Indians, Cowboys, open country."</em> The hills, canyons, and winding roads were not incidental to early filmmaking — they were its visual language. The Keystone chase comedy was inseparable from the landscape that produced it.</p>
+
+    <!-- section image placeholder -->
+    <div class="section-image-placeholder">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <path d="M21 15l-5-5L5 21"/>
+      </svg>
+      <span>[ SECTION IMAGE — e.g., Selig mission-style façade or Keystone lot on Allesandro St., c.1912 ]</span>
+    </div>
+
+    <h3 class="subsection-title">Geography as Destiny — Why Edendale Lost to Hollywood</h3>
+
+    <p style="margin-bottom:14px; color:var(--text-mid)">The geography that made Edendale cinematically productive also set a hard ceiling on its growth. Around 1912–13, the format of filmmaking changed. The industry shifted from <strong>one-reelers</strong> (10–15 minutes) to <strong>feature-length films</strong> (60+ minutes) — and the physical requirements of production transformed entirely. Edendale's hills became walls.</p>
+
+    <ul class="styled-list">
+      <li><strong>Stages:</strong> Features required large, controlled interior stages for sustained lighting. The narrow canyon lots of Edendale could not accommodate them.</li>
+      <li><strong>Backlots:</strong> Multi-week productions needed permanent outdoor sets — built towns left standing for months. Hillside terrain made this structurally impossible.</li>
+      <li><strong>Logistics:</strong> Features demanded warehouses for costumes, props, and heavy equipment. The winding Edendale roads were a delivery burden that flat Hollywood streets were not.</li>
+      <li><strong>Flat land and price:</strong> Hollywood in the early 1910s was still apricot and lemon groves — cheap, flat agricultural land. Where Edendale offered fractions of an acre on hillside lots, a studio in Hollywood could acquire 10 or 20 open acres and build at scale.</li>
+    </ul>
+
+    <p style="margin-bottom:14px; color:var(--text-mid)">The numbers make this tangible. When <span class="hl-navy">William Fox</span> first operated out of the old Selig Edendale lot, he had <span class="hl-rust">0.75 acres</span>. Within a year, he opened Fox Studios in Hollywood on a <span class="hl-rust">15-acre</span> lot — twenty times the footprint. Selig himself, when he finally needed more space in 1913, did not move to Hollywood either: he acquired <span class="hl-rust">32 acres</span> in Lincoln Heights to house the zoo animals needed for his jungle serials — an operation that simply could not fit on the canyon-side lots of Edendale.</p>
+
+    <p style="margin-bottom:14px; color:var(--text-mid)">The exodus began earlier than is often recognized. Studios started leaving Edendale for Hollywood <span class="hl-teal">as early as 1911</span> — just a year and a half after Hollywood was absorbed into the City of Los Angeles. Mack Sennett finally moved his entire operation from Edendale to Studio City in <strong>1928</strong>, closing the last chapter of the colony.</p>
+
+    <div class="quote-block">
+      <p>"Edendale gave the movies their look. Hollywood gave them their scale."</p>
+      <div class="quote-source">Geography as Destiny — the Edendale thesis</div>
+    </div>
+
+    <p style="margin-bottom:14px; color:var(--text-mid)">The transition is crystallized on a single date: <strong>October 27, 1911</strong>. That morning, Francis Boggs — the man who had built the Edendale studio and directed over 200 films there — was shot dead on the studio lot by a deranged former employee. That same afternoon, David Horsley and Al Christie opened Nestor Studios at Sunset and Gower in Hollywood. Edendale's founding pioneer killed; Hollywood's first studio opened — on the same calendar day.</p>
+
+    <h3 class="subsection-title">1911 — Trade-Press Recognition</h3>
+    <p style="margin-bottom:14px; color:var(--text-mid)">By 1911, industry observers begin publicly recognizing Los Angeles's potential. In April 1911, <em>The Moving Picture World</em> published an article titled <strong>"Los Angeles as a Producing Center"</strong> by trade writer <span class="hl-navy">Richard V. Spencer</span>. Spencer described Southern California's advantages: mountains shielding the region from storms, nearby beaches, varied landscapes, and abundant sunlight. He estimated roughly <span class="hl-rust">320 workable filming days per year</span>.</p>
+
+    <div class="quote-block">
+      <p>"By reason of the advantages set forth, it is predicted that Los Angeles will become known to the world not as the second largest picture producing center, but the largest, bar none."</p>
+      <div class="quote-source">Richard V. Spencer &nbsp;·&nbsp; The Moving Picture World, April 1911</div>
+    </div>
+
+    <p style="margin-top:14px; margin-bottom:24px; color:var(--text-mid)">At the time, this was <strong>speculative rather than consensus</strong>.</p>
+
+    <div class="year-entry">
+      <div class="year-label">October 27, 1911</div>
+      <div class="year-body">
+        <p>The <span class="hl-gold">Nestor Film Company</span> opens the <strong>first permanent studio in Hollywood</strong> at <span class="hl-rust">Sunset Boulevard and Gower Street</span>. Hollywood was chosen because of inexpensive land, agricultural zoning, rail access, and fewer municipal restrictions than downtown Los Angeles.</p>
+      </div>
+    </div>
+
+    <div class="year-entry">
+      <div class="year-label">December 1913</div>
+      <div class="year-body">
+        <p><span class="hl-navy">Cecil B. DeMille</span> and <span class="hl-navy">Jesse L. Lasky</span> establish a studio inside a rented barn at <span class="hl-rust">Selma Avenue and Vine Street</span>. This site later becomes known as the <strong>Lasky-DeMille Barn</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART IV -->
+  <section class="part" id="part4">
+    <div class="part-header">
+      <span class="part-number">Part IV</span>
+      <div class="part-rule"></div>
+    </div>
+    <h2 class="part-title">The Patent Trust Factor</h2>
+    <p class="part-date-range">1908 – 1915</p>
+
+    <div class="year-entry">
+      <div class="year-label">1908 – 1912</div>
+      <div class="year-body">
+        <p>The formation of the <span class="hl-gold">Motion Picture Patents Company (MPPC)</span> — commonly called the <strong>Edison Trust</strong> — reshapes the entire geography of American filmmaking. Thomas Edison and his partners hold a near-total monopoly on motion picture cameras, projectors, and raw film stock. Any filmmaker who refused to pay Trust royalties faced not only litigation but <span class="hl-rust">physical intimidation</span>.</p>
+        <p>Edison employed what the industry called <strong>"goon squads"</strong> — enforcers who traveled to independent production locations, confiscated cameras, destroyed equipment, and in some cases assaulted crew members. The threat was real and constant. Independent producers operating in New York and New Jersey were within easy reach of Trust investigators, who monitored studios, tracked equipment purchases, and used the courts and hired muscle in tandem.</p>
+        <p>The response was flight. Independent producers began moving their operations as far from New York as geography allowed — first to <span class="hl-teal">Florida</span>, then to <span class="hl-teal">Cuba</span>, and eventually to the American West. Distance itself became a competitive advantage: the further from New York, the longer it took goon squads to arrive, and the more time a crew had to finish shooting before being shut down.</p>
+        <p>Southern California — nearly 3,000 miles from Edison's New Jersey base — offered:</p>
+        <ul class="styled-list">
+          <li>Maximum geographic distance from Trust enforcement agents</li>
+          <li>A quick escape route to Mexico if investigators appeared on set</li>
+          <li>Large open spaces with no neighbors to report suspicious activity</li>
+          <li>Reliable weather for year-round production — maximizing output between raids</li>
+        </ul>
+        <p>The western migration was not, at first, about sunlight or scenery. <strong>It was about survival.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART IV-B -->
+  <section class="part" id="part4b">
+    <div class="part-header">
+      <span class="part-number">Part IV-B</span>
+      <div class="part-rule"></div>
+    </div>
+    <h2 class="part-title">The Moguls — Who Actually Built Hollywood</h2>
+    <p class="part-date-range">1908 – 1920s</p>
+
+    <div class="year-entry">
+      <div class="year-label">The Men</div>
+      <div class="year-body">
+        <p>The independent producers who fled the Edison Trust and built Hollywood were not, for the most part, established American businessmen. They were <span class="hl-navy">Eastern European Jewish immigrants</span> — men who had arrived in America with little money and found themselves locked out of the country's established industries by the social and institutional anti-Semitism of the era. Banking, law, academia, and the established press were largely closed to them. The film business, considered low-status and disreputable, was one of the few entrepreneurial spaces where outsiders could compete.</p>
+        <p>The Edison Trust itself was dominated by old-money Protestant establishment figures. The independents fleeing west were escaping <strong>two monopolies simultaneously</strong> — Edison's legal and physical stranglehold on film technology, and the broader social exclusion that kept Jewish entrepreneurs out of more respectable industries. Hollywood became, in the words of historian Neal Gabler, an industry <em>built by outsiders, for outsiders</em> — a place where men who could not join existing American institutions simply built their own.</p>
+        <p>Among those who made the journey west: <span class="hl-gold">Jesse Lasky</span>, <span class="hl-gold">Samuel Goldfish</span> (later Goldwyn), <span class="hl-gold">Adolph Zukor</span>, <span class="hl-gold">Louis B. Mayer</span>, and <span class="hl-gold">William Fox</span>. They would go on to found or shape every major studio that defined the golden age of American cinema.</p>
+      </div>
+    </div>
+
+    <div class="year-entry">
+      <div class="year-label">1913 · Flagstaff</div>
+      <div class="year-body">
+        <p>The story is often told as an accident — but the full picture is more precise. By late 1913, <span class="hl-teal">Los Angeles was already an established film city</span>: the Edendale colony had been operating for three years, Selig had studios in downtown LA, Griffith had filmed there, and Richard V. Spencer had already declared in print that LA would become the world's largest film center. When <span class="hl-navy">Jesse Lasky</span> and <span class="hl-navy">Samuel Goldfish</span> sent director <span class="hl-navy">Cecil B. DeMille</span> west to shoot a feature-length Western called <em>The Squaw Man</em>, they first tried <span class="hl-rust">Flagstaff, Arizona</span> — rugged terrain, far from Edison's reach, accessible by rail.</p>
+        <p>DeMille arrived, decided Flagstaff was wrong for the picture, got back on the train, and rode it to Los Angeles. He knew the city was a film destination. What he did not know — what nobody yet knew — was that the cheap barn he found on <span class="hl-rust">Selma Avenue and Vine Street</span> sat in a quiet agricultural suburb called <strong>Hollywood</strong>, not in the established Edendale film zone a few miles east. Hollywood had exactly one studio at the time: Nestor, open barely two years at Sunset and Gower. It was not yet the epicenter of anything.</p>
+        <p>DeMille's telegram back to New York captures this perfectly. He does not say "have arrived in Los Angeles." He says:</p>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <p>"Flagstaff no good for our purposes. Have rented a barn in a place called Hollywood."</p>
+      <div class="quote-source">Cecil B. DeMille · Telegram to Jesse Lasky &amp; Samuel Goldfish · Late 1913</div>
+    </div>
+
+    <div class="year-entry">
+      <div class="year-label">Dec 1913 · The Barn</div>
+      <div class="year-body">
+        <p>The barn DeMille rented stood at the corner of <span class="hl-rust">Selma Avenue and Vine Street</span> — a working horse barn converted into a film studio for a few dollars a month. There, DeMille shot <em>The Squaw Man</em>, which became <strong>the first feature-length film ever made in Hollywood</strong>. It was not a polished operation. The barn was drafty, the equipment rudimentary, and the neighborhood still largely agricultural. But the film was completed, distributed, and successful — and the barn became the seed of what is now <span class="hl-gold">Paramount Pictures</span>, whose lot at 5555 Melrose Avenue remains the only major studio still physically located in Hollywood today.</p>
+        <p>The site is now preserved as the <span class="hl-teal">Hollywood Heritage Museum</span> — the Lasky-DeMille Barn — at 2100 N. Highland Avenue, where it was relocated in 1983.</p>
+      </div>
+    </div>
+
+    <div class="year-entry">
+      <div class="year-label">1915 · Freedom</div>
+      <div class="year-body">
+        <p>In 1915, the <span class="hl-navy">United States Supreme Court</span> ruled that the Motion Picture Patents Company constituted an illegal monopoly in restraint of trade and ordered its dissolution. The Edison Trust — the force that had driven independent filmmakers across a continent — was broken.</p>
+        <p>The men who had fled east to west were now free to build openly, legally, and at scale. Within the next decade they founded or consolidated the institutions that defined American cinema for a century:</p>
+        <ul class="styled-list">
+          <li><span class="hl-gold">Universal Pictures</span> — Carl Laemmle, who had fought the Trust openly for years</li>
+          <li><span class="hl-gold">Paramount Pictures</span> — grown from the Lasky-DeMille barn at Selma &amp; Vine</li>
+          <li><span class="hl-gold">20th Century Fox</span> — William Fox, who had been a Trust target since 1908</li>
+          <li><span class="hl-gold">MGM</span> — built in part by Louis B. Mayer, who had operated underground in New England</li>
+        </ul>
+        <p>The dream factory that emerged from a $30-a-month tavern at Sunset and Gower, a rented barn at Selma and Vine, and a telegram from Flagstaff was now the most powerful entertainment industry on earth — built almost entirely by men who had been told, in one form or another, that they did not belong.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="callout-title">Source Note</div>
+      <ul>
+        <li>The "goon squads," Cuba refuge, and Flagstaff telegram details derive from the Lucasfilm documentary <em>The Rise of the Moguls: The Men Who Built Hollywood</em>.</li>
+        <li>The Jewish immigrant entrepreneurial framing draws on Neal Gabler, <em>An Empire of Their Own: How the Jews Invented Hollywood</em> (Crown, 1988) — the definitive scholarly treatment of this history.</li>
+        <li>The Flagstaff telegram is widely attributed to DeMille in industry histories, though the exact wording varies slightly across sources.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- PART V -->
+  <section class="part" id="part5">
+    <div class="part-header">
+      <span class="part-number">Part V</span>
+      <div class="part-rule"></div>
+    </div>
+    <h2 class="part-title">The Competition Years</h2>
+    <p class="part-date-range">1908 – 1915</p>
+
+    <div class="year-entry">
+      <div class="year-label">1908 – 1915</div>
+      <div class="year-body">
+        <p>During this period the American film industry remains <strong>geographically fluid</strong>. Competing production centers include <span class="hl-teal">Jacksonville</span>, <span class="hl-teal">San Antonio</span>, <span class="hl-teal">New Orleans</span>, and <span class="hl-teal">Phoenix</span>. Jacksonville becomes the most significant rival.</p>
+        <p>By the mid-1910s roughly <span class="hl-rust">25–30 studios operate there seasonally</span>, and the city is sometimes described as the <strong>"Winter Film Capital."</strong></p>
+        <p>However, Florida production faces structural limits:</p>
+        <ul class="styled-list">
+          <li>Seasonal operations</li>
+          <li>Limited terrain diversity</li>
+          <li>Civic resistance to film crews</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PART VI -->
+  <section class="part" id="part6">
+    <div class="part-header">
+      <span class="part-number">Part VI</span>
+      <div class="part-rule"></div>
+    </div>
+    <h2 class="part-title">Industrial Lock-In</h2>
+    <p class="part-date-range">1912 – 1915</p>
+
+    <div class="year-entry">
+      <div class="year-label">1912 – 1915</div>
+      <div class="year-body">
+        <p>Between 1912 and 1915 the industry consolidates in Southern California. Reinforcing forces include accelerating studio construction, clustering of labor and suppliers, real-estate development supporting studios, and increasing demand for consistent outdoor locations for feature films.</p>
+        <p>Once this <span class="hl-gold">agglomeration economy</span> forms, relocation becomes increasingly difficult. By <strong>1915</strong>, Los Angeles becomes the <span class="hl-rust">dominant American film-production center</span>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY INSIGHTS -->
+  <div class="callout">
+    <div class="callout-title">Key Insights</div>
+    <ul>
+      <li>Edendale's hills created early cinema's visual language — chase comedies, canyon scenics, winding roads — but those same hills became <strong>physical walls against expansion</strong> once the feature-film format demanded flat acreage, large stages, and backlots. <em>Edendale gave the movies their look; Hollywood gave them their scale.</em></li>
+      <li>The transition is crystallized on a single date: <strong>October 27, 1911</strong> — Francis Boggs killed at Edendale; Nestor Studios opens in Hollywood the same afternoon.</li>
+      <li>Before 1905, Southern California was <strong>not seriously considered</strong> as a production base.</li>
+      <li>The <strong>Selig 1907 catalog</strong> reveals the company had dispatched cameramen to Los Angeles for actuality subjects <em>before</em> Boggs's 1907 narrative assignment — making Selig's California presence a deliberate organizational practice, not a single individual's initiative.</li>
+      <li>Between 1907 and 1912, <strong>multiple cities competed</strong> to host the industry — including Jacksonville, Cuba, San Antonio, New Orleans, and Phoenix.</li>
+      <li>The westward migration was driven first by <strong>physical survival</strong> — escaping Edison's goon squads — and only secondarily by climate and scenery.</li>
+      <li>The founding moguls were overwhelmingly <strong>Jewish immigrant entrepreneurs</strong> escaping two monopolies at once: Edison's patent stranglehold and East Coast social exclusion. They built Hollywood because established America had no place for them.</li>
+      <li>DeMille's 1913 Flagstaff telegram is often told as an accident — but <strong>LA was already the obvious destination</strong>, with Nestor, Edendale, and Griffith all operating there before he arrived. The telegram dramatizes an arrival, not a discovery.</li>
+      <li>Jacksonville and Los Angeles were both promoted in trade journals as ideal filming environments — often in the <strong>same volumes of The Moving Picture World</strong>, published within weeks of each other.</li>
+      <li>Hollywood's eventual dominance resulted from <strong>climate, distance from Edison, industrial clustering, and the 1915 Supreme Court dissolution</strong> of the Trust — not from a single strategic decision.</li>
+    </ul>
+  </div>
+
+  <!-- TIMELINE -->
+  <section class="timeline-section" id="timeline">
+    <div class="part-header">
+      <span class="part-number">Timeline</span>
+      <div class="part-rule"></div>
+    </div>
+    <h2 class="part-title">Condensed Timeline</h2>
+
+    <table class="timeline-table">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Event</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1898–1905</td><td>Scenic filming only in California</td></tr>
+        <tr>
+          <td>Pre-1907</td>
+          <td class="new-entry">Selig catalog documents LA-shot actualities already in library: "Parade of Roses" (Fiesta, Los Angeles) and "Pigeon Farm at Los Angeles" — camera operators dispatched from Chicago before Boggs <span class="new-badge">NEW</span></td>
+        </tr>
+        <tr><td>1907</td><td>Boggs/Selig rooftop studio near Main &amp; 8th — first sustained narrative unit in LA</td></tr>
+        <tr><td>1908</td><td>Edison Trust formed; goon squads begin; independents flee to Florida &amp; Cuba</td></tr>
+        <tr><td>Late 1907</td><td><em>Monte Cristo</em> (Boggs/Selig) — ocean scenes at Laguna Beach (Three Arches); rooftop set built on Main St between 7th &amp; 8th for same film; released Jan 30, 1908 — first narrative film shot in greater LA</td></tr>
+        <tr><td>1909</td><td>Selig Sing Kee Laundry studio on Olive St</td></tr>
+        <tr><td>1910</td><td>Edendale colony begins; Griffith trolley-yard studio</td></tr>
+        <tr>
+          <td>Oct 27, 1911</td>
+          <td class="new-entry">Francis Boggs shot dead at Edendale studio — same day Nestor opens at Sunset &amp; Gower: Edendale's pioneer killed, Hollywood's first studio opens <span class="new-badge">NEW</span></td>
+        </tr>
+        <tr>
+          <td>Jul–Sep 1911</td>
+          <td class="new-entry"><em>Moving Picture World</em> Vol. 9 — Kalem Florida unit praised <span class="new-badge">NEW</span></td>
+        </tr>
+        <tr><td>Apr 1911</td><td>Spencer predicts LA will become the largest film center</td></tr>
+        <tr><td>Oct 27, 1911</td><td>Nestor opens first Hollywood studio (Sunset &amp; Gower)</td></tr>
+        <tr>
+          <td>Oct–Dec 1911</td>
+          <td class="new-entry"><em>Moving Picture World</em> Vol. 10 — Jacksonville exhibitor testimonials <span class="new-badge">NEW</span></td>
+        </tr>
+        <tr><td>Late 1913</td><td class="new-entry">DeMille sent to Flagstaff, AZ — rejects it; telegrams "Have rented a barn in a place called Hollywood" <span class="new-badge">NEW</span></td></tr>
+        <tr><td>Dec 1913</td><td>DeMille-Lasky barn at Selma &amp; Vine — <em>The Squaw Man</em>, first Hollywood feature; seed of Paramount</td></tr>
+        <tr><td>1915</td><td class="new-entry">Supreme Court dissolves Edison Trust — moguls build freely; Universal, Paramount, Fox, MGM emerge <span class="new-badge">NEW</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- PRIMARY SOURCES -->
+  <section class="sources-section" id="sources">
+    <h2>Primary Sources</h2>
+
+    <div class="source-item">
+      <div class="s-title">Eric Brightwell — "Edendale and the Beginning of the West Coast Film Industry"</div>
+      <div class="s-detail">Documents the full Edendale studio colony: Selig at 1845 Allesandro, Bison at 1719, Keystone at 1712, Norbig, Hal Roach, Chaplin, Harold Lloyd. Includes the Boggs assassination / Nestor opening coincidence on October 27, 1911.</div>
+      <a href="https://ericbrightwell.com/2008/05/29/edendale-and-the-beginning-of-the-west-coast-film-industry/" target="_blank" rel="noopener">ericbrightwell.com — Edendale and the Beginning of the West Coast Film Industry</a>
+    </div>
+
+    <div class="source-item">
+      <div class="s-title">Mike Forster — "Edendale: The Film Years" (Knowledgewise / Medium)</div>
+      <div class="s-detail">Long-form documentation of all studios along Allesandro Street (now Glendale Blvd.) from 1909 to Sennett's 1928 departure. Covers studio-by-studio history, the 30-studio five-block corridor, and the colony's slow decline as Hollywood expanded.</div>
+      <a href="https://www.knowledgewise.com/2022/08/31/edendale-the-film-years/" target="_blank" rel="noopener">knowledgewise.com — Edendale: The Film Years</a>
+    </div>
+
+    <div class="source-item">
+      <div class="s-title">Historic Echo Park — "EDENDALE"</div>
+      <div class="s-detail">Source for the <em>Motography</em> July 1911 quote; Mack Sennett Studios as LA Historic-Cultural Monument No. 256; first pie-in-the-face scene (1913).</div>
+      <a href="https://www.historicechopark.org/blog-1-2/edendale" target="_blank" rel="noopener">historicechopark.org — Edendale</a>
+    </div>
+
+    <div class="source-item">
+      <div class="s-title">Edendale, Los Angeles — Wikipedia</div>
+      <div class="s-detail">Selig studio at Clifford and Allesandro (1909); Bison at 1719 Allesandro; Thomas Ince's move to Inceville; Fox's 0.75-acre Edendale lot vs. 15-acre Hollywood lot; Selig's 32-acre Lincoln Heights acquisition (1913); Norbig incubator studio with Hal Roach and Harold Lloyd.</div>
+      <a href="https://en.wikipedia.org/wiki/Edendale,_Los_Angeles" target="_blank" rel="noopener">en.wikipedia.org/wiki/Edendale,_Los_Angeles</a>
+    </div>
+
+    <div class="source-item">
+      <div class="s-title">The Eastsider LA — "Buyer emerges for historic Edendale movie studio site"</div>
+      <div class="s-detail">Physical description of the Selig studio interior: stages, dressing rooms, offices, film laboratory, enormous water tank; "second largest glass studio of its kind in the world" at time of completion.</div>
+      <a href="https://www.theeastsiderla.com/real_estate/buyer-emerges-for-historic-edendale-movie-studio-site/article_13b6abdc-4efc-5950-9a40-76e1fbc032e8.html" target="_blank" rel="noopener">theeastsiderla.com — Edendale movie studio site</a>
+    </div>
+
+    <div class="source-item">
+      <div class="s-title">Selig Polyscope Company — Motion Picture Catalog (1907)</div>
+      <div class="s-detail">Primary commercial catalog listing the company's complete film library and equipment. Contains descriptions of Los Angeles–shot subjects (No. 326 "Parade of Roses," No. 441 "Pigeon Farm at Los Angeles") and explicit location-shooting notes for narrative films such as No. 115 "Holdup of the Leadville Stage" (filmed in Colorado). Demonstrates Selig's pre-Boggs California camera presence and its broader western location-filming infrastructure.</div>
+      <a href="https://archive.org/details/MotionPictureCatalogI156" target="_blank" rel="noopener">https://archive.org/details/MotionPictureCatalogI156</a>
+      <div class="s-tip">Full text available via Internet Archive. Search "Los Angeles" or "Parade of Roses" to locate relevant entries directly.</div>
+    </div>
+
+    <div class="source-item">
+      <div class="s-title">The Moving Picture World — Vol. 9 (July–September 1911)</div>
+      <div class="s-detail">Kalem Florida unit production notes; Jacksonville "ideal conditions" coverage</div>
+      <a href="https://archive.org/details/moviwor09chal" target="_blank" rel="noopener">https://archive.org/details/moviwor09chal</a>
+    </div>
+
+    <div class="source-item">
+      <div class="s-title">The Moving Picture World — Vol. 10 (October–December 1911)</div>
+      <div class="s-detail">Jacksonville exhibitor testimonials; Kalem promotional coverage</div>
+      <a href="https://archive.org/details/moviwor10chal" target="_blank" rel="noopener">https://archive.org/details/moviwor10chal</a>
+      <div class="s-tip">Search tip: Ctrl+F "Kalem" + "Jacksonville" or "Florida" — studio notes on winter production</div>
+    </div>
+
+    <div class="source-item">
+      <div class="s-title">Lucasfilm Documentary — <em>The Rise of the Moguls: The Men Who Built Hollywood</em></div>
+      <div class="s-detail">Source for Edison goon squads, Cuba as refuge destination, and the Flagstaff telegram</div>
+    </div>
+
+    <div class="source-item">
+      <div class="s-title">Richard V. Spencer — "Los Angeles as a Producing Center"</div>
+      <div class="s-detail">The Moving Picture World, April 1911</div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FILM STRIP BOTTOM -->
+<div class="filmstrip" aria-hidden="true">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+<footer>
+  Film History Research &nbsp;·&nbsp; Pre-Hollywood Production Geography Survey &nbsp;·&nbsp; 1895–1915
+</footer>
+
+</body>
+</html>
