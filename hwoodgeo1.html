@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Geographic Audit — Drop-in Section</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:       #0b1c2c;
+      --navy-mid:   #122336;
+      --navy-light: #1a3148;
+      --gold:       #c9a44a;
+      --gold-light: #e8c97a;
+      --gold-pale:  #f5edda;
+      --cream:      #faf6ee;
+      --rust:       #9b3a2a;
+      --rust-light: #c04a35;
+      --teal:       #1a6b5f;
+      --teal-light: #4ab89a;
+      --text-dark:  #1e1e1e;
+      --text-mid:   #3d3d3d;
+      --text-light: #6b6b6b;
+      --border:     #d4b87a55;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--cream);
+      color: var(--text-mid);
+      font-family: 'Source Serif 4', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.75;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 32px 80px;
+    }
+
+    /* ── PART HEADER (matches hwood5 exactly) ── */
+    .part { margin-top: 64px; }
+    .part-header { display: flex; align-items: center; gap: 16px; margin-bottom: 6px; }
+    .part-number {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); background: var(--navy);
+      padding: 4px 10px; border-radius: 2px; white-space: nowrap;
+    }
+    .part-rule { flex: 1; height: 1px; background: linear-gradient(to right, var(--gold) 0%, transparent 100%); }
+    .part-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 3vw, 30px); font-weight: 700;
+      color: var(--navy); line-height: 1.2; margin-bottom: 4px;
+    }
+    .part-date-range {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      color: var(--rust-light); letter-spacing: 0.15em; margin-bottom: 24px;
+    }
+
+    /* ── SUBSECTION ── */
+    .subsection-title {
+      font-family: 'Playfair Display', serif; font-size: 19px;
+      font-weight: 700; font-style: italic; color: var(--navy-light);
+      margin: 32px 0 12px; padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ── HIGHLIGHTS ── */
+    .hl-gold  { font-weight:600; color:#8a6a10; background:#f5edda; padding:1px 4px; border-radius:2px; }
+    .hl-navy  { font-weight:600; color:var(--navy); }
+    .hl-rust  { font-weight:600; color:var(--rust); }
+    .hl-teal  { font-weight:600; color:var(--teal); }
+
+    p { margin-bottom: 14px; color: var(--text-mid); }
+
+    /* ── THE CORE COMPARISON DISPLAY ── */
+    .terrain-compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      margin: 32px 0;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    @media (max-width: 580px) { .terrain-compare { grid-template-columns: 1fr; } }
+
+    .terrain-col { padding: 0; }
+
+    .terrain-col-header {
+      padding: 16px 22px 14px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .terrain-col.edendale .terrain-col-header { background: var(--rust); }
+    .terrain-col.hollywood .terrain-col-header { background: var(--teal); }
+
+    .terrain-col-tag {
+      font-family: 'DM Mono', monospace; font-size: 9px;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+    .terrain-col-name {
+      font-family: 'Playfair Display', serif; font-size: 20px;
+      font-weight: 900; color: #fff; line-height: 1.1;
+    }
+    .terrain-col-sub {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      color: rgba(255,255,255,0.65); letter-spacing: 0.08em; margin-top: 2px;
+    }
+
+    .terrain-col-body { padding: 20px 22px; background: #fff; }
+    .terrain-col.edendale .terrain-col-body { border-right: 1px solid var(--border); }
+
+    /* BIG NUMBER display */
+    .big-stat {
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #ede5d5;
+    }
+    .big-stat:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .stat-label {
+      font-family: 'DM Mono', monospace; font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--text-light); margin-bottom: 6px;
+    }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px; font-weight: 900; line-height: 1;
+      margin-bottom: 4px;
+    }
+    .edendale .stat-number { color: var(--rust); }
+    .hollywood .stat-number { color: var(--teal); }
+
+    .stat-unit {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      color: var(--text-light); display: block; margin-bottom: 6px;
+    }
+    .stat-note {
+      font-size: 13.5px; color: var(--text-light);
+      font-style: italic; line-height: 1.5;
+    }
+
+    /* ── ELEVATION PROFILE ── */
+    .elevation-profile {
+      margin: 28px 0;
+      background: var(--navy);
+      border-radius: 6px;
+      padding: 24px 28px;
+    }
+    .profile-title {
+      font-family: 'DM Mono', monospace; font-size: 9.5px;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+      display: flex; align-items: center; gap: 12px;
+    }
+    .profile-title::after { content:''; flex:1; height:1px; background:var(--gold); opacity:0.25; }
+
+    .profile-diagram {
+      position: relative;
+      height: 120px;
+      margin-bottom: 16px;
+    }
+
+    /* Edendale cross-section */
+    .profile-edendale {
+      position: absolute; left: 0; width: 48%;
+    }
+    .profile-hollywood {
+      position: absolute; right: 0; width: 48%;
+    }
+
+    .profile-label {
+      font-family: 'DM Mono', monospace; font-size: 9px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .profile-edendale .profile-label { color: #e8907a; }
+    .profile-hollywood .profile-label { color: var(--teal-light); }
+
+    .profile-svg { width: 100%; height: 80px; }
+
+    .profile-divider {
+      position: absolute; left: 50%; top: 0;
+      width: 1px; height: 100%;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .profile-readings {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+      margin-top: 4px;
+    }
+    .reading-box {
+      background: rgba(255,255,255,0.05);
+      border-radius: 4px; padding: 10px 14px;
+    }
+    .reading-label {
+      font-family: 'DM Mono', monospace; font-size: 8.5px;
+      letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 4px;
+    }
+    .reading-edendale .reading-label { color: #e8907a; }
+    .reading-hollywood .reading-label { color: var(--teal-light); }
+
+    .reading-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px; font-weight: 700; color: #fff;
+    }
+    .reading-sub {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      color: rgba(255,255,255,0.45); margin-top: 2px;
+    }
+
+    /* ── AUDIT TABLE ── */
+    .audit-table {
+      width: 100%; border-collapse: collapse;
+      margin: 24px 0; font-size: 15px;
+    }
+    .audit-table thead tr { background: var(--navy); }
+    .audit-table thead th {
+      font-family: 'DM Mono', monospace; font-size: 9px;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold); padding: 11px 16px; text-align: left;
+    }
+    .audit-table tbody tr { border-bottom: 1px solid #e0d8c8; }
+    .audit-table tbody tr:nth-child(even) { background: #f0ebe0; }
+    .audit-table tbody tr:hover { background: #e8dfc8; }
+    .audit-table td { padding: 10px 16px; vertical-align: top; }
+    .audit-table td:first-child {
+      font-family: 'DM Mono', monospace; font-size: 12px;
+      color: var(--text-light); font-weight: 500;
+    }
+    .val-rust { font-weight: 700; color: var(--rust); }
+    .val-teal { font-weight: 700; color: var(--teal); }
+    .val-note { font-size: 13px; color: var(--text-light); font-style: italic; }
+
+    /* ── VERDICT QUOTE ── */
+    .quote-block {
+      background: var(--navy); border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0; padding: 20px 24px; margin: 24px 0;
+      position: relative;
+    }
+    .quote-block::before {
+      content: '\201C'; font-family: 'Playfair Display', serif;
+      font-size: 64px; color: var(--gold); opacity: 0.2;
+      position: absolute; top: -8px; left: 14px;
+      line-height: 1; pointer-events: none;
+    }
+    .quote-block p {
+      font-style: italic; color: var(--cream);
+      font-size: 16px; line-height: 1.7; position: relative; z-index: 1;
+    }
+    .quote-source {
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      letter-spacing: 0.1em; color: var(--gold); margin-top: 10px;
+    }
+
+    /* ── DATA NOTE ── */
+    .data-note {
+      margin-top: 28px; padding: 16px 20px;
+      background: #f0ebe0; border-left: 3px solid var(--gold);
+      font-size: 13.5px; color: var(--text-light);
+    }
+    .data-note strong { color: var(--navy); }
+    .data-note code {
+      font-family: 'DM Mono', monospace; font-size: 11px;
+      background: #e8dfc8; padding: 1px 4px; border-radius: 2px;
+    }
+
+    /* ── MAP EXHIBIT ── */
+    .map-exhibit {
+      margin: 28px 0; border: 1px solid var(--border); border-radius: 4px;
+      overflow: hidden;
+    }
+    .map-exhibit-header {
+      background: var(--navy-mid); padding: 10px 18px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .map-exhibit-title {
+      font-family: 'DM Mono', monospace; font-size: 9.5px;
+      letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold);
+    }
+    .map-exhibit-source {
+      font-family: 'DM Mono', monospace; font-size: 9px;
+      color: #6b8fa8; letter-spacing: 0.08em;
+    }
+
+    /* placeholder for map image — replace with <img> tag */
+    .map-placeholder {
+      width: 100%; height: 220px;
+      background: #e8e0cc;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 8px;
+      color: var(--gold); font-family: 'DM Mono', monospace;
+      font-size: 11px; letter-spacing: 0.1em;
+      border: 2px dashed #c9a44a55;
+    }
+    .map-placeholder svg { opacity: 0.4; }
+
+    /* two-panel map layout */
+    .map-pair {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
+      margin: 28px 0;
+    }
+    @media (max-width: 580px) { .map-pair { grid-template-columns: 1fr; } }
+
+    .map-panel { position: relative; }
+    .map-panel-label {
+      position: absolute; top: 10px; left: 10px; z-index: 2;
+      font-family: 'DM Mono', monospace; font-size: 9px;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      padding: 4px 9px; border-radius: 2px; color: #fff;
+    }
+    .map-panel.edendale .map-panel-label { background: var(--rust); }
+    .map-panel.hollywood .map-panel-label { background: var(--teal); }
+    .map-ph {
+      width: 100%; height: 200px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 6px;
+      font-family: 'DM Mono', monospace; font-size: 10px;
+      letter-spacing: 0.1em; color: #aaa;
+    }
+    .map-panel.edendale .map-ph { background: #f0e8e0; border: 2px dashed #c9a44a44; }
+    .map-panel.hollywood .map-ph { background: #e0ede8; border: 2px dashed #1a6b5f44; }
+    .map-caption {
+      padding: 8px 14px; font-size: 12.5px; font-style: italic;
+      color: var(--text-light); border-top: 1px solid var(--border);
+      background: #faf6ee;
+    }
+    .map-panel.edendale .map-caption { border-right: 1px solid var(--border); }
+
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     GEOGRAPHIC AUDIT SECTION
+     Drop this entire <section> block into hwood5.html
+     after Part III (Infrastructure) and before Part IV (Patent Trust)
+     Add id="partGeo" to nav: <a href="#partGeo">Geo · Audit</a>
+════════════════════════════════════════════════════════════════ -->
+
+<section class="part" id="partGeo">
+  <div class="part-header">
+    <span class="part-number">Geographic Audit</span>
+    <div class="part-rule"></div>
+  </div>
+  <h2 class="part-title">The Terrain Verdict</h2>
+  <p class="part-date-range">c. 1913 &nbsp;·&nbsp; Why Edendale Could Not Become Hollywood</p>
+
+  <p>The shift from Edendale to Hollywood is not typically framed as a geographic argument. It should be. The topographic record — readable directly from historical survey maps — makes the industrial logic inescapable. <span class="hl-rust">Edendale was a canyon.</span> <span class="hl-teal">Hollywood was a plain.</span> When the feature film format demanded industrial scale, those two sentences decided everything.</p>
+
+  <!-- TWO-PANEL MAP EXHIBIT -->
+  <div class="map-pair">
+    <div class="map-panel edendale">
+      <div class="map-panel-label">Edendale — Canyon Terrain</div>
+      <div class="map-ph">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <path d="M21 15l-5-5L5 21"/>
+        </svg>
+        [ INSERT: MapCortex Edendale screenshot ]<br>Glendale Blvd / Allesandro corridor
+      </div>
+      <div class="map-caption">Elevation labels every 2–3 blocks (677–801 ft). Dense contour lines. Canyon signature visible in street geometry — diagonal, compressed, terrain-constrained.</div>
+    </div>
+    <div class="map-panel hollywood">
+      <div class="map-panel-label">Hollywood — Bajada Plain</div>
+      <div class="map-ph">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <circle cx="8.5" cy="8.5" r="1.5"/>
+          <path d="M21 15l-5-5L5 21"/>
+        </svg>
+        [ INSERT: MapCortex Hollywood screenshot ]<br>Sunset Blvd / Vine St / Selma Ave
+      </div>
+      <div class="map-caption">Zero elevation labels across the entire studio district. No contour lines at equivalent zoom. Topographically blank — the cartographic signature of flat terrain.</div>
+    </div>
+  </div>
+
+  <p style="font-size:14px; color:var(--text-light); font-style:italic; margin-top:-12px; margin-bottom:24px;">MapCortex topographic layer, both images at equivalent zoom. Source: USGS/OpenStreetMap.</p>
+
+  <!-- ELEVATION PROFILE -->
+  <div class="elevation-profile">
+    <div class="profile-title">Cross-slope Elevation Profile — Map-Readable Values</div>
+
+    <div class="profile-diagram">
+      <div class="profile-divider"></div>
+
+      <!-- Edendale SVG cross-section -->
+      <div class="profile-edendale">
+        <div class="profile-label">Edendale Canyon Cross-section</div>
+        <svg class="profile-svg" viewBox="0 0 200 80" preserveAspectRatio="none">
+          <!-- canyon floor -->
+          <polyline points="0,70 60,68 80,65 100,55 130,35 160,18 200,8"
+            fill="none" stroke="#c04a35" stroke-width="2.5"/>
+          <!-- fill below -->
+          <polygon points="0,70 60,68 80,65 100,55 130,35 160,18 200,8 200,80 0,80"
+            fill="#c04a3520"/>
+          <!-- floor label -->
+          <text x="8" y="64" fill="#e8907a" font-size="7" font-family="monospace">680 ft (floor)</text>
+          <!-- ridge label -->
+          <text x="148" y="16" fill="#e8907a" font-size="7" font-family="monospace">801 ft (ridge)</text>
+          <!-- rise arrow -->
+          <line x1="170" y1="70" x2="170" y2="10" stroke="#e8907a" stroke-width="1" stroke-dasharray="2,2"/>
+          <text x="174" y="45" fill="#e8907a" font-size="7" font-family="monospace">+121 ft</text>
+        </svg>
+      </div>
+
+      <!-- Hollywood SVG cross-section -->
+      <div class="profile-hollywood">
+        <div class="profile-label">Hollywood Bajada Cross-section</div>
+        <svg class="profile-svg" viewBox="0 0 200 80" preserveAspectRatio="none">
+          <!-- nearly flat line -->
+          <polyline points="0,68 50,67 100,66 150,65 200,63"
+            fill="none" stroke="#4ab89a" stroke-width="2.5"/>
+          <!-- fill below -->
+          <polygon points="0,68 50,67 100,66 150,65 200,63 200,80 0,80"
+            fill="#1a6b5f20"/>
+          <!-- label -->
+          <text x="8" y="62" fill="#4ab89a" font-size="7" font-family="monospace">~400 ft</text>
+          <text x="120" y="60" fill="#4ab89a" font-size="7" font-family="monospace">~395 ft</text>
+          <!-- minimal rise arrow -->
+          <line x1="170" y1="70" x2="170" y2="62" stroke="#4ab89a" stroke-width="1" stroke-dasharray="2,2"/>
+          <text x="174" y="68" fill="#4ab89a" font-size="7" font-family="monospace">~5 ft</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="profile-readings">
+      <div class="reading-box reading-edendale">
+        <div class="reading-label">Edendale — Canyon Floor → Ridge</div>
+        <div class="reading-val">680 ft → 801 ft</div>
+        <div class="reading-sub">+121 ft over ~1,500 ft horizontal · ~8% grade (post-freeway grading; pre-1959 steeper)</div>
+      </div>
+      <div class="reading-box reading-hollywood">
+        <div class="reading-label">Hollywood — Studio District</div>
+        <div class="reading-val">~400 ft · no cross-slope</div>
+        <div class="reading-sub">Zero contour lines at equivalent zoom · bajada alluvial plain · &lt;1–2% grade across studio blocks</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AUDIT TABLE -->
+  <h3 class="subsection-title">The Geographic Audit — Edendale vs. Hollywood, c. 1913</h3>
+
+  <table class="audit-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Edendale — The Trap</th>
+        <th>Hollywood — The Plain</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Geological formation</td>
+        <td><span class="val-rust">Canyon floor / hillside</span></td>
+        <td><span class="val-teal">Alluvial fan (Bajada)</span></td>
+      </tr>
+      <tr>
+        <td>Map evidence</td>
+        <td>Elevation labels every 2–3 blocks; dense contour lines visible at mid-zoom; floor 680 ft, ridge 801 ft within ~1,500 ft</td>
+        <td class="val-note">Zero contour labels across entire studio district at equivalent zoom. Topographically blank.</td>
+      </tr>
+      <tr>
+        <td>Cross-slope grade</td>
+        <td><span class="val-rust">~8% (map-readable, post-freeway)</span><br><span class="val-note">Pre-1959 Glendale Freeway cut: steeper</span></td>
+        <td><span class="val-teal">&lt;2% (negligible)</span><br><span class="val-note">No measurable cross-slope at block scale</span></td>
+      </tr>
+      <tr>
+        <td>Studio acreage ceiling</td>
+        <td><span class="val-rust">~0.75–1 acre</span><br><span class="val-note">Canyon walls on three sides; physically impossible to expand</span></td>
+        <td><span class="val-teal">Unlimited contiguous flat land</span><br><span class="val-note">Lasky expanded to 9 acres by 1914; Paramount to dozens by 1920s</span></td>
+      </tr>
+      <tr>
+        <td>Lot geometry</td>
+        <td><span class="val-rust">Narrow "ribbon" lots</span><br><span class="val-note">50–100 ft wide, running deep into hillside. Linear only.</span></td>
+        <td><span class="val-teal">Wide "grid" parcels</span><br><span class="val-note">Former ranch land. Square. Combinable. Buildable in any direction.</span></td>
+      </tr>
+      <tr>
+        <td>Stage construction</td>
+        <td><span class="val-rust">Structurally impossible at scale</span><br><span class="val-note">A 100-ft glass stage on 8% slope = 8-ft elevation change. Requires excavation exceeding land cost.</span></td>
+        <td><span class="val-teal">No structural constraint</span><br><span class="val-note">A 100-ft stage on &lt;2% slope = &lt;2 ft elevation change. Standard foundation.</span></td>
+      </tr>
+      <tr>
+        <td>Format served</td>
+        <td><span class="val-rust">One-reel (10–15 min)</span><br><span class="val-note">Chase comedies, canyon scenics — formats shaped by the terrain itself</span></td>
+        <td><span class="val-teal">Feature-length (60+ min)</span><br><span class="val-note">Multiple standing sets, backlots, warehouse storage — requires flat industrial acreage</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- THE MATH -->
+  <h3 class="subsection-title">The Stage Construction Problem — The Numbers</h3>
+
+  <p>The shift from one-reelers to features around 1912–13 made a specific piece of infrastructure essential: the <span class="hl-navy">glass-roofed stage</span>. Before reliable artificial lighting, production required a large, level, skylit interior that could be controlled for continuity across shooting days. This was not an amenity. It was a technical requirement of the format.</p>
+
+  <!-- SIDE-BY-SIDE BIG STAT COMPARISON -->
+  <div class="terrain-compare">
+    <div class="terrain-col edendale">
+      <div class="terrain-col-header">
+        <span class="terrain-col-tag">Edendale · The Trap</span>
+        <div class="terrain-col-name">Canyon Ribbon</div>
+        <div class="terrain-col-sub">Glendale Blvd / Allesandro corridor</div>
+      </div>
+      <div class="terrain-col-body">
+        <div class="big-stat">
+          <div class="stat-label">Cross-slope grade (map-readable)</div>
+          <div class="stat-number">~8%</div>
+          <span class="stat-unit">post–1959 Glendale Fwy grading · original was steeper</span>
+          <div class="stat-note">On a 100-ft stage: 8-ft elevation change end to end. Requires retaining walls or full excavation before a single post is set.</div>
+        </div>
+        <div class="big-stat">
+          <div class="stat-label">Maximum studio acreage</div>
+          <div class="stat-number">~1 ac</div>
+          <span class="stat-unit">Selig lot, Clifford & Allesandro</span>
+          <div class="stat-note">Canyon walls on three sides. The lot could not grow in any direction. When William Fox briefly used this same lot: 0.75 acres.</div>
+        </div>
+        <div class="big-stat">
+          <div class="stat-label">Lot geometry</div>
+          <div class="stat-number">Ribbon</div>
+          <span class="stat-unit">50–100 ft wide · runs into hillside</span>
+          <div class="stat-note">Perfect for a Keystone chase — linear, directional. Impossible for a backlot town, which requires width in all directions.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="terrain-col hollywood">
+      <div class="terrain-col-header">
+        <span class="terrain-col-tag">Hollywood · The Plain</span>
+        <div class="terrain-col-name">Bajada Floor</div>
+        <div class="terrain-col-sub">Sunset–Gower / Selma–Vine corridor</div>
+      </div>
+      <div class="terrain-col-body">
+        <div class="big-stat">
+          <div class="stat-label">Cross-slope grade (map-readable)</div>
+          <div class="stat-number">&lt;2%</div>
+          <span class="stat-unit">zero contour labels at studio block scale</span>
+          <div class="stat-note">On a 100-ft stage: less than 2-ft elevation change. Standard foundation. No excavation. No retaining walls.</div>
+        </div>
+        <div class="big-stat">
+          <div class="stat-label">Expansion acreage achieved</div>
+          <div class="stat-number">9 ac</div>
+          <span class="stat-unit">Lasky Feature Play Co. by 1914 · from same barn site</span>
+          <div class="stat-note">Started as a rented barn. Because surrounding land was flat citrus groves, Lasky bought the block. Nine times Edendale's ceiling in one year.</div>
+        </div>
+        <div class="big-stat">
+          <div class="stat-label">Lot geometry</div>
+          <div class="stat-number">Grid</div>
+          <span class="stat-unit">former ranch parcels · combinable · square</span>
+          <div class="stat-note">A "New York Street" and a "Paris Street" could be built side by side at grade. In Edendale, one would have been 30 feet higher than the other.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDICT QUOTE -->
+  <div class="quote-block">
+    <p>Filmmakers didn't discover Hollywood. They were evicted by the geometry of Edendale. The canyon gave early cinema its visual language — chase, cliff, pursuit. Then it gave the industry a ceiling it could not break through. Hollywood offered the only thing Edendale couldn't: <em>the horizontal.</em></p>
+    <div class="quote-source">The Terrain Verdict &nbsp;·&nbsp; Geographic Audit, c. 1913</div>
+  </div>
+
+  <!-- DATA NOTE -->
+  <div class="data-note">
+    <strong>Data note:</strong> Elevation readings (680 ft canyon floor, 801 ft Elysian ridge, ~400 ft Hollywood studio district) are spot elevations read directly from MapCortex topographic layer (USGS / OpenStreetMap source data) at equivalent zoom levels. The 8% cross-slope figure is derived from the 121-ft rise observed over approximately 1,500 ft horizontal distance in the Edendale canyon, readable from labeled spot elevations on the map. <strong>This figure reflects post-1959 terrain</strong> — the Glendale Freeway construction graded significant portions of the original canyon, meaning the 1910 cross-slopes were steeper than current lidar and survey data shows. The Hollywood &lt;2% figure is inferred from the absence of contour lines and elevation labels across the entire studio district at equivalent zoom — a cartographic signature of flat terrain confirmed by the bajada geological formation of the area (alluvial fan deposits from the Santa Monica Mountains). For the 1921 USGS Santa Monica Quadrangle showing the original pre-freeway contour density contrast, see: <code>ngmdb.usgs.gov/topoview</code> — search "Santa Monica 1921."
+  </div>
+
+</section>
+
+</body>
+</html>
