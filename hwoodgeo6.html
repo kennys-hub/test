@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond the Lemon Grove — Geographic Audit · USGS 1894</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1410;--paper:#f5efe4;--pd:#ede4d4;--s:#8b6f47;--sl:#c4a87a;--sf:#e8dcc8;--red:#8b1a1a;--grn:#2a5e2a;--m:'DM Mono',monospace;--ser:'Cormorant Garamond',Georgia,serif;--dis:'Playfair Display',Georgia,serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--ser);font-size:17px;line-height:1.75;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");pointer-events:none;z-index:999;opacity:.5}
+.mh{border-bottom:3px double var(--sl);padding:1.8rem 0 1rem;text-align:center}
+.eyebrow{font-family:var(--m);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--s);margin-bottom:.9rem}
+.eyebrow span{padding:0 1em;border-left:1px solid var(--sl);border-right:1px solid var(--sl)}
+.mh h1{font-family:var(--dis);font-size:clamp(2.2rem,5.5vw,4.4rem);font-weight:900;font-style:italic;line-height:1;color:var(--ink);animation:fu .9s ease both}
+.mh-sub{font-family:var(--dis);font-size:clamp(.8rem,1.8vw,1rem);color:var(--s);letter-spacing:.04em;margin:.4rem 0 1.2rem;animation:fu .9s .15s ease both}
+.rulerow{display:flex;align-items:center;justify-content:center;gap:.6rem;margin:.5rem 0}
+.rulerow .l{flex:1;max-width:140px;height:1px;background:var(--sl)}
+.rulerow .d{width:7px;height:7px;background:var(--sl);transform:rotate(45deg);flex-shrink:0}
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+nav{background:var(--ink);padding:.5rem 1rem;display:flex;justify-content:center;flex-wrap:wrap;position:sticky;top:0;z-index:100}
+nav a{font-family:var(--m);font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:var(--sl);text-decoration:none;padding:.2rem .8rem;border-right:1px solid #3a2e1e;transition:color .2s}
+nav a:first-child{border-left:1px solid #3a2e1e}
+nav a:hover{color:var(--paper)}
+.w{max-width:820px;margin:0 auto;padding:0 1.8rem}
+.sl{font-family:var(--m);font-size:.58rem;letter-spacing:.28em;text-transform:uppercase;color:var(--s);margin-bottom:.35rem;padding-top:2.8rem;border-top:1px solid var(--sl);margin-top:3rem}
+.sl:first-child{margin-top:2rem;border-top:none}
+h2{font-family:var(--dis);font-size:clamp(1.4rem,3vw,2rem);font-weight:700;line-height:1.2;margin-bottom:.25rem}
+h2 em{font-style:italic;color:var(--s)}
+.deck{font-family:var(--m);font-size:.63rem;color:var(--s);letter-spacing:.05em;margin-bottom:1.3rem;padding-bottom:.7rem;border-bottom:1px solid var(--sf)}
+p{font-size:1rem;line-height:1.8;font-weight:300;margin-bottom:1rem}
+p strong{font-weight:600}
+.pq{border-left:4px solid var(--s);margin:1.8rem 0;padding:1rem 1.8rem;background:var(--pd)}
+.pq p{font-family:var(--dis);font-size:clamp(1.05rem,2vw,1.35rem);font-style:italic;font-weight:400;line-height:1.5;margin:0}
+/* NODE CARDS */
+.node-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--sl);border:1px solid var(--sl);margin:1.8rem 0}
+.nc{background:var(--paper);padding:1.1rem 1rem}
+.nc.active{background:var(--pd)}
+.nc-num{font-family:var(--m);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--s);margin-bottom:.25rem}
+.nc-place{font-family:var(--dis);font-size:1.25rem;font-weight:700;font-style:italic;line-height:1.1;margin-bottom:.25rem}
+.nc-tag{font-family:var(--m);font-size:.58rem;letter-spacing:.08em;color:var(--ink);margin-bottom:.55rem;text-transform:uppercase}
+.nc-items{list-style:none;padding:0}
+.nc-items li{font-family:var(--m);font-size:.6rem;color:var(--s);line-height:1.5;padding:.15rem 0;border-top:1px solid var(--sf)}
+.nc-items li:first-child{border-top:none}
+.nc-items li strong{color:var(--ink)}
+.nc-verdict{font-family:var(--m);font-size:.58rem;margin-top:.55rem;padding:.35rem .55rem;font-weight:500}
+.nc-verdict.trap{background:rgba(139,26,26,.08);color:var(--red);border-left:3px solid var(--red)}
+.nc-verdict.win{background:rgba(42,94,42,.08);color:var(--grn);border-left:3px solid var(--grn)}
+.nc-verdict.origin{background:rgba(139,111,71,.1);color:var(--s);border-left:3px solid var(--sl)}
+@media(max-width:580px){.node-row{grid-template-columns:1fr}}
+/* VERDICT BOX */
+.vb{border:2px solid var(--ink);padding:1.8rem 2rem;margin:2rem 0;background:var(--ink);color:var(--paper);position:relative}
+.vb::before{content:'VERDICT';position:absolute;top:-.6rem;left:1.2rem;font-family:var(--m);font-size:.55rem;letter-spacing:.28em;background:var(--ink);padding:0 .5rem;color:var(--sl)}
+.vb p{color:var(--paper);font-family:var(--dis);font-size:clamp(.95rem,1.8vw,1.2rem);font-style:italic;margin:0}
+/* STAT GRID */
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1px;border:1px solid var(--sl);background:var(--sl);margin:1.4rem 0}
+.sc{background:var(--paper);padding:1rem}
+.sc-l{font-family:var(--m);font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:var(--s)}
+.sc-v{font-family:var(--dis);font-size:1.9rem;font-weight:700;line-height:1;color:var(--ink)}
+.sc-v.p{color:var(--red)}.sc-v.g{color:var(--grn)}
+.sc-n{font-family:var(--m);font-size:.56rem;color:var(--s);line-height:1.4;border-top:1px solid var(--sf);padding-top:.35rem;margin-top:.3rem}
+/* TABLE */
+.tc{margin:1.4rem 0;overflow-x:auto;border:1px solid var(--sl)}
+.te{font-family:var(--m);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--paper);background:var(--s);padding:.4rem .8rem}
+table{width:100%;border-collapse:collapse;font-family:var(--m);font-size:.66rem}
+thead th{background:var(--pd);color:var(--s);font-size:.55rem;letter-spacing:.1em;text-transform:uppercase;padding:.5rem .75rem;text-align:left;border-bottom:2px solid var(--sl);white-space:nowrap}
+tbody tr{border-bottom:1px solid var(--sf)}
+tbody tr:last-child{border-bottom:none}
+tbody td{padding:.5rem .75rem;vertical-align:top;line-height:1.4}
+tbody tr:nth-child(even) td{background:rgba(196,168,122,.07)}
+td.lc{font-weight:500;color:var(--s);white-space:nowrap}
+td.hi{color:var(--red);font-weight:500}
+td.ok{color:var(--grn);font-weight:500}
+/* DIAGRAM */
+.dr{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--sl);border:1px solid var(--sl);margin:1.6rem 0}
+.dc{background:var(--paper);padding:1.2rem}
+.dc.dk{background:var(--ink);color:var(--paper)}
+.dc-l{font-family:var(--m);font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.8rem;color:var(--s)}
+.dc.dk .dc-l{color:var(--sl)}
+.psv{width:100%;height:125px}
+@media(max-width:560px){.dr{grid-template-columns:1fr}}
+/* FIGURE */
+.fb{border:1px solid var(--sl);margin:1.8rem 0;background:var(--pd)}
+.fh{background:var(--s);color:var(--paper);padding:.4rem .85rem;font-family:var(--m);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.3rem}
+.fi{padding:1.1rem}
+.fc{font-family:var(--ser);font-size:.8rem;font-style:italic;color:var(--s);margin-top:.6rem;border-top:1px solid var(--sf);padding-top:.55rem;line-height:1.6}
+.sn{font-family:var(--m);font-size:.56rem;color:var(--s);border-top:1px solid var(--sf);padding-top:.45rem;margin-top:.35rem;line-height:1.6}
+/* PRIMARY SOURCE TIMELINE */
+.pst{margin:2rem 0;border:1px solid var(--sl)}
+.pst-head{background:var(--ink);color:var(--sl);padding:.45rem 1rem;font-family:var(--m);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase}
+.pst-entry{display:grid;grid-template-columns:7rem 1fr;gap:0;border-bottom:1px solid var(--sf)}
+.pst-entry:last-child{border-bottom:none}
+.pst-date{font-family:var(--m);font-size:.62rem;font-weight:500;color:var(--paper);background:var(--s);padding:.6rem .8rem;line-height:1.3;display:flex;align-items:flex-start}
+.pst-body{padding:.6rem .9rem;background:var(--paper)}
+.pst-src{font-family:var(--m);font-size:.6rem;font-weight:500;color:var(--ink);margin-bottom:.2rem}
+.pst-desc{font-family:var(--m);font-size:.58rem;color:var(--s);line-height:1.5}
+.pst-tag{display:inline-block;font-family:var(--m);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;padding:.1rem .4rem;margin-top:.25rem}
+.pst-tag.n2{background:rgba(139,26,26,.1);color:var(--red);border:1px solid rgba(139,26,26,.2)}
+.pst-tag.n3{background:rgba(42,94,42,.1);color:var(--grn);border:1px solid rgba(42,94,42,.2)}
+.pst-tag.pivot{background:rgba(139,111,71,.15);color:var(--s);border:1px solid var(--sl)}
+.pst-tag.residual{background:rgba(26,20,16,.08);color:var(--ink);border:1px solid var(--sf)}
+@media(max-width:500px){.pst-entry{grid-template-columns:1fr}.pst-date{background:var(--pd);color:var(--s)}}
+/* CLIP CARD */
+.clip{border:1px solid var(--sl);margin:1rem 0;background:var(--paper)}
+.clip-hd{background:var(--pd);padding:.35rem .8rem;font-family:var(--m);font-size:.56rem;letter-spacing:.15em;text-transform:uppercase;color:var(--s);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.2rem}
+.clip-hd strong{color:var(--ink)}
+.clip-body{padding:.7rem .9rem;font-family:var(--m);font-size:.62rem;color:var(--ink);line-height:1.6;font-style:italic;border-top:1px solid var(--sf)}
+.clip-note{padding:.4rem .9rem .6rem;font-family:var(--m);font-size:.58rem;color:var(--s);line-height:1.5}
+/* CODA */
+.coda{text-align:center;padding:2.2rem 1rem 1.4rem;border-top:3px double var(--sl);margin-top:2.5rem}
+.coda-h{font-family:var(--dis);font-size:clamp(1.5rem,3.2vw,2.4rem);font-weight:900;font-style:italic}
+.coda-s{font-family:var(--m);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--s);margin-top:.4rem}
+.fn{background:var(--ink);color:var(--sl);padding:1.1rem 1.8rem;font-family:var(--m);font-size:.56rem;line-height:1.8}
+.fn strong{color:var(--paper);font-weight:500}
+.orn{text-align:center;color:var(--sl);font-size:.85rem;letter-spacing:.5em;margin:1.2rem 0;display:block}
+</style>
+</head>
+<body>
+
+<div class="mh">
+  <div class="w">
+    <div class="eyebrow"><span>Geographic Audit &nbsp;·&nbsp; USGS 1894 &nbsp;·&nbsp; Forensic Film History</span></div>
+    <h1>Beyond the Lemon Grove</h1>
+    <div class="mh-sub">The Geographic Eviction of the American Film Industry &nbsp;·&nbsp; Why Edendale Could Not Become Hollywood</div>
+    <div class="rulerow"><div class="l"></div><div class="d"></div><div class="l"></div><div class="d"></div><div class="l"></div></div>
+  </div>
+</div>
+
+<nav>
+  <a href="#lit">Literature</a>
+  <a href="#nodes">Three Nodes</a>
+  <a href="#primary">USGS 1894</a>
+  <a href="#shadow">Shadow Tax</a>
+  <a href="#capital">Capital Penalty</a>
+  <a href="#modern">Modern Evidence</a>
+  <a href="#sources">Primary Sources</a>
+</nav>
+
+<div class="w">
+
+<!-- §I -->
+<div id="lit">
+  <div class="sl">§ I</div>
+  <h2>The Topographic <em>Blind Spot</em></h2>
+  <div class="deck">Literature Review &nbsp;·&nbsp; The Standard Trio &nbsp;·&nbsp; The Lemon Grove Myth</div>
+  <p>Most published accounts explain the industry's shift toward Hollywood through the <strong>Standard Trio</strong>: 300 days of sunshine, cheap land, and flight from Edison's patent enforcers. These histories share a <strong>2D Blind Spot</strong> — treating land as a flat commodity, acreage to be counted rather than terrain to be analyzed. They rely on the <strong>Lemon Grove Myth</strong>: filmmakers moved west for the scenery, and Hollywood's emergence was inevitable.</p>
+  <p>By applying a forensic audit to the 1894 USGS Federal Survey — filed nineteen years before DeMille signed his barn lease — we can quantify what the standard histories missed. The ridges flanking Edendale were not scenery. They were industrial infrastructure running at a daily deficit, stealing measurable ROI through what this analysis terms the <strong>Shadow Tax</strong>. Hollywood won because the 1894 survey documented the only node in the Los Angeles basin flat enough to hold the weight of the Feature Film era.</p>
+  <p>The Lemon Grove Myth was not invented by later historians. It was manufactured in real time. In May 1913, the Los Angeles press described Edendale's canyon as "fresh, free ozone" and a chance to do "daring things." The same geometry the 1894 survey documents as an industrial trap was being narrated as liberation — because the Shadow Tax was structurally invisible until the feature format made it legible.</p>
+</div>
+
+<!-- §II -->
+<div id="nodes">
+  <div class="sl">§ II</div>
+  <h2>The Three-Node Migration:<br><em>A Spatially Rational Sequence</em></h2>
+  <div class="deck">Downtown LA 1907–08 · The Distribution Node &nbsp;·&nbsp; Edendale 1909 · The Visual Grammar Node &nbsp;·&nbsp; Hollywood 1911–15 · The Industrial Consolidation Node</div>
+
+  <p>Each move in the westward trajectory was <strong>spatially rational</strong> given the dominant production format at that moment. The sequence only looks inevitable in hindsight. Each node failed not from bad judgment, but from hitting a physical ceiling its terrain imposed. Primary source evidence — eleven newspaper documents spanning February 1912 to February 1924 — confirms this sequence from inside the industry, in real time, without the participants knowing the terrain was driving the outcome.</p>
+
+  <div class="node-row">
+    <div class="nc">
+      <div class="nc-num">Node 1 · 1907–08</div>
+      <div class="nc-place">Downtown LA</div>
+      <div class="nc-tag">The Distribution Node · Vertical / Urban</div>
+      <ul class="nc-items">
+        <li><strong>Everything Factor:</strong> Film exchanges, chemistry labs, talent pool, equipment suppliers — all within walking distance. Zero transport penalty.</li>
+        <li><strong>Selig at 8th &amp; Olive:</strong> No travel cost between production and supply chain. The most efficient node possible for rooftop-and-warehouse filmmaking.</li>
+        <li><strong>The Ceiling:</strong> Fixed-Space Node. No room for a 9-acre studio on a city block. When visual grammar demanded chases and hills, the industry followed the rail lines outward.</li>
+      </ul>
+      <div class="nc-verdict origin">Obsoleted by scale, not terrain</div>
+    </div>
+    <div class="nc active">
+      <div class="nc-num">Node 2 · 1909–1913</div>
+      <div class="nc-place">Edendale</div>
+      <div class="nc-tag">The Visual Grammar Node · Canyon / Vertical</div>
+      <ul class="nc-items">
+        <li><strong>The Appeal:</strong> Hills for visual grammar — chases, cliffs, pursuit, escape — close enough to Downtown via Pacific Electric red cars. By Feb 1912, an Osage horsewoman was learning to ride at Edendale because the canyon's geometry demanded it.</li>
+        <li><strong>Peak Credibility:</strong> July 1912, the Bison Company's Edendale film settled a national boxing controversy as forensic evidence. Dec 1913, Thomas Ince ran "the finest films in the world" from his "great studio at Edendale" — in the same month DeMille signed the Hollywood barn lease.</li>
+        <li><strong>The Failure:</strong> A Topographic Trap. The 8% grade and 734-ft ridges made scaling into the Feature Era physically impossible. The same terrain that built one-reel cinema's visual language became the ceiling that killed its industrial future.</li>
+      </ul>
+      <div class="nc-verdict trap">Obsoleted by Shadow Tax + 8% grade</div>
+    </div>
+    <div class="nc">
+      <div class="nc-num">Node 3 · 1911–15</div>
+      <div class="nc-place">Hollywood</div>
+      <div class="nc-tag">The Industrial Consolidation Node · Flat / Horizontal</div>
+      <ul class="nc-items">
+        <li><strong>The Sweet Spot:</strong> First available 0% grade alluvial fan reachable without crossing a mountain range — the 356-ft Industrial Floor, documented 1894. Al Christie left Edendale in 1912 specifically because he wanted space and "would not find himself crowded."</li>
+        <li><strong>Unlimited Expansion:</strong> Lasky barn lease Dec. 1913; nine acres by 1914. By April 1915, press described simply "the Hollywood studios" — no company name needed. By spring 1915, papers from Vallejo to Long Beach used Hollywood as a cardinal reference point.</li>
+        <li><strong>Validated by 1894:</strong> The 356-ft spot elevation — labeled by a USGS surveyor nineteen years before DeMille — is the documentary proof.</li>
+      </ul>
+      <div class="nc-verdict win">Validated by 356-ft spot elevation · USGS 1894</div>
+    </div>
+  </div>
+
+  <div class="tc">
+    <div class="te">Three-Node Comparison Matrix</div>
+    <table>
+      <thead><tr><th>Criterion</th><th>Node 1 · Downtown</th><th>Node 2 · Edendale</th><th>Node 3 · Hollywood</th></tr></thead>
+      <tbody>
+        <tr><td class="lc">Topography</td><td>Built urban — flat</td><td class="hi">Canyon corridor — vertical</td><td class="ok">Alluvial fan — horizontal</td></tr>
+        <tr><td class="lc">Production format</td><td>Primitive actualities</td><td>One-reel chases / shorts</td><td>Five-reel features</td></tr>
+        <tr><td class="lc">Shadow Tax</td><td class="ok">Minimal — open sky</td><td class="hi">High — 734-ft ridges, topographic sunset</td><td class="ok">Zero — unobstructed horizon</td></tr>
+        <tr><td class="lc">Excavation penalty</td><td>N/A — built surface</td><td class="hi">~8% grade — surcharge before any foundation</td><td class="ok">Zero — 0% grade, standard pour</td></tr>
+        <tr><td class="lc">Expansion ceiling</td><td class="hi">City block — fixed</td><td class="hi">Canyon ribbon — physical ceiling</td><td class="ok">9 acres · Lasky · 1914 · unlimited</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- §III -->
+<div id="primary">
+  <div class="sl">§ III</div>
+  <h2>The 1894 USGS<br><em>Los Angeles Quadrangle</em></h2>
+  <div class="deck">Primary Source · Scale 1:62,500 · Filed May 19, 1897 · 19 years before DeMille · ngmdb.usgs.gov/topoview</div>
+
+  <p>The argument does not require estimation. It is written on a federal topographic survey predating the industry's arrival by more than a decade. <strong>The terrain preceded the studios. The studios had no choice but to respond to it.</strong></p>
+
+  <div class="fb">
+    <div class="fh"><span>Figure 1 · 1894 USGS Federal Survey</span><span>Hollywood Plain vs. Edendale Canyon — One Frame</span></div>
+    <div class="fi">
+      <svg viewBox="0 0 700 205" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border:1px solid #c4a87a;background:#f0e8d8;">
+        <rect x="0" y="0" width="350" height="205" fill="#ede4d4"/>
+        <g stroke="#c4a87a" stroke-width="0.5" opacity="0.45">
+          <line x1="58" y1="0" x2="58" y2="205"/><line x1="116" y1="0" x2="116" y2="205"/><line x1="174" y1="0" x2="174" y2="205"/><line x1="232" y1="0" x2="232" y2="205"/><line x1="290" y1="0" x2="290" y2="205"/>
+          <line x1="0" y1="51" x2="350" y2="51"/><line x1="0" y1="102" x2="350" y2="102"/><line x1="0" y1="153" x2="350" y2="153"/>
+        </g>
+        <text x="175" y="86" text-anchor="middle" font-family="'DM Mono',monospace" font-size="9.5" fill="#8b6f47">ZERO CONTOUR LINES</text>
+        <text x="175" y="100" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8.5" fill="#8b6f47">studio district</text>
+        <circle cx="175" cy="130" r="3.5" fill="none" stroke="#1a1410" stroke-width="1.2"/>
+        <text x="182" y="134" font-family="'DM Mono',monospace" font-size="11" font-weight="500" fill="#1a1410">356</text>
+        <text x="175" y="22" text-anchor="middle" font-family="'Playfair Display',serif" font-size="13" font-style="italic" font-weight="700" fill="#1a1410">Hollywood · Colegrove</text>
+        <line x1="20" y1="180" x2="330" y2="180" stroke="#2a5e2a" stroke-width="2"/>
+        <text x="175" y="196" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8.5" fill="#2a5e2a">FLAT · 0% GRADE · THE INDUSTRIAL FLOOR</text>
+        <rect x="350" y="0" width="350" height="205" fill="#e8dcc8"/>
+        <g stroke="#8b6f47" stroke-width="0.9" fill="none">
+          <path d="M350,170 Q420,157 445,143 Q470,127 495,110 Q520,93 545,77 Q565,65 590,53 Q620,41 700,35"/>
+          <path d="M350,153 Q420,140 445,125 Q470,109 495,93 Q520,77 545,62 Q565,50 590,39 Q620,28 700,22"/>
+          <path d="M350,136 Q420,123 445,108 Q470,92 495,76 Q520,61 545,48 Q565,36 590,26 Q620,16 700,10"/>
+          <path d="M350,119 Q420,106 445,92 Q470,76 495,61 Q520,47 545,35 Q565,24 590,15 Q625,7 700,3"/>
+          <path d="M350,102 Q415,90 440,77 Q465,63 490,49 Q515,36 540,26 Q565,16 595,9 Q640,4 700,1"/>
+        </g>
+        <text x="365" y="167" font-family="'DM Mono',monospace" font-size="10" fill="#1a1410">500</text>
+        <text x="490" y="91" font-family="'DM Mono',monospace" font-size="10" fill="#1a1410">600</text>
+        <text x="572" y="40" font-family="'DM Mono',monospace" font-size="11" font-weight="600" fill="#8b1a1a">734</text>
+        <text x="525" y="18" text-anchor="middle" font-family="'Playfair Display',serif" font-size="13" font-style="italic" font-weight="700" fill="#1a1410">Edendale Canyon</text>
+        <path d="M370,186 Q450,176 525,182 Q600,188 680,184" stroke="#8b1a1a" stroke-width="2" fill="none"/>
+        <text x="525" y="200" text-anchor="middle" font-family="'DM Mono',monospace" font-size="8.5" fill="#8b1a1a">CANYON CORRIDOR · 8% GRADE</text>
+        <line x1="350" y1="0" x2="350" y2="205" stroke="#8b6f47" stroke-width="1.5" stroke-dasharray="4,3"/>
+      </svg>
+      <div class="fc">Left — Hollywood/Colegrove grid: 356 ft spot elevation, zero contour lines across every studio block. Right — Edendale/Ivanhoe canyon: 500 ft through the studio corridor, 734 ft at the Los Felis ridge. One frame, one 1894 federal survey — the entire geographic argument.</div>
+    </div>
+  </div>
+
+  <div class="sg">
+    <div class="sc"><div class="sc-l">Hollywood · Spot Elevation</div><div class="sc-v g">356 ft</div><div class="sc-n">Federal label inside studio grid · zero contour lines · measurement, not estimate</div></div>
+    <div class="sc"><div class="sc-l">Edendale · Canyon Floor</div><div class="sc-v">~500 ft</div><div class="sc-n">Labeled contour · Ivanhoe/Edgemont corridor · Allesandro Street studio row</div></div>
+    <div class="sc"><div class="sc-l">Edendale · Shadow Ridge</div><div class="sc-v p">~734 ft</div><div class="sc-n">Labeled mid-canyon · Los Felis hills · Vertical rise above floor: ~234 ft</div></div>
+    <div class="sc"><div class="sc-l">The Gap · Same Map</div><div class="sc-v p">378 ft</div><div class="sc-n">734 ft ridge minus 356 ft Hollywood · both labeled on same 1894 page</div></div>
+  </div>
+</div>
+
+<!-- §IV -->
+<div id="shadow">
+  <div class="sl">§ IV</div>
+  <h2>The Shadow Tax</h2>
+  <div class="deck">Derived, Not Asserted &nbsp;·&nbsp; Daily Production Penalty &nbsp;·&nbsp; Recurring ROI Deficit</div>
+
+  <p>The ridges flanking Edendale imposed a <strong>quantifiable daily cost</strong> on every studio below them — a recurring tax on every shooting day in the pre-electric era. This is what made Node 2 industrially untenable for the Feature Era, regardless of how productive it had been for one-reel production. The Shadow Tax was structurally invisible in press coverage — the May 1913 Pathé profile described the same canyon as "fresh, free ozone" — because no journalist had reason to run arctan calculations against the contour lines.</p>
+
+  <div class="dr">
+    <div class="dc dk">
+      <div class="dc-l">Edendale — Shadow Profile · Canyon Trap</div>
+      <svg class="psv" viewBox="0 0 270 125" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="270" height="90" fill="#12100c"/>
+        <rect x="0" y="90" width="270" height="35" fill="#1e1810"/>
+        <polygon points="40,90 40,26 0,6 0,90" fill="#1e1810"/>
+        <polygon points="155,90 155,6 205,0 270,3 270,90" fill="#1e1810"/>
+        <rect x="40" y="80" width="115" height="10" fill="#080604" opacity=".8"/>
+        <circle cx="225" cy="40" r="9" fill="#f5d060" opacity=".55"/>
+        <line x1="225" y1="40" x2="40" y2="80" stroke="#f5d060" stroke-width="1" stroke-dasharray="4,3" opacity=".4"/>
+        <text x="192" y="16" font-family="'DM Mono',monospace" font-size="8" fill="#c4a87a">~734 ft</text>
+        <text x="52" y="77" font-family="'DM Mono',monospace" font-size="7.5" fill="#8b6f47">~500 ft</text>
+        <path d="M82,80 A26,26 0 0,1 100,59" stroke="#c4a87a" stroke-width="1" fill="none"/>
+        <text x="102" y="73" font-family="'DM Mono',monospace" font-size="8.5" fill="#c4a87a">~11°</text>
+        <text x="55" y="106" font-family="'DM Mono',monospace" font-size="8" fill="#8b1a1a">shadow zone · 45–60 min/day</text>
+      </svg>
+    </div>
+    <div class="dc">
+      <div class="dc-l">Hollywood — Open Horizon · No Tax</div>
+      <svg class="psv" viewBox="0 0 270 125" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="270" height="90" fill="#e8f2fa"/>
+        <rect x="0" y="90" width="270" height="35" fill="#ede4d4"/>
+        <line x1="0" y1="90" x2="270" y2="90" stroke="#c4a87a" stroke-width="1"/>
+        <circle cx="220" cy="44" r="13" fill="#f5c842" opacity=".9"/>
+        <g stroke="#f5c842" stroke-width="1" opacity=".4">
+          <line x1="220" y1="24" x2="220" y2="16"/><line x1="236" y1="28" x2="242" y2="22"/><line x1="242" y1="44" x2="250" y2="44"/>
+          <line x1="236" y1="60" x2="242" y2="66"/><line x1="220" y1="66" x2="220" y2="74"/>
+          <line x1="204" y1="60" x2="198" y2="66"/><line x1="198" y1="44" x2="190" y2="44"/><line x1="204" y1="28" x2="198" y2="22"/>
+        </g>
+        <text x="16" y="86" font-family="'DM Mono',monospace" font-size="7.5" fill="#8b6f47">open horizon · 356 ft</text>
+        <text x="70" y="108" font-family="'DM Mono',monospace" font-size="8.5" fill="#2a5e2a">0° shadow angle · zero tax</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="sg">
+    <div class="sc"><div class="sc-l">Daily Loss · Edendale</div><div class="sc-v p">45–60 min</div><div class="sc-n">arctan(234 ÷ ~1,200 ft) ≈ 11° · sun disappears 11° above effective horizon</div></div>
+    <div class="sc"><div class="sc-l">ROI Penalty · 8.5-hr day</div><div class="sc-v p">~9–11%</div><div class="sc-n">45–60 min ÷ 8.5 hr usable winter light · recurring daily charge on every frame</div></div>
+    <div class="sc"><div class="sc-l">Annualized · 200 days</div><div class="sc-v p">18–22 days</div><div class="sc-n">3+ full shooting weeks forfeited per year versus Hollywood</div></div>
+    <div class="sc"><div class="sc-l">Hollywood Daily Loss</div><div class="sc-v g">Zero</div><div class="sc-n">356 ft bajada plain · unobstructed until astronomical sunset</div></div>
+  </div>
+  <div class="sn">Vertical difference ~234 ft and shadow angle ~11° read directly from 1894 federal survey. Horizontal ~1,200 ft measurable from scale bar. Derivation transparent and testable: ngmdb.usgs.gov/topoview.</div>
+</div>
+
+<!-- §V -->
+<div id="capital">
+  <div class="sl">§ V</div>
+  <h2>The Capital Penalty</h2>
+  <div class="deck">Excavation Surcharge &nbsp;·&nbsp; One-Time Cost Before Frame One &nbsp;·&nbsp; 8% vs. 0% Grade</div>
+
+  <p>The Shadow Tax was a recurring daily operating cost. The excavation problem was a one-time capital penalty paid before production could begin at all. Together, these two penalties made Node 2 structurally incompatible with the Feature Era. By August 1919, the 8% grade had become local color — a newspaper described "the steepest hill in Edendale, the grade which is the despair of every motor fiend" in a comic anecdote about a runaway dog. The same grade the USGS measured in 1894 was still there. Only what the industry needed from it had changed.</p>
+
+  <div class="tc">
+    <div class="te">Capital Penalty · Edendale 8% Grade vs. Hollywood 0% Grade</div>
+    <table>
+      <thead><tr><th>Item</th><th>Edendale · Canyon Ribbon</th><th>Hollywood · Industrial Floor</th></tr></thead>
+      <tbody>
+        <tr><td class="lc">Grade</td><td class="hi">~8% cross-slope</td><td class="ok">&lt;25 ft across full block — 0%</td></tr>
+        <tr><td class="lc">Earth to move · 1 acre</td><td class="hi">~6,000 cu-yd</td><td class="ok">~0 cu-yd · standard pour</td></tr>
+        <tr><td class="lc">Excavation surcharge</td><td class="hi">$180–$480 before foundation</td><td class="ok">$0</td></tr>
+        <tr><td class="lc">% of Squaw Man budget ($15k)</td><td class="hi">1.2–3.2% on dirt · per stage site</td><td class="ok">0%</td></tr>
+        <tr><td class="lc">Expansion ceiling</td><td class="hi">Canyon ribbon — physical maximum</td><td class="ok">9 acres · Lasky · 1914 · unlimited</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pq"><p>"Every dollar spent moving earth at Edendale was a dollar not available for sets, talent, or shooting days. Hollywood's Industrial Floor was also a financial floor."</p></div>
+  <div class="sn">Steam shovel costs: Construction Equipment magazine, 1910s trade data: ~$0.03/cu-yd standard soil; ~$0.05 stiff clay; ~$0.08 blasting. The Squaw Man $15,000 budget: DeMille/Lasky biographies. The excavation penalty was real but not ruinous in isolation — the combination of excavation + Shadow Tax + lot geometry made Edendale untenable for the feature era.</div>
+</div>
+
+<!-- §VI -->
+<div id="modern">
+  <div class="sl">§ VI</div>
+  <h2>Modern Evidence</h2>
+  <div class="deck">MapCortex 2026 &nbsp;·&nbsp; Post-1959 Glendale Freeway Grading &nbsp;·&nbsp; Modern Data Understates the Original Case</div>
+
+  <p>130 years after the 1894 survey — after the 1959 Glendale Freeway graded away portions of the original canyon — the same contrast holds. <strong>Modern data understates the original case.</strong> The canyon measurable today is shallower than the one Boggs and Sennett filmed in.</p>
+
+  <div class="dr">
+    <div class="dc dk">
+      <div class="dc-l">Edendale — MapCortex 2026</div>
+      <p style="font-family:var(--m);font-size:.6rem;color:#c4a87a;line-height:1.6;margin:0">680–801 ft labels every 2–3 blocks<br>Dense contours confirmed at equivalent zoom<br><span style="color:#8b1a1a">Post-freeway grading — original was steeper</span></p>
+    </div>
+    <div class="dc">
+      <div class="dc-l">Hollywood — MapCortex 2026</div>
+      <p style="font-family:var(--m);font-size:.6rem;color:#8b6f47;line-height:1.6;margin:0">Zero elevation labels across studio district<br>Same bajada plain as 1894, unchanged<br><span style="color:#2a5e2a">The Industrial Floor holds. 130 years on.</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- §VII PRIMARY SOURCE TIMELINE -->
+<div id="sources">
+  <div class="sl">§ VII</div>
+  <h2>Primary Source Timeline</h2>
+  <div class="deck">Los Angeles Herald · Press-Telegram · Vallejo Evening Times · LA Examiner &nbsp;·&nbsp; 11 Documents · February 1912 – February 1924</div>
+
+  <p>The following documents were published without knowledge of the geographic argument this essay makes. Read in sequence, they constitute a real-time record of the Node 2 → Node 3 transition — the terrain's industrial consequences visible in the press before anyone named them. The 1894 USGS survey predicted what these newspapers documented.</p>
+
+  <div class="pst">
+    <div class="pst-head">The Documentary Record · Real Time · No One Knew the Terrain Was Driving the Outcome</div>
+
+    <div class="pst-entry">
+      <div class="pst-date">Feb 1912<br>LA Herald</div>
+      <div class="pst-body">
+        <div class="pst-src">Osage Actress &amp; Fireman Are Married</div>
+        <div class="pst-desc">Princeton Don Colby, an Osage woman performing wild west pictures, met her husband because "he fell in love with the Indian girl as she rode horses at Edendale for the cameramen." The canyon's vertical terrain was actively recruiting the labor and genre it demanded — horsemanship, stunts, western action. The 8% grade was a production asset. The Shadow Tax was invisible.</div>
+        <span class="pst-tag n2">Node 2 · Canyon as asset</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">Jul 1912<br>Unnamed</div>
+      <div class="pst-body">
+        <div class="pst-src">Motion Film Settles Issue — Bison Company, Edendale</div>
+        <div class="pst-desc">The Bison Company's film of the Wolgast-Rivers boxing match was cited as legal evidence settling a national controversy. Shot at "a foot a second," twelve feet of film showed the knockdown. Edendale's dateline carried institutional authority nationally — the industry's public face at peak credibility. The film was technically precise enough to withstand forensic scrutiny. The Shadow Tax ran regardless.</div>
+        <span class="pst-tag n2">Node 2 · Peak institutional credibility</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">Mar 14, 1913<br>LA Herald</div>
+      <div class="pst-body">
+        <div class="pst-src">Movie Picture Ads for Fashion Display — Keystone, Edendale</div>
+        <div class="pst-desc">Keystone filmed comedy sketches at Hamburger's department store, Downtown, releasing "all over Europe and America in a month or so." Fred Mace — president of the local Photo-Players' club — led. Infrastructure of Proximity operating at full efficiency: canyon home base, city as extended backlot. Nine months before DeMille signed the barn lease.</div>
+        <span class="pst-tag n2">Node 2 · Full production confidence · 9 months before pivot</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">May 29, 1913<br>Unnamed</div>
+      <div class="pst-body">
+        <div class="pst-src">Statuesque "Movie" Girl — Western Pathé, Edendale (Gertrude M. Price)</div>
+        <div class="pst-desc">Profile of Lillian Wiggins, Pathé star at Edendale. She learned to ride a horse because the canyon required it. "One trip around the Pathé ranch; one trial ride on the back of a western pony and one day's fresh, free ozone" convinced her to abandon tailor-made clothes for daring stunts. The Lemon Grove Myth being manufactured in real time: terrain liability narrated as liberation. The 734-ft ridge stealing 45–60 min daily was invisible. Pathé was the world's largest film company — paying the Shadow Tax on an international scale without naming it.</div>
+        <span class="pst-tag n2">Node 2 · Lemon Grove Myth manufactured</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">Dec 4, 1913<br>LA Evening Herald</div>
+      <div class="pst-body">
+        <div class="pst-src">Herald First to Use Moving Pictures to Show the Day's News — Thomas Ince, Edendale</div>
+        <div class="pst-desc">The Evening Herald brokered a historic world-first news film arrangement through Thomas H. Ince, "vice president of the New York Motion Picture company," operating from "his great studio at Edendale, where some of the finest films in the world are produced." Ince was one of the architects of the Hollywood studio system — the man who industrialized production methods that required flat terrain. <strong>DeMille signed the Hollywood barn lease this same month.</strong> Edendale described at the height of its prestige in the same month Hollywood received its first permanent feature film commitment. The geographic eviction was not a slow decline — it was a hard structural break.</div>
+        <span class="pst-tag pivot">Pivot month · Peak prestige + structural break simultaneous</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">Feb 28, 1915<br>Vallejo Evening Times</div>
+      <div class="pst-body">
+        <div class="pst-src">Masterpiece Company enlarging studios at Hollywood near Los Angeles</div>
+        <div class="pst-desc">Written for a Northern California readership 400 miles away. Hollywood used as the cardinal reference point — "at Hollywood near Los Angeles." A Vallejo reader was expected to recognize Hollywood as the locator for Los Angeles film activity without further explanation. Node 3 consolidation visible from outside Southern California entirely.</div>
+        <span class="pst-tag n3">Node 3 · Established — visible from Vallejo</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">Apr 13, 1915<br>LA Herald</div>
+      <div class="pst-body">
+        <div class="pst-src">Miriam Cooper profile — "the Hollywood studios"</div>
+        <div class="pst-desc">Cooper — who appeared in Birth of a Nation two months earlier — "finds happiness in Los Angeles, at the Hollywood studios where she poses for moving pictures." No company name. No street. "The Hollywood studios" as a singular known entity. The address has become the institution. Six weeks before the Edendale backwater joke in the same newspaper.</div>
+        <span class="pst-tag n3">Node 3 · Address becomes the institution</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">Apr 30, 1915<br>Long Beach Press-Telegram</div>
+      <div class="pst-body">
+        <div class="pst-src">Universal Pictures — Milton Loryea · Universal City, near Hollywood</div>
+        <div class="pst-desc">Universal City — Carl Laemmle's massive new complex, one of the largest studio facilities yet built — described as "Universal City, near Hollywood." Universal City is the thing being explained. Hollywood is the thing doing the explaining. Even a facility deliberately positioned outside Hollywood is defined by its gravitational field.</div>
+        <span class="pst-tag n3">Node 3 · Hollywood as cardinal reference point</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">May 29, 1915<br>LA Herald</div>
+      <div class="pst-body">
+        <div class="pst-src">Money in Scenarios If You Have Brains — Guy Price</div>
+        <div class="pst-desc">Mary H. O'Connor: "if the industry will only remain in its infancy another five years we will all own bungalows in Hollywood." Hollywood as the aspirational address — where success lands you. Same column: "Edendale papers (if there be any, b'gosh) please copy." Two years after Ince's "great studio," Edendale is a punchline. The cultural processing of a node transition completes fast once the structural break has already happened.</div>
+        <span class="pst-tag n3">Node 3 established · Node 2 culturally finished</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">Jan 4, 1916<br>LA Herald</div>
+      <div class="pst-body">
+        <div class="pst-src">Mutual Test Film Company — 1776 Allesandro Street, Edendale [Advertisement]</div>
+        <div class="pst-desc">Screen test operation at the precise address the 1894 survey targets — the ~500-ft canyon floor, the Allesandro Street studio corridor. Endorsed by a quote from Francis X. Bushman, then one of America's most famous film stars — borrowed national prestige for a local operation the major studios had already left. The residual economy has begun: aspirational service businesses monetizing the address's remaining recognition.</div>
+        <span class="pst-tag residual">Residual economy · Canyon floor repurposed</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">Mar 15, 1916<br>LA Herald</div>
+      <div class="pst-body">
+        <div class="pst-src">Keystones Add Joy to Movie Bill — Guy Price</div>
+        <div class="pst-desc">Guy Price — same byline as the May 1915 backwater joke — refers to the Keystone performers as "the Edendale fun-makers." Not a studio address. A brand nickname. The affectionate shorthand you apply to something whose geography is historical rather than current. In ten months, Edendale has gone from punchline to nostalgia. The same bill features a multi-reel war picture produced on Hollywood's flat terrain — the two formats on one stage, made in two different geographic conditions.</div>
+        <span class="pst-tag residual">Node 2 → nostalgia brand</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">May 2, 1916<br>LA Herald</div>
+      <div class="pst-body">
+        <div class="pst-src">Pacific Picture Producing Co. — 1766 Allesandro Street, Edendale [Advertisement]</div>
+        <div class="pst-desc">Two screen test operations within ten street numbers on Allesandro Street, four months apart. The pitch has loosened: "if you have had no experience before the camera." Alongside the ad: a "moving picture stage carpenter, operator, camera man's helper, expert auto driver" advertising himself in the general employment classifieds alongside hotel workers and bookkeepers. The Node 2 skilled labor force is dispersing into the broader Los Angeles economy.</div>
+        <span class="pst-tag residual">Residual economy thins · skilled labor dispersing</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">Aug 5, 1919<br>LA Herald</div>
+      <div class="pst-body">
+        <div class="pst-src">Here Are Deep Dark Secrets From Clara Kimball Young's Studio — Reed Heustis</div>
+        <div class="pst-desc">"Col. Selig built it years and years ago, when he was grand nabob of the flickers. After him came others. In and out, until the present tenants took hold." Selig — the founding event of Node 2 in 1909 — compressed into archaeological layer. The studio had "lay dormant" for months before Young's company arrived. And: "the steepest hill in Edendale, the grade which is the despair of every motor fiend" — the 8% grade of the 1894 survey, appearing as comedy material. The terrain hasn't changed. Only its role has inverted: from productive asset to comic obstacle.</div>
+        <span class="pst-tag residual">Node 2 → founding myth · 8% grade now comedy</span>
+      </div>
+    </div>
+
+    <div class="pst-entry">
+      <div class="pst-date">Feb 17, 1924<br>LA Examiner</div>
+      <div class="pst-body">
+        <div class="pst-src">What New Sites for Studios Mean to Hollywood — Al Christie, Christie Film Corp.</div>
+        <div class="pst-desc">Christie's firsthand account: arrived in LA representing Nestor Film Company; Edendale was the industry center; wanted "a wider range of action" and a location where he "would not find himself crowded." Went to Hollywood the next afternoon. Found a tavern at Sunset and Gower. Built Hollywood's first studio from the horse stalls. Same issue: "Westwood — The Second Hollywood" real estate advertisement by Janss Investment Co. The node-repetition pattern — industry outgrows flat terrain, moves to the next available alluvial floor — had by 1924 become legible enough that land speculators were selling it as a product. <strong>Christie never mentioned the 1894 USGS survey. He described its consequences.</strong></div>
+        <span class="pst-tag n3">Practitioner confirmation · Node pattern repeating to Node 4</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pq"><p>"The terrain knew first. The surveyor measured it. The industry felt it. The press covered the ozone and the ponies. This essay names the mechanism."</p></div>
+
+  <!-- 1913 compression callout -->
+  <div class="fb">
+    <div class="fh"><span>The 1913 Compression</span><span>Nine Months · Three Newspapers · One Canyon</span></div>
+    <div class="fi">
+      <div class="tc" style="margin:0">
+        <table>
+          <thead><tr><th>Date</th><th>Source</th><th>What It Shows</th></tr></thead>
+          <tbody>
+            <tr><td class="lc">Mar 14, 1913</td><td>Keystone at Hamburger's</td><td>Production confidence · international distribution · no hint of strain</td></tr>
+            <tr><td class="lc">May 29, 1913</td><td>Pathé / Wiggins</td><td>Lemon Grove Myth manufactured in press · Shadow Tax invisible · "fresh, free ozone"</td></tr>
+            <tr><td class="lc hi">Dec 4, 1913</td><td class="hi">Ince "great studio" + DeMille barn lease</td><td class="hi">Peak prestige and structural break — simultaneous, same month</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fc">Nine months. Edendale running at full cultural velocity — international distribution, world's largest film company, world-first news film — straight into the month the Hollywood pivot happened. The canyon didn't decline. It was operating at peak press visibility in the same year the terrain-driven break arrived.</div>
+    </div>
+  </div>
+
+  <!-- Node 4 note -->
+  <div class="dr">
+    <div class="dc dk">
+      <div class="dc-l">The Repeating Pattern · Node 4</div>
+      <p style="font-family:var(--m);font-size:.6rem;color:#c4a87a;line-height:1.7;margin:0">Feb 1924: Christie describes leaving Edendale for Hollywood's flat terrain. Same page: Westwood advertised as "The Second Hollywood." The industry had outgrown Hollywood's urban grid exactly as it had outgrown Edendale's canyon ribbon. The geographic logic — move to the next available flat terrain within rail or road distance of the labor market — reproduced itself one node further west. Land speculators were selling the pattern before anyone named it.</p>
+    </div>
+    <div class="dc">
+      <div class="dc-l">The Node Sequence</div>
+      <p style="font-family:var(--m);font-size:.6rem;color:var(--s);line-height:1.9;margin:0">
+        <strong style="color:var(--ink)">Node 1 · Downtown</strong> → fixed by city blocks<br>
+        <strong style="color:var(--ink)">Node 2 · Edendale</strong> → fixed by canyon geometry<br>
+        <strong style="color:var(--ink)">Node 3 · Hollywood</strong> → fixed by urban growth<br>
+        <strong style="color:var(--ink)">Node 4 · Westwood</strong> → same pattern, one node west<br>
+        <span style="color:var(--sl)">Each ceiling written in terrain before the industry arrived.</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<span class="orn">— ✦ —</span>
+
+<div class="vb">
+  <p>The industry didn't discover Hollywood. It was evicted from Edendale by the geometry of a canyon documented on a federal survey nineteen years before DeMille arrived. The same terrain that gave early cinema its visual language — chase, cliff, pursuit, escape — gave the industry a ceiling it could not engineer its way through. Node 3 won because the 1894 survey confirmed the only thing Node 2 could never offer: a tax-free, 0% grade Industrial Floor with an unobstructed horizon. Al Christie described this in 1924 as self-evident common sense. He never connected it to a federal survey filed in 1897. The terrain knew first.</p>
+</div>
+
+</div><!-- /w -->
+
+<div class="coda">
+  <div class="coda-h">The Horizontal Infinite.</div>
+  <div class="coda-s">Beyond the Lemon Grove &nbsp;·&nbsp; The Geographic Eviction &nbsp;·&nbsp; The Verdict</div>
+</div>
+
+<div class="fn">
+  <strong>Primary source · Survey:</strong> USGS Los Angeles Quadrangle, 1894 (HTMC edition), Scale 1:62,500, filed May 19, 1897. ngmdb.usgs.gov/topoview. Contour interval: 25 ft. Values — 356 ft (Hollywood/Colegrove), ~500 ft (canyon floor, Ivanhoe/Edgemont), 734 ft (Los Felis ridge) — read directly from labeled survey. No interpolation. &nbsp;·&nbsp; <strong>Shadow geometry:</strong> arctan(~234 ft ÷ ~1,200 ft) ≈ 11°; sun altitude 34°N winter solstice max ~32.5°. &nbsp;·&nbsp; <strong>Excavation:</strong> Construction Equipment magazine, 1910s trade data. &nbsp;·&nbsp; <strong>Squaw Man budget:</strong> DeMille/Lasky biographies. &nbsp;·&nbsp; <strong>Modern:</strong> MapCortex topographic layer (USGS/OpenStreetMap), March 2026. Post-1959 Glendale Freeway grading means modern Edendale data understates original canyon depth. &nbsp;·&nbsp; <strong>Newspaper sources:</strong> Los Angeles Herald (1912–1916), Los Angeles Evening Herald (1913), Vallejo Evening Times (1915), Long Beach Press-Telegram (1915), Los Angeles Herald (1919), Los Angeles Examiner (1924). All via California Digital Newspaper Collection (CDNC).
+</div>
+
+</body>
+</html>
