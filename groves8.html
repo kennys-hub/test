@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond the Lemon Grove — The 3+4 Convergence · Geographic Audit · USGS 1894</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1a1612;--paper:#f5f0e8;--pm:#ede6d6;--pd:#e0d6c2;
+  --sepia:#8b7355;--rust:#7a3b1e;--ochre:#c9963a;--sage:#4a5e45;
+  --n1:#3d4a5c;--n2:#7a3b1e;--n3:#4a5e45;
+  --rule:rgba(139,115,85,.35);--mapbg:#1e1a14;
+  --sf:'Playfair Display',Georgia,serif;
+  --gm:'EB Garamond',Georgia,serif;
+  --mn:'Space Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--gm);font-size:18px;line-height:1.75}
+/* MASTHEAD */
+.mh{background:var(--ink);color:var(--paper);text-align:center;padding:3rem 2rem 2.5rem;position:relative;overflow:hidden}
+.mh::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 24px,rgba(255,255,255,.03) 24px,rgba(255,255,255,.03) 25px),repeating-linear-gradient(90deg,transparent,transparent 24px,rgba(255,255,255,.03) 24px,rgba(255,255,255,.03) 25px)}
+.mh-eye{font-family:var(--mn);font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--ochre);margin-bottom:1.2rem;position:relative}
+.mh h1{font-family:var(--sf);font-size:clamp(2rem,6vw,3.5rem);font-weight:700;line-height:1.1;position:relative;margin-bottom:.7rem}
+.mh-sub{font-family:var(--gm);font-style:italic;font-size:1rem;color:var(--pd);opacity:.85;position:relative;max-width:600px;margin:0 auto}
+.mh-rule{width:60px;height:1px;background:var(--ochre);margin:1.4rem auto .5rem;position:relative}
+/* NAV */
+nav{background:var(--ink);border-bottom:2px solid var(--ochre);padding:.5rem 0;position:sticky;top:0;z-index:100;overflow-x:auto;white-space:nowrap}
+nav ul{list-style:none;display:inline-flex;padding:0 1rem;min-width:100%;justify-content:center}
+nav li a{font-family:var(--mn);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--pd);text-decoration:none;padding:.28rem .7rem;display:block;border-right:1px solid rgba(255,255,255,.1);transition:color .2s}
+nav li:last-child a{border-right:none}
+nav li a:hover{color:var(--ochre)}
+/* LAYOUT */
+main{max-width:800px;margin:0 auto;padding:0 1.5rem 5rem}
+/* SECTION */
+.sm{font-family:var(--mn);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--sepia);margin:5rem 0 .5rem;display:flex;align-items:center;gap:1rem}
+.sm::after{content:'';flex:1;height:1px;background:var(--rule)}
+section h2{font-family:var(--sf);font-size:clamp(1.4rem,4vw,2rem);font-weight:600;line-height:1.2;margin-bottom:.4rem}
+section h2 em{font-style:italic;color:var(--rust)}
+.kicker{font-family:var(--mn);font-size:.56rem;letter-spacing:.13em;color:var(--sepia);text-transform:uppercase;margin-bottom:1.75rem;padding-bottom:1.2rem;border-bottom:1px solid var(--rule)}
+p{margin-bottom:1.2rem}
+strong{font-weight:600}
+em{color:var(--rust)}
+/* IMG PLACEHOLDER */
+.imgp{width:100%;background:var(--pd);border:1px dashed var(--sepia);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;margin:2.2rem 0 .4rem;padding:2.5rem 1rem;color:var(--sepia);min-height:180px}
+.imgp svg{opacity:.35}
+.imgp .ilbl{font-family:var(--mn);font-size:.55rem;letter-spacing:.12em;text-transform:uppercase;opacity:.6;text-align:center;line-height:1.7}
+.icap{font-family:var(--gm);font-style:italic;font-size:.82rem;color:var(--sepia);text-align:center;line-height:1.55;margin-bottom:2rem;padding:0 1rem}
+.icap strong{font-style:normal;font-weight:600;display:block;font-family:var(--mn);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.2rem}
+/* FRAMEWORK */
+.fw-intro{background:var(--ink);color:var(--paper);padding:1.75rem 2rem;margin:2rem 0;border-left:4px solid var(--ochre)}
+.fw-intro h3{font-family:var(--mn);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ochre);margin-bottom:.6rem}
+.fw-formula{font-family:var(--sf);font-size:clamp(1.6rem,5vw,2.3rem);font-weight:700;color:var(--paper);line-height:1;margin-bottom:.4rem}
+.fw-formula span{color:var(--ochre)}
+.fw-sub{font-family:var(--gm);font-style:italic;font-size:.9rem;color:var(--pd);opacity:.8}
+.mech-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0 2rem}
+@media(max-width:500px){.mech-grid{grid-template-columns:1fr}}
+.mech{padding:.9rem 1.1rem;border:1px solid var(--rule);background:var(--pm)}
+.mech .mn2{font-family:var(--mn);font-size:.56rem;letter-spacing:.13em;color:var(--sepia);margin-bottom:.18rem}
+.mech .mt{font-family:var(--sf);font-size:.95rem;font-weight:600;margin-bottom:.12rem}
+.mech .ms{font-family:var(--mn);font-size:.52rem;letter-spacing:.07em;color:var(--sepia)}
+/* MATRIX */
+.mx-wrap{overflow-x:auto;margin:2rem 0;border:1px solid var(--rule)}
+.mx{width:100%;border-collapse:collapse;font-size:.77rem;min-width:560px}
+.mx thead tr{background:var(--ink);color:var(--paper)}
+.mx thead th{font-family:var(--mn);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;padding:.65rem .75rem;text-align:left;border-right:1px solid rgba(255,255,255,.1);vertical-align:top}
+.mx thead th.h1{background:var(--n1)}.mx thead th.h2{background:var(--n2)}.mx thead th.h3{background:var(--n3)}
+.mx tbody tr{border-bottom:1px solid var(--rule)}
+.mx tbody tr:nth-child(even){background:var(--pm)}
+.mx td{padding:.55rem .75rem;vertical-align:top;border-right:1px solid var(--rule);font-family:var(--gm);line-height:1.45;font-size:.8rem}
+.mx td:first-child{font-family:var(--mn);font-size:.52rem;letter-spacing:.07em;text-transform:uppercase;color:var(--sepia);font-weight:700}
+.sa{color:#4a7a40;font-weight:700}.sp{color:var(--ochre)}.sr{color:var(--sepia)}.ss{color:#4a7a40;font-weight:700}.sc{color:#4a7a40;font-weight:700;font-style:italic}.sl{color:#4a7a40;font-weight:700}
+/* NODE CARDS */
+.nodes{display:grid;grid-template-columns:1fr 1fr 1fr;margin:2rem 0;border:1px solid var(--rule)}
+@media(max-width:620px){.nodes{grid-template-columns:1fr}}
+.nc{border-right:1px solid var(--rule);display:flex;flex-direction:column}
+.nc:last-child{border-right:none}
+.nc-hd{padding:.9rem 1.1rem .7rem;border-bottom:1px solid var(--rule)}
+.nc.n1 .nc-hd{background:rgba(61,74,92,.07)}.nc.n2 .nc-hd{background:rgba(122,59,30,.07)}.nc.n3 .nc-hd{background:rgba(74,94,69,.07)}
+.nc-num{font-family:var(--mn);font-size:.52rem;letter-spacing:.17em;text-transform:uppercase;margin-bottom:.2rem}
+.nc.n1 .nc-num{color:var(--n1)}.nc.n2 .nc-num{color:var(--n2)}.nc.n3 .nc-num{color:var(--n3)}
+.nc-name{font-family:var(--sf);font-size:.98rem;font-weight:700;line-height:1.2;margin-bottom:.18rem}
+.nc-sub{font-family:var(--gm);font-style:italic;font-size:.76rem;color:var(--sepia);margin-bottom:.45rem}
+.nc-badge{display:inline-block;font-family:var(--mn);font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;padding:.12rem .45rem;color:#fff}
+.nc.n1 .nc-badge{background:var(--n1)}.nc.n2 .nc-badge{background:var(--n2)}.nc.n3 .nc-badge{background:var(--n3)}
+.nc-ter{width:100%;height:85px;display:block}
+.nc-body{padding:.85rem 1.1rem;flex:1}
+.nc-body ul{list-style:none}
+.nc-body li{padding:.4rem 0;border-bottom:1px solid var(--rule);font-family:var(--gm);font-size:.78rem;line-height:1.55}
+.nc-body li:last-child{border-bottom:none}
+.nc-body li .ll{font-family:var(--mn);font-size:.5rem;letter-spacing:.09em;text-transform:uppercase;color:var(--sepia);display:block;margin-bottom:.12rem}
+.nc-verd{font-family:var(--mn);font-size:.5rem;letter-spacing:.08em;text-transform:uppercase;padding:.45rem 1.1rem;background:var(--pd);color:var(--sepia);border-top:1px solid var(--rule);border-left:3px solid;line-height:1.55}
+.nc.n1 .nc-verd{border-color:var(--n1)}.nc.n2 .nc-verd{border-color:var(--n2)}.nc.n3 .nc-verd{border-color:var(--n3)}
+/* COMPARISON TABLE */
+.ct-wrap{overflow-x:auto;margin:2rem 0}
+.ct{width:100%;border-collapse:collapse;font-size:.77rem;min-width:520px}
+.ct thead th{font-family:var(--mn);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;padding:.58rem .72rem;background:var(--ink);color:var(--paper);border-right:1px solid rgba(255,255,255,.1);text-align:left}
+.ct thead th.h1{background:var(--n1)}.ct thead th.h2{background:var(--n2)}.ct thead th.h3{background:var(--n3)}
+.ct tbody tr{border-bottom:1px solid var(--rule)}
+.ct tbody tr:nth-child(even){background:var(--pm)}
+.ct td{padding:.48rem .72rem;border-right:1px solid var(--rule);font-family:var(--gm);font-size:.79rem;line-height:1.4;vertical-align:top}
+.ct td:first-child{font-family:var(--mn);font-size:.5rem;letter-spacing:.07em;color:var(--sepia);text-transform:uppercase;font-weight:700}
+/* PIVOT */
+.pivot{display:grid;grid-template-columns:1fr 1fr;margin:2.5rem 0;border:1px solid var(--rule)}
+@media(max-width:480px){.pivot{grid-template-columns:1fr}}
+.piv-ban{grid-column:1/-1;text-align:center;background:var(--ochre);color:var(--ink);font-family:var(--mn);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;padding:.4rem 1rem}
+.piv-s{padding:1.4rem}
+.piv-s.pe{background:var(--pm);border-right:1px solid var(--rule)}
+.piv-s.ph{background:var(--ink);color:var(--paper)}
+.piv-lbl{font-family:var(--mn);font-size:.52rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.35rem}
+.piv-s.pe .piv-lbl{color:var(--rust)}.piv-s.ph .piv-lbl{color:var(--ochre)}
+.piv-hd{font-family:var(--sf);font-size:.95rem;font-weight:600;margin-bottom:.6rem;line-height:1.3}
+.piv-s.ph .piv-hd{color:var(--paper)}
+.piv-bd{font-family:var(--gm);font-size:.83rem;line-height:1.65}
+.piv-s.ph .piv-bd{color:rgba(229,210,175,.78)}
+/* ANCHORS */
+.anch-track{position:relative;padding-left:2rem;margin:2rem 0}
+.anch-track::before{content:'';position:absolute;left:.45rem;top:.5rem;bottom:0;width:2px;background:linear-gradient(to bottom,var(--n1),var(--n2) 33%,var(--n3))}
+.anch-item{position:relative;margin-bottom:2.4rem}
+.anch-item::before{content:'';position:absolute;left:-2rem;top:.75rem;width:12px;height:12px;border-radius:50%;background:var(--ochre);border:2px solid var(--paper);box-shadow:0 0 0 2px var(--ochre)}
+.a-eye{font-family:var(--mn);font-size:.54rem;letter-spacing:.17em;text-transform:uppercase;color:var(--ochre);margin-bottom:.18rem}
+.a-title{font-family:var(--sf);font-size:1.1rem;font-weight:600;margin-bottom:.18rem}
+.a-sub{font-family:var(--gm);font-style:italic;font-size:.84rem;color:var(--sepia);margin-bottom:.8rem}
+.a-body{font-size:.87rem;line-height:1.7}
+.a-body p{margin-bottom:.65rem}
+.a-src{margin-top:.6rem;font-family:var(--mn);font-size:.5rem;letter-spacing:.04em;color:var(--sepia);border-top:1px solid var(--rule);padding-top:.4rem;line-height:1.7}
+/* MAP PANELS */
+.map-outer{background:var(--mapbg);border:1px solid rgba(139,115,85,.3);margin:2rem 0;overflow:hidden}
+.map-hdr{background:rgba(0,0,0,.4);padding:.52rem 1rem;font-family:var(--mn);font-size:.54rem;letter-spacing:.15em;text-transform:uppercase;color:var(--ochre);border-bottom:1px solid rgba(139,115,85,.2);display:flex;justify-content:space-between;align-items:center}
+.map-hdr span{color:rgba(229,210,175,.35);font-size:.47rem}
+/* USGS */
+.usgs-fig{display:grid;grid-template-columns:1fr 1fr}
+@media(max-width:480px){.usgs-fig{grid-template-columns:1fr}}
+.usgs-pi{padding:1rem;border-right:1px solid rgba(139,115,85,.18)}
+.usgs-pi:last-child{border-right:none}
+.usgs-lbl{font-family:var(--mn);font-size:.48rem;letter-spacing:.13em;color:rgba(229,210,175,.4);text-transform:uppercase;margin-bottom:.45rem}
+.usgs-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(139,115,85,.2)}
+@media(max-width:480px){.usgs-stats{grid-template-columns:1fr 1fr}}
+.usgs-stat{padding:.75rem .7rem;border-right:1px solid rgba(139,115,85,.15);text-align:center}
+.usgs-stat:last-child{border-right:none}
+.usgs-stat .uv{font-family:var(--mn);font-size:1rem;font-weight:700;color:var(--ochre);display:block;line-height:1;margin-bottom:.18rem}
+.usgs-stat .ul{font-family:var(--mn);font-size:.44rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(229,210,175,.38);line-height:1.4}
+/* SHADOW */
+.shad-prof{display:grid;grid-template-columns:1fr 1fr}
+@media(max-width:480px){.shad-prof{grid-template-columns:1fr}}
+.shad-p{padding:.9rem 1rem 1.2rem;border-right:1px solid rgba(139,115,85,.18)}
+.shad-p:last-child{border-right:none}
+.shad-lbl{font-family:var(--mn);font-size:.48rem;letter-spacing:.13em;color:rgba(229,210,175,.4);text-transform:uppercase;margin-bottom:.55rem}
+.shad-stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(139,115,85,.2)}
+@media(max-width:480px){.shad-stats{grid-template-columns:1fr 1fr}}
+.shad-st{padding:.75rem .6rem;border-right:1px solid rgba(139,115,85,.15);text-align:center}
+.shad-st:last-child{border-right:none}
+.shad-st .sv{font-family:var(--mn);font-size:.9rem;font-weight:700;color:var(--ochre);display:block;line-height:1;margin-bottom:.18rem}
+.shad-st.zero .sv{color:#4a7a40}
+.shad-st .sl2{font-family:var(--mn);font-size:.44rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(229,210,175,.38);line-height:1.4}
+/* TRANSIT */
+.tr-area{padding:1.1rem}
+.tr-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:1.1rem}
+@media(max-width:480px){.tr-grid{grid-template-columns:1fr}}
+.tr-card{background:rgba(0,0,0,.3);border:1px solid rgba(139,115,85,.18);padding:.85rem 1rem}
+.tr-lbl{font-family:var(--mn);font-size:.5rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:.3rem}
+.tr-la .tr-lbl{color:#8888b5}.tr-pe .tr-lbl{color:#b04040}
+.tr-name{font-family:var(--sf);font-size:.88rem;font-weight:600;color:var(--paper);margin-bottom:.35rem}
+.tr-body{font-family:var(--gm);font-size:.76rem;color:rgba(229,210,175,.62);line-height:1.6}
+/* MODERN */
+.mod-split{display:grid;grid-template-columns:1fr 1fr;background:var(--mapbg);border:1px solid rgba(139,115,85,.3);margin:2rem 0}
+@media(max-width:480px){.mod-split{grid-template-columns:1fr}}
+.mod-p{padding:1.1rem;border-right:1px solid rgba(139,115,85,.18)}
+.mod-p:last-child{border-right:none}
+.mod-lbl{font-family:var(--mn);font-size:.48rem;letter-spacing:.13em;color:rgba(229,210,175,.38);text-transform:uppercase;margin-bottom:.45rem}
+.mod-desc{margin-top:.6rem}
+.mod-desc li{list-style:none;padding:.1rem 0;border-top:1px solid rgba(139,115,85,.1);font-family:var(--mn);font-size:.47rem;letter-spacing:.05em;color:rgba(229,210,175,.45);line-height:1.5}
+.mod-desc li:first-child{border-top:none}
+.mod-desc li::before{content:'— ';color:var(--ochre)}
+/* CAP TABLE */
+.cap-wrap{overflow-x:auto;margin:1.5rem 0}
+.cap-t{width:100%;border-collapse:collapse;font-size:.77rem;min-width:440px}
+.cap-t thead th{font-family:var(--mn);font-size:.52rem;letter-spacing:.1em;text-transform:uppercase;padding:.58rem .72rem;background:var(--ink);color:var(--paper);border-right:1px solid rgba(255,255,255,.1);text-align:left}
+.cap-t thead th.he{background:var(--n2)}.cap-t thead th.hh{background:var(--n3)}
+.cap-t tbody tr{border-bottom:1px solid var(--rule)}
+.cap-t tbody tr:nth-child(even){background:var(--pm)}
+.cap-t td{padding:.48rem .72rem;border-right:1px solid var(--rule);font-family:var(--gm);font-size:.79rem;line-height:1.4;vertical-align:top}
+.cap-t td:first-child{font-family:var(--mn);font-size:.5rem;letter-spacing:.07em;color:var(--sepia);text-transform:uppercase}
+/* BLOCKQUOTE */
+blockquote{border-left:3px solid var(--ochre);margin:1.5rem 0;padding:.7rem 1.25rem;background:var(--pm);font-style:italic;font-size:.9rem;line-height:1.7}
+blockquote cite{display:block;font-style:normal;font-family:var(--mn);font-size:.5rem;letter-spacing:.09em;color:var(--sepia);margin-top:.4rem}
+/* TIMELINE */
+.tl{margin:2rem 0}
+.tl-e{display:grid;grid-template-columns:74px 1fr;gap:1.1rem;padding:1.1rem 0;border-bottom:1px solid var(--rule)}
+.tl-e:last-child{border-bottom:none}
+.tl-d{text-align:right}
+.tl-mo{font-family:var(--mn);font-size:.54rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sepia);display:block}
+.tl-yr{font-family:var(--mn);font-size:.92rem;font-weight:700;color:var(--ink);display:block;line-height:1}
+.tl-sr{font-family:var(--mn);font-size:.46rem;letter-spacing:.06em;color:var(--sepia);display:block;margin-top:.1rem}
+.tl-c h4{font-family:var(--sf);font-size:.9rem;font-weight:600;margin-bottom:.4rem;line-height:1.3}
+.tl-c p{font-size:.82rem;line-height:1.65;margin-bottom:.3rem}
+.tl-tag{font-family:var(--mn);font-size:.46rem;letter-spacing:.09em;text-transform:uppercase;padding:.12rem .42rem;background:var(--pd);color:var(--sepia);display:inline-block;margin-top:.18rem}
+.tl-piv{background:var(--rust);color:#fff}
+/* BASIN */
+.basin-nodes{display:grid;grid-template-columns:1fr 1fr;gap:.4rem;margin-top:.8rem}
+@media(max-width:460px){.basin-nodes{grid-template-columns:1fr}}
+.bn{background:rgba(0,0,0,.3);border:1px solid rgba(139,115,85,.16);padding:.5rem .75rem;font-family:var(--gm);font-size:.74rem;color:rgba(229,210,175,.58)}
+.bn strong{font-family:var(--mn);font-size:.46rem;letter-spacing:.09em;color:var(--ochre);display:block;text-transform:uppercase;margin-bottom:.1rem;font-weight:700}
+.bn.hwood{border-left:3px solid var(--n3)}.bn.moving{border-left:3px solid var(--ochre)}
+/* COMPRESSION */
+.cbox{margin:2rem 0;border:1px solid var(--rule);overflow:hidden}
+.cbox-hd{background:var(--ink);color:var(--ochre);font-family:var(--mn);font-size:.56rem;letter-spacing:.17em;text-transform:uppercase;padding:.58rem 1rem}
+.crow{display:grid;grid-template-columns:96px 1fr 1fr;border-bottom:1px solid var(--rule)}
+.crow:last-child{border-bottom:none}
+.crow.chr{background:var(--pd)}
+.cc{padding:.5rem .78rem;border-right:1px solid var(--rule);font-family:var(--mn);font-size:.52rem;letter-spacing:.07em;text-transform:uppercase;color:var(--sepia)}
+.cc:last-child{border-right:none}
+.cc.date{font-weight:700;color:var(--rust)}
+.cc.desc{font-family:var(--gm);font-size:.79rem;text-transform:none;letter-spacing:0;color:var(--ink);font-style:italic}
+/* SYNTHESIS */
+.synth{background:var(--pm);border:1px solid var(--rule);border-left:4px solid var(--ochre);padding:1.35rem 1.6rem;margin:2rem 0}
+.synth h4{font-family:var(--sf);font-size:.96rem;font-weight:600;margin-bottom:.6rem}
+.synth p{font-size:.87rem;line-height:1.7;margin-bottom:.5rem}
+/* PATTERN */
+.pat-nodes{display:grid;grid-template-columns:1fr 1fr 1fr;margin:1.5rem 0;border:1px solid var(--rule)}
+@media(max-width:460px){.pat-nodes{grid-template-columns:1fr}}
+.pn{padding:1.1rem;border-right:1px solid var(--rule);text-align:center}
+.pn:last-child{border-right:none}
+.pn-num{font-family:var(--mn);font-size:.52rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:.28rem}
+.pn:nth-child(1) .pn-num{color:var(--n1)}.pn:nth-child(2) .pn-num{color:var(--n2)}.pn:nth-child(3) .pn-num{color:var(--n3)}
+.pn-name{font-family:var(--sf);font-size:.9rem;font-weight:700;margin-bottom:.4rem}
+.pn-verd{font-family:var(--gm);font-style:italic;font-size:.75rem;color:var(--sepia);line-height:1.5}
+/* VERDICT */
+.verdict{background:var(--ink);color:var(--paper);padding:2.75rem 2.5rem;margin:4rem 0 2rem;text-align:center;position:relative}
+.verdict::before,.verdict::after{content:'';position:absolute;left:2rem;right:2rem;height:1px;background:var(--ochre);opacity:.32}
+.verdict::before{top:1.4rem}.verdict::after{bottom:1.4rem}
+.verdict p{font-family:var(--gm);font-size:.98rem;line-height:1.75;color:rgba(229,210,175,.8);max-width:580px;margin:0 auto 1rem}
+.verdict .tl2{font-family:var(--sf);font-style:italic;font-size:1.45rem;color:var(--paper);margin:1.4rem 0}
+.vorn{color:var(--ochre);font-size:1.2rem;margin:1rem 0;letter-spacing:.5em}
+/* NOTES / FOOTER */
+.notes{border-top:2px solid var(--rule);margin-top:3rem;padding-top:1.4rem;font-family:var(--mn);font-size:.52rem;letter-spacing:.04em;color:var(--sepia);line-height:1.9}
+.notes strong{color:var(--ink)}
+footer{text-align:center;padding:2rem 1rem 3rem;font-family:var(--mn);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--sepia);border-top:1px solid var(--rule);margin-top:2rem}
+</style>
+</head>
+<body>
+<header class="mh">
+  <div class="mh-eye">Geographic Audit &nbsp;·&nbsp; USGS 1894 &nbsp;·&nbsp; Forensic Film History</div>
+  <h1>Beyond the Lemon Grove</h1>
+  <div class="mh-rule"></div>
+  <div class="mh-sub">The Geographic Eviction of the American Film Industry &nbsp;·&nbsp; The Convergence That Made Hollywood the Only Possible Outcome</div>
+</header>
+<nav>
+  <ul>
+    <li><a href="#lit">Literature</a></li><li><a href="#fw">3+4 Framework</a></li><li><a href="#nodes">Three Nodes</a></li><li><a href="#anchors">Chain of Anchors</a></li><li><a href="#transit">Transit</a></li><li><a href="#usgs">USGS 1894</a></li><li><a href="#shadow">Shadow Tax</a></li><li><a href="#capital">Capital Penalty</a></li><li><a href="#modern">Modern Evidence</a></li><li><a href="#sources">Primary Sources</a></li><li><a href="#sign">The Sign</a></li>
+  </ul>
+</nav>
+<main>
+<!-- §I LITERATURE -->
+<div class="sm" id="lit">§ I</div>
+<section>
+  <h2>The Topographic <em>Blind Spot</em></h2>
+  <div class="kicker">Literature Review &nbsp;·&nbsp; The Standard Trio &nbsp;·&nbsp; The Lemon Grove Myth</div>
+  <p>Most published accounts explain the industry's shift toward Hollywood through the <strong>Standard Trio</strong>: 300 days of sunshine, cheap land, and flight from Edison's patent enforcers. These histories share a <strong>2D Blind Spot</strong> — treating land as a flat commodity, acreage to be counted rather than terrain to be analyzed. They rely on the <strong>Lemon Grove Myth</strong>: filmmakers moved west for the scenery, and Hollywood's emergence was inevitable.</p>
+  <p>By applying a forensic audit to the 1894 USGS Federal Survey — filed nineteen years before DeMille signed his barn lease — we can quantify what the standard histories missed. The hills and ridges flanking Edendale were not just scenery. They were industrial infrastructure running at a daily deficit, stealing measurable ROI through what this analysis terms the <strong>Shadow Tax</strong>. Hollywood won because the 1894 survey documented the only node in the Los Angeles basin flat enough to hold the weight of the Feature Film era.</p>
+  <p>The Lemon Grove Myth was not invented by later historians. It was manufactured in real time. In May 1913, the Los Angeles press described Edendale's canyon as "fresh, free ozone." By June 1911, the Marysville Democrat had reprinted an LA Times piece calling the Selig plant — the second-largest glass studio in the world, representing $250,000 in capital investment — a marvel of the age. The same geometry the 1894 survey documents as an industrial trap was being celebrated in the national press as infrastructure. The Shadow Tax was structurally invisible because no journalist had reason to run arctan calculations against the contour lines.</p>
+
+  <div class="imgp">
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <div class="ilbl">Image Placeholder · Selig Polyscope Co., Edendale c.1911<br>Suggested: Exterior of the mission-style glass studio / Allesandro Street façade</div>
+  </div>
+  <div class="icap"><strong>Fig. 1.1 · Suggested Image</strong>Selig Polyscope Co., Allesandro Street, Edendale — the $250,000 "second-largest glass studio in the world," June 1911. The press saw a marvel of the age. The 1894 survey saw a canyon trap already charging a daily Shadow Tax.</div>
+
+  <p>The move to the 356-ft floor was obscured by a primitive media landscape that traded in fragments. When Selig and Boggs moved to Edendale, the press framed it as a pastoral retreat to "sunny California" — not an entry into a topographic trap. The media recorded the <em>who</em> and the <em>where</em> but was functionally blind to the <em>why</em> — the mechanical eviction from the Z-axis canyons to the X-axis alluvial floor. This Information Lag allowed the Lemon Grove Myth to take root, replacing the forensic math of the 356-ft coordinate with a romanticized narrative of accidental discovery.</p>
+</section>
+
+<!-- FRAMEWORK -->
+<div class="sm" id="fw">The Forensic Model</div>
+<section>
+  <h2>3 Nodes + 4 Mechanisms</h2>
+  <div class="kicker">The Convergence Framework &nbsp;·&nbsp; Why Hollywood Was Structurally Inevitable &nbsp;·&nbsp; Not Discovery — Convergence</div>
+  <div class="fw-intro">
+    <h3>The 3+4 Convergence</h3>
+    <div class="fw-formula"><span>3</span> Nodes &nbsp;+&nbsp; <span>4</span> Mechanisms</div>
+    <div class="fw-sub">Hollywood was the only coordinate where all four resolved simultaneously.</div>
+  </div>
+  <p>Hollywood was not the only flat land in the Los Angeles basin. It was the only place where three geographic nodes and four industrial mechanisms converged simultaneously at a single topographic coordinate. The nodes map the <em>where</em> and <em>when</em>. The mechanisms explain the <em>why</em> — forces operating across all three nodes, all resolving at Hollywood.</p>
+  <div class="mech-grid">
+    <div class="mech"><div class="mn2">① The Seed</div><div class="mt">Pragmatic Origin</div><div class="ms">Boggs / Selig · Trust escape · 3,000 mi</div></div>
+    <div class="mech"><div class="mn2">② The Umbilical</div><div class="mt">Transit Link</div><div class="ms">Rail / Labor · Spring Street tether</div></div>
+    <div class="mech"><div class="mn2">③ The Sweet Spot</div><div class="mt">Topographic Floor</div><div class="ms">356 ft · 0% grade · 1894 documented</div></div>
+    <div class="mech"><div class="mn2">④ The Anchors</div><div class="mt">Capital Lock-In</div><div class="ms">Christie · DeMille · Griffith · 1911–1916</div></div>
+  </div>
+  <p style="font-family:var(--mn);font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sepia);margin-bottom:.6rem;">The 3+4 Convergence Matrix · Mechanism Status at Each Node</p>
+  <div class="mx-wrap">
+    <table class="mx">
+      <thead><tr>
+        <th>Mechanism</th>
+        <th class="h1">Node 1 · 1907–08<br>Downtown LA</th>
+        <th class="h2">Node 2 · 1909–13<br>Edendale</th>
+        <th class="h3">Node 3 · 1911–15<br>Hollywood ◆</th>
+      </tr></thead>
+      <tbody>
+        <tr><td>① The Seed<br>Pragmatic Origin</td><td><span class="sa">● ACTIVE</span><br>Trust escape · 3,000 mi from Edison · rooftop at 8th &amp; Olive · proves California base</td><td><span class="sr">◌ Residual</span><br>Selig expands to Edendale · $250k committed · Seed becomes Capital Trap</td><td><span class="sr">— Resolved</span><br>Canyon makes Seed's expansion impossible · Christie escapes to flat floor</td></tr>
+        <tr><td>② The Umbilical<br>Transit Link</td><td><span class="sa">● ACTIVE</span><br>Spring Street labor pool · walking distance · zero commute penalty</td><td><span class="sa">● ACTIVE</span><br>LA Railway Glendale Line · nickel commute · canyon-following · fragile</td><td><span class="ss">● SCALES</span><br>Pacific Electric inter-urban · regional network · bajada-crossing · unlimited reach</td></tr>
+        <tr><td>③ The Sweet Spot<br>Topographic Floor</td><td><span class="sr">— Absent</span><br>Urban flat · no topographic drama · no production value beyond rooftop</td><td><span class="sp">▲ PARTIAL</span><br>Canyon drama ✓ · flat floor ✗ · Shadow Tax active · 8% grade penalty</td><td><span class="sc">● COMPLETE</span><br>356-ft floor ✓ · 0% grade ✓ · Shadow Tax = zero ✓ · distressed asset ✓</td></tr>
+        <tr><td>④ The Anchors<br>Capital Lock-In</td><td><span class="sr">— None</span><br>No permanent production commitment · distribution only</td><td><span class="sp">▲ TRAPPED</span><br>$250k Selig · canyon floor · Z-axis trap · expansion impossible</td><td><span class="sl">● LOCKS</span><br>Christie $30 · 1911 ✓ · DeMille $250/mo · 1913 ✓ · Griffith 160-ft wall · 1916 ✓</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="imgp">
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <div class="ilbl">Image Placeholder · Alexandria Hotel Lobby, Los Angeles c.1913<br>Suggested: Interior — "Million Dollar Carpet" industry command &amp; control hub</div>
+  </div>
+  <div class="icap"><strong>Fig. 1.2 · Suggested Image</strong>The Alexandria Hotel, Spring &amp; Fifth Streets, Los Angeles. DeMille signed the Hollywood barn lease on Alexandria Hotel stationery, December 22, 1913 — the Node 3 industrial commitment executed from the Node 1 intelligence hub.</div>
+</section>
+<!-- §II THREE NODES -->
+<div class="sm" id="nodes">§ II</div>
+<section>
+  <h2>The Three-Node Migration: <em>A Spatially Rational Sequence</em></h2>
+  <div class="kicker">Downtown LA 1907–08 · The Distribution Node &nbsp;·&nbsp; Edendale 1909 · The Visual Grammar Node &nbsp;·&nbsp; Hollywood 1911–15 · The Industrial Consolidation Node</div>
+  <p>Each move in the westward trajectory was <strong>spatially rational</strong> given the dominant production format at that moment. The sequence only looks inevitable in hindsight. Each node failed not from bad judgment, but from hitting a physical ceiling its terrain imposed. Node 1 proved the <strong>Economics</strong> of film. Node 2 proved the <strong>Language</strong> of film. Node 3 proved the <strong>Scale</strong> of film. Fifteen primary source documents spanning October 1909 to February 1924 confirm this sequence from inside the industry, in real time, without the participants knowing the terrain was driving the outcome.</p>
+
+  <div class="nodes">
+    <!-- NODE 1 -->
+    <div class="nc n1">
+      <div class="nc-hd">
+        <div class="nc-num">Node 1 · 1907–08</div>
+        <div class="nc-name">Downtown LA</div>
+        <div class="nc-sub">The Distribution Node</div>
+        <div class="nc-badge">Vertical / Urban</div>
+      </div>
+      <svg class="nc-ter" viewBox="0 0 200 85" xmlns="http://www.w3.org/2000/svg" style="background:#161c24;">
+        <rect x="8" y="22" width="17" height="55" fill="#243040" stroke="#3d4a5c" stroke-width="1"/>
+        <rect x="30" y="12" width="15" height="65" fill="#243040" stroke="#3d4a5c" stroke-width="1"/>
+        <rect x="50" y="28" width="14" height="49" fill="#243040" stroke="#3d4a5c" stroke-width="1"/>
+        <rect x="69" y="16" width="19" height="61" fill="#243040" stroke="#3d4a5c" stroke-width="1"/>
+        <rect x="94" y="25" width="15" height="52" fill="#243040" stroke="#3d4a5c" stroke-width="1"/>
+        <rect x="115" y="10" width="17" height="67" fill="#243040" stroke="#3d4a5c" stroke-width="1"/>
+        <rect x="138" y="20" width="19" height="57" fill="#243040" stroke="#3d4a5c" stroke-width="1"/>
+        <rect x="163" y="30" width="17" height="47" fill="#243040" stroke="#3d4a5c" stroke-width="1"/>
+        <rect x="0" y="77" width="200" height="8" fill="#2a3a4a"/>
+        <text x="100" y="83" text-anchor="middle" fill="#3d5a7a" font-family="monospace" font-size="5" letter-spacing="1">FLAT · URBAN GRID</text>
+      </svg>
+      <div class="nc-body"><ul>
+        <li><span class="ll">The Trust Escape</span>Francis Boggs: pragmatist, not visionary. 3,000 miles from Edison's New Jersey enforcers. Rooftop at 8th &amp; Olive — early scripted productions under open sky, year-round light, maximum distance from the Trust.</li>
+        <li><span class="ll">Everything Factor</span>Film exchanges, chemistry labs, talent pool, equipment suppliers — all within walking distance of Spring Street. Zero transport penalty. The most efficient node possible for rooftop-and-warehouse filmmaking.</li>
+        <li><span class="ll">The Ceiling</span>Fixed-Space Node. No room for a 9-acre studio on a city block. When visual grammar demanded chases and hills, the industry followed the rail lines outward.</li>
+      </ul></div>
+      <div class="nc-verd">Obsoleted by scale, not terrain · Economics proven · Language demanded</div>
+    </div>
+    <!-- NODE 2 -->
+    <div class="nc n2">
+      <div class="nc-hd">
+        <div class="nc-num">Node 2 · 1909–1913</div>
+        <div class="nc-name">Edendale</div>
+        <div class="nc-sub">The Visual Grammar Node</div>
+        <div class="nc-badge">Canyon / Vertical</div>
+      </div>
+      <svg class="nc-ter" viewBox="0 0 200 85" xmlns="http://www.w3.org/2000/svg" style="background:#1a1208;">
+        <polygon points="0,85 0,8 32,0 52,14 70,6 86,20" fill="#38200e" stroke="#7a5030" stroke-width="1"/>
+        <polygon points="200,85 200,6 170,0 150,13 132,5 116,20" fill="#38200e" stroke="#7a5030" stroke-width="1"/>
+        <polygon points="86,20 116,20 124,38 102,52 96,52 74,38" fill="#1a0e06"/>
+        <polygon points="86,20 116,20 124,38 102,52 96,52 74,38" fill="rgba(0,0,0,.45)"/>
+        <text x="10" y="13" fill="#c9963a" font-family="monospace" font-size="8" font-weight="bold">734</text>
+        <text x="153" y="11" fill="#c9963a" font-family="monospace" font-size="8" font-weight="bold">734</text>
+        <text x="100" y="47" text-anchor="middle" fill="#7a5030" font-family="monospace" font-size="6">~500 ft</text>
+        <path d="M86,20 Q76,13 68,7" stroke="#c9963a" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+        <text x="56" y="16" fill="#c9963a" font-family="monospace" font-size="6">11°</text>
+        <text x="100" y="78" text-anchor="middle" fill="#6a3820" font-family="monospace" font-size="5" letter-spacing=".5">8% GRADE · SHADOW TAX ACTIVE</text>
+      </svg>
+      <div class="nc-body"><ul>
+        <li><span class="ll">Why Edendale</span>One-reel Chase Economy needed canyon topography AND transit efficiency simultaneously. The Glendale Line's nickel commute was the umbilical to Spring Street's labor pool. Both conditions had to be true at once — and at Edendale, they were.</li>
+        <li><span class="ll">The Capital Trap — 1911</span>Selig's $250,000 mission-style complex: the second-largest glass stage in the world — committed into a Z-axis trap. Every expansion required moving canyon walls. The same hills that gave him the Chase became the ceiling that denied him the Epic.</li>
+        <li><span class="ll">Peak &amp; Break — Same Day</span>October 27, 1911: Francis Boggs shot dead at 1845 Allesandro Street while Selig discussed expansion plans. Same morning: Al Christie opens Node 3 on the 356-ft Industrial Floor. December 1913: Ince at Edendale — DeMille signs the barn lease. Same month.</li>
+      </ul></div>
+      <div class="nc-verd">Obsoleted by Shadow Tax + 8% grade · Language proven · Scale demanded</div>
+    </div>
+    <!-- NODE 3 -->
+    <div class="nc n3">
+      <div class="nc-hd">
+        <div class="nc-num">Node 3 · 1911–15</div>
+        <div class="nc-name">Hollywood</div>
+        <div class="nc-sub">The Industrial Consolidation Node</div>
+        <div class="nc-badge">Flat / Horizontal</div>
+      </div>
+      <svg class="nc-ter" viewBox="0 0 200 85" xmlns="http://www.w3.org/2000/svg" style="background:#111a0f;">
+        <polygon points="0,46 20,22 45,30 72,14 100,24 128,18 155,26 180,20 200,24 200,46" fill="#1c2e18" stroke="#3a5228" stroke-width=".5"/>
+        <rect x="0" y="46" width="200" height="39" fill="#142010"/>
+        <line x1="0" y1="46" x2="200" y2="46" stroke="#3a6228" stroke-width="1.2"/>
+        <rect x="10" y="34" width="27" height="12" fill="#284020" stroke="#4a6a32" stroke-width="1"/>
+        <rect x="46" y="30" width="33" height="16" fill="#284020" stroke="#4a6a32" stroke-width="1"/>
+        <rect x="90" y="28" width="28" height="18" fill="#284020" stroke="#4a6a32" stroke-width="1"/>
+        <rect x="130" y="32" width="40" height="14" fill="#284020" stroke="#4a6a32" stroke-width="1"/>
+        <text x="100" y="62" text-anchor="middle" fill="#c9963a" font-family="monospace" font-size="11" font-weight="bold">356 ft</text>
+        <text x="100" y="73" text-anchor="middle" fill="#3a6228" font-family="monospace" font-size="4.5" letter-spacing=".8">0% GRADE · INDUSTRIAL FLOOR · VALIDATED 1894</text>
+      </svg>
+      <div class="nc-body"><ul>
+        <li><span class="ll">Four-Condition Convergence</span>(1) Distressed Asset — Blondeau Tavern at $30–40/mo, legally killed by 1904 dry vote; (2) Pacific Electric inter-urban link; (3) 356-ft 0% Industrial Floor documented 1894; (4) Floor plus Backdrop — Santa Monica Mountains in frame as scenery, not on budget as Shadow Tax.</li>
+        <li><span class="ll">The Distressed Asset</span>NW corner of Sunset &amp; Gower — roadhouse finished by 1910 annexation. Christie leased the whole structure: roadhouse, barn, corral. Horse stalls became dressing rooms. Corral became a standing Western set. The flat lot became Hollywood's first permanent studio.</li>
+        <li><span class="ll">Unlimited Expansion</span>Nestor opens Oct 1911. Lasky barn lease Dec 1913; nine acres by 1914. By April 1915, press described simply "the Hollywood studios" — no company name needed. By spring 1915, papers from Vallejo to Long Beach used Hollywood as a cardinal reference point.</li>
+      </ul></div>
+      <div class="nc-verd">Validated by 356-ft spot elevation · USGS 1894 · Scale proven · Industry fossilized</div>
+    </div>
+  </div>
+
+  <p style="font-family:var(--mn);font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:var(--sepia);margin:2rem 0 .5rem;">Three-Node Comparison Matrix</p>
+  <div class="ct-wrap"><table class="ct">
+    <thead><tr>
+      <th>Criterion</th><th class="h1">Node 1 · Downtown</th><th class="h2">Node 2 · Edendale</th><th class="h3">Node 3 · Hollywood</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>Evolutionary function</td><td>Economics of film · Trust escape · rooftop actualities</td><td>Language of film · Chase Economy · canyon as free production value</td><td>Scale of film · Feature / Epic · Horizontal Infinite</td></tr>
+      <tr><td>Why this location</td><td>Max distance from Edison · Spring Street talent pool · year-round light</td><td>Glendale Line nickel commute · canyon as nature's backlot · Chase Economy</td><td>356-ft alluvial floor · 0% grade · distressed asset entry · unlimited expansion</td></tr>
+      <tr><td>Topography</td><td>Built urban — flat</td><td>Canyon corridor — vertical</td><td>Alluvial fan — horizontal</td></tr>
+      <tr><td>Production format</td><td>Rooftop narrative scenes / early actualities</td><td>One-reel chases / shorts</td><td>Five-reel features</td></tr>
+      <tr><td>Transit system</td><td>LA Railway — local</td><td>LA Inter-Urban Ry. Co. — canyon-following green line</td><td>LA Railway Co. — black line · bajada-crossing · Hollywood corridor</td></tr>
+      <tr><td>Shadow Tax</td><td>Minimal — open sky</td><td>High — 734-ft ridges, topographic sunset</td><td>Zero — unobstructed horizon</td></tr>
+      <tr><td>Excavation penalty</td><td>N/A — built surface</td><td>~8% grade — surcharge before any foundation</td><td>Zero — 0% grade, standard pour</td></tr>
+      <tr><td>Expansion ceiling</td><td>City block — fixed</td><td>Canyon ribbon — physical ceiling</td><td>9 acres · Lasky · 1914 · unlimited</td></tr>
+      <tr><td>First distressed asset</td><td>N/A</td><td>Canyon required excavation investment</td><td>Blondeau Tavern · $30–40/mo · Oct 1911</td></tr>
+      <tr><td>Capital anchor</td><td>None</td><td>$250,000 Selig · canyon floor</td><td>$250/mo Stern Barn · Dec 1913 · Lasky/DeMille</td></tr>
+    </tbody>
+  </table></div>
+
+  <p style="font-family:var(--mn);font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:var(--sepia);margin:2.5rem 0 .45rem;">October 27, 1911 · The Pivot Day &nbsp;·&nbsp; Same Date · Two Events · One Geographic Argument</p>
+  <div class="pivot">
+    <div class="piv-ban">October 27, 1911 &nbsp;·&nbsp; Same Morning &nbsp;·&nbsp; One Geographic Argument</div>
+    <div class="piv-s pe">
+      <div class="piv-lbl">Edendale · 1845 Allesandro St · Morning</div>
+      <div class="piv-hd">Francis Boggs — Shot Dead on the Canyon Floor</div>
+      <div class="piv-bd">Los Angeles manager of Selig Polyscope, founding director of Node 2 — shot dead by a janitor. W. N. Selig wounded. Selig had arrived from Chicago that morning to discuss expansion plans — expansion the canyon ribbon's 8% grade would have taxed before a board was laid.</div>
+    </div>
+    <div class="piv-s ph">
+      <div class="piv-lbl">Hollywood · Sunset &amp; Gower · Same Day</div>
+      <div class="piv-hd">Nestor Film Company Opens on the Industrial Floor</div>
+      <div class="piv-bd">David Horsley's operation, Al Christie on the ground — opens at Sunset Boulevard and Gower Street. The site: the Blondeau Tavern, a roadhouse dead since Hollywood's 1904 dry vote. Christie had the tip from an unnamed actor at the old Los Angeles Theater on Spring Street. The 356-ft alluvial floor receives its first committed operator.</div>
+    </div>
+  </div>
+  <p style="font-size:.83rem;line-height:1.7;color:var(--sepia);font-style:italic;text-align:center;margin-bottom:2rem;">The 1894 USGS survey predicted neither event. It documented the terrain that made both inevitable. October 27, 1911 is the day the geography resolved into history.</p>
+
+  <div class="imgp">
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <div class="ilbl">Image Placeholder · Sunset &amp; Gower, Hollywood c.1911–1913<br>Suggested: Blondeau Tavern / Nestor Film Company — first studio conversion on the Industrial Floor</div>
+  </div>
+  <div class="icap"><strong>Fig. 2.1 · Suggested Image</strong>The Blondeau Tavern, northwest corner of Sunset Boulevard and Gower Street. Leased for $30–40/month in October 1911. Horse stalls converted to dressing rooms; corral became a standing Western set. Hollywood's first permanent studio, on the 356-ft Industrial Floor.</div>
+</section>
+<!-- §III CHAIN OF ANCHORS -->
+<div class="sm" id="anchors">§ III</div>
+<section>
+  <h2>The Chain of Anchors: <em>How Node 3 Fossilized</em></h2>
+  <div class="kicker">The Industrial Feedback Loop &nbsp;·&nbsp; Three-Stage Structural Reinforcement &nbsp;·&nbsp; 1911 · 1913 · 1916</div>
+  <p>The three-node migration explains how the industry arrived at Hollywood. It does not explain why it never left. That question requires the <strong>Chain of Anchors</strong> — three successive commitments, each one larger than the last, each one made possible by the 356-ft alluvial floor, each one making departure more structurally irrational than arrival had been. The industry didn't just move to Hollywood. It was progressively bolted there by intelligence, capital, and scale — in that order.</p>
+
+  <div class="anch-track">
+    <div class="anch-item">
+      <div class="a-eye">Anchor 1 · October 1911</div>
+      <div class="a-title">Christie / Nestor — The Intelligence</div>
+      <div class="a-sub">Low-Stakes Explorer · Proves the Industrial Floor · Sunset Blvd &amp; Gower Street</div>
+      <div class="a-body">
+        <p>In late 1911, David Horsley's Nestor Film Company was being squeezed by the Motion Picture Patents Company (the "Trust") and by the physical crowding of the Edendale canyon studios. Horsley sent Al Christie west to find a solution. Christie's intelligence came from an actor at the old Los Angeles Theater on Spring Street — a man traversing the basin daily on the Pacific Electric inter-urban, who had watched the Hollywood alluvial plain from the car window and understood that it offered something Edendale's canyon ribbon could never provide: horizontal room.</p>
+        <p>The site identified was the Blondeau Tavern at the northwest corner of Sunset Boulevard and Gower Street — a roadhouse legally strangled by Hollywood's 1904 dry vote (113 to 96) and finished by the 1910 annexation. By October 1911 the property was a zombie asset. Christie and Horsley leased the entire structure for $30 to $40 a month. Carpenters rebuilt the horse stalls into dressing rooms. The tavern bar became the business office. The corral became a standing Western set. The flat lot on the 356-ft alluvial floor became Hollywood's first permanent studio.</p>
+        <div class="a-src">Sources: Christie, Al. "What New Sites for Studios Mean to Hollywood." Los Angeles Examiner, 17 Feb. 1924. · "Nestor Company in Hollywood." Moving Picture World, vol. 10, no. 6, 11 Nov. 1911, p. 467.</div>
+      </div>
+    </div>
+
+    <div class="anch-item">
+      <div class="a-eye">Anchor 2 · December 1913</div>
+      <div class="a-title">DeMille / Lasky — The Capital Anchor</div>
+      <div class="a-sub">Scale-Up Architect · New York Capital Follows the Proof · Selma Ave &amp; Vine Street</div>
+      <div class="a-body">
+        <p>The Jesse L. Lasky Feature Play Company's arrival in Hollywood in December 1913 was not a bold leap into the unknown. Cecil B. DeMille, sent west by Lasky to direct <em>The Squaw Man</em>, followed the same spatial logic — but at feature-length scale and with New York capital behind him. DeMille's original destination was Flagstaff, Arizona. He arrived to find a blizzard and high mountains — terrain that offered neither the flat shooting floor nor the visual depth a Western feature required.</p>
+        <p>DeMille arrived in Los Angeles on December 20, 1913, and established headquarters at the Alexandria Hotel — the lobby known in the industry as the "Million Dollar Carpet." Within two days, L.L. Burns and Harry Revier drove DeMille out to a yellow barn at the corner of Selma Avenue and Vine Street. On December 22, 1913, DeMille signed the lease for half the barn and one acre of flat lot on Alexandria Hotel stationery. The rent was $250 a month. Like Christie's $30–40 Blondeau Tavern deal two years earlier, this was infrastructure recycling on the 356-ft alluvial floor. By 1914 the Lasky operation had expanded to nine acres on the same flat plain.</p>
+        <p><strong>The Stationery Proof:</strong> DeMille signed the Hollywood barn lease on Alexandria Hotel stationery — the physical document confirming that the Node 3 industrial commitment was executed from the Node 1 intelligence hub.</p>
+        <div class="a-src">Sources: DeMille, Cecil B. The Autobiography of Cecil B. DeMille. Prentice-Hall, 1959. · Eyman, Scott. Empire of Dreams. Simon &amp; Schuster, 2010.</div>
+      </div>
+    </div>
+
+    <div class="anch-item">
+      <div class="a-eye">Anchor 3 · 1916 · Derived Mechanical Conclusion</div>
+      <div class="a-title">Griffith / Babylon — The Proof of Scale</div>
+      <div class="a-sub">Topographic Disruptor · The Floor Holds the Epic · Fine Arts Studio · 4500 Sunset Blvd</div>
+      <div class="a-body">
+        <p>In 1916, D.W. Griffith built the Babylon set for <em>Intolerance</em> at the Fine Arts Studio on the 4400–4500 block of Sunset Boulevard. Lead set designer Walter L. Hall's blueprints confirm the Great Wall of Babylon reached between 140 and 160 feet in height — the equivalent of a fifteen-story wooden skyscraper — covering approximately three to four acres of backlot.</p>
+        <p>Griffith's cinematographer Billy Bitzer describes the technical challenge: the camera required a 100-foot tower and had to be pushed back hundreds of feet to achieve the necessary depth of field. That retreat — three hundred feet of flat, unobstructed runway — is the forensic argument. In the 8% cross-slope of Edendale's canyon, a three-hundred-foot camera retreat would place the lens at a materially different elevation, hitting topographic obstructions. On the 356-ft alluvial floor at 4500 Sunset, it was a straight roll across level ground. The Babylon set is the lock-in. After 1916, the Chain of Anchors was complete.</p>
+        <div class="a-src">Sources: Photoplay Magazine, Aug. 1916 · Bitzer, G.W. Billy Bitzer: His Story. Farrar, Straus and Giroux, 1973 · Wanamaker, Marc. Hollywood, 1900–1950. Arcadia Publishing, 2009.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="imgp">
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <div class="ilbl">Image Placeholder · Babylon Set, Fine Arts Studio, Sunset Blvd c.1916<br>Suggested: Wide shot showing full wall height and camera tower — open plain evident</div>
+  </div>
+  <div class="icap"><strong>Fig. 3.1 · Suggested Image</strong>The Babylon set, Fine Arts Studio, 4400–4500 Sunset Boulevard, Hollywood, 1916. 140–160 ft height, 3–4 acres. Griffith's camera required a 300-ft flat runway — achievable only on the 356-ft Industrial Floor. The Chain of Anchors was complete.</div>
+
+  <div class="synth">
+    <h4>Synthesis · The Industrial Feedback Loop</h4>
+    <p>Each anchor made the next one structurally inevitable. Christie proved the floor was workable. DeMille proved it could hold feature-scale capital. Griffith proved it could hold epic-scale ambition. By 1916 the industry had been progressively bolted to a single topographic coordinate by the same 378-foot advantage the 1894 survey documented before any of them arrived.</p>
+    <p>The von Harleman survey of the California film industry in March 1917 documents the result in real time: a constellation of scattered production nodes all orbiting a single gravitational center. Monogram, operating temporarily from Boyle Heights, announced plans to move "to more spacious quarters in Hollywood within a very short time." The same spatial logic Christie had acted on in 1911 was still functioning as an industrial law in 1917.</p>
+  </div>
+</section>
+<!-- §IV TRANSIT -->
+<div class="sm" id="transit">§ IV</div>
+<section>
+  <h2>The Infrastructure of Proximity: <em>Two Rail Systems, Two Nodes</em></h2>
+  <div class="kicker">1906 City of Los Angeles Railway Map &nbsp;·&nbsp; LA Railway vs. Pacific Electric &nbsp;·&nbsp; The Transit Reorientation</div>
+  <p>The Node 2 → Node 3 transition was not only a geographic shift — it was a <strong>transit system reorientation</strong> confirmed on a 1906 railway map six years before Christie made the move. Edendale and Hollywood were served by different networks running in different directions from Downtown, at different scales, connecting to different terrain types.</p>
+
+  <div class="imgp" style="min-height:240px;">
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <div class="ilbl">Image Placeholder · Map of the City of Los Angeles Showing Railway Systems, 1906<br>Library of Congress · LA Railway (black) vs. Pacific Electric Inter-Urban (red)<br>Suggested: Map scan or detail showing Glendale line vs. Hollywood corridor</div>
+  </div>
+  <div class="icap"><strong>Fig. 4.1 · Primary Source Map · Suggested Image</strong>Map of the City of Los Angeles Showing Railway Systems, 1906. Library of Congress / Travel and Hotel Bureau. LA Railway Co. lines in black (Hollywood corridor, bajada-crossing); LA Inter-Urban Ry. Co. in green (Glendale canyon, Node 2); Pacific Electric Inter-Urban in red (regional, east/south routes). The two canyon vs. bajada networks diverge visibly from Downtown — the transit reorientation driving Node 2 → Node 3 readable six years before Christie made the move.</div>
+
+  <div class="map-outer">
+    <div class="map-hdr">Transit Reorientation · Node 2 → Node 3 <span>1906 Map · LOC · LA Inter-Urban (green/canyon) vs. LA Railway (black/bajada)</span></div>
+    <div class="tr-area">
+      <svg viewBox="0 0 520 170" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:#1a1614;display:block;max-height:170px;">
+        <rect x="222" y="72" width="58" height="26" fill="#22201c" stroke="#8b7355" stroke-width="1.5" rx="2"/>
+        <text x="251" y="83" text-anchor="middle" fill="#e5d2af" font-family="monospace" font-size="6" letter-spacing=".5">DOWNTOWN</text>
+        <text x="251" y="93" text-anchor="middle" fill="#8b7355" font-family="monospace" font-size="4">SPRING ST · NODE 1</text>
+        <path d="M222,82 Q162,70 102,46 Q73,34 53,23" stroke="#7a8ab0" stroke-width="2.5" fill="none"/>
+        <polygon points="26,0 53,23 80,0 80,52 26,52" fill="#241a0e" stroke="#7a3b1e" stroke-width="1.5"/>
+        <text x="53" y="27" text-anchor="middle" fill="#c9963a" font-family="monospace" font-size="6" font-weight="bold">EDENDALE</text>
+        <text x="53" y="38" text-anchor="middle" fill="#8b5a35" font-family="monospace" font-size="4">NODE 2 · CANYON</text>
+        <text x="126" y="47" fill="#7a8ab0" font-family="monospace" font-size="5">LA INTER-URBAN RY.</text>
+        <text x="126" y="55" fill="#6a7a9a" font-family="monospace" font-size="4">Green line · canyon-following · Node 2</text>
+        <path d="M251,72 Q264,50 326,38 Q368,26 412,20" stroke="#b03030" stroke-width="2.5" fill="none"/>
+        <rect x="402" y="4" width="104" height="36" fill="#141e12" stroke="#4a5e45" stroke-width="1.5" rx="2"/>
+        <text x="454" y="18" text-anchor="middle" fill="#c9963a" font-family="monospace" font-size="6" font-weight="bold">HOLLYWOOD</text>
+        <text x="454" y="29" text-anchor="middle" fill="#4a7a40" font-family="monospace" font-size="4">NODE 3 · 356 ft · INDUSTRIAL FLOOR</text>
+        <text x="330" y="27" fill="#b03030" font-family="monospace" font-size="5">LA RAILWAY CO.</text>
+        <text x="330" y="35" fill="#903030" font-family="monospace" font-size="4">Black line · bajada flat · Hollywood</text>
+        <line x1="16" y1="148" x2="44" y2="148" stroke="#7a8ab0" stroke-width="2"/>
+        <text x="50" y="152" fill="#8090b0" font-family="monospace" font-size="4.5">LA Railway Co. (black · Hollywood corridor · bajada flat)</text>
+        <line x1="16" y1="162" x2="44" y2="162" stroke="#b03030" stroke-width="2"/>
+        <text x="50" y="166" fill="#a04040" font-family="monospace" font-size="4.5">LA Inter-Urban Ry. Co. (green · Glendale canyon · Node 2)</text>
+      </svg>
+      <div class="tr-grid">
+        <div class="tr-card tr-la">
+          <div class="tr-lbl">Node 2 · Edendale · LA Inter-Urban Ry.</div>
+          <div class="tr-name">Canyon-Following · Green Line</div>
+          <div class="tr-body">LA Inter-Urban Railway Co. — green line on 1906 map · northeast from Downtown · Glendale corridor · canyon-following. Enabled the Infrastructure of Proximity: Downtown labor pool commutable to canyon studios on a nickel fare. But the line threaded the canyon — it could not scale beyond the canyon ribbon's physical ceiling. The terrain that made Edendale accessible also made it a trap.</div>
+        </div>
+        <div class="tr-card tr-pe">
+          <div class="tr-lbl">Node 3 · Hollywood · LA Railway Co.</div>
+          <div class="tr-name">Bajada-Crossing · Black Line</div>
+          <div class="tr-body">LA Railway Co. — black line on 1906 map · northwest from Downtown · Hollywood corridor · flat bajada plain. Christie's "ten miles out" ran on this line, crossing the alluvial fan with no canyon threading and no grade penalty. The Pacific Electric Inter-Urban (red) radiated east and south in 1906 — the Hollywood connection was LA Railway, running straight across the Industrial Floor to the Sunset &amp; Gower terminus.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- §V USGS 1894 -->
+<div class="sm" id="usgs">§ V</div>
+<section>
+  <h2>The 1894 USGS <em>Los Angeles Quadrangle</em></h2>
+  <div class="kicker">Primary Source · Scale 1:62,500 · Filed May 19, 1897 · 19 years before DeMille · ngmdb.usgs.gov/topoview</div>
+  <p>The argument does not require estimation. It is written on a federal topographic survey predating the industry's arrival by more than a decade. <strong>The terrain preceded the studios. The studios had no choice but to respond to it.</strong></p>
+
+  <div class="imgp" style="min-height:260px;">
+    <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="1"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+    <div class="ilbl">Image Placeholder · 1894 USGS Los Angeles Quadrangle<br>Scale 1:62,500 · Filed May 19, 1897 · ngmdb.usgs.gov/topoview<br>Suggested: Detail scan showing Hollywood/Colegrove grid (356 ft) alongside Edendale canyon (500–734 ft) in one frame</div>
+  </div>
+  <div class="icap"><strong>Fig. 5.1 · Primary Source · Suggested Image</strong>USGS Los Angeles Quadrangle, 1894 (HTMC edition). Left: Hollywood/Colegrove grid — 356 ft spot elevation, zero contour lines. Right: Edendale/Ivanhoe canyon — 500 ft through the Allesandro Street studio corridor, 734 ft at the Los Felis ridge. One frame, one 1894 federal survey — the entire geographic argument.</div>
+
+  <div class="map-outer">
+    <div class="map-hdr">Figure 5.2 · 1894 USGS Federal Survey · Hollywood Plain vs. Edendale Canyon <span>One Frame · The Argument</span></div>
+    <div class="usgs-fig">
+      <div class="usgs-pi">
+        <div class="usgs-lbl">Hollywood · Colegrove · Studio Grid</div>
+        <svg viewBox="0 0 220 145" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:#141c12;">
+          <line x1="0" y1="36" x2="220" y2="36" stroke="#1e3a18" stroke-width=".5"/><line x1="0" y1="72" x2="220" y2="72" stroke="#1e3a18" stroke-width=".5"/><line x1="0" y1="108" x2="220" y2="108" stroke="#1e3a18" stroke-width=".5"/>
+          <line x1="44" y1="0" x2="44" y2="145" stroke="#1e3a18" stroke-width=".5"/><line x1="88" y1="0" x2="88" y2="145" stroke="#1e3a18" stroke-width=".5"/><line x1="132" y1="0" x2="132" y2="145" stroke="#1e3a18" stroke-width=".5"/><line x1="176" y1="0" x2="176" y2="145" stroke="#1e3a18" stroke-width=".5"/>
+          <text x="110" y="65" text-anchor="middle" fill="#c9963a" font-family="monospace" font-size="22" font-weight="bold">356</text>
+          <text x="110" y="81" text-anchor="middle" fill="#3a6a28" font-family="monospace" font-size="6" letter-spacing=".8">HOLLYWOOD · COLEGROVE</text>
+          <text x="110" y="93" text-anchor="middle" fill="#2e5820" font-family="monospace" font-size="5.5">FLAT · 0% GRADE · INDUSTRIAL FLOOR</text>
+          <text x="110" y="133" text-anchor="middle" fill="#1e4018" font-family="monospace" font-size="6">ZERO CONTOUR LINES</text>
+          <text x="110" y="143" text-anchor="middle" fill="#1a3815" font-family="monospace" font-size="5">studio district</text>
+        </svg>
+      </div>
+      <div class="usgs-pi" style="border-right:none;">
+        <div class="usgs-lbl">Edendale · Ivanhoe Canyon · Studio Row</div>
+        <svg viewBox="0 0 220 145" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:#1a1208;">
+          <path d="M0,125 Q55,117 110,110 Q165,103 220,96" stroke="#3a2215" stroke-width="1" fill="none"/>
+          <path d="M0,107 Q52,97 105,86 Q158,75 220,68" stroke="#4a3020" stroke-width="1" fill="none"/>
+          <path d="M0,87 Q48,74 100,62 Q152,50 220,40" stroke="#5a3a28" stroke-width="1.2" fill="none"/>
+          <path d="M0,67 Q44,52 96,38 Q148,24 220,14" stroke="#6a4a32" stroke-width="1.2" fill="none"/>
+          <path d="M0,46 Q40,30 90,16 Q142,2 210,0" stroke="#7a5a3a" stroke-width="1.5" fill="none"/>
+          <path d="M0,24 Q36,12 84,3 Q136,0 200,0" stroke="#8a6a42" stroke-width="1.5" fill="none"/>
+          <text x="8" y="13" fill="#c9963a" font-family="monospace" font-size="8" font-weight="bold">734</text>
+          <text x="8" y="33" fill="#c9963a" font-family="monospace" font-size="7">700</text>
+          <text x="8" y="53" fill="#c9963a" font-family="monospace" font-size="7">600</text>
+          <text x="8" y="73" fill="#c9963a" font-family="monospace" font-size="7">500</text>
+          <text x="110" y="136" text-anchor="middle" fill="#7a4a28" font-family="monospace" font-size="6">EDENDALE CANYON</text>
+          <text x="110" y="144" text-anchor="middle" fill="#6a3a20" font-family="monospace" font-size="5">8% GRADE · ALLESANDRO ST STUDIO ROW</text>
+        </svg>
+      </div>
+    </div>
+    <div class="usgs-stats">
+      <div class="usgs-stat"><span class="uv">356 ft</span><div class="ul">Hollywood Spot Elevation · Federal label · zero contour lines</div></div>
+      <div class="usgs-stat"><span class="uv">~500 ft</span><div class="ul">Edendale Canyon Floor · Allesandro St studio row</div></div>
+      <div class="usgs-stat"><span class="uv">~734 ft</span><div class="ul">Edendale Shadow Ridge · Los Felis hills</div></div>
+      <div class="usgs-stat"><span class="uv">378 ft</span><div class="ul">The Gap · Same 1894 map · Not an estimate</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- §VI SHADOW TAX -->
+<div class="sm" id="shadow">§ VI</div>
+<section>
+  <h2>The Shadow Tax</h2>
+  <div class="kicker">Derived, Not Asserted &nbsp;·&nbsp; Daily Production Penalty &nbsp;·&nbsp; Recurring ROI Deficit</div>
+  <p>The ridges flanking Edendale imposed a <strong>quantifiable daily cost</strong> on every studio below them — a recurring tax on every shooting day in the pre-electric era. By June 1911 the world's largest film company (Pathé) and the second-largest glass studio in the world (Selig) were both paying this tax daily without naming it. The May 1913 press called the canyon "fresh, free ozone." The 1894 survey called it a 734-ft ridge at an 11° shadow angle.</p>
+
+  <div class="map-outer">
+    <div class="map-hdr">Shadow Profile Comparison · Derived from 1894 Survey Data <span>arctan(234 ÷ ~1,200 ft) ≈ 11°</span></div>
+    <div class="shad-prof">
+      <div class="shad-p">
+        <div class="shad-lbl">Edendale — Canyon Trap</div>
+        <svg viewBox="0 0 200 115" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:#1a1208;">
+          <polygon points="0,115 0,8 32,0 52,14 70,6 85,19" fill="#38200e" stroke="#7a5030" stroke-width="1"/>
+          <polygon points="200,115 200,6 170,0 150,13 132,5 116,19" fill="#38200e" stroke="#7a5030" stroke-width="1"/>
+          <polygon points="85,19 116,19 124,37 102,50 96,50 74,37" fill="#1a0e06"/>
+          <polygon points="85,19 116,19 124,37 102,50 96,50 74,37" fill="rgba(0,0,0,.45)"/>
+          <text x="10" y="13" fill="#c9963a" font-family="monospace" font-size="8" font-weight="bold">734</text>
+          <text x="152" y="11" fill="#c9963a" font-family="monospace" font-size="8" font-weight="bold">734</text>
+          <text x="100" y="44" text-anchor="middle" fill="#7a5030" font-family="monospace" font-size="6">~500 ft</text>
+          <path d="M85,19 Q75,12 66,6" stroke="#c9963a" stroke-width="1" fill="none" stroke-dasharray="2,2"/>
+          <text x="54" y="15" fill="#c9963a" font-family="monospace" font-size="6">~11°</text>
+          <text x="100" y="107" text-anchor="middle" fill="#6a3820" font-family="monospace" font-size="5.5">shadow zone · 45–60 min/day</text>
+        </svg>
+      </div>
+      <div class="shad-p" style="border-right:none;">
+        <div class="shad-lbl">Hollywood — Open Horizon · No Tax</div>
+        <svg viewBox="0 0 200 115" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:#121a10;">
+          <polygon points="0,46 20,22 45,30 72,14 100,24 128,18 155,26 180,20 200,24 200,46" fill="#1c2e18" stroke="#3a5228" stroke-width=".5"/>
+          <rect x="0" y="46" width="200" height="69" fill="#142010"/>
+          <line x1="0" y1="46" x2="200" y2="46" stroke="#3a6228" stroke-width="1.2"/>
+          <rect x="12" y="35" width="26" height="11" fill="#284020" stroke="#4a6a32" stroke-width="1"/>
+          <rect x="48" y="30" width="32" height="16" fill="#284020" stroke="#4a6a32" stroke-width="1"/>
+          <rect x="90" y="28" width="27" height="18" fill="#284020" stroke="#4a6a32" stroke-width="1"/>
+          <rect x="128" y="32" width="38" height="14" fill="#284020" stroke="#4a6a32" stroke-width="1"/>
+          <line x1="0" y1="0" x2="100" y2="46" stroke="#c9963a" stroke-width="1" stroke-dasharray="3,2" opacity=".4"/>
+          <line x1="30" y1="0" x2="130" y2="46" stroke="#c9963a" stroke-width="1" stroke-dasharray="3,2" opacity=".3"/>
+          <text x="100" y="68" text-anchor="middle" fill="#4a7a35" font-family="monospace" font-size="9" font-weight="bold">356 ft</text>
+          <text x="100" y="80" text-anchor="middle" fill="#3a6228" font-family="monospace" font-size="5.5">open horizon · 0° shadow angle · zero tax</text>
+        </svg>
+      </div>
+    </div>
+    <div class="shad-stats">
+      <div class="shad-st"><span class="sv">45–60 min</span><div class="sl2">Daily Loss · Edendale · arctan(234 ÷ ~1,200 ft) ≈ 11°</div></div>
+      <div class="shad-st"><span class="sv">~9–11%</span><div class="sl2">ROI Penalty · 8.5-hr day · recurring daily charge</div></div>
+      <div class="shad-st"><span class="sv">18–22 days</span><div class="sl2">Annualized · 200 shooting days · 3+ full weeks forfeited</div></div>
+      <div class="shad-st zero"><span class="sv">Zero</span><div class="sl2">Hollywood Daily Loss · Unobstructed until astronomical sunset</div></div>
+    </div>
+  </div>
+  <p style="font-family:var(--mn);font-size:.5rem;letter-spacing:.04em;color:var(--sepia);line-height:1.8;margin-top:.7rem;">Vertical difference ~234 ft and shadow angle ~11° read directly from 1894 federal survey. Horizontal ~1,200 ft measurable from scale bar. Derivation transparent and testable: ngmdb.usgs.gov/topoview.</p>
+</section>
+<!-- §VII CAPITAL PENALTY -->
+<div class="sm" id="capital">§ VII</div>
+<section>
+  <h2>The Capital Penalty</h2>
+  <div class="kicker">Excavation Surcharge &nbsp;·&nbsp; One-Time Cost Before Frame One &nbsp;·&nbsp; 8% vs. 0% Grade</div>
+  <p>The Shadow Tax was a recurring daily operating cost. The excavation problem was a one-time capital penalty paid before production could begin at all. Selig had already committed $250,000 to the Edendale canyon floor by June 1911 — absorbing both penalties simultaneously while the national press celebrated the studio as the second largest of its kind in the world. By August 1919, the same 8% grade had become comedy material: a newspaper described "the steepest hill in Edendale, the grade which is the despair of every motor fiend." The terrain hadn't changed. Only what the industry needed from it had.</p>
+  <div class="cap-wrap"><table class="cap-t">
+    <thead><tr>
+      <th>Item</th><th class="he">Edendale · Canyon Ribbon</th><th class="hh">Hollywood · Industrial Floor</th>
+    </tr></thead>
+    <tbody>
+      <tr><td>Grade</td><td>~8% cross-slope</td><td>&lt;25 ft across full block — 0%</td></tr>
+      <tr><td>Earth to move · 1 acre</td><td>~6,000 cu-yd</td><td>~0 cu-yd · standard pour</td></tr>
+      <tr><td>Excavation surcharge</td><td>$180–$480 before foundation</td><td>$0</td></tr>
+      <tr><td>% of Squaw Man budget ($15k)</td><td>1.2–3.2% on dirt · per stage site</td><td>0%</td></tr>
+      <tr><td>Selig capital committed by 1911</td><td>$250,000 · canyon floor · 8% grade</td><td>N/A — Selig never expanded to Hollywood</td></tr>
+      <tr><td>Expansion ceiling</td><td>Canyon ribbon — physical maximum</td><td>9 acres · Lasky · 1914 · unlimited</td></tr>
+      <tr><td>Babylon set feasibility (1916)</td><td>Impossible — 160-ft wall on 8% slope; 300-ft camera retreat hits canyon wall</td><td>Achieved — 0% grade, standard mudsill foundation, 300-ft runway available</td></tr>
+    </tbody>
+  </table></div>
+  <blockquote>"Every dollar spent moving earth at Edendale was a dollar not available for sets, talent, or shooting days. Hollywood's Industrial Floor was also a financial floor."</blockquote>
+  <p style="font-family:var(--mn);font-size:.5rem;letter-spacing:.04em;color:var(--sepia);line-height:1.8;">Steam shovel costs: Construction Equipment magazine, 1910s trade data: ~$0.03/cu-yd standard soil; ~$0.05 stiff clay; ~$0.08 blasting. The Squaw Man $15,000 budget: DeMille/Lasky biographies. Selig $250,000 investment: Marysville Democrat, June 19, 1911, reprinting LA Times.</p>
+</section>
+
+<!-- §VIII MODERN EVIDENCE -->
+<div class="sm" id="modern">§ VIII</div>
+<section>
+  <h2>Modern Evidence</h2>
+  <div class="kicker">MapCortex 2026 &nbsp;·&nbsp; Post-1959 Glendale Freeway Grading &nbsp;·&nbsp; Modern Data Understates the Original Case</div>
+  <p>130 years after the 1894 survey — after the 1959 Glendale Freeway graded away portions of the original canyon — the same contrast holds. <strong>Modern data understates the original case.</strong> The canyon measurable today is shallower than the one Boggs and Sennett filmed in. The Stephens &amp; Wanamaker studio map shows the full Allesandro corridor: Selig Polyscope 1910–1919, Pathé 1910–1916, Bison 1909–1912, Keystone/Mack Sennett 1912–1928 — every major Node 2 operator squeezed into the same narrow canyon ribbon the 1894 survey places at ~500 ft elevation between the 734-ft ridges.</p>
+  <div class="mod-split">
+    <div class="mod-p">
+      <div class="mod-lbl">Edendale — MapCortex 2026</div>
+      <svg viewBox="0 0 200 125" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:#1a1410;">
+        <path d="M0,115 Q55,108 110,101 Q165,94 200,88" stroke="#3a2015" stroke-width="1" fill="none"/>
+        <path d="M0,98 Q52,89 105,79 Q158,69 200,62" stroke="#4a3020" stroke-width="1" fill="none"/>
+        <path d="M0,80 Q48,68 100,56 Q152,44 200,36" stroke="#5a3a28" stroke-width="1.2" fill="none"/>
+        <path d="M0,61 Q44,47 96,33 Q148,19 200,10" stroke="#6a4a32" stroke-width="1.2" fill="none"/>
+        <path d="M0,40 Q40,26 90,13 Q142,0 195,0" stroke="#7a5a3a" stroke-width="1.5" fill="none"/>
+        <path d="M0,18 Q36,8 84,1 Q136,0 185,0" stroke="#8a6a42" stroke-width="1.5" fill="none"/>
+        <text x="8" y="11" fill="#c9963a" font-family="monospace" font-size="7.5" font-weight="bold">801</text>
+        <text x="8" y="28" fill="#c9963a" font-family="monospace" font-size="7">760</text>
+        <text x="8" y="47" fill="#c9963a" font-family="monospace" font-size="7">720</text>
+        <text x="8" y="67" fill="#c9963a" font-family="monospace" font-size="7">680</text>
+        <text x="100" y="122" text-anchor="middle" fill="#6a4a25" font-family="monospace" font-size="5">DENSE CONTOURS · 2–3 BLOCKS</text>
+      </svg>
+      <ul class="mod-desc">
+        <li>680–801 ft labels every 2–3 blocks</li>
+        <li>Dense contours confirmed at equivalent zoom</li>
+        <li>Post-1959 freeway grading — original canyon was steeper</li>
+        <li>The Allesandro corridor studios are now demolished (1932)</li>
+      </ul>
+    </div>
+    <div class="mod-p" style="border-right:none;">
+      <div class="mod-lbl">Hollywood — MapCortex 2026</div>
+      <svg viewBox="0 0 200 125" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:#121a10;">
+        <line x1="0" y1="31" x2="200" y2="31" stroke="#1e3a18" stroke-width=".5"/><line x1="0" y1="62" x2="200" y2="62" stroke="#1e3a18" stroke-width=".5"/><line x1="0" y1="93" x2="200" y2="93" stroke="#1e3a18" stroke-width=".5"/>
+        <line x1="40" y1="0" x2="40" y2="125" stroke="#1e3a18" stroke-width=".5"/><line x1="80" y1="0" x2="80" y2="125" stroke="#1e3a18" stroke-width=".5"/><line x1="120" y1="0" x2="120" y2="125" stroke="#1e3a18" stroke-width=".5"/><line x1="160" y1="0" x2="160" y2="125" stroke="#1e3a18" stroke-width=".5"/>
+        <rect x="18" y="48" width="28" height="16" fill="#1e3a18" stroke="#3a6a30" stroke-width="1" rx="1"/>
+        <rect x="62" y="43" width="32" height="21" fill="#1e3a18" stroke="#3a6a30" stroke-width="1" rx="1"/>
+        <rect x="110" y="46" width="26" height="18" fill="#1e3a18" stroke="#3a6a30" stroke-width="1" rx="1"/>
+        <rect x="153" y="50" width="28" height="15" fill="#1e3a18" stroke="#3a6a30" stroke-width="1" rx="1"/>
+        <text x="100" y="22" text-anchor="middle" fill="#2a5a22" font-family="monospace" font-size="7">ZERO ELEVATION LABELS</text>
+        <text x="100" y="122" text-anchor="middle" fill="#3a6a28" font-family="monospace" font-size="5">INDUSTRIAL FLOOR HOLDS · 130 YEARS ON</text>
+      </svg>
+      <ul class="mod-desc">
+        <li>Zero elevation labels across studio district</li>
+        <li>Same bajada plain as 1894, unchanged</li>
+        <li>The Industrial Floor holds. 130 years on.</li>
+        <li>Nestor's Sunset &amp; Gower site still in production use</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- §IX PRIMARY SOURCES -->
+<div class="sm" id="sources">§ IX</div>
+<section>
+  <h2>Primary Source Timeline</h2>
+  <div class="kicker">22 Documents · October 1909 – February 1924 · LA Herald · LA Examiner · Marysville Democrat · Topeka State Journal · Imperial Valley Press · San Bernardino Sun · Vallejo Evening Times · Long Beach Press-Telegram · Moving Picture World</div>
+  <p>The following documents were published without knowledge of the geographic argument this essay makes. Read in sequence, they constitute a real-time record of the Node 2 → Node 3 transition — the terrain's industrial consequences visible in the press before anyone named the mechanism.</p>
+
+  <div class="tl">
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Oct 27</span><span class="tl-yr">1909</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Residents of Edendale Repairing Street Which City and Railway Had Neglected</h4><p>G. W. Patterson and neighbors seized picks and shovels to fix Baxter and Alessandro. The Glendale line tracks were in place but the road surface was impassable. Edendale's Infrastructure of Proximity was built on a foundation the city refused to maintain.</p><span class="tl-tag">Node 2 · Infrastructure dependency · Pre-studio</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Feb 27</span><span class="tl-yr">1911</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Actress Viola Barry Elopes; Weds Hero of Picture Show — Bison Company, Edendale</h4><p>John Conway, leading man of the Bison moving picture stock company at Edendale, elopes with stage actress Viola Barry. Eight months before the Boggs murder, Edendale's talent community had the domestic glamour and press attention of the legitimate stage. The Infrastructure of Proximity was cultural as well as logistical.</p><span class="tl-tag">Node 2 · Social credibility · Canyon-to-stage talent ecosystem</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Jun 19</span><span class="tl-yr">1911</span><span class="tl-sr">Marysville Democrat</span></div><div class="tl-c"><h4>With California Picture Producers — reprinted from LA Times</h4><p>Pathé Frères branch studio at Edendale confirmed. Selig Polyscope: $250,000 invested, "second largest glass studio of its kind in the world." Edendale's status as the industry center was national news — reprinted 400 miles north in Marysville. The Shadow Tax and 8% grade were invisible. The prestige was total.</p><span class="tl-tag">Node 2 · $250,000 committed · National press · Earliest document</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Oct 27</span><span class="tl-yr">1911</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Francis Boggs, Moving Picture Manager, Killed — Selig Wounded · 1845 Allesandro Street · <em>same day:</em> Nestor Film Company opens at Sunset &amp; Gower</h4><p>Francis Boggs shot dead by a janitor at the studio on Allesandro Street. W. N. Selig wounded. Selig had arrived from Chicago that morning to discuss expansion plans — expansion that the canyon ribbon's 8% grade would have taxed before a board was laid. <strong>Same morning: Nestor Film Company opens at Sunset and Gower on the strength of a Spring Street actor's tip, leasing the dead Blondeau Tavern for $30–40 a month.</strong> Node 2's founding operator killed on the canyon floor on the exact day Node 3 received its first committed operator.</p><span class="tl-tag tl-piv">Oct 27, 1911 · Boggs killed · Nestor / Anchor 1 opens · Same day</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Feb 29</span><span class="tl-yr">1912</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Indian Actress and Fireman Are Married</h4><p>Princeton Don Colby, Osage woman performing wild west pictures, met her husband because he "fell in love with the Indian girl as she rode horses at Edendale for the cameramen." The canyon was shaping Edendale's entire workforce around its own geometry.</p><span class="tl-tag">Node 2 · Canyon terrain recruiting labor to match</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Jul 8</span><span class="tl-yr">1912</span><span class="tl-sr">Topeka State Journal</span></div><div class="tl-c"><h4>Welch Helped Ad — Bison Company, Edendale</h4><p>The Bison Company's film of the Wolgast-Rivers boxing match — published in Topeka, Kansas. F. J. Balshofer's precise technical testimony: the most exact statement in the entire primary source collection, made from the canyon floor. Edendale's institutional credibility had reached Kansas.</p><span class="tl-tag">Node 2 · Peak institutional credibility · National reach</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Aug 1</span><span class="tl-yr">1912</span><span class="tl-sr">Imperial Valley Press</span></div><div class="tl-c"><h4>"Movie" Indians Are Howling for Baths — Universal Film Company, East Hollywood</h4><p>Universal Film Company shooting at East Hollywood. Fifty-odd Pueblo Indians contracted from Albuquerque for film work. The same calendar month as the Bison/Topeka boxing film: Node 2 and Node 3 both operating at full production scale simultaneously.</p><span class="tl-tag">Node 3 · East Hollywood · Universal pre-Universal City · Parallel operation</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Dec 27</span><span class="tl-yr">1912</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Punch Bag for Beauty — Lillian Russell at Kinemacolor Moving Picture Plant, Hollywood</h4><p>Lillian Russell — one of the most famous women in America — "passes most her days now" posing for moving pictures at the Kinemacolor plant in Hollywood. This is fourteen months before DeMille signed the barn lease — Hollywood already had a named, operational facility with a nationally celebrated performer as its regular presence.</p><span class="tl-tag">Node 3 · Kinemacolor Hollywood · 14 months pre-DeMille · Lillian Russell</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Mar 14</span><span class="tl-yr">1913</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Movie Picture Ads for Fashion Display — Keystone Film Company, Edendale</h4><p>Keystone filmed comedy sketches at Hamburger's department store, Downtown, releasing "all over Europe and America in a month or so." Infrastructure of Proximity at full efficiency. Nine months before DeMille signed the barn lease. No hint of strain.</p><span class="tl-tag">Node 2 · Full production confidence · 9 months before pivot</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">May 29</span><span class="tl-yr">1913</span><span class="tl-sr">Sacramento Star</span></div><div class="tl-c"><h4>Statuesque "Movie" Girl — Western Pathé, Edendale</h4><p>Lillian Wiggins learned to ride a horse because the canyon required it. "One trip around the Pathé ranch; one trial ride on the back of a western pony and one day's fresh, free ozone" — the Lemon Grove Myth being manufactured in real time. Pathé was the world's largest film company, paying the Shadow Tax on an international distribution scale without naming it.</p><span class="tl-tag">Node 2 · Lemon Grove Myth manufactured · Shadow Tax invisible</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Aug 20</span><span class="tl-yr">1913</span><span class="tl-sr">San Bernardino Sun</span></div><div class="tl-c"><h4>Universal Film Company — headquarters at Hollywood (not yet Universal City)</h4><p>A 27-person Universal location company returns to "the Universal Film company's headquarters at Hollywood" after a summer shooting season in the San Bernardino mountains. Hollywood headquarters named explicitly, four months before DeMille signed the barn lease.</p><span class="tl-tag">Node 3 · Universal HQ Hollywood · Pre-Universal City · Aug 1913</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Dec 4</span><span class="tl-yr">1913</span><span class="tl-sr">LA Evening Herald</span></div><div class="tl-c"><h4>Herald First to Use Moving Pictures to Show the Day's News — Thomas Ince, Edendale</h4><p>The Evening Herald brokered a world-first news film arrangement through Thomas Ince, from "his great studio at Edendale, where some of the finest films in the world are produced." <strong>DeMille signed the Hollywood barn lease this same month</strong> — December 22, 1913, on Alexandria Hotel stationery, $250/month for half of Jacob Stern's yellow barn at Selma and Vine.</p><span class="tl-tag tl-piv">Pivot month · Peak Node 2 prestige · Anchor 2 signed · Same month</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Feb 21</span><span class="tl-yr">1914</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Universal Film Manufacturing Co. — Relocation Advertisement — address: Hollywood, Cal.</h4><p>Carl Laemmle's Universal — "the largest film manufacturing concern in the universe," capitalized at $2,000,000, 500-person payroll, spending $20,000 every week — ran a national advertisement seeking a new ranch. Reply address: I. Bernstein, General Manager, Hollywood, Cal.</p><span class="tl-tag">Node 3 · Universal Hollywood address · National relocation ad · Pre-Universal City</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Feb 28</span><span class="tl-yr">1915</span><span class="tl-sr">Vallejo Evening Times</span></div><div class="tl-c"><h4>Masterpiece Company enlarging studios at Hollywood near Los Angeles</h4><p>Written for a Northern California readership 400 miles away. "At Hollywood near Los Angeles" — Hollywood as cardinal reference point requiring no further explanation. Node 3 consolidation visible from outside Southern California entirely.</p><span class="tl-tag">Node 3 established · Visible from Vallejo</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Apr 13</span><span class="tl-yr">1915</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Miriam Cooper profile — "the Hollywood studios"</h4><p>Cooper — who appeared in Birth of a Nation two months earlier — "finds happiness in Los Angeles, at the Hollywood studios." No company name. No street. The address has become the institution.</p><span class="tl-tag">Node 3 · Address becomes the institution</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Apr 30</span><span class="tl-yr">1915</span><span class="tl-sr">Long Beach Press-Telegram</span></div><div class="tl-c"><h4>Universal Pictures — Universal City, near Hollywood</h4><p>Universal City — one of the largest studio complexes yet built — described as "near Hollywood." Universal City is the thing being explained. Hollywood is the thing doing the explaining. Even a facility deliberately positioned outside Hollywood is defined by its gravitational field.</p><span class="tl-tag">Node 3 · Hollywood as cardinal reference point</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">May 29</span><span class="tl-yr">1915</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Money in Scenarios If You Have Brains — Guy Price</h4><p>Mary H. O'Connor: "if the industry will only remain in its infancy another five years we will all own bungalows in Hollywood." Same column: "Edendale papers (if there be any, b'gosh) please copy." Two years after Ince's "great studio," Edendale is a punchline in the newspaper that celebrated it.</p><span class="tl-tag">Node 3 established · Node 2 culturally finished</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Jan 4</span><span class="tl-yr">1916</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Mutual Test Film Company — 1776 Allesandro Street, Edendale [Advertisement]</h4><p>Screen test operation at the precise address the 1894 survey targets — the ~500-ft canyon floor. Endorsed by a quote from Francis X. Bushman. Borrowed national prestige for a local operation the major studios had already left. The residual economy begins.</p><span class="tl-tag">Residual economy · Canyon floor repurposed</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Mar 15</span><span class="tl-yr">1916</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Keystones Add Joy to Movie Bill — Guy Price</h4><p>"The Edendale fun-makers" — not a studio address, a brand nickname. The affectionate shorthand you apply to something whose geography is historical rather than current. Ten months after the backwater joke, Edendale has settled from punchline to nostalgia.</p><span class="tl-tag">Node 2 → nostalgia brand</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">May 2</span><span class="tl-yr">1916</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Pacific Picture Producing Co. — 1766 Allesandro Street [Advertisement]</h4><p>Two screen test operations within ten street numbers on Allesandro Street, four months apart. In the same classified column: a "moving picture stage carpenter, operator, camera man's helper" advertising himself alongside hotel workers and bookkeepers. The Node 2 skilled labor force is dispersing into the broader Los Angeles economy.</p><span class="tl-tag">Residual economy thins · Skilled labor dispersing</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Aug 5</span><span class="tl-yr">1919</span><span class="tl-sr">LA Herald</span></div><div class="tl-c"><h4>Here Are Deep Dark Secrets From Clara Kimball Young's Studio — Reed Heustis</h4><p>"Col. Selig built it years and years ago, when he was grand nabob of the flickers. After him came others." Selig compressed into archaeology. And: "the steepest hill in Edendale, the grade which is the despair of every motor fiend" — the 8% grade of the 1894 survey, now comedy material. In 1909 it was why Selig chose Edendale. In 1919 it defeats automobiles and loses dogs.</p><span class="tl-tag">Node 2 → founding myth · 8% grade now comedy</span></div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Mar 3</span><span class="tl-yr">1917</span><span class="tl-sr">Moving Picture World</span></div><div class="tl-c">
+      <h4>News of Los Angeles and Vicinity — G.P. von Harleman · The Scattered Basin / Hollywood Center</h4>
+      <p>Von Harleman's industry survey documents the Los Angeles basin as a constellation of scattered production nodes, each orbiting the Hollywood center. Al Christie — named without address or explanation, his Hollywood location requiring no identification — finishing "Suspended Sentence" with Betty Compson at the lot he opened in October 1911.</p>
+      <div class="map-outer" style="margin:.75rem 0;">
+        <div class="map-hdr" style="font-size:.48rem;">Los Angeles Basin Production Nodes · March 1917 · Von Harleman Survey</div>
+        <div style="padding:1rem;">
+          <div class="basin-nodes">
+            <div class="bn"><strong>Long Beach</strong>Balboa Amusement &amp; Producing Co.</div>
+            <div class="bn"><strong>Glendale</strong>Kalem — expanding, adding 16 dressing rooms</div>
+            <div class="bn"><strong>Boyle Heights</strong>Bernstein Film Productions · old Perry estate</div>
+            <div class="bn moving"><strong>Boyle Heights → Hollywood</strong>Monogram Film Co. — explicitly moving to Hollywood "within a very short time" for more space</div>
+            <div class="bn"><strong>Culver City</strong>Thomas H. Ince / Triangle-Kay Bee</div>
+            <div class="bn"><strong>Universal City — "near Hollywood"</strong>Universal — defines itself by proximity to Hollywood center</div>
+            <div class="bn hwood"><strong>Hollywood · Sunset &amp; Gower</strong>Al E. Christie — named without address, location self-evident</div>
+            <div class="bn hwood"><strong>Hollywood · Lasky / Paramount</strong>Lasky — portable carpenter shop wheeled across flat lot; impossible on 8% grade</div>
+          </div>
+        </div>
+      </div>
+      <span class="tl-tag">1917 · Scattered nodes · Hollywood gravitational center · Anchor chain confirmed</span>
+    </div></div>
+
+    <div class="tl-e"><div class="tl-d"><span class="tl-mo">Feb 17</span><span class="tl-yr">1924</span><span class="tl-sr">LA Examiner</span></div><div class="tl-c">
+      <h4>What New Sites for Studios Mean to Hollywood — Al Christie, Christie Film Corporation · The Full Confession</h4>
+      <blockquote>"Twelve years ago, I stepped off the train at Los Angeles as a representative of the old Nestor Film Company to make a series of pictures. At that time, Edendale was the center of the motion picture industry, and a pretty crowded center at that. I wanted a location for a studio which would permit a wider range of action… where I would have all the space I could use and not find myself crowded."<cite>— Al Christie, Los Angeles Examiner, February 17, 1924</cite></blockquote>
+      <p>Christie names Edendale's crowding, the motive, the intelligence source (an actor at the old Los Angeles Theater on Spring Street), the destination ("a community about ten miles out of the city known as Hollywood"), and the asset ("an old tavern at the corner of Sunset Boulevard and Gower Street"). Same issue: "Westwood — The Second Hollywood." <strong>Christie described the consequences of the 1894 survey without ever knowing the survey existed.</strong></p>
+      <span class="tl-tag tl-piv">Practitioner confession · Pattern confirmed · The Second Hollywood</span>
+    </div></div>
+  </div><!-- /timeline -->
+
+  <!-- 1913 Compression -->
+  <div class="cbox" style="margin-top:2.5rem;">
+    <div class="cbox-hd">The 1913 Compression · Nine Months · Three Newspapers · One Canyon Running Into Its Ceiling</div>
+    <div class="crow chr"><div class="cc">Date</div><div class="cc">Source</div><div class="cc">What It Shows</div></div>
+    <div class="crow"><div class="cc date">Mar 14, 1913</div><div class="cc desc">Keystone at Hamburger's</div><div class="cc desc">Production confidence · international distribution · no hint of strain</div></div>
+    <div class="crow"><div class="cc date">May 29, 1913</div><div class="cc desc">Pathé / Wiggins</div><div class="cc desc">Lemon Grove Myth manufactured · Shadow Tax invisible · "fresh, free ozone"</div></div>
+    <div class="crow"><div class="cc date">Dec 4, 1913</div><div class="cc desc">Ince "great studio" + DeMille barn lease</div><div class="cc desc">Peak prestige and structural break — simultaneous, same month · Anchor 2 signed</div></div>
+  </div>
+
+  <p style="font-family:var(--mn);font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:var(--sepia);margin:2.5rem 0 .65rem;">The Repeating Geographic Pattern</p>
+  <div class="pat-nodes">
+    <div class="pn"><div class="pn-num">Node 1 · Downtown</div><div class="pn-name">The Seed</div><div class="pn-verd">Obsoleted by city blocks — no room to scale. Economics proven.</div></div>
+    <div class="pn"><div class="pn-num">Node 2 · Edendale</div><div class="pn-name">The Canyon</div><div class="pn-verd">Obsoleted by canyon geometry — Shadow Tax + 8% grade. Language proven.</div></div>
+    <div class="pn"><div class="pn-num">Node 3 · Hollywood</div><div class="pn-name">The Floor</div><div class="pn-verd">356 ft · 0% grade · validated 1894 · locked by Chain of Anchors 1911–1916.</div></div>
+  </div>
+  <p style="font-size:.83rem;line-height:1.7;color:var(--sepia);font-style:italic;">Feb 1924: Christie describes leaving Edendale for Hollywood — same page: "Westwood — The Second Hollywood." The pattern repeats one node further west on the same alluvial plain. Land speculators were selling the pattern before anyone named it.</p>
+</section>
+<!-- §X THE SIGN -->
+<div class="sm" id="sign">§ X</div>
+<section>
+  <h2>The Sign on the Floor's <em>Fame</em></h2>
+  <div class="kicker">Hollywoodland 1923–1932 &nbsp;·&nbsp; Five Primary Sources &nbsp;·&nbsp; The Most Famous Image in Film History Is a Real Estate Advertisement</div>
+
+  <p>The floor made the name. The sign carried it. Those are two different things — and the 1,394 feet of vertical terrain between them is the final forensic measurement this essay offers.</p>
+  <p>By 1923 the word <em>Hollywood</em> meant the film industry to the entire world. Al Christie had proved the Industrial Floor in 1911. DeMille had confirmed it in 1913. Griffith had sealed it in 1916. The Chain of Anchors was complete. The name belonged to the 356-ft bajada plain documented in the 1894 federal survey.</p>
+  <p>In July 1923, a syndicate of Los Angeles capitalists erected a 50-foot illuminated sign on the ~1,750-ft ridgeline above and north of that plain. The sign read <strong>HOLLYWOODLAND</strong>. It was an advertisement for hillside residential lots. No studio ever operated there. The terrain was beautiful, genuinely so — bridle trails, panoramic views, San Fernando Valley to the north, the city carpeted below. It was also, by the measurement of the 1894 survey, the wrong elevation for the industry that made the name worth advertising.</p>
+  <p>The most famous image associated with the film industry — the thing the whole world pictures when they hear the word <em>Hollywood</em> — is a real estate advertisement for terrain the film industry had already rejected, erected twelve years after Christie proved the floor worked, on a ridge the Shadow Tax would have charged every shooting day.</p>
+
+  <!-- ELEVATION SVG -->
+  <div class="map-outer" style="margin:2.5rem 0;">
+    <div class="map-hdr">Elevation Cross-Section · Hollywood Hills to Industrial Floor · 1894 Survey Data <span>Vertical difference: 1,394 ft · Same basin · One word</span></div>
+    <svg viewBox="0 0 580 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;background:#141008;display:block;padding:1rem 1.5rem;box-sizing:border-box;">
+
+      <!-- Ground profile -->
+      <path d="M30,220 Q80,218 120,215 Q160,212 200,200 Q230,190 255,165 Q275,145 290,118 Q305,92 320,75 Q340,58 365,45 Q390,35 420,28 Q450,22 480,18 Q510,16 540,15"
+            stroke="#5a4a32" stroke-width="1.5" fill="none"/>
+      <!-- Fill under profile -->
+      <path d="M30,220 Q80,218 120,215 Q160,212 200,200 Q230,190 255,165 Q275,145 290,118 Q305,92 320,75 Q340,58 365,45 Q390,35 420,28 Q450,22 480,18 Q510,16 540,15 L540,240 L30,240 Z"
+            fill="rgba(60,40,20,.35)"/>
+
+      <!-- FLOOR LINE: 356 ft -->
+      <line x1="30" y1="220" x2="200" y2="220" stroke="#4a6a30" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="30" y1="220" x2="540" y2="220" stroke="rgba(74,106,48,.2)" stroke-width="1" stroke-dasharray="1,4"/>
+
+      <!-- STUDIO FLOOR MARKER -->
+      <rect x="30" y="200" width="170" height="20" fill="rgba(74,94,69,.12)" stroke="#4a5e45" stroke-width="1" rx="1"/>
+      <text x="38" y="210" fill="#c9963a" font-family="monospace" font-size="9" font-weight="bold">356 ft</text>
+      <text x="38" y="218" fill="#4a7a40" font-family="monospace" font-size="5" letter-spacing=".5">INDUSTRIAL FLOOR · 0% GRADE</text>
+
+      <!-- Studio rectangles on floor -->
+      <rect x="42" y="190" width="18" height="10" fill="#284020" stroke="#4a6a32" stroke-width=".8"/>
+      <rect x="65" y="188" width="24" height="12" fill="#284020" stroke="#4a6a32" stroke-width=".8"/>
+      <rect x="95" y="186" width="20" height="14" fill="#284020" stroke="#4a6a32" stroke-width=".8"/>
+      <rect x="121" y="189" width="28" height="11" fill="#284020" stroke="#4a6a32" stroke-width=".8"/>
+      <text x="80" y="183" text-anchor="middle" fill="#3a6028" font-family="monospace" font-size="4.5" letter-spacing=".3">RKO · LASKY · NESTOR · KEYSTONE</text>
+
+      <!-- MULHOLLAND ~1400ft -->
+      <line x1="30" y1="78" x2="540" y2="78" stroke="rgba(139,115,85,.18)" stroke-width="1" stroke-dasharray="2,4"/>
+      <text x="33" y="75" fill="#6a5a3a" font-family="monospace" font-size="4.5">~1,400 ft · Mulholland Drive · completed 1924</text>
+
+      <!-- Sennett homesite dot -->
+      <circle cx="370" cy="44" r="5" fill="#7a3b1e" stroke="#c9963a" stroke-width="1.2"/>
+      <text x="378" y="40" fill="#c9963a" font-family="monospace" font-size="5.5" font-weight="bold">~1,400 ft</text>
+      <text x="378" y="49" fill="#8b5a35" font-family="monospace" font-size="4.5">Sennett homesite</text>
+      <text x="378" y="57" fill="#6a4a28" font-family="monospace" font-size="4">Mulholland Drive</text>
+
+      <!-- SIGN RIDGE ~1750ft -->
+      <line x1="30" y1="28" x2="540" y2="28" stroke="rgba(201,150,58,.15)" stroke-width="1" stroke-dasharray="2,4"/>
+
+      <!-- Sign letters on ridge -->
+      <text x="475" y="14" text-anchor="middle" fill="#c9963a" font-family="monospace" font-size="11" font-weight="bold" letter-spacing="3">H</text>
+      <!-- Ladder -->
+      <line x1="481" y1="15" x2="481" y2="28" stroke="#8b7355" stroke-width="1"/>
+      <line x1="478" y1="19" x2="484" y2="19" stroke="#8b7355" stroke-width=".8"/>
+      <line x1="478" y1="23" x2="484" y2="23" stroke="#8b7355" stroke-width=".8"/>
+
+      <!-- Sign elevation label -->
+      <text x="33" y="24" fill="#c9963a" font-family="monospace" font-size="5.5" font-weight="bold">~1,750 ft</text>
+      <text x="33" y="33" fill="#8b6a3a" font-family="monospace" font-size="4.5">HOLLYWOODLAND sign ridge</text>
+
+      <!-- GAP ANNOTATION -->
+      <line x1="18" y1="28" x2="18" y2="220" stroke="rgba(201,150,58,.4)" stroke-width="1"/>
+      <line x1="14" y1="28" x2="22" y2="28" stroke="rgba(201,150,58,.4)" stroke-width="1"/>
+      <line x1="14" y1="220" x2="22" y2="220" stroke="rgba(201,150,58,.4)" stroke-width="1"/>
+      <text x="12" y="128" text-anchor="middle" fill="#c9963a" font-family="monospace" font-size="5.5" font-weight="bold" transform="rotate(-90,12,128)">1,394 ft</text>
+
+      <!-- Entwistle figure - small, at top of H -->
+      <circle cx="481" cy="11" r="2.5" fill="rgba(229,210,175,.5)" stroke="rgba(229,210,175,.3)" stroke-width=".8"/>
+
+      <!-- North/South labels -->
+      <text x="540" y="255" text-anchor="end" fill="#4a3a22" font-family="monospace" font-size="4.5">NORTH · hills</text>
+      <text x="30" y="255" fill="#4a3a22" font-family="monospace" font-size="4.5">SOUTH · floor</text>
+      <line x1="30" y1="248" x2="540" y2="248" stroke="rgba(139,115,85,.15)" stroke-width=".5"/>
+
+      <!-- illumination glow on sign -->
+      <ellipse cx="475" cy="18" rx="22" ry="8" fill="none" stroke="rgba(201,150,58,.12)" stroke-width="3"/>
+      <ellipse cx="475" cy="18" rx="30" ry="12" fill="none" stroke="rgba(201,150,58,.06)" stroke-width="4"/>
+    </svg>
+  </div>
+
+  <!-- FIVE DOCUMENTS -->
+  <p style="font-family:var(--mn);font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:var(--sepia);margin:2.5rem 0 .65rem;">Five Primary Documents · 1923–1932 · The Ridge in Real Time</p>
+
+  <div class="tl">
+
+    <div class="tl-e">
+      <div class="tl-d"><span class="tl-mo">Mar 31</span><span class="tl-yr">1923</span><span class="tl-sr">LA Evening Express</span></div>
+      <div class="tl-c">
+        <h4>L.A. Syndicate Opens Hollywoodland of 500 Acres Today</h4>
+        <p>Harry Chandler, E.P. Clark, Gen. M.H. Sherman, S.H. Woodruff and Tracy E. Shoults purchase 500 acres of foothill property "just north of Hollywood on the Hollywood side of the hills." The article names Sherman and Clark as "two pioneers who reached fame through their efforts of development and the building of the first electric railroads of which this section boasted." The same men whose Pacific Electric inter-urban network delivered Christie to the 356-ft floor in 1911 are opening a residential subdivision on the ridge above it in 1923. The transit umbilical that made the floor valuable is now being cited as the credential that makes the ridge trustworthy.</p>
+        <span class="tl-tag">Sherman · Pacific Electric builders · Ridge opening · Same syndicate</span>
+      </div>
+    </div>
+
+    <div class="tl-e">
+      <div class="tl-d"><span class="tl-mo">Jul</span><span class="tl-yr">1923</span><span class="tl-sr">Sign erected</span></div>
+      <div class="tl-c">
+        <h4>HOLLYWOODLAND — 13 Letters · ~1,750 ft · Illuminated</h4>
+        <p>The sign goes up four months after the subdivision opening. Fifty-foot letters on the ridgeline, illuminated at night, visible from the floor below. It advertises Hollywoodland — the subdivision — not Hollywood — the industry. The name the floor earned in eleven years of production is now burning on a ridge the floor's operators rejected as an industrial trap. The sign does not create the confusion. The confusion already exists. The word Hollywood covers both places simultaneously and the sign simply makes the ridge version visible from a great distance.</p>
+        <span class="tl-tag">Sign erected · Real estate advertisement · Floor's name on the ridge</span>
+      </div>
+    </div>
+
+    <div class="tl-e">
+      <div class="tl-d"><span class="tl-mo">Apr 27</span><span class="tl-yr">1924</span><span class="tl-sr">LA Examiner</span></div>
+      <div class="tl-c">
+        <h4>Hollywoodland — Bridle Trails, Panoramas, "Happiness Is the Keynote"</h4>
+        <p>S.H. Woodruff's bridle trail "winds to the summit above the great Hollywoodland sign, and from that point the entire San Fernando Valley, Old Baldy, Mount Wilson and Mount Lowe stretch in one great panorama to the north, while to the south the city of Los Angeles lies carpeted like a gigantic Persian rug." The floor — the bajada plain, the 356-ft Industrial Floor, the coordinate the 1894 survey documents — is described from the ridge as decorative pattern. The studios are carpet. The trail goes above the sign, not to it. The sign is a waypoint. The panorama is the product. The ridge delivers exactly what it promises. It is genuinely beautiful. The Examiner piece is not manufacturing a myth — it is accurately describing a different place at a different elevation with different values than the floor below.</p>
+        <span class="tl-tag">Ridge accurately described · Beautiful · Different place · Floor visible as pattern from above</span>
+      </div>
+    </div>
+
+    <div class="tl-e">
+      <div class="tl-d"><span class="tl-mo">Jan 3</span><span class="tl-yr">1927</span><span class="tl-sr">LA Herald</span></div>
+      <div class="tl-c">
+        <h4>Auction — 2 Lots in Hollywoodland — "Directly Under the Hollywoodland Sign" — Within a Stone's Throw of the Mack Sennett Million-Dollar Homesite</h4>
+        <p>By January 1927, proximity to the sign is a quantifiable premium — a selling point stated first in the auction headline. And the landmark cited to locate the lots is Mack Sennett's homesite. Sennett — whose Keystone operation began on Node 2's Edendale canyon floor in 1912, whose studio the 1915 Herald called "the Edendale fun-makers," who followed the industry's spatial logic through the canyon years — built his personal residence on the Hollywoodland ridge. He moved his <em>home</em> to the ridge while production stayed on the floor. The floor is where the money is made. The ridge is where the money is spent. The auction ad makes the class geography of Hollywood explicit in four lines of classified copy.</p>
+        <span class="tl-tag">Shadow Premium · Sennett · Floor = production · Ridge = residence · Class geography explicit</span>
+      </div>
+    </div>
+
+    <div class="tl-e">
+      <div class="tl-d"><span class="tl-mo">Sep 19</span><span class="tl-yr">1932</span><span class="tl-sr">Oakland Tribune</span></div>
+      <div class="tl-c">
+        <h4>Actress Dies in Leap Off Sign — Guild Star, Disappointed by Hollywood, Hurls Self From Big Illuminated 'H'</h4>
+        <p>Peg Entwistle arrived from New York with Theater Guild credentials. She signed with RKO — one of the major studios on the 356-ft Industrial Floor — for a small part in one picture. The studio declined to pick up her option. The floor's sorting mechanism processed her and expelled her. She left a note: <em>"I am afraid I am a coward and I am sorry for many things. If I had only done this long ago I could have saved a lot of pain."</em> She signed it P.E. She climbed the maintenance ladder to the top of the H — the same ladder used by repairmen replacing the sign's electric bulbs. Her body was found in front of the A, nearly 100 feet from where she jumped, having rolled that far down the hillside. The terrain that the 1894 survey measures acted on her at the end.</p>
+        <p>She did not die because the ridge was false. The ridge was real — the bridle trails, the panorama, the genuine beauty the 1924 Examiner described. She died because the word Hollywood covered both places — the sorting floor and the aspirational ridge — and the distance between them was not visible until you were standing on the maintenance ladder looking down at the carpet of the city.</p>
+        <span class="tl-tag tl-piv">Sep 19, 1932 · RKO option dropped · H to A · 1,394 ft · The distance made visible</span>
+      </div>
+    </div>
+
+  </div><!-- /tl -->
+
+  <!-- CODA BOX -->
+  <div class="synth" style="margin-top:2.5rem;border-left-color:var(--rust);">
+    <h4>Coda · The Name, The Floor, The Sign</h4>
+    <p>The floor made the name. Christie proved it in 1911. DeMille confirmed it in 1913. Griffith sealed it in 1916. By 1923 the word <em>Hollywood</em> was the most valuable geographic brand in the world — earned entirely on a 356-ft alluvial plain the 1894 federal survey had documented before any of them arrived.</p>
+    <p>The sign went up in 1923 on terrain 1,394 feet above that plain. It was a real estate advertisement. It said HOLLYWOODLAND in thirteen illuminated letters on a ridge where no studio ever operated, on terrain the industry's own spatial logic had already rejected, visible from the floor below after dark.</p>
+    <p>The most famous image associated with the film industry is not a studio. It is not a camera. It is not a frame of film. It is a real estate advertisement on the wrong terrain — burning above the floor that made it famous, visible to everyone on the floor below, reached by a maintenance ladder.</p>
+    <p style="font-family:var(--mn);font-size:.52rem;letter-spacing:.09em;color:var(--sepia);margin-top:.8rem;margin-bottom:0;">The 1894 survey measured the floor. The sign advertised the ridge. The word Hollywood covered both. The terrain never noticed the difference.</p>
+  </div>
+
+</section>
+
+<!-- VERDICT -->
+<div class="verdict">
+  <p>The industry didn't discover Hollywood. It was evicted from Edendale by the geometry of a canyon documented on a federal survey nineteen years before DeMille arrived. The same terrain that gave early cinema its visual language — chase, cliff, pursuit, escape — gave the industry a ceiling it could not engineer its way through.</p>
+  <p>Node 3 won because the 1894 survey confirmed the only thing Node 2 could never offer: a tax-free, 0% grade Industrial Floor with an unobstructed horizon. Al Christie proved it with a $30 tavern lease in 1911. Cecil B. DeMille confirmed it with a $250 barn lease in 1913. D.W. Griffith sealed it with a 160-foot wall in 1916. Three anchors. One topographic coordinate. The Chain was complete before anyone named the mechanism.</p>
+  <div class="vorn">— ✦ —</div>
+  <div class="tl2">The Horizontal Infinite.</div>
+  <p style="font-family:var(--mn);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(229,210,175,.42);margin-top:1.4rem;font-style:normal;">"The terrain knew first. The surveyor measured it. The industry felt it. The press covered the ozone and the ponies. The sign burned on the wrong ridge. This essay names the mechanism."</p>
+</div>
+
+<!-- NOTES -->
+<div class="notes">
+  <strong>Primary source · Survey:</strong> USGS Los Angeles Quadrangle, 1894 (HTMC edition), Scale 1:62,500, filed May 19, 1897. ngmdb.usgs.gov/topoview. Contour interval: 25 ft. Values — 356 ft (Hollywood/Colegrove), ~500 ft (canyon floor, Ivanhoe/Edgemont), 734 ft (Los Felis ridge) — read directly from labeled survey. No interpolation. · <strong>Shadow geometry:</strong> arctan(~234 ft ÷ ~1,200 ft) ≈ 11°; sun altitude 34°N winter solstice max ~32.5°. · <strong>Excavation:</strong> Construction Equipment magazine, 1910s trade data: ~$0.03–$0.08/cu-yd. · <strong>Squaw Man budget:</strong> DeMille/Lasky biographies. · <strong>Selig investment:</strong> Marysville Democrat, June 19, 1911, reprinting LA Times. · <strong>Studio corridor map:</strong> E.J. Stephens &amp; Marc Wanamaker, Early Poverty Row Studios, Arcadia Publishing, 2014. · <strong>Transit:</strong> Map of the City of Los Angeles Showing Railway Systems, 1906, Library of Congress / Travel and Hotel Bureau. Legend confirmed: LA Railway Co. (black) = Hollywood corridor; LA Inter-Urban Ry. Co. (green) = Glendale canyon line (Node 2); Pacific Electric Inter-Urban (red) = regional east/south routes. · <strong>Modern:</strong> MapCortex topographic layer (USGS/OpenStreetMap), March 2026. Post-1959 Glendale Freeway grading means modern Edendale data understates original canyon depth. · <strong>Christie confession:</strong> Christie, Al. "What New Sites for Studios Mean to Hollywood." Los Angeles Examiner, 17 Feb. 1924. · <strong>Nestor arrival:</strong> "Nestor Company in Hollywood." Moving Picture World, vol. 10, no. 6, 11 Nov. 1911, p. 467. · <strong>Von Harleman survey:</strong> Von Harleman, G.P. "News of Los Angeles and Vicinity." Moving Picture World, vol. 31, 3 Mar. 1917, pp. 1364–66. · <strong>DeMille / Lasky:</strong> DeMille, Cecil B. The Autobiography of Cecil B. DeMille. Prentice-Hall, 1959. · Eyman, Scott. Empire of Dreams. Simon &amp; Schuster, 2010. · <strong>Babylon set:</strong> Photoplay Magazine, Aug. 1916 · Bitzer, G.W. Billy Bitzer: His Story. FSG, 1973 · Wanamaker, Marc. Hollywood, 1900–1950. Arcadia Publishing, 2009. · <strong>Newspaper sources:</strong> Los Angeles Herald (1909–1919), Los Angeles Evening Herald (1913), Marysville Democrat (1911, reprinting LA Times), Topeka State Journal (1912), Imperial Valley Press (1912), San Bernardino Sun (1913), Vallejo Evening Times (1915), Long Beach Press-Telegram (1915), Los Angeles Examiner (1924). All via California Digital Newspaper Collection (CDNC) except Topeka State Journal. &nbsp;·&nbsp; <strong>§X · Hollywoodland:</strong> "L.A. Syndicate Opens Hollywoodland of 500 Acres Today." Los Angeles Evening Express, 31 Mar. 1923. · "Hollywoodland." Los Angeles Examiner, 27 Apr. 1924. · "Auction — 2 Lots in Hollywoodland." Los Angeles Herald, 3 Jan. 1927. · "Actress Dies in Leap Off Sign." Oakland Tribune, vol. 117, no. 81, 19 Sep. 1932. · Coons, Robbin. "In Hollywood." San Pedro News Pilot, vol. 5, no. 177, 28 Sep. 1932. Sign erected July 1923 (Chandler syndicate). Sign elevation ~1,750 ft per USGS topo; floor 356 ft per 1894 survey; vertical difference 1,394 ft. Sennett homesite: Hollywoodland ridge, cited LA Herald 3 Jan. 1927.
+</div>
+
+</main>
+<footer>© 2026 Kenny A. &nbsp;·&nbsp; Beyond the Lemon Grove &nbsp;·&nbsp; Geographic Audit · USGS 1894 &nbsp;·&nbsp; All rights reserved.</footer>
+</body>
+</html>
