@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond the Lemon Grove — The 3+4 Convergence · Geographic Audit · USGS 1894</title>
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #0f0e0c;
+  color: #d4c9b0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 17px;
+  line-height: 1.75;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+}
+
+/* ── TYPOGRAPHY ── */
+h1 { font-size: 2.8rem; font-weight: normal; letter-spacing: -0.01em; color: #efe8d5; line-height: 1.15; margin-bottom: 0.4rem; }
+h2 { font-size: 1.55rem; font-weight: normal; color: #c9b87a; border-bottom: 1px solid rgba(201,184,122,0.2); padding-bottom: 0.4rem; margin: 3.5rem 0 1.2rem; letter-spacing: 0.01em; }
+h3 { font-size: 1.15rem; color: #b8a86a; margin: 2rem 0 0.6rem; font-weight: normal; font-style: italic; }
+h4 { font-size: 0.95rem; color: #9a8a5a; margin: 1.5rem 0 0.4rem; font-weight: normal; letter-spacing: 0.05em; text-transform: uppercase; }
+p { margin-bottom: 1.1rem; }
+strong { color: #ddd0b0; font-weight: bold; }
+em { font-style: italic; color: #c4b890; }
+
+/* ── NAV ── */
+nav {
+  border-bottom: 1px solid rgba(201,184,122,0.15);
+  padding: 1.2rem 0;
+  margin-bottom: 3rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #7a6a4a;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0;
+}
+nav a { color: #9a8a5a; text-decoration: none; margin-right: 1.2rem; transition: color 0.2s; }
+nav a:hover { color: #c9b87a; }
+
+/* ── HEADER ── */
+.site-header {
+  padding: 3.5rem 0 2.5rem;
+  border-bottom: 1px solid rgba(201,184,122,0.15);
+  margin-bottom: 3rem;
+}
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #7a6a4a;
+  margin-bottom: 1rem;
+  font-family: 'Courier New', monospace;
+}
+.subtitle {
+  font-size: 1.05rem;
+  color: #8a7a5a;
+  font-style: italic;
+  margin-top: 0.6rem;
+  line-height: 1.5;
+}
+
+/* ── SECTION MARKERS ── */
+.section-marker {
+  font-family: 'Courier New', monospace;
+  font-size: 0.7rem;
+  color: #5a4a2a;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.section-rule {
+  border: none;
+  border-top: 1px solid rgba(201,184,122,0.12);
+  margin: 4rem 0 3rem;
+}
+
+/* ── PULL QUOTES ── */
+blockquote {
+  border-left: 2px solid rgba(201,184,122,0.35);
+  margin: 2rem 0;
+  padding: 0.8rem 1.5rem;
+  color: #b0a070;
+  font-style: italic;
+  font-size: 1.02rem;
+}
+
+/* ── TABLES ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.84rem;
+}
+th {
+  text-align: left;
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid rgba(201,184,122,0.3);
+  color: #9a8a5a;
+  font-weight: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+td {
+  padding: 0.5rem 0.7rem;
+  border-bottom: 1px solid rgba(201,184,122,0.08);
+  vertical-align: top;
+  color: #c4b890;
+}
+tr:last-child td { border-bottom: none; }
+
+/* ── FRAMEWORK BOXES ── */
+.framework-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(201,184,122,0.1);
+  margin: 2rem 0;
+  border: 1px solid rgba(201,184,122,0.1);
+}
+.framework-cell {
+  background: #0f0e0c;
+  padding: 1.2rem 1.4rem;
+}
+.fw-num { font-size: 1.4rem; color: rgba(201,184,122,0.4); font-family: 'Courier New', monospace; display: block; margin-bottom: 0.3rem; }
+.fw-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: #7a6a4a; display: block; margin-bottom: 0.2rem; }
+.fw-title { font-size: 1rem; color: #c9b87a; display: block; margin-bottom: 0.3rem; }
+.fw-desc { font-size: 0.84rem; color: #8a7a5a; }
+
+/* ── NODE CARDS ── */
+.node-card {
+  border: 1px solid rgba(201,184,122,0.12);
+  padding: 1.4rem 1.6rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+.node-label {
+  font-family: 'Courier New', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6a5a3a;
+  margin-bottom: 0.4rem;
+}
+.node-title { font-size: 1.1rem; color: #c9b87a; margin-bottom: 0.8rem; }
+
+/* ── TIMELINE ENTRIES ── */
+.timeline-entry {
+  border-left: 1px solid rgba(201,184,122,0.15);
+  padding: 0 0 2rem 1.8rem;
+  margin-left: 0.5rem;
+  position: relative;
+}
+.timeline-entry::before {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: 0.5rem;
+  width: 5px;
+  height: 5px;
+  background: rgba(201,184,122,0.4);
+  border-radius: 50%;
+}
+.timeline-date {
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: #7a6a4a;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.timeline-source {
+  font-size: 0.78rem;
+  color: #6a5a3a;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+.timeline-headline {
+  font-size: 1rem;
+  color: #c4b890;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+.timeline-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #5a4a2a;
+  border: 1px solid rgba(201,184,122,0.15);
+  padding: 0.1rem 0.5rem;
+  margin-top: 0.5rem;
+  font-family: 'Courier New', monospace;
+}
+
+/* ── ELEVATION DIAGRAMS ── */
+.elevation-diagram {
+  background: #0a0908;
+  border: 1px solid rgba(201,184,122,0.1);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: #7a6a4a;
+  overflow-x: auto;
+}
+.elev-label { color: #c9b87a; }
+.elev-number { color: #9a8a5a; }
+
+/* ── STAT BOXES ── */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(201,184,122,0.08);
+  margin: 2rem 0;
+}
+.stat-cell {
+  background: #0f0e0c;
+  padding: 1.2rem;
+  text-align: center;
+}
+.stat-number { font-size: 1.8rem; color: #c9b87a; display: block; font-family: 'Courier New', monospace; }
+.stat-label { font-size: 0.72rem; color: #6a5a3a; text-transform: uppercase; letter-spacing: 0.1em; }
+
+/* ── PIVOT DAY BOX ── */
+.pivot-box {
+  border: 1px solid rgba(201,184,122,0.2);
+  margin: 2.5rem 0;
+  overflow: hidden;
+}
+.pivot-header {
+  background: rgba(201,184,122,0.06);
+  padding: 0.8rem 1.4rem;
+  font-family: 'Courier New', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #9a8a5a;
+  border-bottom: 1px solid rgba(201,184,122,0.15);
+}
+.pivot-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(201,184,122,0.1);
+}
+.pivot-col {
+  background: #0f0e0c;
+  padding: 1.2rem 1.4rem;
+}
+.pivot-loc { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: #7a6a4a; margin-bottom: 0.4rem; font-family: 'Courier New', monospace; }
+.pivot-event { color: #c4b890; font-size: 0.95rem; }
+
+/* ── ANCHOR CHAIN ── */
+.anchor {
+  border-left: 2px solid rgba(201,184,122,0.2);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+}
+.anchor-num { font-family: 'Courier New', monospace; font-size: 0.7rem; color: #7a6a4a; letter-spacing: 0.1em; }
+.anchor-title { font-size: 1.05rem; color: #c9b87a; margin: 0.2rem 0 0.5rem; }
+
+/* ── LAND VALUE ARC ── */
+.land-arc {
+  background: #0a0908;
+  border: 1px solid rgba(201,184,122,0.1);
+  padding: 1.5rem;
+  margin: 2rem 0;
+}
+.land-arc-title {
+  font-family: 'Courier New', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #6a5a3a;
+  margin-bottom: 1rem;
+}
+.land-row {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(201,184,122,0.05);
+  font-size: 0.88rem;
+}
+.land-row:last-child { border-bottom: none; }
+.land-year { color: #7a6a4a; font-family: 'Courier New', monospace; font-size: 0.8rem; }
+.land-desc { color: #c4b890; }
+
+/* ── FIGURE PLACEHOLDERS ── */
+.fig-placeholder {
+  border: 1px dashed rgba(201,184,122,0.15);
+  padding: 1.2rem 1.4rem;
+  margin: 2rem 0;
+  font-size: 0.82rem;
+  color: #5a4a2a;
+  font-style: italic;
+}
+.fig-placeholder strong { color: #7a6a4a; font-style: normal; }
+
+/* ── SOURCES ── */
+.sources {
+  font-size: 0.78rem;
+  color: #6a5a3a;
+  border-top: 1px solid rgba(201,184,122,0.1);
+  padding-top: 0.8rem;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+/* ── CODA ── */
+.coda {
+  text-align: center;
+  padding: 4rem 0 2rem;
+  border-top: 1px solid rgba(201,184,122,0.12);
+  margin-top: 5rem;
+}
+.coda-rule { color: rgba(201,184,122,0.3); font-size: 1.2rem; margin-bottom: 2rem; }
+.coda-text { font-size: 0.88rem; color: #6a5a3a; font-style: italic; line-height: 1.8; max-width: 580px; margin: 0 auto 1rem; }
+.coda-byline { font-size: 0.72rem; color: #4a3a1a; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'Courier New', monospace; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 600px) {
+  body { font-size: 15px; padding: 0 1rem 4rem; }
+  h1 { font-size: 1.9rem; }
+  .framework-grid, .pivot-cols, .stat-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="eyebrow" style="padding-top:2rem;">Geographic Audit &nbsp;·&nbsp; USGS 1894 &nbsp;·&nbsp; Forensic Film History</div>
+
+<nav>
+<a href="#prologue">Prologue</a>
+<a href="#lit">Literature</a>
+<a href="#fw">3+4 Framework</a>
+<a href="#nodes">Three Nodes</a>
+<a href="#anchors">Chain of Anchors</a>
+<a href="#transit">Transit</a>
+<a href="#usgs">USGS 1894</a>
+<a href="#shadow">Shadow Tax</a>
+<a href="#capital">Capital Penalty</a>
+<a href="#modern">Modern Evidence</a>
+<a href="#sources">Primary Sources</a>
+<a href="#sign">The Sign</a>
+</nav>
+
+<header class="site-header">
+  <h1>Beyond the Lemon Grove</h1>
+  <div class="subtitle">The Geographic Eviction of the American Film Industry &nbsp;·&nbsp; The Convergence That Made Hollywood the Only Possible Outcome</div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- PROLOGUE -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="prologue">
+<div class="section-marker">Prologue · 1890–1909</div>
+<h2>Before the Camera: The Land as Lemons</h2>
+<p>The terrain that became Hollywood was not empty. Before the industry arrived, it was a functioning agricultural economy with a name, a brand, and a theory of its own value — none of which had anything to do with motion pictures.</p>
+
+<p>The forensic record begins not with a film but with a real estate advertisement and a federal survey filed in the same calendar year — 1894. Neither document knew the other existed. Together they constitute the essay's founding irony: the same ground was measured as an industrial floor and sold as a lemon grove in the same twelve months.</p>
+
+<h3>The Land Before the Lens</h3>
+
+<div class="land-arc">
+<div class="land-arc-title">Hollywood Corridor · Land Value Arc · 1890–1916 · Primary Documents</div>
+
+<div class="land-row">
+  <div class="land-year">Nov 20 1890</div>
+  <div class="land-desc"><strong>LA Herald.</strong> Reporter rides through Cahuenga foothills near Colegrove with A. H. Denker. H. H. Wilcox sells 40 acres at Hollywood for $18,000 — $450/acre raw land. Reporter predicts $1,000/acre within five years and declares the foothills destined for millionaire villa residences. <em>"There is not a spur of these foothills that will not bear as a crest the home of some millionaire."</em> He was right about the destination. Wrong about the mechanism. The money would be made on the floor and spent on the hills.</div>
+</div>
+
+<div class="land-row">
+  <div class="land-year">Apr 12 1891</div>
+  <div class="land-desc"><strong>LA Herald.</strong> Morrison &amp; Chanslor, 139 South Broadway. <em>"90 acres, frostless belt, improved, west of Hollywood — $30,000. 22 acres, adjoining Hollywood — $5,000."</em> Hollywood used as agricultural compass point to locate orange groves and frostless acreage. The word exists purely to orient a farm buyer.</div>
+</div>
+
+<div class="land-row">
+  <div class="land-year">Jul 3 1892</div>
+  <div class="land-desc"><strong>LA Herald. Fair Cahuenga.</strong> Hammel &amp; Denker ranch: 1,000 acres of valley land, 125 cows milked daily, 600 acres of corn never irrigated, 20 acres of sugar beets. Winter vegetables shipping to Boston and Chicago. Ten acres of peas netting $2,500 profit. <em>"The two great needs of this fertile valley are transportation and irrigation facilities."</em> Transportation and irrigation — the same two problems, rephrased, that Christie solves in 1911 with a transit line and a flat floor.</div>
+</div>
+
+<div class="land-row">
+  <div class="land-year">Feb 3 1893</div>
+  <div class="land-desc"><strong>LA Herald. Colegrove.</strong> <em>"In the early spring a large acreage will be planted to lemons, numerous purchases of land for that purpose having lately been made. It looks as if the Cahuenga valley would, in a few years, take the lead in the production of that most useful fruit — the Sicily of America."</em> The Cahuenga valley floor in February 1893 is converting itself into a lemon district on terrain the federal government will survey as an industrial floor fourteen months later. The dummy road from Temple Street to Hollywood already running packed Sunday trains — families with lunch baskets picnicking in the canyons.</div>
+</div>
+
+<div class="land-row">
+  <div class="land-year">May 1894</div>
+  <div class="land-desc"><strong>USGS Los Angeles Quadrangle filed.</strong> Scale 1:62,500. Contour interval 25 ft. Hollywood/Colegrove grid: <strong>356 ft spot elevation, zero contour lines, 0% grade</strong>. The federal surveyor measures the Industrial Floor. The terrain does not know it is being measured. The lemon growers do not know the survey exists.</div>
+</div>
+
+<div class="land-row">
+  <div class="land-year">Dec 16 1894</div>
+  <div class="land-desc"><strong>LA Herald.</strong> Brodtbeck &amp; McConnell, 113 S. Broadway. <em>"For Sale — $300 per acre — Ten acres lemon land at Hollywood, on Sunset Boulevard."</em> Same year as the USGS survey. Seven months after the federal filing. The surveyor saw elevation, grade, contour. McConnell saw lemons. Same ground. Same year. Completely different understanding of what it was worth and why.</div>
+</div>
+
+<div class="land-row">
+  <div class="land-year">Dec 30 1900</div>
+  <div class="land-desc"><strong>LA Herald.</strong> <em>"$7,500 improved ranch near Hollywood for New York. $6,000 orange and lemon grove near Hollywood for Los Angeles or state of Washington."</em> Exchange listings. Hollywood lemon land traded sideways for Washington state property. The coordinate is a commodity to be swapped, not developed.</div>
+</div>
+
+</div>
+
+<p>The lemon grove was not a myth invented by later historians. It was a functioning economic identity — the Sicily of America, the frostless belt, the foothill country shipping winter vegetables to Boston. The industry did not arrive in empty terrain. It arrived in a valley that had spent thirty years becoming something else, on ground that a federal survey had already measured for entirely different purposes.</p>
+
+<p>The survey measured it in 1894. McConnell sold it as lemons in 1894. It took seventeen more years for anyone to understand what the measurement actually meant.</p>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION I — LITERATURE / BLIND SPOT -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="lit">
+<div class="section-marker">§ I</div>
+<h2>The Topographic <em>Blind Spot</em></h2>
+<p style="font-size:0.8rem; color:#6a5a3a; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1.2rem;">Literature Review &nbsp;·&nbsp; The Standard Trio &nbsp;·&nbsp; The Lemon Grove Myth</p>
+
+<p>Most published accounts explain the industry's shift toward Hollywood through the <strong>Standard Trio</strong>: 300 days of sunshine, cheap land, and flight from Edison's patent enforcers. These histories share a <strong>2D Blind Spot</strong> — treating land as a flat commodity, acreage to be counted rather than terrain to be analyzed. They rely on the <strong>Lemon Grove Myth</strong>: filmmakers moved west for the scenery, and Hollywood's emergence was inevitable.</p>
+
+<p>By applying a forensic audit to the 1894 USGS Federal Survey — filed nineteen years before DeMille signed his barn lease — we can quantify what the standard histories missed. The hills and ridges flanking Edendale were not just scenery. They were industrial infrastructure running at a daily deficit, stealing measurable ROI through what this analysis terms the <strong>Shadow Tax</strong>. Hollywood won because the 1894 survey documented the only node in the Los Angeles basin flat enough to hold the weight of the Feature Film era.</p>
+
+<p>The Lemon Grove Myth was not invented by later historians. It was manufactured in real time. In May 1913, the Los Angeles press described Edendale's canyon as "fresh, free ozone." By June 1911, the Marysville Democrat had reprinted an LA Times piece calling the Selig plant — the second-largest glass studio in the world, representing $250,000 in capital investment — a marvel of the age. The same geometry the 1894 survey documents as an industrial trap was being celebrated in the national press as infrastructure. The Shadow Tax was structurally invisible because no journalist had reason to run arctan calculations against the contour lines.</p>
+
+<div class="fig-placeholder"><strong>Fig. 1.1 · Suggested Image</strong> — Selig Polyscope Co., Allesandro Street, Edendale — the $250,000 "second-largest glass studio in the world," June 1911. The press saw a marvel of the age. The 1894 survey saw a canyon trap already charging a daily Shadow Tax.</div>
+
+<p>The move to the 356-ft floor was obscured by a primitive media landscape that traded in fragments. When Selig and Boggs moved to Edendale, the press framed it as a pastoral retreat to "sunny California" — not an entry into a topographic trap. The media recorded the <em>who</em> and the <em>where</em> but was functionally blind to the <em>why</em> — the mechanical eviction from the Z-axis canyons to the X-axis alluvial floor. This Information Lag allowed the Lemon Grove Myth to take root, replacing the forensic math of the 356-ft coordinate with a romanticized narrative of accidental discovery.</p>
+
+<p>There is a second layer to the Information Lag. Before the studio era, the industry was nomadic — ranging across public land with no perimeter, no gate, no signal to the outside world that what was happening was fictional. Between 1904 and 1910, Selig's field operations generated a documented series of incidents in which the boundary between filmed reality and actual reality collapsed entirely:</p>
+
+<p><strong>October 1904, Colorado.</strong> A party of eastern tourists riding through the foothills near Colorado Springs came upon Selig filming a stage hold-up. Believing it genuine, several armed tourists opened fire. William N. Selig was shot and painfully wounded in the arm before the fusillade was stopped. <em>(Auburn Journal, October 13, 1904.)</em></p>
+
+<p><strong>August 1909, Mount Shasta.</strong> Selig's company was filming a kidnapping scene in the woods between Mount Shasta and McCloud. A farmer on the slopes saw the chase and capture of a young girl, took his rifle and a fast horse, overtook the actors, compelled them to free the girl, and was not satisfied until shown credentials proving the kidnapping was a play. <em>(Colusa Daily Sun, August 24, 1909.)</em></p>
+
+<p><strong>January 1910, Truckee.</strong> Selig's company shooting a fake Peary North Pole expedition on Donner Lake — nine months after Peary's actual expedition. Sealskin boots, fur clothes, dog sleds, Eskimo costumes. Truckee residents watched the company leave for the woods: <em>"one would imagine himself in the wilds of Alaska."</em> <em>(Truckee Republican, January 26, 1910.)</em></p>
+
+<p>Three incidents. Same company. The confusion ran in both directions — reality mistaken for film, actors shot; film mistaken for reality, farmer with a rifle stops the production. The studio system solved this. A walled lot on the 356-ft floor with a gate and a sign meant no farmer could mistake a kidnapping scene for a real one. The controlled terrain ended the nomadic era and the ambiguity that came with it. The 1914 Edendale joke — a man watching a real assault and assuming it was a film shoot — is the inversion: by then the studios had run so long in the canyon that real violence got the benefit of the doubt.</p>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION I-B — 3+4 FRAMEWORK -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="fw">
+<div class="section-marker">The Forensic Model</div>
+<h2>3 Nodes + 4 Mechanisms</h2>
+<p style="font-size:0.8rem; color:#6a5a3a; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1.2rem;">The Convergence Framework &nbsp;·&nbsp; Why Hollywood Was Structurally Inevitable &nbsp;·&nbsp; Not Discovery — Convergence</p>
+
+<h3>The 3+4 Convergence</h3>
+<p>Hollywood was not the only flat land in the Los Angeles basin. It was the only place where three geographic nodes and four industrial mechanisms converged simultaneously at a single topographic coordinate. The nodes map the <em>where</em> and <em>when</em>. The mechanisms explain the <em>why</em> — forces operating across all three nodes, all resolving at Hollywood.</p>
+
+<div class="framework-grid">
+  <div class="framework-cell">
+    <span class="fw-num">①</span>
+    <span class="fw-label">The Seed</span>
+    <span class="fw-title">Pragmatic Origin</span>
+    <span class="fw-desc">Boggs / Selig · Trust escape · 3,000 mi</span>
+  </div>
+  <div class="framework-cell">
+    <span class="fw-num">②</span>
+    <span class="fw-label">The Umbilical</span>
+    <span class="fw-title">Transit Link</span>
+    <span class="fw-desc">Rail / Labor · Spring Street tether</span>
+  </div>
+  <div class="framework-cell">
+    <span class="fw-num">③</span>
+    <span class="fw-label">The Sweet Spot</span>
+    <span class="fw-title">Topographic Floor</span>
+    <span class="fw-desc">356 ft · 0% grade · 1894 documented</span>
+  </div>
+  <div class="framework-cell">
+    <span class="fw-num">④</span>
+    <span class="fw-label">The Anchors</span>
+    <span class="fw-title">Capital Lock-In</span>
+    <span class="fw-desc">Christie · DeMille · Griffith · Council · 1911–1916</span>
+  </div>
+</div>
+
+<table>
+<thead>
+<tr>
+  <th>Mechanism</th>
+  <th>Node 1 · 1907–08 Downtown LA</th>
+  <th>Node 2 · 1909–13 Edendale</th>
+  <th>Node 3 · 1911–15 Hollywood ◆</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>① The Seed</strong><br>Pragmatic Origin</td>
+  <td>● ACTIVE — Trust escape · 3,000 mi from Edison · rooftop at 8th &amp; Olive · proves California base</td>
+  <td>◌ Residual — Selig expands to Edendale · $250k committed · Seed becomes Capital Trap</td>
+  <td>— Resolved — Canyon makes Seed's expansion impossible · Christie escapes to flat floor</td>
+</tr>
+<tr>
+  <td><strong>② The Umbilical</strong><br>Transit Link</td>
+  <td>● ACTIVE — Spring Street labor pool · walking distance · zero commute penalty</td>
+  <td>● ACTIVE — LA Railway Glendale Line · nickel commute · canyon-following · fragile</td>
+  <td>● SCALES — Pacific Electric inter-urban · regional network · bajada-crossing · unlimited reach</td>
+</tr>
+<tr>
+  <td><strong>③ The Sweet Spot</strong><br>Topographic Floor</td>
+  <td>— Absent — Urban flat · no topographic drama · no production value beyond rooftop</td>
+  <td>▲ PARTIAL — Canyon drama ✓ · flat floor ✗ · Shadow Tax active · 8% grade penalty</td>
+  <td>● COMPLETE — 356-ft floor ✓ · 0% grade ✓ · Shadow Tax = zero ✓ · distressed asset ✓</td>
+</tr>
+<tr>
+  <td><strong>④ The Anchors</strong><br>Capital Lock-In</td>
+  <td>— None — No permanent production commitment · distribution only</td>
+  <td>▲ TRAPPED — $250k Selig · canyon floor · Z-axis trap · expansion impossible</td>
+  <td>● LOCKS — Christie $30 · 1911 ✓ · DeMille $250/mo · 1913 ✓ · Griffith 160-ft wall · 1916 ✓ · Council $15M · Nov 1916 ✓</td>
+</tr>
+</tbody>
+</table>
+
+<div class="fig-placeholder"><strong>Fig. 1.2 · Suggested Image</strong> — The Alexandria Hotel, Spring &amp; Fifth Streets, Los Angeles. DeMille signed the Hollywood barn lease on Alexandria Hotel stationery, December 22, 1913 — the Node 3 industrial commitment executed from the Node 1 intelligence hub.</div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION II — THREE NODES -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="nodes">
+<div class="section-marker">§ II</div>
+<h2>The Three-Node Migration: <em>A Spatially Rational Sequence</em></h2>
+<p style="font-size:0.8rem; color:#6a5a3a; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1.2rem;">Downtown LA 1907–08 &nbsp;·&nbsp; Edendale 1909 &nbsp;·&nbsp; Hollywood 1911–15</p>
+
+<p>Each move in the westward trajectory was <strong>spatially rational</strong> given the dominant production format at that moment. The sequence only looks inevitable in hindsight. Each node failed not from bad judgment, but from hitting a physical ceiling its terrain imposed. Node 1 proved the <strong>Economics</strong> of film. Node 2 proved the <strong>Language</strong> of film. Node 3 proved the <strong>Scale</strong> of film.</p>
+
+<!-- NODE 1 -->
+<div class="node-card">
+<div class="node-label">Node 1 · 1907–08</div>
+<div class="node-title">Downtown LA — The Distribution Node · Vertical / Urban</div>
+<p><strong>The Trust Escape.</strong> Francis Boggs: pragmatist, not visionary. 3,000 miles from Edison's New Jersey enforcers. Rooftop at 8th &amp; Olive — early scripted productions under open sky, year-round light, maximum distance from the Trust.</p>
+<p><strong>Everything Factor.</strong> Film exchanges, chemistry labs, talent pool, equipment suppliers — all within walking distance of Spring Street. Zero transport penalty. The most efficient node possible for rooftop-and-warehouse filmmaking.</p>
+<p><strong>The Ceiling.</strong> Fixed-Space Node. No room for a 9-acre studio on a city block. When visual grammar demanded chases and hills, the industry followed the rail lines outward.</p>
+<p style="font-size:0.8rem; color:#6a5a3a; font-style:italic;">Obsoleted by scale, not terrain · Economics proven · Language demanded</p>
+</div>
+
+<!-- NODE 2 -->
+<div class="node-card">
+<div class="node-label">Node 2 · 1909–1913</div>
+<div class="node-title">Edendale — The Visual Grammar Node · Canyon / Vertical</div>
+
+<p><strong>Before the Studios: The Neighborhood Baseline.</strong> Edendale in February 1909 — eight months before Selig files his building permit — is a quiet residential suburb where an 8-room modern house with a 4-room cottage, fruit trees, and two transit connections sells for $3,500. The Elysian Heights ad sells it as high ground: <em>"where the air is pure and bracing; where health is considered as well as surroundings."</em> <em>(LA Herald, February 21, 1909.)</em> The canyon was a health retreat selling pure air. Nine months later Selig broke ground on the capital trap.</p>
+
+<p>In November 1908, a drug store and six-room house in Edendale lists at $6,000 clear — and the owner wants Oregon property in exchange. He is trying to exit Edendale for the Pacific Northwest at the exact moment before the value changes. Whether he got out before Selig arrived, the record does not say. <em>(LA Herald, November 8, 1908.)</em></p>
+
+<p><strong>The Building Permit.</strong> Selig Polyscope Company, owner. Richards-Neustadt Construction Company, builder. Alessandro Street, 1851. One-story photographic studio. <strong>$3,977.</strong> <em>(LA Times, circa 1909.)</em> The studio cost more to build than an improved 8-room house in the same neighborhood in the same year. The capital trap clock starts here.</p>
+
+<p><strong>Why Edendale.</strong> One-reel Chase Economy needed canyon topography AND transit efficiency simultaneously. The Glendale Line's nickel commute was the umbilical to Spring Street's labor pool. Both conditions had to be true at once — and at Edendale, they were.</p>
+
+<p><strong>The Capital Trap — 1911.</strong> Selig's $250,000 mission-style complex: the second-largest glass stage in the world — committed into a Z-axis trap. Every expansion required moving canyon walls. The same hills that gave him the Chase became the ceiling that denied him the Epic. The Marysville Democrat celebrated it as a national marvel in June 1911 — reprinting the LA Times 400 miles north — while the Shadow Tax ran daily and invisibly against every shooting hour. The $2,000 stagecoach Boggs personally secured — an antique presidential coach, an excellent prop for canyon chase westerns — is the purest single symbol of capital committed to a terrain that was already obsolete for the next format. <em>(Marysville Democrat, June 19, 1911.)</em></p>
+
+<p><strong>Peak &amp; Break — Same Day.</strong> October 27, 1911: Francis Boggs shot dead at 1845 Allesandro Street. Boggs had been earning $500 a month — the highest salary in the canyon operation. Selig had arrived from Chicago that morning for an expansion conference. In the room: Hobart Bosworth, J. L. McGee, W. Santzhi. The expansion the canyon's 8% grade would have taxed before a board was laid was never discussed. <em>(Press Democrat, October 28, 1911.)</em> Same morning: Al Christie opens Node 3 on the 356-ft Industrial Floor. December 1913: DeMille signs the barn lease.</p>
+
+<p>Three days after the pivot day, the San Jose Mercury News advertised 101 acres of vacant land near Edendale for $100 an acre — <em>"suitable for grain, hay, seed or alfalfa."</em> <em>(October 30, 1911.)</em> The canyon's industrial transformation was invisible to the agricultural land market 72 hours after it happened. A San Jose land agent was still selling the Edendale corridor as a grain farm while Selig's $250,000 studio sat on the same corridor and the national press called it the second largest of its kind in the world.</p>
+
+<p style="font-size:0.8rem; color:#6a5a3a; font-style:italic;">Obsoleted by Shadow Tax + 8% grade · Language proven · Scale demanded</p>
+</div>
+
+<!-- NODE 3 -->
+<div class="node-card">
+<div class="node-label">Node 3 · 1911–15</div>
+<div class="node-title">Hollywood — The Industrial Consolidation Node · Flat / Horizontal · 356 ft</div>
+<p><strong>Four-Condition Convergence.</strong> (1) Distressed Asset — Blondeau Tavern at $30–40/mo, legally killed by 1904 dry vote; (2) Pacific Electric inter-urban link; (3) 356-ft 0% Industrial Floor documented 1894; (4) Floor plus Backdrop — Santa Monica Mountains in frame as scenery, not on budget as Shadow Tax.</p>
+<p><strong>The Distressed Asset.</strong> NW corner of Sunset &amp; Gower — roadhouse finished by 1910 annexation. Christie leased the whole structure: roadhouse, barn, corral. Horse stalls became dressing rooms. Corral became a standing Western set. The flat lot became Hollywood's first permanent studio.</p>
+<p><strong>Unlimited Expansion.</strong> Nestor opens Oct 1911. Lasky barn lease Dec 1913; nine acres by 1914. By April 1915, press described simply "the Hollywood studios" — no company name needed. By spring 1915, papers from Vallejo to Long Beach used Hollywood as a cardinal reference point.</p>
+<p style="font-size:0.8rem; color:#6a5a3a; font-style:italic;">Validated by 356-ft spot elevation · USGS 1894 · Scale proven · Industry fossilized</p>
+</div>
+
+<table>
+<thead>
+<tr>
+  <th>Criterion</th>
+  <th>Node 1 · Downtown</th>
+  <th>Node 2 · Edendale</th>
+  <th>Node 3 · Hollywood</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Evolutionary function</td><td>Economics of film · Trust escape · rooftop actualities</td><td>Language of film · Chase Economy · canyon as free production value</td><td>Scale of film · Feature / Epic · Horizontal Infinite</td></tr>
+<tr><td>Pre-industry land use</td><td>Urban commercial — built surface</td><td>Residential suburb · $3,500 house · pure air · health retreat</td><td>Lemon groves · $300/acre · Sicily of America</td></tr>
+<tr><td>Topography</td><td>Built urban — flat</td><td>Canyon corridor — vertical</td><td>Alluvial fan — horizontal</td></tr>
+<tr><td>Production format</td><td>Rooftop narrative scenes / early actualities</td><td>One-reel chases / shorts</td><td>Five-reel features</td></tr>
+<tr><td>Shadow Tax</td><td>Minimal — open sky</td><td>High — 734-ft ridges, topographic sunset</td><td>Zero — unobstructed horizon</td></tr>
+<tr><td>Expansion ceiling</td><td>City block — fixed</td><td>Canyon ribbon — physical ceiling</td><td>9 acres · Lasky · 1914 · unlimited</td></tr>
+<tr><td>First distressed asset</td><td>N/A</td><td>Canyon required excavation investment</td><td>Blondeau Tavern · $30–40/mo · Oct 1911</td></tr>
+</tbody>
+</table>
+
+<!-- PIVOT DAY -->
+<h3>October 27, 1911 · The Pivot Day</h3>
+<p style="font-size:0.8rem; color:#6a5a3a; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1.2rem;">Same Date · Two Events · One Geographic Argument</p>
+
+<div class="pivot-box">
+<div class="pivot-header">October 27, 1911 &nbsp;·&nbsp; Same Morning &nbsp;·&nbsp; One Geographic Argument</div>
+<div class="pivot-cols">
+  <div class="pivot-col">
+    <div class="pivot-loc">Edendale · 1845 Allesandro St · Morning</div>
+    <div class="pivot-event"><strong>Francis Boggs — Shot Dead on the Canyon Floor</strong><br><br>Los Angeles manager of Selig Polyscope, founding director of Node 2 — shot dead by a Japanese gardener. W. N. Selig wounded. Selig had arrived from Chicago that morning for an expansion conference. In the room: Hobart Bosworth, J. L. McGee, W. Santzhi. Boggs had been earning $500 a month. He had personally purchased the Edendale property and built the studio — transforming it into a veritable park. He built the capital trap, ran it, and died on it. The expansion the canyon's 8% grade would have taxed before a board was laid was never discussed.</div>
+  </div>
+  <div class="pivot-col">
+    <div class="pivot-loc">Hollywood · Sunset &amp; Gower · Same Day</div>
+    <div class="pivot-event"><strong>Nestor Film Company Opens on the Industrial Floor</strong><br><br>David Horsley's operation, Al Christie on the ground — opens at Sunset Boulevard and Gower Street. The site: the Blondeau Tavern, a roadhouse dead since Hollywood's 1904 dry vote. Christie had the tip from an unnamed actor at the old Los Angeles Theater on Spring Street. The 356-ft alluvial floor receives its first committed operator at $30–40 a month.<br><br><strong>$500/month dies on the canyon floor. $30/month opens on the flat floor. The 59-month clock starts.</strong></div>
+  </div>
+</div>
+</div>
+
+<p>The 1894 USGS survey predicted neither event. It documented the terrain that made both inevitable. October 27, 1911 is the day the geography resolved into history.</p>
+
+<div class="fig-placeholder"><strong>Fig. 2.1 · Suggested Image</strong> — The Blondeau Tavern, northwest corner of Sunset Boulevard and Gower Street. Leased for $30–40/month in October 1911. Horse stalls converted to dressing rooms; corral became a standing Western set. Hollywood's first permanent studio, on the 356-ft Industrial Floor.</div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION III — CHAIN OF ANCHORS -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="anchors">
+<div class="section-marker">§ III</div>
+<h2>The Chain of Anchors: <em>How Node 3 Fossilized</em></h2>
+<p style="font-size:0.8rem; color:#6a5a3a; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1.2rem;">The Industrial Feedback Loop &nbsp;·&nbsp; Four-Stage Structural Reinforcement &nbsp;·&nbsp; 1911 · 1913 · 1916 · November 1916</p>
+
+<p>The three-node migration explains how the industry arrived at Hollywood. It does not explain why it never left. That question requires the <strong>Chain of Anchors</strong> — four successive commitments, each one larger than the last, each one made possible by the 356-ft alluvial floor, each one making departure more structurally irrational than arrival had been. The industry didn't just move to Hollywood. It was progressively bolted there by intelligence, capital, scale — and finally, political sovereignty — in that order.</p>
+
+<p>Fifty-nine months. October 1911 to November 1916. From a $30 tavern lease to a city council's surrender. The 1894 survey measured the coordinate. The terrain did the rest.</p>
+
+<div class="anchor">
+<div class="anchor-num">Anchor 1 · October 1911</div>
+<div class="anchor-title">Christie / Nestor — The Intelligence</div>
+<p>Low-Stakes Explorer · Proves the Industrial Floor · Sunset Blvd &amp; Gower Street</p>
+<p>Christie's intelligence came from an actor at the old Los Angeles Theater on Spring Street — a man traversing the basin daily on the Pacific Electric inter-urban, who had watched the Hollywood alluvial plain from the car window and understood that it offered something Edendale's canyon ribbon could never provide: horizontal room. The site: the Blondeau Tavern at the northwest corner of Sunset and Gower — a roadhouse legally strangled by Hollywood's 1904 dry vote and finished by the 1910 annexation. Christie and Horsley leased the entire structure for $30 to $40 a month. Carpenters rebuilt the horse stalls into dressing rooms. The tavern bar became the business office. The corral became a standing Western set.</p>
+<div class="sources">Sources: Christie, Al. "What New Sites for Studios Mean to Hollywood." Los Angeles Examiner, 17 Feb. 1924. · "Nestor Company in Hollywood." Moving Picture World, vol. 10, no. 6, 11 Nov. 1911, p. 467.</div>
+</div>
+
+<div class="anchor">
+<div class="anchor-num">Anchor 2 · December 1913</div>
+<div class="anchor-title">DeMille / Lasky — The Capital Anchor</div>
+<p>Scale-Up Architect · New York Capital Follows the Proof · Selma Ave &amp; Vine Street</p>
+<p>DeMille's original destination was Flagstaff, Arizona. He arrived to find a blizzard and high mountains — terrain that offered neither the flat shooting floor nor the visual depth a Western feature required. DeMille arrived in Los Angeles on December 20, 1913, and established headquarters at the Alexandria Hotel — the lobby known in the industry as the "Million Dollar Carpet." Within two days, L.L. Burns and Harry Revier drove DeMille out to a yellow barn at the corner of Selma Avenue and Vine Street. On December 22, 1913, DeMille signed the lease for half the barn and one acre of flat lot on Alexandria Hotel stationery. The rent was $250 a month. By 1914 the Lasky operation had expanded to nine acres on the same flat plain.</p>
+<p><strong>The Stationery Proof:</strong> DeMille signed the Hollywood barn lease on Alexandria Hotel stationery — the physical document confirming that the Node 3 industrial commitment was executed from the Node 1 intelligence hub.</p>
+<div class="sources">Sources: DeMille, Cecil B. The Autobiography of Cecil B. DeMille. Prentice-Hall, 1959. · Eyman, Scott. Empire of Dreams. Simon &amp; Schuster, 2010.</div>
+</div>
+
+<div class="anchor">
+<div class="anchor-num">Anchor 3 · 1916</div>
+<div class="anchor-title">Griffith / Babylon — The Proof of Scale</div>
+<p>Topographic Disruptor · The Floor Holds the Epic · Fine Arts Studio · 4500 Sunset Blvd</p>
+<p>In 1916, D.W. Griffith built the Babylon set for <em>Intolerance</em> at the Fine Arts Studio on the 4400–4500 block of Sunset Boulevard. The Great Wall of Babylon reached between 140 and 160 feet in height — the equivalent of a fifteen-story wooden skyscraper — covering approximately three to four acres of backlot. Griffith's cinematographer Billy Bitzer describes the technical challenge: the camera required a 100-foot tower and had to be pushed back hundreds of feet to achieve the necessary depth of field. That retreat — three hundred feet of flat, unobstructed runway — is the forensic argument. In the 8% cross-slope of Edendale's canyon, a three-hundred-foot camera retreat would place the lens at a materially different elevation, hitting topographic obstructions. On the 356-ft alluvial floor at 4500 Sunset, it was a straight roll across level ground. The Babylon set is the physical symptom. What came three months later is the lock.</p>
+<div class="sources">Sources: Photoplay Magazine, Aug. 1916 · Bitzer, G.W. Billy Bitzer: His Story. Farrar, Straus and Giroux, 1973 · Wanamaker, Marc. Hollywood, 1900–1950. Arcadia Publishing, 2009.</div>
+</div>
+
+<div class="anchor">
+<div class="anchor-num">Anchor 4 · November 1916 · The Kill Shot</div>
+<div class="anchor-title">The City Council — Political Sovereignty</div>
+<p>System Proof · The Deed to the City · 59-Month Lock · $15,000,000</p>
+<p>The Babylon set proved the floor could hold epic scale. The November 1916 city council hearing proved the floor had achieved something beyond scale: <strong>systemic sovereignty</strong>. When the residents of Hollywood — the people who actually lived there — formally petitioned the Los Angeles city council to stop the noise, the lights, the cannons, the incessant hammering, the flimsy inflammable buildings, and the removal of the <em>Intolerance</em> scenery, the council's welfare committee told them no.</p>
+
+<p><em>"That the $15,000,000 motion picture industry in Los Angeles was too important an institution to be nagged and harassed into leaving."</em></p>
+
+<p>Landlord J. G. Clark stated the structural reality plainly: <em>"If these motion picture companies are ousted from Hollywood, fully half of the renting houses of Hollywood will be vacant."</em> Fred Kley of Lasky: <em>"$350,000 being spent by the film companies in Los Angeles this year."</em></p>
+
+<p>This is not a film essay argument. This is an industrial audit argument. The Babylon set was a temporary structure — it was torn down. The council's decision was permanent. The terrain made departure physically irrational in 1911. The capital made it financially irrational by 1914. The social infrastructure made it institutionally irrational by 1915. The city council made it <strong>politically irrational in November 1916</strong>.</p>
+
+<p>The Chain of Anchors was complete. The hardware — $15,000,000 in committed capital — had overridden the software — the legal rights of the citizens who lived there. That is the ultimate fossilization. That is the deed to the city.</p>
+
+<p><strong>October 1911: $30 tavern lease. November 1916: city council surrender. Fifty-nine months.</strong></p>
+
+<div class="sources">Sources: "Silent Drama Too Noisy." Los Angeles Herald, vol. 42, no. 308, 25 Oct. 1916. · "Film Producers Fight Council." Los Angeles Herald, vol. 42, no. 10, 13 Nov. 1916.</div>
+</div>
+
+<h4>Synthesis · The Industrial Feedback Loop</h4>
+<p>Each anchor made the next one structurally inevitable. Christie proved the floor was workable. DeMille proved it could hold feature-scale capital. Griffith proved it could hold epic-scale ambition. The council proved it could hold political sovereignty. By November 1916 the industry had been progressively bolted to a single topographic coordinate by the same 378-foot advantage the 1894 survey documented before any of them arrived.</p>
+
+<div class="stat-row">
+  <div class="stat-cell">
+    <span class="stat-number">$30</span>
+    <span class="stat-label">Oct 1911 · Tavern Lease · Anchor 1</span>
+  </div>
+  <div class="stat-cell">
+    <span class="stat-number">$15M</span>
+    <span class="stat-label">Nov 1916 · Council Surrender · Anchor 4</span>
+  </div>
+  <div class="stat-cell">
+    <span class="stat-number">59 mo</span>
+    <span class="stat-label">Oct 1911 – Nov 1916 · The Full Arc</span>
+  </div>
+</div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION IV — TRANSIT -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="transit">
+<div class="section-marker">§ IV</div>
+<h2>The Infrastructure of Proximity: <em>Two Rail Systems, Two Nodes</em></h2>
+<p>The Node 2 → Node 3 transition was not only a geographic shift — it was a <strong>transit system reorientation</strong> confirmed on a 1906 railway map six years before Christie made the move. Edendale and Hollywood were served by different networks running in different directions from Downtown, at different scales, connecting to different terrain types.</p>
+
+<div class="fig-placeholder"><strong>Fig. 4.1 · Primary Source Map · Suggested Image</strong> — Map of the City of Los Angeles Showing Railway Systems, 1906. Library of Congress / Travel and Hotel Bureau. LA Railway Co. lines in black (Hollywood corridor, bajada-crossing); LA Inter-Urban Ry. Co. in green (Glendale canyon, Node 2); Pacific Electric Inter-Urban in red (regional, east/south routes).</div>
+
+<div class="node-card">
+<div class="node-label">Node 2 · Edendale · LA Inter-Urban Ry.</div>
+<div class="node-title">Canyon-Following · Green Line</div>
+<p>LA Inter-Urban Railway Co. — green line on 1906 map · northeast from Downtown · Glendale corridor · canyon-following. Enabled the Infrastructure of Proximity: Downtown labor pool commutable to canyon studios on a nickel fare. But the line threaded the canyon — it could not scale beyond the canyon ribbon's physical ceiling. The terrain that made Edendale accessible also made it a trap.</p>
+</div>
+
+<div class="node-card">
+<div class="node-label">Node 3 · Hollywood · LA Railway Co.</div>
+<div class="node-title">Bajada-Crossing · Black Line</div>
+<p>LA Railway Co. — black line on 1906 map · northwest from Downtown · Hollywood corridor · flat bajada plain. Christie's "ten miles out" ran on this line, crossing the alluvial fan with no canyon threading and no grade penalty. The Pacific Electric Inter-Urban (red) radiated east and south in 1906 — the Hollywood connection was LA Railway, running straight across the Industrial Floor to the Sunset &amp; Gower terminus.</p>
+</div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION V — USGS 1894 -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="usgs">
+<div class="section-marker">§ V</div>
+<h2>The 1894 USGS <em>Los Angeles Quadrangle</em></h2>
+<p style="font-size:0.8rem; color:#6a5a3a; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1.2rem;">Primary Source · Scale 1:62,500 · Filed May 19, 1897 · 19 years before DeMille · ngmdb.usgs.gov/topoview</p>
+
+<p>The argument does not require estimation. It is written on a federal topographic survey predating the industry's arrival by more than a decade. <strong>The terrain preceded the studios. The studios had no choice but to respond to it.</strong></p>
+
+<div class="fig-placeholder"><strong>Fig. 5.1 · Primary Source · Suggested Image</strong> — USGS Los Angeles Quadrangle, 1894 (HTMC edition). Left: Hollywood/Colegrove grid — 356 ft spot elevation, zero contour lines. Right: Edendale/Ivanhoe canyon — 500 ft through the Allesandro Street studio corridor, 734 ft at the Los Felis ridge. One frame, one 1894 federal survey — the entire geographic argument.</div>
+
+<div class="elevation-diagram">
+<p style="color:#7a6a4a; margin-bottom:1rem; font-size:0.7rem; letter-spacing:0.1em;">FIGURE 5.2 · 1894 USGS FEDERAL SURVEY · HOLLYWOOD PLAIN vs. EDENDALE CANYON</p>
+<table style="font-family:'Courier New',monospace; font-size:0.8rem; width:100%; border:none;">
+<tr>
+  <td style="color:#c9b87a; padding:0.3rem 1rem 0.3rem 0; border:none; width:50%;">
+    Hollywood · Colegrove · Studio Grid<br>
+    <span style="font-size:1.4rem; color:#c9b87a;">356</span> ft<br>
+    FLAT · 0% GRADE · INDUSTRIAL FLOOR<br>
+    ZERO CONTOUR LINES
+  </td>
+  <td style="color:#8a6a4a; padding:0.3rem 0 0.3rem 1rem; border:none; border-left:1px solid rgba(201,184,122,0.15); width:50%;">
+    Edendale · Ivanhoe Canyon · Studio Row<br>
+    <span style="font-size:1.4rem; color:#8a6a4a;">734</span> ft ridge<br>
+    ~500 ft canyon floor<br>
+    8% GRADE · SHADOW TAX ACTIVE
+  </td>
+</tr>
+</table>
+<p style="margin-top:1rem; color:#6a5a3a;">378 ft gap · Same 1894 map · Not an estimate</p>
+</div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION VI — SHADOW TAX -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="shadow">
+<div class="section-marker">§ VI</div>
+<h2>The Shadow Tax</h2>
+<p style="font-size:0.8rem; color:#6a5a3a; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1.2rem;">Derived, Not Asserted &nbsp;·&nbsp; Daily Production Penalty &nbsp;·&nbsp; Recurring ROI Deficit</p>
+
+<p>The ridges flanking Edendale imposed a <strong>quantifiable daily cost</strong> on every studio below them — a recurring tax on every shooting day in the pre-electric era. By June 1911 the world's largest film company (Pathé) and the second-largest glass studio in the world (Selig) were both paying this tax daily without naming it. The May 1913 press called the canyon "fresh, free ozone." The 1894 survey called it a 734-ft ridge at an 11° shadow angle.</p>
+
+<div class="stat-row">
+  <div class="stat-cell">
+    <span class="stat-number">45–60</span>
+    <span class="stat-label">Min/day lost · Edendale · arctan(234 ÷ ~1,200 ft) ≈ 11°</span>
+  </div>
+  <div class="stat-cell">
+    <span class="stat-number">~9–11%</span>
+    <span class="stat-label">ROI Penalty · 8.5-hr day · recurring daily charge</span>
+  </div>
+  <div class="stat-cell">
+    <span class="stat-number">Zero</span>
+    <span class="stat-label">Hollywood Daily Loss · Unobstructed until astronomical sunset</span>
+  </div>
+</div>
+
+<p>Vertical difference ~234 ft and shadow angle ~11° read directly from 1894 federal survey. Horizontal ~1,200 ft measurable from scale bar. Derivation transparent and testable: ngmdb.usgs.gov/topoview.</p>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION VII — CAPITAL PENALTY -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="capital">
+<div class="section-marker">§ VII</div>
+<h2>The Capital Penalty</h2>
+<p style="font-size:0.8rem; color:#6a5a3a; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1.2rem;">Excavation Surcharge &nbsp;·&nbsp; One-Time Cost Before Frame One &nbsp;·&nbsp; 8% vs. 0% Grade</p>
+
+<p>The Shadow Tax was a recurring daily operating cost. The excavation problem was a one-time capital penalty paid before production could begin at all. Selig had already committed $250,000 to the Edendale canyon floor by June 1911 — absorbing both penalties simultaneously while the national press celebrated the studio as the second largest of its kind in the world. By August 1919, the same 8% grade had become comedy material: a newspaper described "the steepest hill in Edendale, the grade which is the despair of every motor fiend." The terrain hadn't changed. Only what the industry needed from it had.</p>
+
+<table>
+<thead><tr><th>Item</th><th>Edendale · Canyon Ribbon</th><th>Hollywood · Industrial Floor</th></tr></thead>
+<tbody>
+<tr><td>Grade</td><td>~8% cross-slope</td><td>&lt;25 ft across full block — 0%</td></tr>
+<tr><td>Earth to move · 1 acre</td><td>~6,000 cu-yd</td><td>~0 cu-yd · standard pour</td></tr>
+<tr><td>Excavation surcharge</td><td>$180–$480 before foundation</td><td>$0</td></tr>
+<tr><td>% of Squaw Man budget ($15k)</td><td>1.2–3.2% on dirt · per stage site</td><td>0%</td></tr>
+<tr><td>Selig capital committed by 1911</td><td>$250,000 · canyon floor · 8% grade</td><td>N/A — Selig never expanded to Hollywood</td></tr>
+<tr><td>Babylon set feasibility (1916)</td><td>Impossible — 160-ft wall on 8% slope; 300-ft camera retreat hits canyon wall</td><td>Achieved — 0% grade, standard mudsill foundation, 300-ft runway available</td></tr>
+</tbody>
+</table>
+
+<blockquote>"Every dollar spent moving earth at Edendale was a dollar not available for sets, talent, or shooting days. Hollywood's Industrial Floor was also a financial floor."</blockquote>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION VIII — MODERN EVIDENCE -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="modern">
+<div class="section-marker">§ VIII</div>
+<h2>Modern Evidence</h2>
+<p style="font-size:0.8rem; color:#6a5a3a; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1.2rem;">MapCortex 2026 &nbsp;·&nbsp; Post-1959 Glendale Freeway Grading &nbsp;·&nbsp; Modern Data Understates the Original Case</p>
+
+<p>130 years after the 1894 survey — after the 1959 Glendale Freeway graded away portions of the original canyon — the same contrast holds. <strong>Modern data understates the original case.</strong> The canyon measurable today is shallower than the one Boggs and Sennett filmed in.</p>
+
+<p>Edendale on MapCortex 2026: dense contours, 680–801 ft labels every 2–3 blocks, post-1959 freeway grading means the original canyon was steeper. Hollywood on MapCortex 2026: zero elevation labels across the studio district. The Industrial Floor holds. 130 years on. Nestor's Sunset &amp; Gower site still in production use.</p>
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION IX — PRIMARY SOURCE TIMELINE -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="sources">
+<div class="section-marker">§ IX</div>
+<h2>Primary Source Timeline</h2>
+<p style="font-size:0.8rem; color:#6a5a3a; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1.2rem;">Updated Document Set &nbsp;·&nbsp; 1890 – 1924 &nbsp;·&nbsp; Including New Prologue Documents and Node 2 Dissolution Sequence</p>
+
+<p>The following documents were published without knowledge of the geographic argument this essay makes. Read in sequence, they constitute a real-time record of the full arc — from lemon groves to city council sovereignty — the terrain's industrial consequences visible in the press before anyone named the mechanism.</p>
+
+<!-- PROLOGUE DOCS -->
+<h3>Prologue Documents · 1890–1909 · The Land Before the Lens</h3>
+
+<div class="timeline-entry">
+<div class="timeline-date">Nov 20 1890</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">Our Indian Summer — A Ride in a Day as Perfect as if in June · Frostless Foothills</div>
+<p>Reporter rides through Cahuenga foothills near Colegrove with A. H. Denker. H. H. Wilcox sells 40 acres at Hollywood at the mouth of Cahuenga Pass for $18,000 — $450/acre. Reporter predicts $1,000/acre within five years and declares the foothills destined for millionaire villa residences: <em>"There is not a spur of these foothills that will not bear as a crest the home of some millionaire."</em> He was right about the destination. The 1890 reporter saw the hills as the endpoint of value. The 1894 surveyor measured the floor as the mechanism. Both were correct. The floor made the money. The industry produced the wealth. The wealth went up the hill exactly as predicted — just from a source the reporter could not have imagined.</p>
+<span class="timeline-tag">Prologue · Hills prediction correct · Floor mechanism invisible</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Apr 12 1891</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">Morrison &amp; Chanslor — Hollywood as Agricultural Compass Point</div>
+<p><em>"90 acres, frostless belt, improved, west of Hollywood — $30,000. 22 acres, adjoining Hollywood — $5,000."</em> Hollywood used to locate orange groves for farm buyers. The word exists purely as a geographic reference for agricultural investment.</p>
+<span class="timeline-tag">Prologue · Agricultural compass point</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Jul 3 1892</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">Fair Cahuenga — Hammel &amp; Denker Ranch · The Sicily of America</div>
+<p>Cahuenga valley floor: 1,000 acres of valley land, winter vegetables shipping to Boston and Chicago at $0.03/pound freight. Ten acres of peas netting $2,500 profit. <em>"The two great needs of this fertile valley are transportation and irrigation facilities."</em> The valley's two great needs in 1892 become two different things to two different industries on the same ground — the film industry needs transit and a flat floor, not irrigation. The Denker ranch becomes Beverly Hills.</p>
+<span class="timeline-tag">Prologue · Sicily of America · Transportation problem named</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Feb 3 1893</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">Colegrove — Bounteous Nature · The Lemon District Plan</div>
+<p><em>"In the early spring a large acreage will be planted to lemons... it looks as if the Cahuenga valley would, in a few years, take the lead in the production of that most useful fruit."</em> The dummy road to Hollywood already running packed Sunday trains — families picnicking in the canyons. The Cahuenga valley is actively converting itself into a lemon production district on terrain the federal government will survey as an industrial floor fourteen months later.</p>
+<span class="timeline-tag">Prologue · Active lemon conversion · Proto-transit running</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">May 1894</div>
+<div class="timeline-source">USGS Federal Survey</div>
+<div class="timeline-headline">Los Angeles Quadrangle Filed · 356 ft · 0% Grade · Industrial Floor Documented</div>
+<p>Scale 1:62,500. Contour interval 25 ft. Hollywood/Colegrove: 356-ft spot elevation, zero contour lines. Edendale/Ivanhoe canyon: ~500 ft floor, 734 ft Los Felis ridge. The surveyor measures the Industrial Floor. Nobody in the motion picture industry exists yet to care. The terrain does not know it is being measured.</p>
+<span class="timeline-tag">Primary survey · 356 ft documented · 17 years before DeMille</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Dec 16 1894</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">Brodtbeck &amp; McConnell — Ten Acres Lemon Land at Hollywood, on Sunset Boulevard · $300/Acre</div>
+<p>Same year as the USGS survey. Seven months after the federal filing. The surveyor saw elevation, grade, contour. McConnell saw lemons. Same ground. Same year. The Industrial Floor sold as a citrus investment in the same calendar year it was measured as a topographic coordinate.</p>
+<span class="timeline-tag">Prologue · Lemon land · Same year as survey · Citation anchor</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Dec 30 1900</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">Hollywood Lemon Grove Traded for Washington State Land</div>
+<p><em>"$6,000 orange and lemon grove near Hollywood for Los Angeles or state of Washington."</em> Exchange listings. Hollywood land is a commodity to be traded sideways — not invested in, not developed. Eleven years before Christie's $30 tavern lease.</p>
+<span class="timeline-tag">Prologue · Commodity exchange · Pre-industry valuation</span>
+</div>
+
+<!-- SELIG NOMADIC ERA -->
+<h3>The Nomadic Era · 1904–1910 · Selig in the Field</h3>
+
+<div class="timeline-entry">
+<div class="timeline-date">Oct 11 1904</div>
+<div class="timeline-source">Auburn Journal, Oct 13 1904</div>
+<div class="timeline-headline">Too Realistic — Moving Picture "Bandits" Peppered by Tourists in Colorado</div>
+<p>A party of eastern tourists near Colorado Springs came upon Selig filming a stage hold-up. Believing it genuine, several armed tourists opened fire. William N. Selig was shot and painfully wounded in the arm before the fusillade was stopped. The nomadic era in a single incident: no perimeter, no gate, no signal to the outside world that what was happening was fictional. The studio floor solved this. A walled lot with a gate meant no tourist could mistake a robbery scene for a real one.</p>
+<span class="timeline-tag">Nomadic era · Film/reality confusion · Selig shot · Terrain problem</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Aug 24 1909</div>
+<div class="timeline-source">Colusa Daily Sun</div>
+<div class="timeline-headline">A Hero Thwarted — Farmer Broke Up Act of Moving Picture People · Mount Shasta</div>
+<p>Selig's company filming a kidnapping scene between Mount Shasta and McCloud. A farmer saw the chase and capture from his cabin, took his rifle and a fast horse, overtook the actors, compelled them to free the girl, and was not satisfied until shown credentials. Same pattern as Colorado, 1904. Same company. The confusion ran in both directions — reality mistaken for film, Selig shot; film mistaken for reality, farmer stops the production. The controlled lot ended the ambiguity in both directions.</p>
+<span class="timeline-tag">Nomadic era · Farmer with rifle · Film/reality confusion #2</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Jan 26 1910</div>
+<div class="timeline-source">Truckee Republican</div>
+<div class="timeline-headline">Motion Picture Company Left for Coast — Fake Peary North Pole Expedition on Donner Lake</div>
+<p>Selig's company in Truckee shooting a fake Peary North Pole expedition — nine months after Peary's actual expedition. Sealskin boots, fur clothes, dog sleds, Eskimo costumes. <em>"To see the company starting out of town to the woods arrayed in all their frontier dress and armament with the sleigh containing several people and the dogs straining at their harness, one would imagine himself in the wilds of Alaska."</em> The nomadic industry manufacturing historical record substitutes in public space. Truckee residents watching the company leave experience the same dislocation as the Colorado tourists and the Mount Shasta farmer. The studio floor ended this entire era.</p>
+<span class="timeline-tag">Nomadic era · Fake Peary · Public ambiguity · Pre-studio</span>
+</div>
+
+<!-- NODE 2 OPENING -->
+<h3>Node 2 Opening · 1908–1911 · Edendale Before and After</h3>
+
+<div class="timeline-entry">
+<div class="timeline-date">Nov 8 1908</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">For Exchange — 1-Story Store Building, Drug Stock, 6-Room House, Edendale · $6,000 · Want Oregon Property</div>
+<p>One year before Selig's building permit. The owner of a drug store and house in Edendale is trying to exchange it for Oregon property on a cash basis. Edendale pre-studio: a quiet commercial neighborhood where a business owner wants out, willing to take rural Oregon in trade for a $6,000 property. He is selling at the exact moment before the value changes.</p>
+<span class="timeline-tag">Node 2 baseline · Pre-studio · Owner wants Oregon</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Feb 21 1909</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">Elysian Heights — 8-Room Modern House Near Edendale Car Line · $3,500 · "Where the Air is Pure and Bracing"</div>
+<p>Eight months before Selig's building permit. A fully improved property — 8-room house, 4-room cottage, fruit trees, cement plastered front, two transit connections — sells for $3,500 near the Edendale car line. Selling language: <em>"On high ground, where the air is pure and bracing; where health is considered as well as surroundings."</em> The canyon was selling itself as a health retreat. Nine months later Selig filed a permit for a one-story photographic studio at $3,977 — more than an improved 8-room house in the same neighborhood in the same year. The studio cost more to build than the neighborhood it was entering.</p>
+<span class="timeline-tag">Node 2 baseline · $3,500 house · Pure air selling point · 8 months pre-permit</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Circa 1909</div>
+<div class="timeline-source">LA Times [building permit record]</div>
+<div class="timeline-headline">Alessandro Street 1851 — Selig Polyscope Company, Owner · One-Story Photographic Studio · $3,977</div>
+<p>Richards-Neustadt Construction Company, builder. The building permit for the first Selig structure at Edendale. $3,977 for a one-story photographic studio — more than the $3,500 improved 8-room house in the same neighborhood. The capital trap clock starts here. The address: 1851 Alessandro. Boggs is murdered at 1845 Alessandro in October 1911. He built it, ran it, and died on it.</p>
+<span class="timeline-tag">Node 2 origin · $3,977 permit · Capital trap opens · 1851 Alessandro</span>
+</div>
+
+<!-- [The full existing primary source timeline entries from groves9 continue here — Jun 19 1911 Marysville Democrat through Feb 17 1924 LA Examiner] -->
+<!-- For brevity in this build these are carried forward intact from the original -->
+
+<div class="timeline-entry">
+<div class="timeline-date">Jun 19 1911</div>
+<div class="timeline-source">Marysville Democrat [reprinting LA Times]</div>
+<div class="timeline-headline">With California Picture Producers — Pathé at Edendale · Selig $250,000 · "Second Largest Glass Studio in the World"</div>
+<p>Pathé Frères branch studio at Edendale confirmed. Selig Polyscope: $250,000 invested, "second largest glass studio of its kind in the world." The $2,000 stagecoach Boggs personally secured — an antique presidential coach — is the purest symbol of capital committed to canyon-specific production. A stagecoach is useless on a flat studio floor. It belongs to the Chase Economy, to the canyon grammar. Boggs spent $2,000 on a prop that the Shadow Tax was already making obsolete. The writer predicts leading picture actors will become world-famous — their names advertised like legitimate stage stars. Four years later Geraldine Farrar arrives with eleven servants and a military escort. Edendale's status as the industry center was national news. The Shadow Tax and 8% grade were invisible. The prestige was total.</p>
+<span class="timeline-tag">Node 2 · $250,000 committed · National press · Shadow Tax invisible · Star system predicted</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Oct 27 1911</div>
+<div class="timeline-source">LA Herald · Press Democrat Oct 28</div>
+<div class="timeline-headline">Francis Boggs, Moving Picture Manager, Killed — Selig Wounded · 1845 Allesandro Street · Same Day: Nestor Film Company Opens at Sunset &amp; Gower</div>
+<p>Francis Boggs shot dead. W. N. Selig wounded. Selig had arrived from Chicago that morning for an expansion conference — in the room: Hobart Bosworth, J. L. McGee, W. Santzhi. Boggs had been earning $500 a month. He had personally purchased the Edendale property and built the studio. <strong>Same morning: Nestor Film Company opens at Sunset and Gower on the strength of a Spring Street actor's tip, leasing the dead Blondeau Tavern for $30–40 a month.</strong> $500/month dies on the canyon floor on the exact day $30/month opens on the flat floor. The 59-month clock starts.</p>
+<span class="timeline-tag">Oct 27 1911 · Pivot Day · $500 dies · $30 opens · 59-month clock</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Oct 30 1911</div>
+<div class="timeline-source">San Jose Mercury News</div>
+<div class="timeline-headline">$100 Per Acre — 101 Acres Vacant Land Near Edendale, Suitable for Grain, Hay, Seed or Alfalfa</div>
+<p>Three days after the pivot day. 101 acres near Edendale advertised as farmland — grain, hay, alfalfa — at $100 an acre in the San Jose press. The same corridor where Selig has committed $250,000 and the national press called it the second largest glass studio in the world. The canyon's industrial transformation invisible to the agricultural land market 72 hours after it happened. The information lag is a documented condition, not an inference.</p>
+<span class="timeline-tag">Node 2 · Information lag · Alfalfa farm · 3 days post-pivot</span>
+</div>
+
+<!-- Remaining existing timeline entries carried forward intact -->
+<div class="timeline-entry">
+<div class="timeline-date">Mar 13 1913</div>
+<div class="timeline-source">Sacramento Star · G.M. Price</div>
+<div class="timeline-headline">"I'm Going to Die Here" — Joseph De Grasse, Pathé Edendale · Canyon Floor at Peak Confidence</div>
+<p>Gertrude M. Price interviews Joseph De Grasse inside the Pathé Frères office at Edendale. De Grasse: <em>"It was a case of choosing between Shakespeare and climate. And climate won."</em> His commitment: <em>"Horses couldn't drag me back to New York. I'm going to DIE here."</em> The climate myth stated from inside — De Grasse naming climate as the mechanism while standing on terrain charging him the Shadow Tax daily. Personal commitment held him. Topographic logic expelled the industry regardless of his preference. By 1916 the canyon address is a nostalgia brand.</p>
+<span class="timeline-tag">Node 2 · Peak confidence · Climate myth from inside · "Die here" · G.M. Price #1</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">May 29 1913</div>
+<div class="timeline-source">Sacramento Star</div>
+<div class="timeline-headline">Pathé / Wiggins — "Fresh, Free Ozone" · Lemon Grove Myth Manufactured</div>
+<p>Lillian Wiggins learned to ride a horse because the canyon required it. "One trip around the Pathé ranch; one trial ride on the back of a western pony and one day's fresh, free ozone" — the Lemon Grove Myth being manufactured in real time. Pathé was the world's largest film company, paying the Shadow Tax on an international distribution scale without naming it.</p>
+<span class="timeline-tag">Node 2 · Lemon Grove Myth manufactured · Shadow Tax invisible</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Dec 4 1913</div>
+<div class="timeline-source">LA Evening Herald</div>
+<div class="timeline-headline">Thomas Ince, "Great Studio at Edendale" — DeMille Signs Barn Lease Same Month</div>
+<p>The Evening Herald brokered a world-first news film arrangement through Thomas Ince, from "his great studio at Edendale." DeMille signed the Hollywood barn lease this same month — December 22, 1913, on Alexandria Hotel stationery, $250/month for half of Jacob Stern's yellow barn at Selma and Vine. Peak Node 2 prestige and the Node 3 capital anchor signed in the same month.</p>
+<span class="timeline-tag">Pivot month · Peak Node 2 prestige · Anchor 2 signed · Same month</span>
+</div>
+
+<!-- NODE 2 DISSOLUTION -->
+<h3>Node 2 Dissolution · 1915–1919 · The Canyon Empties</h3>
+
+<div class="timeline-entry">
+<div class="timeline-date">May 22 1915</div>
+<div class="timeline-source">LA Herald · Guy Price</div>
+<div class="timeline-headline">"Movieitis" — K&amp;E Buying Selig Edendale · Broadway Buys the Canyon Vacancy</div>
+<p>Price names the migration epidemic: "movieitis." Klaw &amp; Erlanger — Broadway's most powerful theatrical booking syndicate — reportedly buying the Selig plant at Edendale. The canyon floor's founding capital anchor — $250,000, the Marysville Democrat's "second largest glass studio of its kind in the world" — being sold to Broadway theatrical interests. The terrain sorted the film industry out of Edendale. Broadway bought the vacancy. The flat floor got the industry. The canyon got the legitimate theater.</p>
+<span class="timeline-tag">Node 2 dissolution · K&amp;E buys Selig · Broadway buys vacancy</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">May 29 1915</div>
+<div class="timeline-source">LA Herald · Guy Price</div>
+<div class="timeline-headline">"Edendale Papers (If There Be Any, B'gosh) Please Copy" — Node 2 Punchline</div>
+<p>Two years after Ince's "great studio," Edendale is a punchline in the newspaper that celebrated it. Same column: a woman says "if the industry will only remain in its infancy another five years we will all own bungalows in Hollywood." The canyon has completed its arc from national marvel to joke in 48 months.</p>
+<span class="timeline-tag">Node 2 punchline · Node 3 default · Canyon culturally finished</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Aug 7 1915</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">For Sale — Leaving This City, I Will Sacrifice My 4 Lots on Sunset Blvd. and Edendale</div>
+<p>Someone leaving Los Angeles dumps four Edendale lots at a sacrifice price. The word is doing the work. This is the canyon's residential economy in quiet collapse — no announcement, no press coverage, just a private owner exiting at whatever the market will bear. Same month: the photoplay colony named, Geraldine Farrar with eleven servants, Hollywood bungalows being built "for all time." Edendale: sacrifice sale. Hollywood: for all time.</p>
+<span class="timeline-tag">Node 2 dissolution · Sacrifice sale · Private market knows · Aug 1915</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Feb 9 1916</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">Wanted — 4-Room Bungalow, Furnished · Edendale or Hollywood District · Rent Must Be Very Reasonable</div>
+<p>A family of three lists Edendale and Hollywood as interchangeable residential options in the same classified ad. February 1916 — three months before the city council declares Hollywood too important to harass. To a civilian renter they are the same neighborhood category. The industry has completely bifurcated these two places in 52 months and an ordinary family cannot tell the difference. The information gap runs in all directions: the press couldn't see the Shadow Tax; the land market couldn't price the terrain advantage; and in February 1916 a renter treats Hollywood and Edendale as equivalent while the city council is weeks away from surrendering political sovereignty over one of them.</p>
+<span class="timeline-tag">Node 2 dissolution · Civilian invisibility · Information gap · Edendale or Hollywood</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Aug 5 1919</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">Deep Dark Secrets From Clara Kimball Young's Studio — "Col. Selig Built It Years and Years Ago, When He Was Grand Nabob of the Flickers"</div>
+<p>Selig compressed into archaeology. And: "the steepest hill in Edendale, the grade which is the despair of every motor fiend" — the 8% grade of the 1894 survey, now comedy material. In 1909 it was why Selig chose Edendale. In 1919 it defeats automobiles and loses dogs.</p>
+<span class="timeline-tag">Node 2 → founding myth · 8% grade now comedy</span>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Dec 23 1919</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">Edendale · $1,500 Christmas Presents — ½ Acre, 3-Room House, 100 Registered Rabbits, 100 Hutches · $13.50/Month</div>
+<p><em>"Take Edendale car, walk east on Los Feliz Blvd to Rich St."</em> December 1919. Eight years after Christie opened at Sunset and Gower. Three years after the city council declared Hollywood too important to harass. The canyon that in June 1911 held the second largest glass studio in the world — $250,000 committed, national press coverage, Hobart Bosworth directing westerns — is in December 1919 a rabbit farm on Los Feliz Boulevard on installment terms at $13.50 a month. The capital trap completed its full arc: $3,977 photographic studio → $250,000 glass studio → zoo → Broadway legitimate theater → rabbit hutches.</p>
+<span class="timeline-tag">Node 2 endpoint · Rabbit hutches · $13.50/month · Full arc complete</span>
+</div>
+
+<!-- COUNCIL HEARING -->
+<h3>The Lock · November 1916 · City Council Hearing</h3>
+
+<div class="timeline-entry">
+<div class="timeline-date">Oct 25 · Nov 13 1916</div>
+<div class="timeline-source">LA Herald</div>
+<div class="timeline-headline">"$15,000,000 Industry Too Important to Be Harassed Into Leaving" — City Council Hearing · Half of Hollywood's Renting Houses Dependent · The Irreversibility Is Complete</div>
+<p>The Western Avenue and Griffith Park Improvement Association petitions the council: loud noises at night, flimsy inflammable buildings, bright electric lights, running machinery, shooting guns and cannons, incessant hammering, high board fences, Indians in tents. A second petition asks removal of <em>Intolerance</em> scenery. The council welfare committee hearing: Fred Kley (Lasky), William Keefe (Griffith), Alfred Wright (Fox). Landlord J. G. Clark: <em>"If these motion picture companies are ousted from Hollywood, fully half of the renting houses of Hollywood will be vacant."</em> Fred Kley: <em>"$350,000 being spent by the film companies in Los Angeles this year."</em> Committee position: <em>"Los Angeles would be intensely inconsistent were she to nag and harass industries."</em></p>
+<p>The terrain made departure physically irrational in 1911. The capital made it financially irrational by 1914. The social infrastructure made it institutionally irrational by 1915. The city council made it politically irrational in November 1916. <strong>The irreversibility argument, complete in the public record. Fifty-nine months. October 1911 to November 1916. From a $30 tavern lease to a city council's surrender.</strong></p>
+<span class="timeline-tag">Anchor 4 · Political sovereignty · $15M · 59-month lock · Kill shot</span>
+</div>
+
+<!-- CHRISTIE CONFESSION -->
+<div class="timeline-entry">
+<div class="timeline-date">Feb 17 1924</div>
+<div class="timeline-source">LA Examiner</div>
+<div class="timeline-headline">What New Sites for Studios Mean to Hollywood — Al Christie · The Full Confession</div>
+<blockquote>"Twelve years ago, I stepped off the train at Los Angeles as a representative of the old Nestor Film Company to make a series of pictures. At that time, Edendale was the center of the motion picture industry, and a pretty crowded center at that. I wanted a location for a studio which would permit a wider range of action… where I would have all the space I could use and not find myself crowded." — Al Christie, Los Angeles Examiner, February 17, 1924</blockquote>
+<p>Christie names Edendale's crowding, the motive, the intelligence source, the destination, and the asset. Same issue: "Westwood — The Second Hollywood." The pattern repeats one node further west on the same alluvial plain. Christie described the consequences of the 1894 survey without ever knowing the survey existed.</p>
+<span class="timeline-tag">Practitioner confession · Pattern confirmed · The Second Hollywood</span>
+</div>
+
+</section>
+
+<hr class="section-rule">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION X — THE SIGN -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="sign">
+<div class="section-marker">§ X</div>
+<h2>The Sign on the Floor's <em>Fame</em></h2>
+<p style="font-size:0.8rem; color:#6a5a3a; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:1.2rem;">Hollywoodland 1923–1932 &nbsp;·&nbsp; Five Primary Sources &nbsp;·&nbsp; The Most Famous Image in Film History Is a Real Estate Advertisement</p>
+
+<p>The floor made the name. The sign carried it. Those are two different things — and the 1,394 feet of vertical terrain between them is the final forensic measurement this essay offers.</p>
+
+<p>By 1923 the word <em>Hollywood</em> meant the film industry to the entire world. Al Christie had proved the Industrial Floor in 1911. DeMille had confirmed it in 1913. Griffith had sealed it in 1916. The city council had made it permanent in November 1916. The Chain of Anchors was complete. The name belonged to the 356-ft bajada plain documented in the 1894 federal survey.</p>
+
+<p>In July 1923, a syndicate of Los Angeles capitalists erected a 50-foot illuminated sign on the ~1,750-ft ridgeline above and north of that plain. The sign read <strong>HOLLYWOODLAND</strong>. It was an advertisement for hillside residential lots. No studio ever operated there. The terrain was beautiful, genuinely so — bridle trails, panoramic views. It was also, by the measurement of the 1894 survey, the wrong elevation for the industry that made the name worth advertising.</p>
+
+<p>The 1890 reporter on his ride through the Cahuenga foothills had predicted millionaire villas on the hilltops. He was right. The floor made the money. The money went up the hill. The sign went up on the hill in 1923, exactly as he predicted, burning above the floor that earned the name — visible from every studio below it after dark.</p>
+
+<p>The most famous image associated with the film industry is not a studio. It is not a camera. It is not a frame of film. It is a real estate advertisement on the wrong terrain — burning above the floor that made it famous, visible to everyone on the floor below, reached by a maintenance ladder.</p>
+
+<div class="elevation-diagram">
+<p style="color:#7a6a4a; margin-bottom:1rem; font-size:0.7rem; letter-spacing:0.1em;">ELEVATION CROSS-SECTION · HOLLYWOOD HILLS TO INDUSTRIAL FLOOR · 1894 SURVEY DATA</p>
+<p style="color:#c9b87a;">356 ft — INDUSTRIAL FLOOR · RKO · LASKY · NESTOR · KEYSTONE</p>
+<p style="color:#8a6a4a; margin-top:0.5rem;">~1,400 ft — Mulholland Drive · Sennett homesite</p>
+<p style="color:#7a5a3a; margin-top:0.5rem;">~1,750 ft — HOLLYWOODLAND sign ridge</p>
+<p style="color:#5a4a2a; margin-top:1rem; font-size:0.9rem;">1,394 ft vertical difference · Same basin · One word</p>
+</div>
+
+<div class="timeline-entry">
+<div class="timeline-date">Sep 19 1932</div>
+<div class="timeline-source">Oakland Tribune</div>
+<div class="timeline-headline">Actress Dies in Leap Off Sign — Guild Star, Disappointed by Hollywood, Hurls Self From Big Illuminated 'H'</div>
+<p>Peg Entwistle arrived from New York with Theater Guild credentials. She signed with RKO — one of the major studios on the 356-ft Industrial Floor — for a small part in one picture. The studio declined to pick up her option. The floor's sorting mechanism processed her and expelled her. She left a note: <em>"I am afraid I am a coward and I am sorry for many things. If I had only done this long ago I could have saved a lot of pain."</em> She signed it P.E. She climbed the maintenance ladder to the top of the H. Her body was found in front of the A.</p>
+<p>She did not die because the ridge was false. The ridge was real — the bridle trails, the panorama, the genuine beauty the 1924 Examiner described. The 1890 reporter's prediction was right: the hills became millionaire homes, star residences, exactly as he said. She died because the word Hollywood covered both places — the sorting floor and the aspirational ridge — and the distance between them was not visible until you were standing on the maintenance ladder looking down at the carpet of the city.</p>
+<span class="timeline-tag">Sep 19 1932 · RKO option dropped · H to A · 1,394 ft · The distance made visible</span>
+</div>
+</section>
+
+<hr class="section-rule">
+
+<!-- CODA -->
+<div class="coda">
+<div class="coda-rule">— ✦ —</div>
+
+<p class="coda-text">The floor made the name. Christie proved it in 1911. DeMille confirmed it in 1913. Griffith sealed it in 1916. The city council made it permanent in November 1916. By then the word <em>Hollywood</em> was the most valuable geographic brand in the world — earned entirely on a 356-ft alluvial plain that Brodtbeck &amp; McConnell sold as lemon land in December 1894, in the same calendar year the USGS measured it as an industrial floor.</p>
+
+<p class="coda-text">Fifty-nine months. October 1911 to November 1916. From a $30 tavern lease to a city council's surrender. The 1894 survey measured the coordinate. The terrain did the rest.</p>
+
+<p class="coda-text">The industry didn't discover Hollywood. It was evicted from Edendale by the geometry of a canyon documented on a federal survey nineteen years before DeMille arrived. Node 3 won because the 1894 survey confirmed the only thing Node 2 could never offer: a tax-free, 0% grade Industrial Floor with an unobstructed horizon. Al Christie proved it with a $30 tavern lease in 1911. Cecil B. DeMille confirmed it with a $250 barn lease in 1913. D.W. Griffith sealed it with a 160-foot wall in 1916. The city council locked it in November 1916. Four anchors. One topographic coordinate. The Chain was complete before anyone named the mechanism.</p>
+
+<p class="coda-text" style="font-style:normal; color:#5a4a2a; font-size:0.8rem; margin-top:2rem;">"The terrain knew first. The surveyor measured it. The land agents sold it as lemons. The industry felt it. The press covered the ozone and the ponies. The council surrendered to it. The sign burned on the wrong ridge. This essay names the mechanism."</p>
+
+<p class="coda-text" style="font-style:normal;">— The Horizontal Infinite.</p>
+
+<div class="coda-byline" style="margin-top:2rem;">© 2026 Kenny A. &nbsp;·&nbsp; Beyond the Lemon Grove &nbsp;·&nbsp; Geographic Audit · USGS 1894 &nbsp;·&nbsp; All rights reserved.</div>
+</div>
+
+<!-- FULL CITATION BLOCK -->
+<div style="margin-top:4rem; padding-top:2rem; border-top:1px solid rgba(201,184,122,0.1); font-size:0.75rem; color:#5a4a2a; line-height:1.8;">
+<p style="color:#7a6a4a; letter-spacing:0.1em; text-transform:uppercase; font-size:0.68rem; margin-bottom:1rem;">Primary Sources &amp; Citations</p>
+<p><strong>Survey:</strong> USGS Los Angeles Quadrangle, 1894 (HTMC edition), Scale 1:62,500, filed May 19, 1897. ngmdb.usgs.gov/topoview. Contour interval: 25 ft. Values — 356 ft (Hollywood/Colegrove), ~500 ft (canyon floor, Ivanhoe/Edgemont), 734 ft (Los Felis ridge) — read directly from labeled survey.</p>
+<p><strong>Prologue land documents:</strong> LA Herald, Nov 20 1890 (Wilcox/Denker ride); LA Herald, Apr 12 1891 (Morrison &amp; Chanslor); LA Herald, Jul 3 1892 (Fair Cahuenga / Hammel &amp; Denker); LA Herald, Feb 3 1893 (Colegrove); LA Herald, Dec 16 1894 (Brodtbeck &amp; McConnell, lemon land on Sunset Boulevard, $300/acre — citation anchor for pre-industry Hollywood land values); LA Herald, Dec 30 1900 (Hollywood grove exchange listings).</p>
+<p><strong>Nomadic era:</strong> Auburn Journal, Oct 13 1904 (Selig shot in Colorado); Colusa Daily Sun, Aug 24 1909 (farmer with rifle, Mount Shasta); Truckee Republican, Jan 26 1910 (fake Peary North Pole expedition, Donner Lake).</p>
+<p><strong>Node 2 baseline:</strong> LA Herald, Nov 8 1908 (Edendale drug store exchange, $6,000, want Oregon); LA Herald, Feb 21 1909 (Elysian Heights, $3,500, Edendale car line); LA Times, circa 1909 (building permit: Alessandro Street 1851, Selig Polyscope, one-story photographic studio, $3,977); San Jose Mercury News, Oct 30 1911 ($100/acre alfalfa, 3 days post-pivot).</p>
+<p><strong>Node 2 dissolution:</strong> LA Herald, Aug 7 1915 (sacrifice sale, 4 Edendale lots); LA Herald, Feb 9 1916 (wanted — Edendale or Hollywood, rent must be very reasonable); LA Herald, Aug 5 1919 (Selig "grand nabob," 8% grade comedy); LA Herald, Dec 23 1919 (rabbit hutches, $13.50/month).</p>
+<p><strong>Pivot day / Boggs:</strong> LA Herald, Oct 27 1911; Press Democrat, Oct 28 1911 (full account: $500 salary, Bosworth in room, Selig expansion conference).</p>
+<p><strong>Marysville Democrat:</strong> Jun 19 1911, reprinting LA Times (full text: $250,000, $2,000 stagecoach, Bosworth named, star system predicted).</p>
+<p><strong>Council hearing:</strong> LA Herald, Oct 25 and Nov 13 1916 ("Too important to be harassed away" · "half the renting houses vacant" · $350,000 Lasky · $15,000,000 industry).</p>
+<p><strong>Christie confession:</strong> Christie, Al. "What New Sites for Studios Mean to Hollywood." Los Angeles Examiner, 17 Feb. 1924. · "Nestor Company in Hollywood." Moving Picture World, vol. 10, no. 6, 11 Nov. 1911, p. 467.</p>
+<p><strong>DeMille / Lasky:</strong> DeMille, Cecil B. The Autobiography of Cecil B. DeMille. Prentice-Hall, 1959. · Eyman, Scott. Empire of Dreams. Simon &amp; Schuster, 2010.</p>
+<p><strong>Babylon set:</strong> Photoplay Magazine, Aug. 1916 · Bitzer, G.W. Billy Bitzer: His Story. FSG, 1973 · Wanamaker, Marc. Hollywood, 1900–1950. Arcadia Publishing, 2009.</p>
+<p><strong>Transit:</strong> Map of the City of Los Angeles Showing Railway Systems, 1906, Library of Congress / Travel and Hotel Bureau.</p>
+<p><strong>§X · Hollywoodland:</strong> LA Evening Express, Mar 31 1923; LA Examiner, Apr 27 1924; LA Herald, Jan 3 1927; Oakland Tribune, Sep 19 1932. Sign erected July 1923. Sign elevation ~1,750 ft per USGS topo; floor 356 ft per 1894 survey; vertical difference 1,394 ft.</p>
+<p><strong>Modern:</strong> MapCortex topographic layer (USGS/OpenStreetMap), March 2026. Post-1959 Glendale Freeway grading means modern Edendale data understates original canyon depth.</p>
+<p><strong>All newspaper sources</strong> via California Digital Newspaper Collection (CDNC) except where noted.</p>
+</div>
+
+</body>
+</html>
